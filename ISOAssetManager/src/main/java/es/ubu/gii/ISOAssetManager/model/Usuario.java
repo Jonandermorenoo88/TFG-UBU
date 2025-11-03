@@ -31,7 +31,7 @@ public class Usuario {
     @JoinColumn(name = "departamento_id", nullable = true)
     private Departamento departamento;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "usuario_roles",
         joinColumns = @JoinColumn(name = "usuario_id"),
