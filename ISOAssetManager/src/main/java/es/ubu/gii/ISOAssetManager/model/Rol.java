@@ -35,5 +35,10 @@ public class Rol {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public Object setUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'setUsuario'");
+	}
 }
 
