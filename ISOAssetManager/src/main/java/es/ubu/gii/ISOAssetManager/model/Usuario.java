@@ -22,7 +22,16 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(fetch = FetchType.EAGER)
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "empresa_id", nullable = true)
+    private Empresa empresa;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "departamento_id", nullable = true)
+    private Departamento departamento;
+
+    @OneToMany(fetch = FetchType.EAGER) // tiene que ser many to one ya que puede haber varios roles
     @JoinTable(
         name = "usuario_roles",
         joinColumns = @JoinColumn(name = "usuario_id"),
@@ -65,11 +74,39 @@ public class Usuario {
     public void setPassword(String password) { 
         this.password = password; 
     }
+
+    public Empresa getEmpresa() { 
+        return empresa; 
+    }
+
+    public void setEmpresa(Empresa empresa) { 
+        this.empresa = empresa; 
+    }
+
+    public Departamento getDepartamento() { 
+        return departamento; 
+    }
+
+    public void setDepartamento(Departamento departamento) { 
+        this.departamento = departamento; 
+    }
+
     public Set<Rol> getRoles() { 
         return roles; 
     }
 
     public void setRoles(Set<Rol> roles) { 
         this.roles = roles; 
+    }
+
+
+    @PrePersist @PreUpdate
+    private void validarEmpresaDepartamento() {
+        if (departamento != null && empresa != null) {
+            var empDep = departamento.getEmpresa();
+            if (empDep != null && !empDep.getId().equals(empresa.getId())) {
+                throw new IllegalStateException("El departamento no pertenece a la empresa del usuario.");
+            }
+        }
     }
 }
