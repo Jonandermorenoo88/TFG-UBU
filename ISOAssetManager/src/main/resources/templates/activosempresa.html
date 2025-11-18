@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Activos de la Empresa</title>
+    <link rel="stylesheet" href="/activosempresaestilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2 th:text="'Activos de ' + ${empresa.nombre}">Activos</h2>
+
+        <a th:href="@{'/activos/nuevo?empresaId=' + ${empresa.id}}" class="btn btn-primary">Añadir Activo</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Valor (€)</th>
+                    <th>Responsable</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="activo : ${activos}">
+                    <td th:text="${activo.nombre}">Nombre</td>
+                    <td th:text="${activo.tipo}">Tipo</td>
+                    <td th:text="${activo.descripcion}">Descripción</td>
+                    <td th:text="${#numbers.formatDecimal(activo.valor,1,2)}">0,00</td>
+                    <td th:text="${activo.responsable != null ? activo.responsable.nombre : '—'}">—</td>
+                    <td>
+                        <a th:href="@{/activos/editar/{id}(id=${activo.id})}" class="btn btn-warning">Modificar</a>
+                        <form th:action="@{/activos/eliminar/{id}(id=${activo.id})}" method="post" style="display:inline;">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Eliminar este activo?');">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/empresas" class="btn btn-secondary">Volver a empresas</a>
+    </div>
+</body>
+</html>
