@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Cliente</title>
+  <link rel="stylesheet" th:href="@{/panelestilos.css}">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Panel de Cliente</h1>
+
+    <div th:if="${error}" class="alert danger" th:text="${error}"></div>
+
+    <p>
+      Aún no tienes una empresa asignada.<br>
+      <strong>Espera a que el auditor te asigne tu empresa y departamento.</strong>
+    </p>
+
+    <a class="volver" th:href="@{/inicio}">Cerrar sesión</a>
+  </div>
+</body>
+</html>
