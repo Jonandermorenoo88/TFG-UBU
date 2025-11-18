@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Empresas</title>
+  <link rel="stylesheet" th:href="@{/empresaestilos.css}">
+</head>
+<body>
+<div class="container">
+  <h1>Gestión de Empresas</h1>
+
+  <!-- Cerrar sesión (POST /logout con CSRF) -->
+  <form th:action="@{/logout}" method="post" style="margin-bottom:1rem;">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit" class="btn btn-danger btn-logout">Cerrar Sesión</button>
+  </form>
+
+  <!-- Botón Añadir: SOLO ADMIN o AUDITOR -->
+  <div class="toolbar" style="margin: .5rem 0 1rem;">
+    <a class="btn btn-primary"
+       th:href="@{/empresas/nueva}"
+       sec:authorize="hasAnyRole('ADMIN','AUDITOR')">
+      Añadir Empresa
+    </a>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Sector</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="empresa : ${empresas}">
+      <td th:text="${empresa.nombre}">Nombre</td>
+      <td th:text="${empresa.sector}">Sector</td>
+      <td th:text="${empresa.direccion}">Dirección</td>
+      <td>
+        <!-- VISIBLES PARA TODOS (ADMIN/AUDITOR/CLIENTE) -->
+        <a th:href="@{/activos/empresa/{id}(id=${empresa.id})}">Ver activos</a>
+        <a class="link" th:href="@{/empresas/{id}/bloques(id=${empresa.id})}">Evaluar ISO</a>
+
+        <!-- Eliminar: SOLO ADMIN o AUDITOR -->
+        <form th:action="@{/empresas/eliminar/{id}(id=${empresa.id})}"
+              method="post"
+              sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+              style="display:inline;">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+          <button type="submit" class="btn btn-danger"
+                  onclick="return confirm('¿Eliminar esta empresa?');">
+            Eliminar
+          </button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
