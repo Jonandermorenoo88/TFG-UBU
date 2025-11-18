@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="/usuariosestilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Gestión de Usuarios</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Asignar Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.nombre}">Nombre</td>
+                    <td th:text="${usuario.email}">Email</td>
+                    <td>
+                        <ul>
+                            <li th:each="rol : ${usuario.roles}">
+                                <span th:text="${rol.nombre}">ROL</span>
+                                <form th:action="@{/usuarios/eliminar-rol}" method="post" style="display:inline;">
+                                    <input type="hidden" name="usuarioId" th:value="${usuario.id}" />
+                                    <input type="hidden" name="rolNombre" th:value="${rol.nombre}" />
+                                    <button type="submit" class="btn-eliminar-rol"
+                                            onclick="return confirm('¿Eliminar este rol del usuario?')">❌</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <form th:action="@{/usuarios/asignar-rol}" method="post">
+                            <input type="hidden" name="usuarioId" th:value="${usuario.id}" />
+                            <select name="rolNombre">
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="AUDITOR">AUDITOR</option>
+                                <option value="RRHH">RRHH</option>
+                                <option value="IT/TECNICO">IT/TECNICO</option>
+                                <option value="DIRECCION">DIRECCION</option>
+                                <option value="FACILITIES">FACILITIES</option>
+                            </select>
+                            <button type="submit">Asignar Rol</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:action="@{/usuarios/eliminar}" method="post" style="display:inline;">
+                            <input type="hidden" name="id" th:value="${usuario.id}" />
+                            <button type="submit" class="btn-eliminar"
+                                    onclick="return confirm('¿Eliminar este usuario?')">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
