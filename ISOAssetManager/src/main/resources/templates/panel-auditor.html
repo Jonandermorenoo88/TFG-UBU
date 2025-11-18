@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="/panelestilos.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Panel de Administración</h1>
+    <p>Selecciona una opción:</p>
+
+    <div class="botonera">
+        <a href="/empresas" class="btn">Gestionar Empresas</a>
+
+        <div th:if="${esAdmin}">
+            <a href="/usuarios" class="btn">Gestionar Usuarios</a>
+        </div>
+    </div>
+
+    <a href="/inicio" class="volver">Cerrar sesión</a>
+  </div>
+</body>
+</html>
