@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Activo</title>
+    <link rel="stylesheet" href="/activonuevoestilos.css">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="'Editar activo de ' + ${activo.empresa.nombre}">Editar Activo</h1>
+
+    <form th:action="@{/activos/actualizar}" method="post">
+        <input type="hidden" name="id" th:value="${activo.id}">
+        <input type="hidden" name="empresaId" th:value="${activo.empresa.id}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        <div>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" th:value="${activo.nombre}" required>
+        </div>
+
+        <div>
+            <label>Tipo:</label>
+            <input type="text" name="tipo" th:value="${activo.tipo}" required>
+        </div>
+
+        <div>
+            <label>Descripción:</label>
+            <textarea name="descripcion" rows="4" required th:text="${activo.descripcion}"></textarea>
+        </div>
+
+        <div>
+            <label>Valor (€):</label>
+            <input type="number" name="valor" step="0.01" min="0" th:value="${activo.valor}" required>
+        </div>
+
+        <div>
+            <label>Responsable:</label>
+            <select name="responsableId" required>
+                <option th:each="u : ${usuariosEmpresa}"
+                        th:value="${u.id}"
+                        th:text="${u.nombre + ' (' + u.email + ')'}"
+                        th:selected="${u.id} == ${activo.responsable.id}"></option>
+            </select>
+        </div>
+
+        <button type="submit">Guardar Cambios</button>
+        <a th:href="@{/activos/empresa/{id}(id=${activo.empresa.id})}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
