@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluar ISO</title>
+    <link rel="stylesheet" href="/bloques.css">
+</head>
+<body>
+<div class="container">
+    <h1>Evaluar ISO - <span th:text="${empresa.nombre}"></span></h1>
+
+    <a href="/empresas" class="back-link">← Volver a empresas</a>
+
+    <div class="bloques">
+
+    <!-- ORGANIZACIONALES: ADMIN, AUDITOR, DIRECCION -->
+    <!-- Versión habilitada -->
+    <a sec:authorize="hasAnyRole('ADMIN','AUDITOR','DIRECCION')"
+       th:href="@{/empresas/{id}/cuestionario/grupo/organizacionales(id=${empresa.id})}"
+       class="bloque">
+        <h2>Controles organizacionales</h2>
+        <p>Anexo A.5</p>
+    </a>
+    <!-- Versión deshabilitada -->
+    <a sec:authorize="!hasAnyRole('ADMIN','AUDITOR','DIRECCION')"
+       class="bloque bloque--disabled">
+        <h2>Controles organizacionales</h2>
+        <p>Anexo A.5</p>
+    </a>
+
+    <!-- PERSONAS: ADMIN, AUDITOR, RRHH -->
+    <a sec:authorize="hasAnyRole('ADMIN','AUDITOR','RRHH')"
+       th:href="@{/empresas/{id}/cuestionario/grupo/personas(id=${empresa.id})}"
+       class="bloque">
+        <h2>Controles de personas</h2>
+        <p>Anexo A.6</p>
+    </a>
+    <a sec:authorize="!hasAnyRole('ADMIN','AUDITOR','RRHH')"
+       class="bloque bloque--disabled">
+        <h2>Controles de personas</h2>
+        <p>Anexo A.6</p>
+    </a>
+
+    <!-- FÍSICOS: ADMIN, AUDITOR, FACILITIES -->
+    <a sec:authorize="hasAnyRole('ADMIN','AUDITOR','FACILITIES')"
+       th:href="@{/empresas/{id}/cuestionario/grupo/fisicos(id=${empresa.id})}"
+       class="bloque">
+        <h2>Controles físicos</h2>
+        <p>Anexo A.7</p>
+    </a>
+    <a sec:authorize="!hasAnyRole('ADMIN','AUDITOR','FACILITIES')"
+       class="bloque bloque--disabled">
+        <h2>Controles físicos</h2>
+        <p>Anexo A.7</p>
+    </a>
+
+    <!-- TECNOLÓGICOS: ADMIN, AUDITOR, IT/TECNICO -->
+    <a sec:authorize="hasAnyRole('ADMIN','AUDITOR','IT/TECNICO')"
+       th:href="@{/empresas/{id}/cuestionario/grupo/tecnologicos(id=${empresa.id})}"
+       class="bloque">
+        <h2>Controles tecnológicos</h2>
+        <p>Anexo A.8</p>
+    </a>
+    <a sec:authorize="!hasAnyRole('ADMIN','AUDITOR','IT/TECNICO')"
+       class="bloque bloque--disabled">
+        <h2>Controles tecnológicos</h2>
+        <p>Anexo A.8</p>
+    </a>
+
+</div>
+
+    </div>
+</div>
+</body>
+</html>
