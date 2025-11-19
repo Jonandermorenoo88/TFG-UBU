@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title th:text="${anexo != null ? 'Controles ' + anexo.id : 'Controles'}">Controles</title>
+  <link rel="stylesheet" href="/controles.css">
+</head>
+<body class="page">
+  <div class="container">
+    <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
+
+    <h1 class="page-title" th:text="${anexo != null ? anexo.nombre : 'Controles'}">Controles</h1>
+    <div class="subtitle" th:if="${anexo != null}" th:text="'Anexo ' + ${anexo.id}">Anexo A.5</div>
+
+    <div class="grid">
+      <a class="card"
+         th:each="c : ${controles}"
+         th:href="@{|/empresas/${empresaId}/cuestionario/control/${c.id}/preguntas|}">
+        <div class="card-title" th:text="${c.nombre}">Nombre del control</div>
+        <div class="card-sub" th:text="${c.id}">A5.1</div>
+
+        <!-- Puntuación media -->
+        <div th:if="${scores != null}"
+            th:with="p=${scores[c.id]}"
+            class="score"
+            th:classappend="${p == null} ? ' score--muted' :
+                            (${p} &lt; 50 ? ' score--red' :
+                            (${p} &lt; 70 ? ' score--orange' : ' score--green'))"
+            th:text="${p == null} ? '— %' : (${p} + '%')">
+          75%
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
