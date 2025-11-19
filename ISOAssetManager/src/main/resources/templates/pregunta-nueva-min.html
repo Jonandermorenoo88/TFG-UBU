@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Nueva pregunta</title>
+  <link rel="stylesheet" th:href="@{/pregunta.css}">
+</head>
+<body class="page">
+<div class="container">
+  <a class="back" th:href="@{|/empresas/${empresaId}/cuestionario/control/${control.id}/preguntas|}">
+    ← Volver
+  </a>
+
+  <h2 class="page-title">Añadir nueva pregunta</h2>
+
+  <form th:action="@{|/empresas/${empresaId}/cuestionario/control/${control.id}/preguntas|}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+    <label for="texto"><b>Texto de la pregunta</b></label>
+    <input id="texto" name="texto" type="text" required placeholder="Escribe la pregunta...">
+
+    <!-- NUEVO: explicación opcional -->
+    <label for="explicacion" class="mt-1"><b>Explicación (opcional)</b></label>
+    <textarea id="explicacion" name="explicacion" rows="3" placeholder="Añade una explicación, si aplica…"></textarea>
+
+    <div class="mt-2">
+      <button type="submit" class="btn">Guardar</button>
+      <a class="btn danger" th:href="@{|/empresas/${empresaId}/cuestionario/control/${control.id}/preguntas|}">
+        Cancelar
+      </a>
+    </div>
+  </form>
+</div>
+</body>
+</html>
