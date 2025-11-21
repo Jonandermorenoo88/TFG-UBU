@@ -22,6 +22,32 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
+    // CAMPOS PARA RSA KEYS
+    @Lob
+    @Column(name = "public_key", columnDefinition = "LONGBLOB")
+    private byte[] publicKey;
+
+    @Lob
+    @Column(name = "private_key", columnDefinition = "LONGBLOB")
+    private byte[] privateKey;
+
+    public byte[] getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(byte[] publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public byte[] getPrivateKey() {
+        return privateKey;
+    }
+
+    public void setPrivateKey(byte[] privateKey) {
+        this.privateKey = privateKey;
+    }
+
+    // ---------------------------
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "empresa_id", nullable = true)
@@ -31,7 +57,7 @@ public class Usuario {
     @JoinColumn(name = "departamento_id", nullable = true)
     private Departamento departamento;
 
-    @OneToMany(fetch = FetchType.EAGER) // tiene que ser many to one ya que puede haber varios roles
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "usuario_roles",
         joinColumns = @JoinColumn(name = "usuario_id"),
@@ -47,58 +73,25 @@ public class Usuario {
         this.password = password;
     }
 
-    // ---- Getters / Setters ----
-    public Long getId() { 
-        return id; 
-    }
+    public Long getId() { return id; }
 
-    public String getNombre() { 
-        return nombre; 
-    }
-    public void setNombre(String nombre) { 
-        this.nombre = nombre; 
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getEmail() { 
-        return email; 
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setEmail(String email) { 
-        this.email = email; 
-    }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public String getPassword() { 
-        return password; 
-    }
+    public Empresa getEmpresa() { return empresa; }
+    public void setEmpresa(Empresa empresa) { this.empresa = empresa; }
 
-    public void setPassword(String password) { 
-        this.password = password; 
-    }
+    public Departamento getDepartamento() { return departamento; }
+    public void setDepartamento(Departamento departamento) { this.departamento = departamento; }
 
-    public Empresa getEmpresa() { 
-        return empresa; 
-    }
-
-    public void setEmpresa(Empresa empresa) { 
-        this.empresa = empresa; 
-    }
-
-    public Departamento getDepartamento() { 
-        return departamento; 
-    }
-
-    public void setDepartamento(Departamento departamento) { 
-        this.departamento = departamento; 
-    }
-
-    public Set<Rol> getRoles() { 
-        return roles; 
-    }
-
-    public void setRoles(Set<Rol> roles) { 
-        this.roles = roles; 
-    }
-
+    public Set<Rol> getRoles() { return roles; }
+    public void setRoles(Set<Rol> roles) { this.roles = roles; }
 
     @PrePersist @PreUpdate
     private void validarEmpresaDepartamento() {
