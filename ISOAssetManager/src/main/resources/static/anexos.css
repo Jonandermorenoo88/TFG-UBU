@@ -1,0 +1,180 @@
+/* ===== Variables base ===== */
+:root{
+  --bg: #f4f7fb;
+  --text: #0f172a;
+  --muted: #5b667a;
+  --tile-start: #0b7bff;
+  --tile-end: #0963ff;
+  --tile-shadow: rgba(16, 70, 255, .28);
+  --radius-lg: 16px;
+  --radius-sm: 10px;
+}
+
+/* Modo oscuro opcional */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #0b1220;
+    --text: #e6ecff;
+    --muted: #9aa6c1;
+    --tile-start: #2b8eff;
+    --tile-end: #1e6fff;
+    --tile-shadow: rgba(0, 80, 255, .35);
+  }
+}
+
+/* ===== Reset suave ===== */
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ===== Layout ===== */
+.page{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+.title{
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(26px, 4vw, 44px);
+  letter-spacing: .2px;
+  margin: 6px 0 6px;
+}
+
+.backline{
+  text-align: center;
+  margin: 8px 0 26px;
+}
+.backlink{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1864ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.backlink:hover{ transform: translateX(-2px); opacity: .9; }
+.backlink:focus-visible{
+  outline: 3px solid rgba(24,100,255,.35);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ===== Rejilla de tarjetas ===== */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 18px;
+}
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* ===== Tarjeta/“botón” principal ===== */
+.tile,
+.card,
+.control-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, var(--tile-start), var(--tile-end));
+  box-shadow: 0 12px 26px var(--tile-shadow);
+  border: 1px solid rgba(255,255,255,.12);
+  transition: transform .12s ease, box-shadow .12s ease, filter .18s ease;
+  will-change: transform, box-shadow, filter;
+}
+.tile:hover,
+.card:hover,
+.control-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px var(--tile-shadow);
+  filter: brightness(1.03);
+}
+.tile:active{ transform: translateY(-1px) scale(.997); }
+.tile:focus-visible{
+  outline: 3px solid rgba(255,255,255,.6);
+  outline-offset: 2px;
+}
+
+/* Título dentro de la tarjeta */
+.tile .tile-title{
+  font-size: clamp(18px, 2.1vw, 24px);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+/* Subtítulo (Anexo A.X) */
+.tile small{
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .95;
+}
+
+/* ===== Listados grandes (controles) ===== */
+.list{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+.list .control-btn{
+  min-height: 72px;
+  padding: 18px 20px;
+  text-align: left;
+  align-items: center;
+}
+.list .control-btn .kicker{
+  font: 600 12px/1 Inter, system-ui, sans-serif;
+  opacity: .9;
+  letter-spacing: .2px;
+  margin-bottom: 2px;
+}
+.list .control-btn .title{
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ===== Preguntas / tarjetas blancas ===== */
+.questions{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+.question-card{
+  background: #fff;
+  border: 1px solid #e7ecf5;
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  box-shadow: 0 4px 10px rgba(16,24,40,.05);
+}
+.question-card h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+.options{
+  display: grid;
+  gap: 10px;
+}
+.option{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: va
+}
