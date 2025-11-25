@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Evaluar ISO</title>
+  <link rel="stylesheet" href="/controles.css">
+</head>
+<body class="page">
+  <div class="container">
+    <a class="back" th:href="@{/empresas}">← Volver a empresas</a>
+
+    <h1 class="page-title">
+      <span>Evaluar ISO</span>
+      <span th:if="${usuarioNombre != null}" th:text="' - ' + ${usuarioNombre}"></span>
+    </h1>
+
+    <div class="grid">
+      <!-- Botones de anexos -->
+      <a class="card"
+         th:each="cat : ${categorias}"
+         th:href="@{'/anexos/' + ${cat.id} + '/controles'}">
+        <h3 class="card-title" th:text="${cat.nombre}">Controles organizacionales</h3>
+        <small class="card-sub" th:text="'Anexo ' + ${cat.id}">Anexo A.5</small>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
