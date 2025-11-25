@@ -15,3 +15,4 @@ public class CsrfControllerAdvice {
         return (CsrfToken) request.getAttribute("_csrf");
     }
 }
+

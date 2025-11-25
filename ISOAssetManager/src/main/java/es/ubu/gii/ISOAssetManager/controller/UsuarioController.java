@@ -11,7 +11,10 @@ public class UsuarioController {
     public String mostrarInicio(Model model) {
         return "inicio"; 
     }
+
+    @GetMapping("/registro")
+    public String registro() {
+        return "registro";
+    }
 }
-
-
 

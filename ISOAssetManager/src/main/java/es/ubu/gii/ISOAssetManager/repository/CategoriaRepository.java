@@ -6,3 +6,4 @@ import es.ubu.gii.ISOAssetManager.model.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, String> {
 }
+

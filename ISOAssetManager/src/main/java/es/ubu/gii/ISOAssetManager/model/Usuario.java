@@ -22,7 +22,10 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
-    // CAMPOS PARA RSA KEYS
+    // ---------------------------
+    // 🔐 CAMPOS PARA RSA
+    // ---------------------------
+
     @Lob
     @Column(name = "public_key", columnDefinition = "LONGBLOB")
     private byte[] publicKey;

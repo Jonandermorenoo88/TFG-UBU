@@ -82,4 +82,14 @@ public class Activo {
     public void setResponsable(Usuario responsable) { 
         this.responsable = responsable; 
     }
+
+    // el responsable debe pertenecer a la misma empresa del activo
+    @PrePersist @PreUpdate
+    private void validarResponsableEmpresa() {
+        if (empresa == null || responsable == null ||
+            responsable.getEmpresa() == null ||
+            !responsable.getEmpresa().getId().equals(empresa.getId())) {
+            throw new IllegalStateException("El responsable debe pertenecer a la misma empresa del activo.");
+        }
+    }
 }
