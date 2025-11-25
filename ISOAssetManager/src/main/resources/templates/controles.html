@@ -13,11 +13,18 @@
     <h1 class="page-title" th:text="${anexo != null ? anexo.nombre : 'Controles'}">Controles</h1>
     <div class="subtitle" th:if="${anexo != null}" th:text="'Anexo ' + ${anexo.id}">Anexo A.5</div>
 
+    <!-- Gráfico resumen de puntuaciones por control -->
+    <div class="chart-wrap" style="margin:18px 0; background:#fff; border:1px solid #e6eefc; border-radius:8px; padding:12px;">
+      <canvas id="controlesChart" aria-label="Puntuación por control" role="img" style="width:100%;height:360px;"></canvas>
+    </div>
+
     <div class="grid">
       <a class="card"
          th:each="c : ${controles}"
          th:href="@{|/empresas/${empresaId}/cuestionario/control/${c.id}/preguntas|}">
-        <div class="card-title" th:text="${c.nombre}">Nombre del control</div>
+        <!-- Nombre del control como título -->
+        <div class="card-title" th:text="${c.nombre}">Controles</div>
+        <!-- Mostrar ID (p.ej. A5.1) como subtítulo -->
         <div class="card-sub" th:text="${c.id}">A5.1</div>
 
         <!-- Puntuación media -->
@@ -33,5 +40,71 @@
       </a>
     </div>
   </div>
+
+  <!-- Chart.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Construye etiquetas (usar código A5.1 desde .card-sub) y datos leyendo las tarjetas ya renderizadas (.card)
+    document.addEventListener('DOMContentLoaded', function () {
+      const canvas = document.getElementById('controlesChart');
+      if (!canvas) return;
+
+      const cardElems = Array.from(document.querySelectorAll('.grid a.card, .grid .card'));
+      if (cardElems.length === 0) {
+        canvas.style.display = 'none';
+        return;
+      }
+
+      const labels = [];
+      const data = [];
+      cardElems.forEach(card => {
+        // usar el subtítulo (ej. A5.1) como etiqueta del gráfico
+        const idEl = card.querySelector('.card-sub');
+        const scoreEl = card.querySelector('.score');
+        const label = idEl ? idEl.textContent.trim() : '(sin código)';
+        let score = 0;
+        if (scoreEl) {
+          const txt = scoreEl.textContent.trim();
+          const m = txt.match(/(\d+)\s*%/);
+          if (m) score = parseInt(m[1], 10);
+        }
+        labels.push(label);
+        data.push(isNaN(score) ? 0 : score);
+      });
+
+      if (labels.length === 0) {
+        canvas.style.display = 'none';
+        return;
+      }
+
+      canvas.style.height = '360px';
+      const ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Puntuación media (%)',
+            data: data,
+            backgroundColor: data.map(() => 'rgba(13,110,253,0.72)'),
+            borderColor: data.map(() => 'rgba(13,110,253,0.95)'),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { ticks: { maxRotation: 45, minRotation: 0 }, grid: { display: false } },
+            y: { beginAtZero: true, max: 100, ticks: { stepSize: 10 } }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.y + '%'; } } }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
