@@ -1,8 +1,4 @@
- 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- // Construye etiquetas (usar código A5.1 desde .card-sub) y datos leyendo las tarjetas ya renderizadas (.card)
-    
- document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
       const canvas = document.getElementById('controlesChart');
       if (!canvas) return;
 
