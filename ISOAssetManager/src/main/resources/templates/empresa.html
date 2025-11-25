@@ -9,6 +9,15 @@
 </head>
 <body>
 <div class="container">
+  <div class="header-actions">
+    <!-- SOLO ADMIN y AUDITOR ven el botón volver -->
+    <a sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+       th:href="@{${#authentication.principal.authorities.![authority].contains('ROLE_ADMIN') ? '/panel-admin' : '/panel-auditor'}}"
+       class="btn-back">
+      ← Volver
+    </a>
+  </div>
+
   <h1>Gestión de Empresas</h1>
 
   <!-- Cerrar sesión (POST /logout con CSRF) -->

@@ -7,14 +7,14 @@
 </head>
 <body>
   <div class="dashboard-container">
-    <h1>Panel de Administración</h1>
+    <h1>Panel de Auditor</h1>
     <p>Selecciona una opción:</p>
 
     <div class="botonera">
         <a href="/empresas" class="btn">Gestionar Empresas</a>
 
-        <div th:if="${esAdmin}">
-            <a href="/usuarios" class="btn">Gestionar Usuarios</a>
+        <div th:if="${esAuditor}">
+            <a href="/auditor/usuarios" class="btn">Gestionar Clientes</a>
         </div>
     </div>
 

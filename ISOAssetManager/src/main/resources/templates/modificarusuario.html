@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Usuarios</title>
@@ -7,6 +8,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="header-actions">
+            <a sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+               th:href="@{${#authentication.principal.authorities.![authority].contains('ROLE_ADMIN') ? '/panel-admin' : '/panel-auditor'}}"
+               class="btn-back">
+              ← Volver
+            </a>
+        </div>
+        
         <h2>Gestión de Usuarios</h2>
 
         <table>
