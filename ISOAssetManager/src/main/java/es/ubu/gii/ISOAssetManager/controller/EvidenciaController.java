@@ -257,7 +257,7 @@ public class EvidenciaController {
     }
 
    // =========================================================
-// 🔍 Verificar integridad + firma (VISTA BONITA THYMELEAF)
+//  Verificar integridad + firma (VISTA BONITA THYMELEAF)
 // =========================================================
     @GetMapping("/{evidenciaId}/verificar")
     public String verificarEvidencia(@PathVariable Long empresaId,
@@ -270,7 +270,7 @@ public class EvidenciaController {
             return "verificar-evidencia";
         }
 
-        // 1️⃣ Recalcular hash del fichero
+        // 1️ Recalcular hash del fichero
         boolean hashCoincide = false;
         try {
             Path ruta = Paths.get(ev.getRutaFichero());
@@ -281,7 +281,7 @@ public class EvidenciaController {
             return "verificar-evidencia";
         }
 
-        // 2️⃣ Verificación de firma
+        // 2 Verificación de firma
         boolean firmaValida = false;
         try {
             Usuario u = ev.getUsuario();
@@ -300,7 +300,7 @@ public class EvidenciaController {
             model.addAttribute("error", "Error al verificar la firma digital.");
         }
 
-        // 3️⃣ Datos para la vista
+        // 3️ Datos para la vista
         model.addAttribute("empresaId", empresaId);
         model.addAttribute("evidencia", ev);
         model.addAttribute("hashCoincide", hashCoincide);
