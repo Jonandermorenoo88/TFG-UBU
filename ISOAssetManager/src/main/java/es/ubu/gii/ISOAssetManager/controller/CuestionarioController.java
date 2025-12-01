@@ -1,4 +1,3 @@
-// CuestionarioController.java
 package es.ubu.gii.ISOAssetManager.controller;
 
 import java.time.LocalDateTime;
@@ -40,15 +39,17 @@ public class CuestionarioController {
     private final RespuestaEmpresaRepository respuestaEmpresaRepo;
     private final RespuestaPosibleRepository respuestaPosibleRepo;
     private final EvidenciaRepository evidenciaRepo;
+    private final es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService;
 
     public CuestionarioController(CategoriaRepository categoriaRepo,
-                                  ControlRepository controlRepo,
-                                  EmpresaRepository empresaRepo,
-                                  UsuarioRepository usuarioRepo,
-                                  PreguntaRepository preguntaRepo,
-                                  RespuestaEmpresaRepository respuestaEmpresaRepo,
-                                  RespuestaPosibleRepository respuestaPosibleRepo,
-                                  EvidenciaRepository evidenciaRepo) {
+            ControlRepository controlRepo,
+            EmpresaRepository empresaRepo,
+            UsuarioRepository usuarioRepo,
+            PreguntaRepository preguntaRepo,
+            RespuestaEmpresaRepository respuestaEmpresaRepo,
+            RespuestaPosibleRepository respuestaPosibleRepo,
+            EvidenciaRepository evidenciaRepo,
+            es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService) {
         this.categoriaRepo = categoriaRepo;
         this.controlRepo = controlRepo;
         this.empresaRepo = empresaRepo;
@@ -57,15 +58,15 @@ public class CuestionarioController {
         this.respuestaEmpresaRepo = respuestaEmpresaRepo;
         this.respuestaPosibleRepo = respuestaPosibleRepo;
         this.evidenciaRepo = evidenciaRepo;
+        this.blockchainService = blockchainService;
     }
 
     // Mapeo de slug -> id de categoría (A5/A6/A7/A8)
     private static final Map<String, String> SLUG_TO_CAT = Map.of(
-        "organizacionales", "A5",
-        "personas",         "A6",
-        "fisicos",          "A7",
-        "tecnologicos",     "A8"
-    );
+            "organizacionales", "A5",
+            "personas", "A6",
+            "fisicos", "A7",
+            "tecnologicos", "A8");
 
     /**
      * Lista los controles de un grupo (anexo) para una empresa
@@ -73,8 +74,8 @@ public class CuestionarioController {
      */
     @GetMapping("/grupo/{grupo}")
     public String listarControlesPorGrupo(@PathVariable Long empresaId,
-                                          @PathVariable String grupo,
-                                          Model model) {
+            @PathVariable String grupo,
+            Model model) {
         String catId = SLUG_TO_CAT.get(grupo);
         if (catId == null) {
             return "errors/404";
@@ -84,20 +85,17 @@ public class CuestionarioController {
 
         var controles = controlRepo.findByCategoria_IdOrderByOrdenAscIdAsc(catId);
 
-        List<RespuestaEmpresa> respuestasCat =
-                respuestaEmpresaRepo.findByEmpresaIdAndCategoriaId(empresaId, catId);
+        List<RespuestaEmpresa> respuestasCat = respuestaEmpresaRepo.findByEmpresaIdAndCategoriaId(empresaId, catId);
 
         Map<String, Integer> scores = respuestasCat.stream()
-            .filter(re -> re.getPregunta() != null
-                       && re.getPregunta().getControl() != null
-                       && re.getRespuesta() != null)
-            .collect(Collectors.groupingBy(
-                re -> re.getPregunta().getControl().getId(), // p.ej. "A5.1"
-                Collectors.collectingAndThen(
-                    Collectors.averagingDouble(re -> re.getRespuesta().getBaremo()),
-                    avg -> (int) Math.round(avg)
-                )
-            ));
+                .filter(re -> re.getPregunta() != null
+                        && re.getPregunta().getControl() != null
+                        && re.getRespuesta() != null)
+                .collect(Collectors.groupingBy(
+                        re -> re.getPregunta().getControl().getId(), // p.ej. "A5.1"
+                        Collectors.collectingAndThen(
+                                Collectors.averagingDouble(re -> re.getRespuesta().getBaremo()),
+                                avg -> (int) Math.round(avg))));
 
         model.addAttribute("empresaId", empresaId);
         model.addAttribute("anexo", cat);
@@ -113,15 +111,15 @@ public class CuestionarioController {
      */
     @GetMapping("/control/{controlId:.+}/preguntas")
     public String preguntasDeControl(@PathVariable Long empresaId,
-                                     @PathVariable String controlId,
-                                     Model model) {
+            @PathVariable String controlId,
+            Model model) {
 
         // Preguntas del control
         List<Pregunta> preguntas = preguntaRepo.findByControl_IdOrderByIdAsc(controlId);
 
         // Respuestas ya dadas por esta empresa para este control
-        List<RespuestaEmpresa> yaRespondidas =
-                respuestaEmpresaRepo.findByEmpresa_IdAndPregunta_Control_Id(empresaId, controlId);
+        List<RespuestaEmpresa> yaRespondidas = respuestaEmpresaRepo.findByEmpresa_IdAndPregunta_Control_Id(empresaId,
+                controlId);
 
         Map<Long, Long> seleccion = new HashMap<>();
         Map<Long, RespuestaEmpresa> respuestas = new HashMap<>();
@@ -137,8 +135,8 @@ public class CuestionarioController {
         var opcionesGlobales = respuestaPosibleRepo.findAllByOrderByOrdenAscIdAsc();
 
         // 🔎 Evidencias asociadas a ESTE control y ESTA empresa (no por pregunta)
-        List<Evidencia> evidenciasControl =
-                evidenciaRepo.findByEmpresa_IdAndControl_IdOrderByFechaSubidaDesc(empresaId, controlId);
+        List<Evidencia> evidenciasControl = evidenciaRepo.findByEmpresa_IdAndControl_IdOrderByFechaSubidaDesc(empresaId,
+                controlId);
 
         model.addAttribute("empresaId", empresaId);
         model.addAttribute("controlId", controlId);
@@ -154,8 +152,8 @@ public class CuestionarioController {
 
     @GetMapping("/control/{controlId:.+}/preguntas/nueva")
     public String nuevaPregunta(@PathVariable Long empresaId,
-                                @PathVariable String controlId,
-                                Model model) {
+            @PathVariable String controlId,
+            Model model) {
         var control = controlRepo.findById(controlId).orElseThrow();
         model.addAttribute("empresaId", empresaId);
         model.addAttribute("control", control);
@@ -164,9 +162,9 @@ public class CuestionarioController {
 
     @PostMapping("/control/{controlId:.+}/preguntas")
     public String crearPregunta(@PathVariable Long empresaId,
-                                @PathVariable String controlId,
-                                @RequestParam String texto,
-                                @RequestParam(required = false) String explicacion) {
+            @PathVariable String controlId,
+            @RequestParam String texto,
+            @RequestParam(required = false) String explicacion) {
         var control = controlRepo.findById(controlId).orElseThrow();
         var q = new Pregunta();
         q.setTexto(texto);
@@ -181,8 +179,8 @@ public class CuestionarioController {
 
     @GetMapping("/control/{controlId:.+}/preguntas/eliminar")
     public String elegirPreguntaAEliminar(@PathVariable Long empresaId,
-                                          @PathVariable String controlId,
-                                          Model model) {
+            @PathVariable String controlId,
+            Model model) {
         model.addAttribute("empresaId", empresaId);
         model.addAttribute("controlId", controlId);
         model.addAttribute("preguntas", preguntaRepo.findByControl_IdOrderByIdAsc(controlId));
@@ -191,8 +189,8 @@ public class CuestionarioController {
 
     @PostMapping("/control/{controlId:.+}/preguntas/eliminar")
     public String eliminarPregunta(@PathVariable Long empresaId,
-                                   @PathVariable String controlId,
-                                   @RequestParam Long preguntaId) {
+            @PathVariable String controlId,
+            @RequestParam Long preguntaId) {
         // limpia respuestas de esa pregunta
         respuestaEmpresaRepo.deleteByPreguntaId(preguntaId);
         // borra la pregunta
@@ -202,16 +200,18 @@ public class CuestionarioController {
 
     @PostMapping("/control/{controlId:.+}/responder")
     public String responder(@PathVariable Long empresaId,
-                            @PathVariable String controlId,
-                            @RequestParam Long preguntaId,
-                            @RequestParam Long opcionId,
-                            Authentication auth) {
+            @PathVariable String controlId,
+            @RequestParam Long preguntaId,
+            @RequestParam Long opcionId,
+            Authentication auth) {
 
         Empresa empresa = empresaRepo.findById(empresaId).orElseThrow();
 
         Usuario usuario = null;
+        Object principal = null;
         if (auth != null) {
             usuario = usuarioRepo.findByEmail(auth.getName()).orElse(null);
+            principal = auth.getPrincipal();
         }
 
         Pregunta pregunta = preguntaRepo.findById(preguntaId).orElseThrow();
@@ -229,14 +229,36 @@ public class CuestionarioController {
 
         respuestaEmpresaRepo.save(re);
 
+        // --- BLOCKCHAIN INTEGRATION ---
+        // Registramos la respuesta en la cadena de bloques
+        blockchainService.crearBloque(re, usuario, principal);
+        // ------------------------------
+
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 
     @PostMapping("/control/{controlId:.+}/preguntas/{preguntaId}/respuesta/eliminar")
     public String eliminarRespuesta(@PathVariable Long empresaId,
-                                    @PathVariable String controlId,
-                                    @PathVariable Long preguntaId) {
+            @PathVariable String controlId,
+            @PathVariable Long preguntaId) {
         respuestaEmpresaRepo.deleteByEmpresaIdAndPreguntaId(empresaId, preguntaId);
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
+    }
+
+    // --- Endpoint para verificar la cadena (Vista) ---
+    @GetMapping("/blockchain/verificar-vista")
+    public String verificarBlockchainVista(Model model) {
+        boolean valida = blockchainService.validarCadena();
+        model.addAttribute("esValida", valida);
+        return "verificar-blockchain";
+    }
+
+    // --- Endpoint para verificar la cadena (API/Demo) ---
+    @GetMapping("/blockchain/verificar")
+    @ResponseBody
+    public String verificarBlockchain() {
+        boolean valida = blockchainService.validarCadena();
+        return valida ? "INTEGRIDAD CORRECTA: La cadena de bloques es válida."
+                : "ALERTA: La cadena de bloques ha sido manipulada.";
     }
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificación de Blockchain</title>
+  <link rel="stylesheet" href="/verificarevidencia.css">
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <h1>Auditoría Blockchain</h1>
+    <p class="subtitle">Verificación de integridad de la cadena de respuestas.</p>
+
+    <div class="status-row">
+      <span class="label">Estado de la cadena</span>
+      <span class="badge"
+            th:classappend="${esValida} ? ' ok' : ' fail'"
+            th:text="${esValida} ? 'INTEGRA' : 'CORRUPTA'">
+        INTEGRA
+      </span>
+    </div>
+
+    <div class="meta" style="margin-top: 20px;">
+        <p th:if="${esValida}">
+            Todas las respuestas registradas mantienen su integridad criptográfica.
+            La cadena de bloques es válida y no ha sido manipulada.
+        </p>
+        <p th:if="${!esValida}" style="color: red; font-weight: bold;">
+            ¡ALERTA! Se ha detectado una manipulación en los registros.
+            La cadena de bloques no coincide con los datos almacenados.
+        </p>
+    </div>
+
+    <div class="actions">
+      <!-- Botón para volver atrás (usando historia del navegador o un link fijo) -->
+      <a href="javascript:history.back()" class="btn btn-secondary">
+        ← Volver
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
