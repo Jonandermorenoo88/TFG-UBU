@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.Authentication;
@@ -220,9 +221,13 @@ public class CuestionarioController {
         Pregunta pregunta = preguntaRepo.findById(preguntaId).orElseThrow();
         RespuestaPosible opcion = respuestaPosibleRepo.findById(opcionId).orElseThrow();
 
-        RespuestaEmpresa re = respuestaEmpresaRepo
-                .findByEmpresa_IdAndPregunta_Id(empresaId, preguntaId)
-                .orElseGet(RespuestaEmpresa::new);
+        // Verificar si ya existe una respuesta
+        Optional<RespuestaEmpresa> respuestaExistente = respuestaEmpresaRepo
+                .findByEmpresa_IdAndPregunta_Id(empresaId, preguntaId);
+
+        boolean esNueva = respuestaExistente.isEmpty();
+
+        RespuestaEmpresa re = respuestaExistente.orElseGet(RespuestaEmpresa::new);
 
         re.setEmpresa(empresa);
         re.setPregunta(pregunta);
@@ -233,8 +238,12 @@ public class CuestionarioController {
         respuestaEmpresaRepo.save(re);
 
         // --- BLOCKCHAIN INTEGRATION ---
-        // Registramos la respuesta en la cadena de bloques
-        blockchainService.crearBloque(re, usuario, principal);
+        // Solo registramos en blockchain si es una respuesta NUEVA
+        // Si se modifica una respuesta existente, NO creamos un nuevo bloque
+        // (esto mantiene la inmutabilidad de la cadena)
+        if (esNueva) {
+            blockchainService.crearBloque(re, usuario, principal);
+        }
         // ------------------------------
 
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
