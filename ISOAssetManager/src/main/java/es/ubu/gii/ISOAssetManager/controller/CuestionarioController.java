@@ -40,6 +40,7 @@ public class CuestionarioController {
     private final RespuestaPosibleRepository respuestaPosibleRepo;
     private final EvidenciaRepository evidenciaRepo;
     private final es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService;
+    private final es.ubu.gii.ISOAssetManager.repository.BloqueRepository bloqueRepo;
 
     public CuestionarioController(CategoriaRepository categoriaRepo,
             ControlRepository controlRepo,
@@ -49,7 +50,8 @@ public class CuestionarioController {
             RespuestaEmpresaRepository respuestaEmpresaRepo,
             RespuestaPosibleRepository respuestaPosibleRepo,
             EvidenciaRepository evidenciaRepo,
-            es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService) {
+            es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService,
+            es.ubu.gii.ISOAssetManager.repository.BloqueRepository bloqueRepo) {
         this.categoriaRepo = categoriaRepo;
         this.controlRepo = controlRepo;
         this.empresaRepo = empresaRepo;
@@ -59,6 +61,7 @@ public class CuestionarioController {
         this.respuestaPosibleRepo = respuestaPosibleRepo;
         this.evidenciaRepo = evidenciaRepo;
         this.blockchainService = blockchainService;
+        this.bloqueRepo = bloqueRepo;
     }
 
     // Mapeo de slug -> id de categoría (A5/A6/A7/A8)
@@ -241,7 +244,19 @@ public class CuestionarioController {
     public String eliminarRespuesta(@PathVariable Long empresaId,
             @PathVariable String controlId,
             @PathVariable Long preguntaId) {
-        respuestaEmpresaRepo.deleteByEmpresaIdAndPreguntaId(empresaId, preguntaId);
+
+        // Buscar la respuesta primero
+        RespuestaEmpresa re = respuestaEmpresaRepo.findByEmpresa_IdAndPregunta_Id(empresaId, preguntaId).orElse(null);
+
+        if (re != null) {
+            // Eliminar el bloque asociado si existe (esto romperá la cadena, pero evita el
+            // error 500)
+            bloqueRepo.findByRespuestaId(re.getId()).ifPresent(bloqueRepo::delete);
+
+            // Eliminar la respuesta
+            respuestaEmpresaRepo.delete(re);
+        }
+
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 

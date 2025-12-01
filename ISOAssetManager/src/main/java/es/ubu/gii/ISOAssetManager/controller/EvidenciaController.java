@@ -9,6 +9,8 @@ import es.ubu.gii.ISOAssetManager.repository.ControlRepository;
 import es.ubu.gii.ISOAssetManager.repository.EvidenciaRepository;
 import es.ubu.gii.ISOAssetManager.repository.EmpresaRepository;
 import es.ubu.gii.ISOAssetManager.repository.UsuarioRepository;
+import es.ubu.gii.ISOAssetManager.service.BlockchainService;
+import es.ubu.gii.ISOAssetManager.repository.BloqueRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,24 +47,30 @@ public class EvidenciaController {
     private final EmpresaRepository empresaRepo;
     private final ControlRepository controlRepo;
     private final UsuarioRepository usuarioRepo;
+    private final BlockchainService blockchainService;
+    private final BloqueRepository bloqueRepo;
 
     private final Path rootLocation = Paths.get("uploads/evidencias");
 
     public EvidenciaController(EvidenciaRepository evidenciaRepo,
-                               EmpresaRepository empresaRepo,
-                               ControlRepository controlRepo,
-                               UsuarioRepository usuarioRepo) {
+            EmpresaRepository empresaRepo,
+            ControlRepository controlRepo,
+            UsuarioRepository usuarioRepo,
+            BlockchainService blockchainService,
+            BloqueRepository bloqueRepo) {
         this.evidenciaRepo = evidenciaRepo;
         this.empresaRepo = empresaRepo;
         this.controlRepo = controlRepo;
         this.usuarioRepo = usuarioRepo;
+        this.blockchainService = blockchainService;
+        this.bloqueRepo = bloqueRepo;
     }
 
     @PostMapping("/subir")
     public String subirEvidencia(@PathVariable Long empresaId,
-                                 @RequestParam("controlId") String controlId,
-                                 @RequestParam("archivo") MultipartFile archivo,
-                                 Authentication auth) {
+            @RequestParam("controlId") String controlId,
+            @RequestParam("archivo") MultipartFile archivo,
+            Authentication auth) {
         try {
             if (archivo.isEmpty()) {
                 return "redirect:/empresas/" + empresaId +
@@ -115,10 +123,10 @@ public class EvidenciaController {
             logger.debug("Fichero copiado a {}", destino);
 
             // ====== Cargar empresa y control ======
-            Empresa empresa = empresaRepo.findById(empresaId).orElseThrow(() ->
-                    new IllegalStateException("Empresa no encontrada: " + empresaId));
-            Control control = controlRepo.findById(controlId).orElseThrow(() ->
-                    new IllegalStateException("Control no encontrado: " + controlId));
+            Empresa empresa = empresaRepo.findById(empresaId)
+                    .orElseThrow(() -> new IllegalStateException("Empresa no encontrada: " + empresaId));
+            Control control = controlRepo.findById(controlId)
+                    .orElseThrow(() -> new IllegalStateException("Control no encontrado: " + controlId));
             logger.debug("Empresa y control cargados: {} / {}", empresa.getId(), control.getId());
 
             // ====== Usuario autenticado (puede ser null) ======
@@ -175,6 +183,11 @@ public class EvidenciaController {
             logger.info("Evidencia guardada correctamente para empresa={}, control={}, id={}",
                     empresaId, controlId, ev.getId());
 
+            // --- BLOCKCHAIN INTEGRATION ---
+            // Registramos la evidencia en la cadena de bloques
+            blockchainService.crearBloque(ev, usuario, auth != null ? auth.getPrincipal() : null);
+            // ------------------------------
+
             return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
 
         } catch (IOException ioe) {
@@ -203,7 +216,7 @@ public class EvidenciaController {
 
     @GetMapping("/{evidenciaId}/descargar")
     public ResponseEntity<Resource> descargarEvidencia(@PathVariable Long empresaId,
-                                                       @PathVariable Long evidenciaId) {
+            @PathVariable Long evidenciaId) {
         try {
             Evidencia evidencia = evidenciaRepo.findById(evidenciaId)
                     .orElseThrow(() -> new IllegalStateException("Evidencia no encontrada: " + evidenciaId));
@@ -236,7 +249,7 @@ public class EvidenciaController {
 
     @PostMapping("/{evidenciaId}/eliminar")
     public String eliminarEvidencia(@PathVariable Long empresaId,
-                                    @PathVariable Long evidenciaId) {
+            @PathVariable Long evidenciaId) {
 
         Evidencia ev = evidenciaRepo.findById(evidenciaId).orElseThrow();
         String controlId = ev.getControl().getId();
@@ -250,19 +263,22 @@ public class EvidenciaController {
             }
         }
 
+        // Eliminar bloque asociado si existe
+        bloqueRepo.findByEvidenciaId(ev.getId()).ifPresent(bloqueRepo::delete);
+
         evidenciaRepo.delete(ev);
 
         return "redirect:/empresas/" + empresaId +
                 "/cuestionario/control/" + controlId + "/preguntas";
     }
 
-   // =========================================================
-//  Verificar integridad + firma (VISTA BONITA THYMELEAF)
-// =========================================================
+    // =========================================================
+    // Verificar integridad + firma (VISTA BONITA THYMELEAF)
+    // =========================================================
     @GetMapping("/{evidenciaId}/verificar")
     public String verificarEvidencia(@PathVariable Long empresaId,
-                                    @PathVariable Long evidenciaId,
-                                    org.springframework.ui.Model model) {
+            @PathVariable Long evidenciaId,
+            org.springframework.ui.Model model) {
 
         Evidencia ev = evidenciaRepo.findById(evidenciaId).orElse(null);
         if (ev == null) {
@@ -287,8 +303,8 @@ public class EvidenciaController {
             Usuario u = ev.getUsuario();
             if (u != null && u.getPublicKey() != null && ev.getFirma() != null) {
                 java.security.KeyFactory keyFactory = java.security.KeyFactory.getInstance("RSA");
-                java.security.spec.X509EncodedKeySpec pubSpec =
-                        new java.security.spec.X509EncodedKeySpec(u.getPublicKey());
+                java.security.spec.X509EncodedKeySpec pubSpec = new java.security.spec.X509EncodedKeySpec(
+                        u.getPublicKey());
                 java.security.PublicKey publicKey = keyFactory.generatePublic(pubSpec);
 
                 Signature sig = Signature.getInstance("SHA256withRSA");
@@ -309,9 +325,9 @@ public class EvidenciaController {
         return "verificar-evidencia"; // Thymeleaf
     }
 
-
     /**
      * Método privado para calcular el hash SHA-256 de un fichero.
+     * 
      * @param rutaFichero ruta al fichero
      * @return array de bytes del hash
      * @throws Exception si hay error al leer el fichero

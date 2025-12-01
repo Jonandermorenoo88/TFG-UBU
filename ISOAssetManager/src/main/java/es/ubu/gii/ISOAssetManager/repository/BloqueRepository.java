@@ -10,4 +10,10 @@ import java.util.Optional;
 public interface BloqueRepository extends JpaRepository<Bloque, Long> {
     // Find the last block to link the chain
     Optional<Bloque> findTopByOrderByIdDesc();
+
+    // Find block by answer ID
+    Optional<Bloque> findByRespuestaId(Long respuestaId);
+
+    // Find block by evidence ID
+    Optional<Bloque> findByEvidenciaId(Long evidenciaId);
 }

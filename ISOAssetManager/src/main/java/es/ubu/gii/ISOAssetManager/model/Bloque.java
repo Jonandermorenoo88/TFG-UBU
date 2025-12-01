@@ -26,6 +26,10 @@ public class Bloque {
     @JoinColumn(name = "respuesta_id")
     private RespuestaEmpresa respuesta;
 
+    @OneToOne
+    @JoinColumn(name = "evidencia_id")
+    private Evidencia evidencia;
+
     public Bloque() {
     }
 
@@ -33,6 +37,14 @@ public class Bloque {
         this.previousHash = previousHash;
         this.data = data;
         this.respuesta = respuesta;
+        this.timeStamp = System.currentTimeMillis();
+        this.hash = calcularHash();
+    }
+
+    public Bloque(String previousHash, String data, Evidencia evidencia) {
+        this.previousHash = previousHash;
+        this.data = data;
+        this.evidencia = evidencia;
         this.timeStamp = System.currentTimeMillis();
         this.hash = calcularHash();
     }
@@ -99,5 +111,13 @@ public class Bloque {
 
     public void setRespuesta(RespuestaEmpresa respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public Evidencia getEvidencia() {
+        return evidencia;
+    }
+
+    public void setEvidencia(Evidencia evidencia) {
+        this.evidencia = evidencia;
     }
 }

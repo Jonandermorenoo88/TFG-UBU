@@ -2,6 +2,7 @@ package es.ubu.gii.ISOAssetManager.service;
 
 import es.ubu.gii.ISOAssetManager.config.details.SuperCustomerUserDetails;
 import es.ubu.gii.ISOAssetManager.model.Bloque;
+import es.ubu.gii.ISOAssetManager.model.Evidencia;
 import es.ubu.gii.ISOAssetManager.model.RespuestaEmpresa;
 import es.ubu.gii.ISOAssetManager.model.Usuario;
 import es.ubu.gii.ISOAssetManager.repository.BloqueRepository;
@@ -78,6 +79,59 @@ public class BlockchainService {
     }
 
     /**
+     * Crea un nuevo bloque en la cadena para una evidencia subida.
+     */
+    public Bloque crearBloque(Evidencia evidencia, Usuario usuario, Object principal) {
+        // 1. Obtener el hash del último bloque
+        String previousHash = "0";
+        Optional<Bloque> lastBlock = bloqueRepo.findTopByOrderByIdDesc();
+        if (lastBlock.isPresent()) {
+            previousHash = lastBlock.get().getHash();
+        }
+
+        // 2. Preparar los datos del bloque (JSON simple)
+        // Incluimos el hash del fichero para vincularlo criptográficamente
+        String hashEvidenciaHex = bytesToHex(evidencia.getHash());
+        String data = String.format(
+                "{\"id\":%d,\"empresa\":%d,\"control\":\"%s\",\"archivo\":\"%s\",\"hashEvidencia\":\"%s\",\"fecha\":\"%s\"}",
+                evidencia.getId(),
+                evidencia.getEmpresa().getId(),
+                evidencia.getControl().getId(),
+                evidencia.getNombreArchivo(),
+                hashEvidenciaHex,
+                evidencia.getFechaSubida().toString());
+
+        // 3. Crear instancia del bloque
+        Bloque nuevoBloque = new Bloque();
+        nuevoBloque.setPreviousHash(previousHash);
+        nuevoBloque.setData(data);
+        nuevoBloque.setEvidencia(evidencia); // Vinculamos la evidencia
+        nuevoBloque.setTimeStamp(System.currentTimeMillis());
+
+        // 4. Calcular Hash del bloque actual
+        String hashCalculado = calcularHashBloque(nuevoBloque);
+        nuevoBloque.setHash(hashCalculado);
+
+        // 5. Firmar el bloque
+        if (principal instanceof SuperCustomerUserDetails details) {
+            try {
+                PrivateKey privateKey = details.getPrivateKey();
+                if (privateKey != null) {
+                    Signature signature = Signature.getInstance("SHA256withRSA");
+                    signature.initSign(privateKey);
+                    signature.update(hashCalculado.getBytes(StandardCharsets.UTF_8));
+                    nuevoBloque.setFirma(signature.sign());
+                    logger.debug("Bloque de evidencia firmado correctamente por usuario {}", usuario.getEmail());
+                }
+            } catch (Exception e) {
+                logger.error("Error al firmar el bloque de evidencia", e);
+            }
+        }
+
+        return bloqueRepo.save(nuevoBloque);
+    }
+
+    /**
      * Valida la integridad de toda la cadena de bloques.
      * 
      * @return true si la cadena es válida, false si ha sido manipulada.
@@ -125,16 +179,22 @@ public class BlockchainService {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1)
-                    hexString.append('0');
-                hexString.append(hex);
-            }
-            return hexString.toString();
+            return bytesToHex(hash);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private String bytesToHex(byte[] bytes) {
+        if (bytes == null)
+            return "";
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1)
+                hexString.append('0');
+            hexString.append(hex);
+        }
+        return hexString.toString();
     }
 }
