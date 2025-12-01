@@ -17,246 +17,224 @@
     <script th:src="@{/js/evidencia.js}"></script>
 
 </head>
+</a>
+</h2>
 
-<body class="page">
-    <div class="container">
+<!-- ----------------------------------------------------- -->
+<!--                 BLOQUE DE EVIDENCIAS                  -->
+<!-- ----------------------------------------------------- -->
+<section class="evidence-section">
+    <h3 class="section-title">📎 Evidencias del control</h3>
 
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
-            <a class="btn"
-                style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
-                th:href="@{|/empresas/${empresaId}/cuestionario/blockchain/verificar-vista|}">
-                🛡️ Verificar Integridad Blockchain
-            </a>
+    <div class="evidence-block">
+
+        <!-- LISTA DE EVIDENCIAS CON MEJOR DISEÑO -->
+        <div class="evidence-container" th:if="${evidenciasControl != null and !#lists.isEmpty(evidenciasControl)}">
+            <div class="evidence-count">
+                <span th:text="${evidenciasControl.size()}">0</span>
+                <span th:text="${evidenciasControl.size() == 1 ? 'evidencia' : 'evidencias'}">evidencias</span>
+            </div>
+            <ul class="evidence-list">
+                <li class="evidence-item" th:each="ev : ${evidenciasControl}">
+                    <div class="evidence-header">
+                        <div class="evidence-icon">
+                            <span th:switch="${#strings.toLowerCase(#strings.substringAfter(ev.nombreArchivo, '.'))}">
+                                <span th:case="'pdf'">📄</span>
+                                <span th:case="'docx'">📝</span>
+                                <span th:case="'jpg'">🖼️</span>
+                                <span th:case="'jpeg'">🖼️</span>
+                                <span th:case="'png'">🖼️</span>
+                                <span th:case="*">📎</span>
+                            </span>
+                        </div>
+                        <div class="evidence-details">
+                            <div class="evidence-name" th:text="${ev.nombreArchivo}">archivo.pdf</div>
+                            <div class="evidence-meta">
+                                <span class="evidence-size"
+                                    th:text="${ev.tamanoBytes > 1048576 ? ((ev.tamanoBytes / 1048576).intValue() + ' MB') : ((ev.tamanoBytes / 1024).intValue() + ' KB')}">1
+                                    MB</span>
+                                <span class="evidence-date"
+                                    th:text="${#temporals.format(ev.fechaSubida, 'dd/MM/yyyy HH:mm')}">01/01/2025
+                                    10:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="evidence-actions">
+                        <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/descargar|}"
+                            class="btn-evidence download" title="Descargar archivo">
+                            ⬇️
+                        </a>
+
+                        <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/verificar|}"
+                            class="btn-evidence verify" title="Verificar integridad">
+                            ✔️
+                        </a>
+
+                        <form sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+                            th:action="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/eliminar|}"
+                            method="post" class="inline-form" onsubmit="return confirm('¿Eliminar esta evidencia?');">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <button class="btn-evidence delete" title="Eliminar evidencia">🗑️</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
         </div>
 
-        <h2 class="page-title">
-            <a th:href="@{'/guia-control/' + ${controlId}}" th:text="'Preguntas del control ' + ${controlId}">
-                Preguntas del control
-            </a>
-        </h2>
+        <!-- MENSAJE: NO HAY EVIDENCIAS -->
+        <div class="empty-state" th:if="${evidenciasControl == null or #lists.isEmpty(evidenciasControl)}">
+            <div class="empty-icon">📭</div>
+            <p>No hay evidencias subidas aún para este control.</p>
+        </div>
 
-        <!-- ----------------------------------------------------- -->
-        <!--                 BLOQUE DE EVIDENCIAS                  -->
-        <!-- ----------------------------------------------------- -->
-        <section class="evidence-section">
-            <h3 class="section-title">📎 Evidencias del control</h3>
+        <!-- SEPARADOR -->
+        <div class="evidence-divider"></div>
 
-            <div class="evidence-block">
+        <!-- SUBIR NUEVA EVIDENCIA CON MEJOR DISEÑO -->
+        <div class="upload-section">
+            <h4 class="upload-title">➕ Subir nueva evidencia</h4>
 
-                <!-- LISTA DE EVIDENCIAS CON MEJOR DISEÑO -->
-                <div class="evidence-container"
-                    th:if="${evidenciasControl != null and !#lists.isEmpty(evidenciasControl)}">
-                    <div class="evidence-count">
-                        <span th:text="${evidenciasControl.size()}">0</span>
-                        <span th:text="${evidenciasControl.size() == 1 ? 'evidencia' : 'evidencias'}">evidencias</span>
+            <form th:action="@{|/empresas/${empresaId}/cuestionario/evidencias/subir|}" method="post"
+                enctype="multipart/form-data" class="upload-form" id="upload-form">
+
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <input type="hidden" name="controlId" th:value="${controlId}" />
+
+                <!-- MENSAJES DE ERROR -->
+                <div th:if="${param.error == '1'}" class="alert alert-error">
+                    <span class="alert-icon">❌</span>
+                    <div class="alert-content">
+                        <strong>Error al procesar la evidencia</strong>
+                        <p>Revisa los logs del servidor para más detalles.</p>
                     </div>
-                    <ul class="evidence-list">
-                        <li class="evidence-item" th:each="ev : ${evidenciasControl}">
-                            <div class="evidence-header">
-                                <div class="evidence-icon">
-                                    <span
-                                        th:switch="${#strings.toLowerCase(#strings.substringAfter(ev.nombreArchivo, '.'))}">
-                                        <span th:case="'pdf'">📄</span>
-                                        <span th:case="'docx'">📝</span>
-                                        <span th:case="'jpg'">🖼️</span>
-                                        <span th:case="'jpeg'">🖼️</span>
-                                        <span th:case="'png'">🖼️</span>
-                                        <span th:case="*">📎</span>
-                                    </span>
-                                </div>
-                                <div class="evidence-details">
-                                    <div class="evidence-name" th:text="${ev.nombreArchivo}">archivo.pdf</div>
-                                    <div class="evidence-meta">
-                                        <span class="evidence-size"
-                                            th:text="${ev.tamanoBytes > 1048576 ? ((ev.tamanoBytes / 1048576).intValue() + ' MB') : ((ev.tamanoBytes / 1024).intValue() + ' KB')}">1
-                                            MB</span>
-                                        <span class="evidence-date"
-                                            th:text="${#temporals.format(ev.fechaSubida, 'dd/MM/yyyy HH:mm')}">01/01/2025
-                                            10:00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="evidence-actions">
-                                <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/descargar|}"
-                                    class="btn-evidence download" title="Descargar archivo">
-                                    ⬇️
-                                </a>
-
-                                <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/verificar|}"
-                                    class="btn-evidence verify" title="Verificar integridad">
-                                    ✔️
-                                </a>
-
-                                <form sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
-                                    th:action="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/eliminar|}"
-                                    method="post" class="inline-form"
-                                    onsubmit="return confirm('¿Eliminar esta evidencia?');">
-                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                                    <button class="btn-evidence delete" title="Eliminar evidencia">🗑️</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
+                </div>
+                <div th:if="${param.error == '2'}" class="alert alert-error">
+                    <span class="alert-icon">⚠️</span>
+                    <div class="alert-content">
+                        <strong>Archivo demasiado grande</strong>
+                        <p>El tamaño máximo permitido es 50 MB.</p>
+                    </div>
+                </div>
+                <div th:if="${param.error == '3'}" class="alert alert-error">
+                    <span class="alert-icon">🚫</span>
+                    <div class="alert-content">
+                        <strong>Tipo de archivo no permitido</strong>
+                        <p>Solo se aceptan: PDF, imágenes (JPG, PNG) y documentos Word (.docx)</p>
+                    </div>
                 </div>
 
-                <!-- MENSAJE: NO HAY EVIDENCIAS -->
-                <div class="empty-state" th:if="${evidenciasControl == null or #lists.isEmpty(evidenciasControl)}">
-                    <div class="empty-icon">📭</div>
-                    <p>No hay evidencias subidas aún para este control.</p>
+                <!-- INPUT DE ARCHIVO CON DRAG & DROP -->
+                <div class="file-input-wrapper">
+                    <label for="file-input" class="file-input-label">
+                        <input type="file" id="file-input" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.docx" required
+                            class="file-input-hidden" />
+                        <div class="file-input-display">
+                            <span class="file-icon">📤</span>
+                            <span class="file-text">Haz clic para seleccionar un archivo o arrastra uno
+                                aquí</span>
+                            <span class="file-hint">(máx. 50 MB - PDF, imágenes, Word)</span>
+                        </div>
+                    </label>
+                    <div class="file-selected" id="file-selected" style="display:none;">
+                        <span id="file-name"></span>
+                        <button type="button" class="btn-clear"
+                            onclick="document.getElementById('file-input').value=''; document.getElementById('file-selected').style.display='none'; document.getElementById('file-input').parentElement.style.display='block';">✕</button>
+                    </div>
                 </div>
 
-                <!-- SEPARADOR -->
-                <div class="evidence-divider"></div>
-
-                <!-- SUBIR NUEVA EVIDENCIA CON MEJOR DISEÑO -->
-                <div class="upload-section">
-                    <h4 class="upload-title">➕ Subir nueva evidencia</h4>
-
-                    <form th:action="@{|/empresas/${empresaId}/cuestionario/evidencias/subir|}" method="post"
-                        enctype="multipart/form-data" class="upload-form" id="upload-form">
-
-                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                        <input type="hidden" name="controlId" th:value="${controlId}" />
-
-                        <!-- MENSAJES DE ERROR -->
-                        <div th:if="${param.error == '1'}" class="alert alert-error">
-                            <span class="alert-icon">❌</span>
-                            <div class="alert-content">
-                                <strong>Error al procesar la evidencia</strong>
-                                <p>Revisa los logs del servidor para más detalles.</p>
-                            </div>
-                        </div>
-                        <div th:if="${param.error == '2'}" class="alert alert-error">
-                            <span class="alert-icon">⚠️</span>
-                            <div class="alert-content">
-                                <strong>Archivo demasiado grande</strong>
-                                <p>El tamaño máximo permitido es 50 MB.</p>
-                            </div>
-                        </div>
-                        <div th:if="${param.error == '3'}" class="alert alert-error">
-                            <span class="alert-icon">🚫</span>
-                            <div class="alert-content">
-                                <strong>Tipo de archivo no permitido</strong>
-                                <p>Solo se aceptan: PDF, imágenes (JPG, PNG) y documentos Word (.docx)</p>
-                            </div>
-                        </div>
-
-                        <!-- INPUT DE ARCHIVO CON DRAG & DROP -->
-                        <div class="file-input-wrapper">
-                            <label for="file-input" class="file-input-label">
-                                <input type="file" id="file-input" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.docx"
-                                    required class="file-input-hidden" />
-                                <div class="file-input-display">
-                                    <span class="file-icon">📤</span>
-                                    <span class="file-text">Haz clic para seleccionar un archivo o arrastra uno
-                                        aquí</span>
-                                    <span class="file-hint">(máx. 50 MB - PDF, imágenes, Word)</span>
-                                </div>
-                            </label>
-                            <div class="file-selected" id="file-selected" style="display:none;">
-                                <span id="file-name"></span>
-                                <button type="button" class="btn-clear"
-                                    onclick="document.getElementById('file-input').value=''; document.getElementById('file-selected').style.display='none'; document.getElementById('file-input').parentElement.style.display='block';">✕</button>
-                            </div>
-                        </div>
-
-                        <!-- BOTONES DE ACCIÓN -->
-                        <div class="upload-actions">
-                            <button type="submit" class="btn btn-primary">
-                                ✅ Subir evidencia
-                            </button>
-                            <button type="reset" class="btn btn-secondary">
-                                ↻ Limpiar
-                            </button>
-                        </div>
-                    </form>
+                <!-- BOTONES DE ACCIÓN -->
+                <div class="upload-actions">
+                    <button type="submit" class="btn btn-primary">
+                        ✅ Subir evidencia
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        ↻ Limpiar
+                    </button>
                 </div>
+            </form>
+        </div>
 
+    </div>
+</section>
+
+<h3 class="section-title">❓ Preguntas</h3>
+<!-- Acciones ADMIN/AUDITOR -->
+<p class="actions" sec:authorize="hasAnyRole('ADMIN','AUDITOR')">
+    <a class="btn" th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/nueva|}">
+        ➕ Añadir pregunta
+    </a>
+
+    <a class="btn danger" th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/eliminar|}">
+        🗑 Eliminar pregunta
+    </a>
+</p>
+
+<div class="empty" th:if="${#lists.isEmpty(preguntas)}">No hay preguntas todavía.</div>
+
+<!-- ----------------------------------------------------- -->
+<!--                    LISTA DE PREGUNTAS                 -->
+<!-- ----------------------------------------------------- -->
+<div class="list" th:if="${!#lists.isEmpty(preguntas)}">
+    <div class="question" th:each="p, iter : ${preguntas}">
+        <div class="question-index" th:text="${iter.count} + '.'">1.</div>
+
+        <div style="flex:1">
+
+            <!-- Enunciado -->
+            <div class="question-text" th:text="${p.texto}">Texto de la pregunta</div>
+
+            <!-- Explicación opcional -->
+            <div class="question-explanation" th:if="${p.explicacion != null and !#strings.isEmpty(p.explicacion)}">
+                <em th:text="${p.explicacion}">Explicación</em>
             </div>
-        </section>
 
-        <h3 class="section-title">❓ Preguntas</h3>
-        <!-- Acciones ADMIN/AUDITOR -->
-        <p class="actions" sec:authorize="hasAnyRole('ADMIN','AUDITOR')">
-            <a class="btn" th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/nueva|}">
-                ➕ Añadir pregunta
-            </a>
+            <!-- Respuesta seleccionada -->
+            <div class="answer-pill" th:if="${respuestas[p.id] != null}">
+                <span
+                    th:text="${respuestas[p.id].respuesta.textoOpcion} + ' (' + ${respuestas[p.id].respuesta.baremo} + ')'">
+                    Sí (100)
+                </span>
 
-            <a class="btn danger"
-                th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/eliminar|}">
-                🗑 Eliminar pregunta
-            </a>
-        </p>
-
-        <div class="empty" th:if="${#lists.isEmpty(preguntas)}">No hay preguntas todavía.</div>
-
-        <!-- ----------------------------------------------------- -->
-        <!--                    LISTA DE PREGUNTAS                 -->
-        <!-- ----------------------------------------------------- -->
-        <div class="list" th:if="${!#lists.isEmpty(preguntas)}">
-            <div class="question" th:each="p, iter : ${preguntas}">
-                <div class="question-index" th:text="${iter.count} + '.'">1.</div>
-
-                <div style="flex:1">
-
-                    <!-- Enunciado -->
-                    <div class="question-text" th:text="${p.texto}">Texto de la pregunta</div>
-
-                    <!-- Explicación opcional -->
-                    <div class="question-explanation"
-                        th:if="${p.explicacion != null and !#strings.isEmpty(p.explicacion)}">
-                        <em th:text="${p.explicacion}">Explicación</em>
-                    </div>
-
-                    <!-- Respuesta seleccionada -->
-                    <div class="answer-pill" th:if="${respuestas[p.id] != null}">
-                        <span
-                            th:text="${respuestas[p.id].respuesta.textoOpcion} + ' (' + ${respuestas[p.id].respuesta.baremo} + ')'">
-                            Sí (100)
-                        </span>
-
-                        <form class="inline-form"
-                            th:action="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/${p.id}/respuesta/eliminar|}"
-                            method="post">
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                            <button title="Quitar">✖</button>
-                        </form>
-                    </div>
-
-                    <!-- Selector de respuesta -->
-                    <div class="answer-box">
-                        <form th:action="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/responder|}"
-                            method="post">
-
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                            <input type="hidden" name="preguntaId" th:value="${p.id}" />
-
-                            <select name="opcionId" class="answer-select"
-                                onchange="this.form.querySelector('[data-save]').disabled=false">
-
-                                <option th:if="${#lists.isEmpty(opciones)}" value="">
-                                    (sin opciones)
-                                </option>
-
-                                <option th:each="opt : ${opciones}" th:value="${opt.id}"
-                                    th:selected="${seleccion[p.id]} == ${opt.id}"
-                                    th:text="${opt.textoOpcion + ' (' + opt.baremo + ')'}">
-                                </option>
-                            </select>
-
-                            <div class="answer-save">
-                                <button type="submit" class="btn small" data-save disabled>
-                                    Guardar
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
+                <form class="inline-form"
+                    th:action="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/preguntas/${p.id}/respuesta/eliminar|}"
+                    method="post">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <button title="Quitar">✖</button>
+                </form>
             </div>
+
+            <!-- Selector de respuesta -->
+            <div class="answer-box">
+                <form th:action="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/responder|}" method="post">
+
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <input type="hidden" name="preguntaId" th:value="${p.id}" />
+
+                    <select name="opcionId" class="answer-select"
+                        onchange="this.form.querySelector('[data-save]').disabled=false">
+
+                        <option th:if="${#lists.isEmpty(opciones)}" value="">
+                            (sin opciones)
+                        </option>
+
+                        <option th:each="opt : ${opciones}" th:value="${opt.id}"
+                            th:selected="${seleccion[p.id]} == ${opt.id}"
+                            th:text="${opt.textoOpcion + ' (' + opt.baremo + ')'}">
+                        </option>
+                    </select>
+
+                    <div class="answer-save">
+                        <button type="submit" class="btn small" data-save disabled>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
+</div>
+</div>
 
 </body>
 

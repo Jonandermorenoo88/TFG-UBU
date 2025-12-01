@@ -6,30 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title th:text="${anexo != null ? 'Controles ' + anexo.id : 'Controles'}">Controles</title>
   <link rel="stylesheet" href="/controles.css">
-  <div class="chart-wrap"
-    style="margin:18px 0; background:#fff; border:1px solid #e6eefc; border-radius:8px; padding:12px;">
-    <canvas id="controlesChart" aria-label="Puntuación por control" role="img"
-      style="width:100%;height:360px;"></canvas>
-  </div>
+  <script src="/js/grafico.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-  <div class="grid">
-    <a class="card" th:each="c : ${controles}"
-      th:href="@{|/empresas/${empresaId}/cuestionario/control/${c.id}/preguntas|}">
-      <!-- Nombre del control como título -->
-      <div class="card-title" th:text="${c.nombre}">Controles</div>
-      <!-- Mostrar ID (p.ej. A5.1) como subtítulo -->
-      <div class="card-sub" th:text="${c.id}">A5.1</div>
+<body class="page">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
+    </div>
 
-      <!-- Puntuación media -->
-      <div th:if="${scores != null}" th:with="p=${scores[c.id]}" class="score" th:classappend="${p == null} ? ' score--muted' :
+    <h1 class="page-title" th:text="${anexo != null ? anexo.nombre : 'Controles'}">Controles</h1>
+    <div class="subtitle" th:if="${anexo != null}" th:text="'Anexo ' + ${anexo.id}">Anexo A.5</div>
+
+    <!-- Gráfico resumen de puntuaciones por control -->
+    <div class="chart-wrap"
+      style="margin:18px 0; background:#fff; border:1px solid #e6eefc; border-radius:8px; padding:12px;">
+      <canvas id="controlesChart" aria-label="Puntuación por control" role="img"
+        style="width:100%;height:360px;"></canvas>
+    </div>
+
+    <div class="grid">
+      <a class="card" th:each="c : ${controles}"
+        th:href="@{|/empresas/${empresaId}/cuestionario/control/${c.id}/preguntas|}">
+        <!-- Nombre del control como título -->
+        <div class="card-title" th:text="${c.nombre}">Controles</div>
+        <!-- Mostrar ID (p.ej. A5.1) como subtítulo -->
+        <div class="card-sub" th:text="${c.id}">A5.1</div>
+
+        <!-- Puntuación media -->
+        <div th:if="${scores != null}" th:with="p=${scores[c.id]}" class="score" th:classappend="${p == null} ? ' score--muted' :
                             (${p} &lt; 50 ? ' score--red' :
                             (${p} &lt; 70 ? ' score--orange' : ' score--green'))"
-        th:text="${p == null} ? '— %' : (${p} + '%')">
-        75%
-      </div>
-    </a>
+          th:text="${p == null} ? '— %' : (${p} + '%')">
+          75%
+        </div>
+      </a>
+    </div>
   </div>
-  </div>
-  </body>
+</body>
 
 </html>

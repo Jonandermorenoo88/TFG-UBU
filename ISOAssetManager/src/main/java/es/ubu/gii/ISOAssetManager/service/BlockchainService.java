@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.Signature;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,8 +58,7 @@ public class BlockchainService {
         String hashCalculado = calcularHashBloque(nuevoBloque);
         nuevoBloque.setHash(hashCalculado);
 
-        // 5. Firmar el bloque si el usuario tiene clave privada (Autenticado con
-        // certificado)
+        // 5. Firmar el bloque si el usuario tiene clave privada
         if (principal instanceof SuperCustomerUserDetails details) {
             try {
                 PrivateKey privateKey = details.getPrivateKey();
@@ -71,7 +71,6 @@ public class BlockchainService {
                 }
             } catch (Exception e) {
                 logger.error("Error al firmar el bloque", e);
-                // No fallamos la transacción, simplemente se guarda sin firma
             }
         }
 
@@ -90,7 +89,6 @@ public class BlockchainService {
         }
 
         // 2. Preparar los datos del bloque (JSON simple)
-        // Incluimos el hash del fichero para vincularlo criptográficamente
         String hashEvidenciaHex = bytesToHex(evidencia.getHash());
         String data = String.format(
                 "{\"id\":%d,\"empresa\":%d,\"control\":\"%s\",\"archivo\":\"%s\",\"hashEvidencia\":\"%s\",\"fecha\":\"%s\"}",
@@ -105,7 +103,7 @@ public class BlockchainService {
         Bloque nuevoBloque = new Bloque();
         nuevoBloque.setPreviousHash(previousHash);
         nuevoBloque.setData(data);
-        nuevoBloque.setEvidencia(evidencia); // Vinculamos la evidencia
+        nuevoBloque.setEvidencia(evidencia);
         nuevoBloque.setTimeStamp(System.currentTimeMillis());
 
         // 4. Calcular Hash del bloque actual
@@ -132,35 +130,34 @@ public class BlockchainService {
     }
 
     /**
-     * Valida la integridad de toda la cadena de bloques.
-     * 
-     * @return true si la cadena es válida, false si ha sido manipulada.
+     * Valida la integridad de la cadena completa.
      */
     public boolean validarCadena() {
-        List<Bloque> cadena = bloqueRepo.findAll(); // Ojo: en prod esto debería ser paginado o iterativo
+        List<Bloque> cadena = bloqueRepo.findAll();
+        cadena.sort(Comparator.comparing(Bloque::getId));
 
         for (int i = 0; i < cadena.size(); i++) {
             Bloque actual = cadena.get(i);
+            Bloque anterior = (i == 0) ? null : cadena.get(i - 1);
 
-            // 1. Validar Hash del bloque actual
+            // 1. Recalcular hash del bloque actual
             String hashCalculado = calcularHashBloque(actual);
-            if (!actual.getHash().equals(hashCalculado)) {
+            if (!hashCalculado.equals(actual.getHash())) {
                 logger.error("Integridad rota en bloque ID {}: Hash actual no coincide", actual.getId());
                 return false;
             }
 
-            // 2. Validar enlace con el anterior
-            if (i > 0) {
-                Bloque anterior = cadena.get(i - 1);
+            // 2. Verificar enlace con el anterior
+            if (anterior != null) {
                 if (!actual.getPreviousHash().equals(anterior.getHash())) {
-                    logger.error("Integridad rota en bloque ID {}: PreviousHash no coincide con bloque anterior",
+                    logger.error("Integridad rota en bloque ID {}: Hash previo no coincide con el del bloque anterior",
                             actual.getId());
                     return false;
                 }
             } else {
                 // Bloque génesis
                 if (!"0".equals(actual.getPreviousHash())) {
-                    logger.error("Bloque génesis inválido");
+                    logger.error("Bloque génesis ID {} tiene previousHash inválido", actual.getId());
                     return false;
                 }
             }
@@ -168,11 +165,48 @@ public class BlockchainService {
         return true;
     }
 
-    private String calcularHashBloque(Bloque bloque) {
-        String input = bloque.getPreviousHash()
-                + bloque.getData()
-                + Long.toString(bloque.getTimeStamp());
-        return aplicarSha256(input);
+    /**
+     * Valida la integridad de los bloques asociados a un control específico.
+     */
+    public boolean validarIntegridadControl(String controlId, Long empresaId) {
+        List<Bloque> cadena = bloqueRepo.findAll();
+        List<Bloque> bloquesControl = cadena.stream()
+                .filter(b -> perteneceAControl(b, controlId, empresaId))
+                .sorted(Comparator.comparing(Bloque::getId))
+                .toList();
+
+        if (bloquesControl.isEmpty()) {
+            return true;
+        }
+
+        for (Bloque b : bloquesControl) {
+            String hashCalculado = calcularHashBloque(b);
+            if (!hashCalculado.equals(b.getHash())) {
+                logger.error("Integridad rota en bloque ID {} (Control {}): Hash no coincide", b.getId(), controlId);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private boolean perteneceAControl(Bloque b, String controlId, Long empresaId) {
+        if (b.getRespuesta() != null) {
+            return b.getRespuesta().getEmpresa().getId().equals(empresaId) &&
+                    b.getRespuesta().getPregunta().getControl().getId().equals(controlId);
+        }
+        if (b.getEvidencia() != null) {
+            return b.getEvidencia().getEmpresa().getId().equals(empresaId) &&
+                    b.getEvidencia().getControl().getId().equals(controlId);
+        }
+        return false;
+    }
+
+    private String calcularHashBloque(Bloque b) {
+        return aplicarSha256(
+                b.getPreviousHash()
+                        + Long.toString(b.getTimeStamp())
+                        + b.getData());
     }
 
     private String aplicarSha256(String input) {

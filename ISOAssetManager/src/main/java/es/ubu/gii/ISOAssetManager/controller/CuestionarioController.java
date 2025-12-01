@@ -268,6 +268,17 @@ public class CuestionarioController {
         return "verificar-blockchain";
     }
 
+    // --- Endpoint para verificar la cadena POR CONTROL (Vista) ---
+    @GetMapping("/control/{controlId}/blockchain/verificar-vista")
+    public String verificarBlockchainControlVista(@PathVariable Long empresaId,
+            @PathVariable String controlId,
+            Model model) {
+        boolean valida = blockchainService.validarIntegridadControl(controlId, empresaId);
+        model.addAttribute("esValida", valida);
+        model.addAttribute("controlId", controlId); // Para mostrar en la vista si se quiere
+        return "verificar-blockchain";
+    }
+
     // --- Endpoint para verificar la cadena (API/Demo) ---
     @GetMapping("/blockchain/verificar")
     @ResponseBody
