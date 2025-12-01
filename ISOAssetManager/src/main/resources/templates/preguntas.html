@@ -23,7 +23,7 @@
 
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
-            <a class="btn"
+            <a class="btn" sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
                 style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
                 th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/blockchain/verificar-vista|}">
                 🛡️ Verificar Integridad Blockchain
@@ -83,7 +83,8 @@
                                     ⬇️
                                 </a>
 
-                                <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/verificar|}"
+                                <a sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+                                    th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${ev.id}/verificar|}"
                                     class="btn-evidence verify" title="Verificar integridad">
                                     ✔️
                                 </a>
