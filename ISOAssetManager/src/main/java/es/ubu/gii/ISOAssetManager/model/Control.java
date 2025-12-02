@@ -20,13 +20,14 @@ public class Control {
     @JoinColumn(name = "categoria_id", referencedColumnName = "id", nullable = false)
     private Categoria categoria;
 
-    @Column(name = "orden", insertable = false, updatable = false)
+    @Column(name = "orden")
     private Integer orden;
-    
+
     @OneToMany(mappedBy = "control", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Pregunta> preguntas = new ArrayList<>();
 
-    public Control() {}
+    public Control() {
+    }
 
     public Control(String id, String nombre, Categoria categoria) {
         this.id = id;
@@ -43,43 +44,43 @@ public class Control {
     }
 
     // Getters / setters
-    public String getId() { 
-        return id; 
+    public String getId() {
+        return id;
     }
 
-    public void setId(String id) { 
-        this.id = id; 
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getNombre() { 
-        return nombre; 
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre(String nombre) { 
-        this.nombre = nombre; 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Categoria getCategoria() { 
-        return categoria; 
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategoria(Categoria categoria) { 
-        this.categoria = categoria; 
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public Integer getOrden() { 
-        return orden; 
+    public Integer getOrden() {
+        return orden;
     }
 
-    public void setOrden(Integer orden) { 
-        this.orden = orden; 
+    public void setOrden(Integer orden) {
+        this.orden = orden;
     }
 
-    public List<Pregunta> getPreguntas() { 
-        return preguntas; 
+    public List<Pregunta> getPreguntas() {
+        return preguntas;
     }
 
-    public void setPreguntas(List<Pregunta> preguntas) { 
-        this.preguntas = preguntas; 
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
     }
 }
