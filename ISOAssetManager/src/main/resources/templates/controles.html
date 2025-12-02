@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,6 +14,12 @@
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
       <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
+
+      <a sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
+        th:href="@{|/empresas/${empresaId}/cuestionario/blockchain/verificar-vista|}"
+        style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+        🛡️ Verificar Integridad Global
+      </a>
     </div>
 
     <h1 class="page-title" th:text="${anexo != null ? anexo.nombre : 'Controles'}">Controles</h1>
