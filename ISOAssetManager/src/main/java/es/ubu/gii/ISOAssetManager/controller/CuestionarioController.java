@@ -296,4 +296,77 @@ public class CuestionarioController {
         return valida ? "INTEGRIDAD CORRECTA: La cadena de bloques es válida."
                 : "ALERTA: La cadena de bloques ha sido manipulada.";
     }
+
+    // --- Exportar a Excel ---
+    @GetMapping("/control/{controlId}/exportar")
+    public org.springframework.http.ResponseEntity<byte[]> exportarRespuestasExcel(@PathVariable Long empresaId,
+            @PathVariable String controlId) throws java.io.IOException {
+
+        // 1. Obtener datos
+        List<Pregunta> preguntas = preguntaRepo.findByControl_IdOrderByIdAsc(controlId);
+        List<RespuestaEmpresa> respuestas = respuestaEmpresaRepo.findByEmpresa_IdAndPregunta_Control_Id(empresaId,
+                controlId);
+        Map<Long, RespuestaEmpresa> mapaRespuestas = new HashMap<>();
+        for (RespuestaEmpresa r : respuestas) {
+            if (r.getPregunta() != null)
+                mapaRespuestas.put(r.getPregunta().getId(), r);
+        }
+
+        // 2. Crear Excel
+        try (org.apache.poi.ss.usermodel.Workbook workbook = new org.apache.poi.xssf.usermodel.XSSFWorkbook()) {
+            org.apache.poi.ss.usermodel.Sheet sheet = workbook.createSheet("Respuestas " + controlId);
+
+            // Estilos
+            org.apache.poi.ss.usermodel.CellStyle headerStyle = workbook.createCellStyle();
+            org.apache.poi.ss.usermodel.Font headerFont = workbook.createFont();
+            headerFont.setBold(true);
+            headerStyle.setFont(headerFont);
+            headerStyle.setFillForegroundColor(org.apache.poi.ss.usermodel.IndexedColors.GREY_25_PERCENT.getIndex());
+            headerStyle.setFillPattern(org.apache.poi.ss.usermodel.FillPatternType.SOLID_FOREGROUND);
+
+            // Cabecera
+            org.apache.poi.ss.usermodel.Row headerRow = sheet.createRow(0);
+            String[] headers = { "ID Pregunta", "Pregunta", "Respuesta", "Puntuación", "Fecha" };
+            for (int i = 0; i < headers.length; i++) {
+                org.apache.poi.ss.usermodel.Cell cell = headerRow.createCell(i);
+                cell.setCellValue(headers[i]);
+                cell.setCellStyle(headerStyle);
+            }
+
+            // Datos
+            int rowNum = 1;
+            for (Pregunta p : preguntas) {
+                org.apache.poi.ss.usermodel.Row row = sheet.createRow(rowNum++);
+
+                row.createCell(0).setCellValue(p.getId());
+                row.createCell(1).setCellValue(p.getTexto());
+
+                RespuestaEmpresa r = mapaRespuestas.get(p.getId());
+                if (r != null && r.getRespuesta() != null) {
+                    row.createCell(2).setCellValue(r.getRespuesta().getTextoOpcion());
+                    row.createCell(3).setCellValue(r.getRespuesta().getBaremo());
+                    row.createCell(4).setCellValue(r.getFechaRespuesta().toString());
+                } else {
+                    row.createCell(2).setCellValue("Sin responder");
+                    row.createCell(3).setCellValue(0);
+                    row.createCell(4).setCellValue("-");
+                }
+            }
+
+            // Auto-size columnas
+            for (int i = 0; i < headers.length; i++) {
+                sheet.autoSizeColumn(i);
+            }
+
+            // 3. Escribir a byte array
+            java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+            workbook.write(out);
+
+            return org.springframework.http.ResponseEntity.ok()
+                    .header(org.springframework.http.HttpHeaders.CONTENT_DISPOSITION,
+                            "attachment; filename=respuestas_" + controlId + ".xlsx")
+                    .contentType(org.springframework.http.MediaType.APPLICATION_OCTET_STREAM)
+                    .body(out.toByteArray());
+        }
+    }
 }
