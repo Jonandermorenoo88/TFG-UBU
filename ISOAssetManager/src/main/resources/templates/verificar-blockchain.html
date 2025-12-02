@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Verificación de Blockchain</title>
   <link rel="stylesheet" href="/verificarevidencia.css">
 </head>
+
 <body>
-<div class="page">
-  <div class="card">
-    <h1>Auditoría Blockchain</h1>
-    <p class="subtitle">Verificación de integridad de la cadena de respuestas.</p>
+  <div class="page">
+    <div class="card">
+      <h1 th:if="${controlId == null}">Auditoría Blockchain Global</h1>
+      <h1 th:if="${controlId != null}" th:text="'Auditoría Blockchain - Control ' + ${controlId}">Auditoría Control</h1>
 
-    <div class="status-row">
-      <span class="label">Estado de la cadena</span>
-      <span class="badge"
-            th:classappend="${esValida} ? ' ok' : ' fail'"
-            th:text="${esValida} ? 'INTEGRA' : 'CORRUPTA'">
-        INTEGRA
-      </span>
-    </div>
+      <p class="subtitle" th:if="${controlId == null}">Verificación de integridad de TODA la cadena de bloques.</p>
+      <p class="subtitle" th:if="${controlId != null}">Verificación de integridad específica para el control <strong
+          th:text="${controlId}"></strong>.</p>
 
-    <div class="meta" style="margin-top: 20px;">
+      <div class="status-row">
+        <span class="label">Estado de la cadena</span>
+        <span class="badge" th:classappend="${esValida} ? ' ok' : ' fail'"
+          th:text="${esValida} ? 'INTEGRA' : 'CORRUPTA'">
+          INTEGRA
+        </span>
+      </div>
+
+      <div class="meta" style="margin-top: 20px;">
         <p th:if="${esValida}">
-            Todas las respuestas registradas mantienen su integridad criptográfica.
-            La cadena de bloques es válida y no ha sido manipulada.
+          <span th:if="${controlId == null}">Todos los registros de la cadena mantienen su integridad
+            criptográfica.</span>
+          <span th:if="${controlId != null}">Los registros asociados al control <strong th:text="${controlId}"></strong>
+            mantienen su integridad.</span>
+          La verificación de firmas y hashes ha sido exitosa.
         </p>
         <p th:if="${!esValida}" style="color: red; font-weight: bold;">
-            ¡ALERTA! Se ha detectado una manipulación en los registros.
-            La cadena de bloques no coincide con los datos almacenados.
+          ¡ALERTA! Se ha detectado una manipulación en los registros.
+          <span th:if="${controlId == null}">La cadena de bloques global contiene inconsistencias.</span>
+          <span th:if="${controlId != null}">Los datos del control <strong th:text="${controlId}"></strong> no coinciden
+            con la cadena de bloques.</span>
         </p>
-    </div>
+      </div>
 
-    <div class="actions">
-      <!-- Botón para volver atrás (usando historia del navegador o un link fijo) -->
-      <a href="javascript:history.back()" class="btn btn-secondary">
-        ← Volver
-      </a>
+      <div class="actions">
+        <a href="javascript:history.back()" class="btn btn-secondary">
+          ← Volver
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </body>
+
 </html>
