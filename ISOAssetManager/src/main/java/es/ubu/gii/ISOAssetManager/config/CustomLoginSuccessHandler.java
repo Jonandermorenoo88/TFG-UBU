@@ -26,6 +26,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
      * Método invocado cuando la autenticación es exitosa.
      * <p>
      * Redirige al usuario a diferentes rutas según su rol:
+     * </p>
      * <ul>
      * <li>ADMIN -> /panel-admin</li>
      * <li>AUDITOR -> /panel-auditor</li>
@@ -33,7 +34,6 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
      * /empresas</li>
      * <li>Sin rol reconocido -> /esperarol</li>
      * </ul>
-     * </p>
      *
      * @param request        La solicitud HTTP.
      * @param response       La respuesta HTTP.
