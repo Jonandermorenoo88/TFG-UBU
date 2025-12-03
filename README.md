@@ -3,7 +3,7 @@
 ## Descripción
 ISOAssetManager es una aplicación web desarrollada con Spring Boot para la gestión de activos y controles relacionados con normativas ISO. Este proyecto forma parte de un Trabajo de Fin de Grado (TFG) en la Universidad de Burgos.
 
-La aplicación permite administrar controles, verificar la integridad de los datos mediante tecnología Blockchain y generar reportes en Excel, todo ello gestionado bajo un sistema de roles (Administrador y Auditor).
+La aplicación permite administrar controles, verificar la integridad de los datos mediante tecnología Blockchain y generar reportes en Excel, todo ello gestionado bajo un sistema de roles.
 
 ## Características Principales
 - **Gestión de Controles**: Creación, edición y visualización de controles ISO.
