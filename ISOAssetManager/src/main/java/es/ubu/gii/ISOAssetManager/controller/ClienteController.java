@@ -11,16 +11,42 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import es.ubu.gii.ISOAssetManager.model.Usuario;
 import es.ubu.gii.ISOAssetManager.repository.UsuarioRepository;
 
+/**
+ * Controlador para la gestión del panel del cliente (usuario operativo).
+ * <p>
+ * Gestiona la redirección y visualización de la información principal del
+ * usuario,
+ * incluyendo su asignación a una empresa y departamento.
+ * </p>
+ */
 @Controller
 public class ClienteController {
 
     private static final Logger log = LoggerFactory.getLogger(ClienteController.class);
     private final UsuarioRepository usuarioRepository;
 
+    /**
+     * Constructor con inyección de dependencias.
+     *
+     * @param usuarioRepository Repositorio de usuarios.
+     */
     public ClienteController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
+    /**
+     * Muestra la página principal del cliente.
+     * <p>
+     * Si el usuario ya tiene una empresa asignada, lo redirige automáticamente a la
+     * vista de su empresa.
+     * Si no, muestra un panel de espera o informativo.
+     * </p>
+     *
+     * @param model Modelo para pasar datos a la vista.
+     * @param auth  Información de autenticación del usuario actual.
+     * @param ra    Atributos para mensajes flash (errores).
+     * @return Nombre de la vista o redirección.
+     */
     @GetMapping("/cliente")
     public String clienteHome(Model model, Authentication auth, RedirectAttributes ra) {
         String email = auth.getName();
@@ -43,6 +69,18 @@ public class ClienteController {
         return "cliente-panel";
     }
 
+    /**
+     * Muestra la información de la empresa asignada al cliente.
+     * <p>
+     * Verifica que el usuario tenga una empresa asignada. Si no, lo redirige al
+     * panel principal.
+     * </p>
+     *
+     * @param model Modelo para pasar datos a la vista.
+     * @param auth  Información de autenticación del usuario actual.
+     * @param ra    Atributos para mensajes flash (errores).
+     * @return Nombre de la vista de empresa del cliente o redirección.
+     */
     @GetMapping("/cliente/empresa")
     public String clienteEmpresa(Model model, Authentication auth, RedirectAttributes ra) {
         String email = auth.getName();
