@@ -7,7 +7,13 @@ La aplicación permite administrar controles, verificar la integridad de los dat
 
 ## Características Principales
 - **Gestión de Controles**: Creación, edición y visualización de controles ISO.
-- **Seguridad y Roles**: Sistema de autenticación con roles diferenciados (Administrador, Auditor).
+- **Seguridad y Roles**: Sistema de autenticación con roles diferenciados:
+  - **Administrador (ADMIN)**: Acceso total al sistema.
+  - **Auditor (AUDITOR)**: Gestión de auditorías y acceso a todos los cuestionarios.
+  - **Dirección (DIRECCION)**: Acceso a controles organizacionales (A5).
+  - **Recursos Humanos (RRHH)**: Acceso a controles de personas (A6).
+  - **Facilities (FACILITIES)**: Acceso a controles físicos (A7).
+  - **IT/Técnico (IT/TECNICO)**: Acceso a controles tecnológicos (A8).
 - **Verificación Blockchain**: Mecanismo para verificar la integridad de los registros mediante hash/blockchain.
 - **Exportación de Datos**: Funcionalidad para exportar listados y respuestas a formato Excel (XLSX).
 - **Interfaz Web**: Interfaz de usuario amigable construida con Thymeleaf.
@@ -65,5 +71,4 @@ El puerto por defecto está configurado en `8081` (ver `application.properties`)
 - `pom.xml`: Definición de dependencias Maven.
 
 ## Autor
-Jon Ander Moreno
-Universidad de Burgos
+Jon Ander Incera Moreno
