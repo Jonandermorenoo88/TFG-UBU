@@ -58,39 +58,96 @@ public class Evidencia {
     @Column(name = "firma_evidencia", columnDefinition = "LONGBLOB")
     private byte[] firma;
 
-    public Evidencia() {}
+    public Evidencia() {
+    }
 
     // ================== GETTERS & SETTERS ==================
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getNombreArchivo() { return nombreArchivo; }
-    public void setNombreArchivo(String nombreArchivo) { this.nombreArchivo = nombreArchivo; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getRutaFichero() { return rutaFichero; }
-    public void setRutaFichero(String rutaFichero) { this.rutaFichero = rutaFichero; }
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
 
-    public String getContentType() { return contentType; }
-    public void setContentType(String contentType) { this.contentType = contentType; }
+    public void setNombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
+    }
 
-    public Long getTamanoBytes() { return tamanoBytes; }
-    public void setTamanoBytes(Long tamanoBytes) { this.tamanoBytes = tamanoBytes; }
+    public String getRutaFichero() {
+        return rutaFichero;
+    }
 
-    public LocalDateTime getFechaSubida() { return fechaSubida; }
-    public void setFechaSubida(LocalDateTime fechaSubida) { this.fechaSubida = fechaSubida; }
+    public void setRutaFichero(String rutaFichero) {
+        this.rutaFichero = rutaFichero;
+    }
 
-    public Usuario getUsuario() { return usuario; }
-    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
+    public String getContentType() {
+        return contentType;
+    }
 
-    public Empresa getEmpresa() { return empresa; }
-    public void setEmpresa(Empresa empresa) { this.empresa = empresa; }
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
 
-    public Control getControl() { return control; }
-    public void setControl(Control control) { this.control = control; }
+    public Long getTamanoBytes() {
+        return tamanoBytes;
+    }
 
-    public byte[] getHash() { return hash; }
-    public void setHash(byte[] hash) { this.hash = hash; }
+    public void setTamanoBytes(Long tamanoBytes) {
+        this.tamanoBytes = tamanoBytes;
+    }
 
-    public byte[] getFirma() { return firma; }
-    public void setFirma(byte[] firma) { this.firma = firma; }
+    public LocalDateTime getFechaSubida() {
+        return fechaSubida;
+    }
+
+    public void setFechaSubida(LocalDateTime fechaSubida) {
+        this.fechaSubida = fechaSubida;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Control getControl() {
+        return control;
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+    }
+
+    public byte[] getHash() {
+        return hash;
+    }
+
+    public void setHash(byte[] hash) {
+        this.hash = hash;
+    }
+
+    public byte[] getFirma() {
+        return firma;
+    }
+
+    public void setFirma(byte[] firma) {
+        this.firma = firma;
+    }
 }
