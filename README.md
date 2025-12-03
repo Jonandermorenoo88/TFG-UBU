@@ -59,6 +59,13 @@ La aplicación permite administrar controles, verificar la integridad de los dat
    ```
    (En Windows puedes usar `mvnw.cmd spring-boot:run`)
 
+## Documentación (Javadoc)
+Para generar la documentación técnica del proyecto (Javadoc), ejecuta el siguiente comando:
+```bash
+./mvnw javadoc:javadoc
+```
+La documentación generada estará disponible en: `target/site/apidocs/index.html`.
+
 ## Uso
 Una vez iniciada la aplicación, abre tu navegador web y accede a:
 http://localhost:8081
@@ -72,3 +79,5 @@ El puerto por defecto está configurado en `8081` (ver `application.properties`)
 
 ## Autor
 Jon Ander Incera Moreno
+Estudiante del Grado en Ingeniería Informática — Universidad de Burgos
+Trabajo de Fin de Grado 2025
