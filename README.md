@@ -65,5 +65,4 @@ El puerto por defecto está configurado en `8081` (ver `application.properties`)
 - `pom.xml`: Definición de dependencias Maven.
 
 ## Autor
-Jon Ander Moreno
-Universidad de Burgos
+Jon Ander Incera Moreno
