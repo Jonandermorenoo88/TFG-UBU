@@ -28,6 +28,21 @@ import es.ubu.gii.ISOAssetManager.repository.RespuestaPosibleRepository;
 import es.ubu.gii.ISOAssetManager.repository.UsuarioRepository;
 import es.ubu.gii.ISOAssetManager.repository.EvidenciaRepository;
 
+/**
+ * Controlador principal para la gestión de los cuestionarios de evaluación ISO
+ * 27001.
+ * <p>
+ * Maneja la lógica de negocio relacionada con:
+ * <ul>
+ * <li>Navegación por grupos de controles (anexos).</li>
+ * <li>Visualización y gestión de preguntas y respuestas.</li>
+ * <li>Cálculo de puntuaciones y estadísticas.</li>
+ * <li>Integración con Blockchain para la integridad de las respuestas.</li>
+ * <li>Gestión de evidencias.</li>
+ * <li>Exportación de resultados a Excel.</li>
+ * </ul>
+ * </p>
+ */
 @Controller
 @RequestMapping("/empresas/{empresaId}/cuestionario")
 public class CuestionarioController {
@@ -43,6 +58,20 @@ public class CuestionarioController {
     private final es.ubu.gii.ISOAssetManager.service.BlockchainService blockchainService;
     private final es.ubu.gii.ISOAssetManager.repository.BloqueRepository bloqueRepo;
 
+    /**
+     * Constructor con inyección de dependencias.
+     *
+     * @param categoriaRepo        Repositorio de categorías.
+     * @param controlRepo          Repositorio de controles.
+     * @param empresaRepo          Repositorio de empresas.
+     * @param usuarioRepo          Repositorio de usuarios.
+     * @param preguntaRepo         Repositorio de preguntas.
+     * @param respuestaEmpresaRepo Repositorio de respuestas de empresa.
+     * @param respuestaPosibleRepo Repositorio de opciones de respuesta.
+     * @param evidenciaRepo        Repositorio de evidencias.
+     * @param blockchainService    Servicio de blockchain.
+     * @param bloqueRepo           Repositorio de bloques.
+     */
     public CuestionarioController(CategoriaRepository categoriaRepo,
             ControlRepository controlRepo,
             EmpresaRepository empresaRepo,
@@ -73,8 +102,17 @@ public class CuestionarioController {
             "tecnologicos", "A8");
 
     /**
-     * Lista los controles de un grupo (anexo) para una empresa
-     * y añade el mapa de medias por control (0..100).
+     * Lista los controles de un grupo (anexo) específico para una empresa.
+     * <p>
+     * Calcula y muestra las puntuaciones medias obtenidas en cada control del
+     * grupo.
+     * </p>
+     *
+     * @param empresaId ID de la empresa.
+     * @param grupo     Slug del grupo de controles (ej: "organizacionales",
+     *                  "personas").
+     * @param model     Modelo para pasar datos a la vista.
+     * @return Nombre de la vista de lista de controles o página de error 404.
      */
     @GetMapping("/grupo/{grupo}")
     public String listarControlesPorGrupo(@PathVariable Long empresaId,
@@ -110,8 +148,16 @@ public class CuestionarioController {
     }
 
     /**
-     * Pantalla de preguntas de un control.
-     * Vista: templates/preguntas.html
+     * Muestra la pantalla de preguntas para un control específico.
+     * <p>
+     * Carga las preguntas del control, las respuestas existentes de la empresa,
+     * las opciones de respuesta disponibles y las evidencias adjuntas.
+     * </p>
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @param model     Modelo para pasar datos a la vista.
+     * @return Nombre de la vista de preguntas.
      */
     @GetMapping("/control/{controlId:.+}/preguntas")
     public String preguntasDeControl(@PathVariable Long empresaId,
@@ -154,6 +200,15 @@ public class CuestionarioController {
         return "preguntas";
     }
 
+    /**
+     * Muestra el formulario para crear una nueva pregunta personalizada en un
+     * control.
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @param model     Modelo para pasar datos a la vista.
+     * @return Nombre de la vista del formulario de nueva pregunta.
+     */
     @GetMapping("/control/{controlId:.+}/preguntas/nueva")
     public String nuevaPregunta(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -164,6 +219,15 @@ public class CuestionarioController {
         return "pregunta-nueva-min";
     }
 
+    /**
+     * Procesa la creación de una nueva pregunta personalizada.
+     *
+     * @param empresaId   ID de la empresa.
+     * @param controlId   ID del control.
+     * @param texto       Texto de la pregunta.
+     * @param explicacion Explicación opcional de la pregunta.
+     * @return Redirección a la lista de preguntas del control.
+     */
     @PostMapping("/control/{controlId:.+}/preguntas")
     public String crearPregunta(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -181,6 +245,14 @@ public class CuestionarioController {
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 
+    /**
+     * Muestra la vista para seleccionar preguntas a eliminar.
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @param model     Modelo para pasar datos a la vista.
+     * @return Nombre de la vista de eliminación de preguntas.
+     */
     @GetMapping("/control/{controlId:.+}/preguntas/eliminar")
     public String elegirPreguntaAEliminar(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -191,6 +263,14 @@ public class CuestionarioController {
         return "preguntas-eliminar";
     }
 
+    /**
+     * Elimina una pregunta y sus respuestas asociadas.
+     *
+     * @param empresaId  ID de la empresa.
+     * @param controlId  ID del control.
+     * @param preguntaId ID de la pregunta a eliminar.
+     * @return Redirección a la lista de preguntas del control.
+     */
     @PostMapping("/control/{controlId:.+}/preguntas/eliminar")
     public String eliminarPregunta(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -202,6 +282,22 @@ public class CuestionarioController {
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 
+    /**
+     * Registra la respuesta de una empresa a una pregunta.
+     * <p>
+     * Si es una respuesta nueva, genera un bloque en la blockchain para garantizar
+     * la integridad.
+     * Si es una actualización, solo guarda el cambio en la base de datos
+     * relacional.
+     * </p>
+     *
+     * @param empresaId  ID de la empresa.
+     * @param controlId  ID del control.
+     * @param preguntaId ID de la pregunta.
+     * @param opcionId   ID de la opción seleccionada.
+     * @param auth       Información de autenticación del usuario.
+     * @return Redirección a la lista de preguntas del control.
+     */
     @PostMapping("/control/{controlId:.+}/responder")
     public String responder(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -249,6 +345,20 @@ public class CuestionarioController {
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 
+    /**
+     * Elimina una respuesta existente.
+     * <p>
+     * También elimina el bloque de blockchain asociado si existe, para mantener la
+     * consistencia
+     * (aunque esto invalida la cadena posterior, es necesario para la funcionalidad
+     * de eliminar respuesta).
+     * </p>
+     *
+     * @param empresaId  ID de la empresa.
+     * @param controlId  ID del control.
+     * @param preguntaId ID de la pregunta cuya respuesta se eliminará.
+     * @return Redirección a la lista de preguntas del control.
+     */
     @PostMapping("/control/{controlId:.+}/preguntas/{preguntaId}/respuesta/eliminar")
     public String eliminarRespuesta(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -269,7 +379,12 @@ public class CuestionarioController {
         return "redirect:/empresas/" + empresaId + "/cuestionario/control/" + controlId + "/preguntas";
     }
 
-    // --- Endpoint para verificar la cadena (Vista) ---
+    /**
+     * Muestra la vista de verificación de integridad de la blockchain global.
+     *
+     * @param model Modelo para pasar el resultado de la validación.
+     * @return Nombre de la vista de verificación.
+     */
     @GetMapping("/blockchain/verificar-vista")
     public String verificarBlockchainVista(Model model) {
         boolean valida = blockchainService.validarCadena();
@@ -277,7 +392,14 @@ public class CuestionarioController {
         return "verificar-blockchain";
     }
 
-    // --- Endpoint para verificar la cadena POR CONTROL (Vista) ---
+    /**
+     * Muestra la vista de verificación de integridad para un control específico.
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @param model     Modelo para pasar el resultado de la validación.
+     * @return Nombre de la vista de verificación.
+     */
     @GetMapping("/control/{controlId}/blockchain/verificar-vista")
     public String verificarBlockchainControlVista(@PathVariable Long empresaId,
             @PathVariable String controlId,
@@ -288,7 +410,11 @@ public class CuestionarioController {
         return "verificar-blockchain";
     }
 
-    // --- Endpoint para verificar la cadena (API/Demo) ---
+    /**
+     * Endpoint API para verificar la integridad de la cadena de bloques.
+     *
+     * @return Mensaje de texto indicando si la cadena es válida o no.
+     */
     @GetMapping("/blockchain/verificar")
     @ResponseBody
     public String verificarBlockchain() {
@@ -297,7 +423,14 @@ public class CuestionarioController {
                 : "ALERTA: La cadena de bloques ha sido manipulada.";
     }
 
-    // --- Exportar a Excel ---
+    /**
+     * Genera y descarga un archivo Excel con las respuestas de un control.
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @return ResponseEntity con el archivo Excel en formato byte array.
+     * @throws java.io.IOException Si ocurre un error al generar el archivo.
+     */
     @GetMapping("/control/{controlId}/exportar")
     public org.springframework.http.ResponseEntity<byte[]> exportarRespuestasExcel(@PathVariable Long empresaId,
             @PathVariable String controlId) throws java.io.IOException {
