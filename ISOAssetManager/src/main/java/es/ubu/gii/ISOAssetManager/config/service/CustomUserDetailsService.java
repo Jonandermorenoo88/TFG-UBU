@@ -17,20 +17,44 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Servicio personalizado para cargar los detalles del usuario durante la
+ * autenticación.
+ * <p>
+ * Implementa {@link UserDetailsService} para recuperar la información del
+ * usuario desde la base de datos
+ * y construir un objeto {@link SuperCustomerUserDetails} con los roles y claves
+ * RSA necesarios.
+ * </p>
+ */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    /**
+     * Carga los detalles del usuario dado su nombre de usuario (email).
+     * <p>
+     * Además de recuperar la información básica, este método gestiona la generación
+     * o recuperación
+     * de claves RSA para el usuario, necesarias para operaciones de firma o cifrado
+     * en la aplicación.
+     * </p>
+     *
+     * @param email El correo electrónico del usuario.
+     * @return Una instancia de {@link SuperCustomerUserDetails} con la información
+     *         del usuario.
+     * @throws UsernameNotFoundException Si no se encuentra un usuario con el email
+     *                                   proporcionado.
+     */
     @Override
     public SuperCustomerUserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
         Usuario user = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + email));
 
-        Collection<? extends GrantedAuthority> authorities =
-                mapRolesToAuthorities(user.getRoles());
+        Collection<? extends GrantedAuthority> authorities = mapRolesToAuthorities(user.getRoles());
 
         SuperCustomerUserDetails details = new SuperCustomerUserDetails();
         details.setUsername(user.getEmail());
@@ -79,6 +103,12 @@ public class CustomUserDetailsService implements UserDetailsService {
         return details;
     }
 
+    /**
+     * Convierte los roles del usuario en autoridades de Spring Security.
+     *
+     * @param roles Conjunto de roles del usuario.
+     * @return Colección de {@link GrantedAuthority}.
+     */
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Set<Rol> roles) {
         return roles.stream()
                 .map(rol -> new SimpleGrantedAuthority("ROLE_" + rol.getNombre().toUpperCase()))
