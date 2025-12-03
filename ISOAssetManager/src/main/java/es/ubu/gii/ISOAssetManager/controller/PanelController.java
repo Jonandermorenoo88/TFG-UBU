@@ -6,11 +6,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
+/**
+ * Controlador para la gestión de los paneles principales de la aplicación.
+ * <p>
+ * Gestiona la redirección inicial tras el login y el acceso a los paneles
+ * específicos
+ * de Administrador y Auditor.
+ * </p>
+ */
 @Controller
 public class PanelController {
 
     /**
-     * Redirección genérica desde /panel según el rol.
+     * Redirige al usuario a su panel correspondiente según su rol.
+     * <p>
+     * - ADMIN: redirige a /panel-admin
+     * - AUDITOR: redirige a /panel-auditor
+     * - Otros: redirige a /inicio
+     * </p>
+     *
+     * @param userDetails Detalles del usuario autenticado.
+     * @return Redirección a la ruta adecuada.
      */
     @GetMapping("/panel")
     public String panelRedirect(@AuthenticationPrincipal SuperCustomerUserDetails userDetails) {
@@ -35,11 +51,19 @@ public class PanelController {
     }
 
     /**
-     * Panel del administrador.
+     * Muestra el panel de administración.
+     * <p>
+     * Verifica que el usuario tenga el rol de ADMIN.
+     * </p>
+     *
+     * @param model       Modelo para pasar datos a la vista.
+     * @param userDetails Detalles del usuario autenticado.
+     * @return Nombre de la vista del panel de administración o redirección si no
+     *         tiene permisos.
      */
     @GetMapping("/panel-admin")
     public String panelAdmin(Model model,
-                             @AuthenticationPrincipal SuperCustomerUserDetails userDetails) {
+            @AuthenticationPrincipal SuperCustomerUserDetails userDetails) {
 
         if (userDetails == null) {
             return "redirect:/login";
@@ -58,11 +82,19 @@ public class PanelController {
     }
 
     /**
-     * Panel del auditor.
+     * Muestra el panel del auditor.
+     * <p>
+     * Verifica que el usuario tenga el rol de AUDITOR.
+     * </p>
+     *
+     * @param model       Modelo para pasar datos a la vista.
+     * @param userDetails Detalles del usuario autenticado.
+     * @return Nombre de la vista del panel de auditor o redirección si no tiene
+     *         permisos.
      */
     @GetMapping("/panel-auditor")
     public String panelAuditor(Model model,
-                               @AuthenticationPrincipal SuperCustomerUserDetails userDetails) {
+            @AuthenticationPrincipal SuperCustomerUserDetails userDetails) {
 
         if (userDetails == null) {
             return "redirect:/login";
