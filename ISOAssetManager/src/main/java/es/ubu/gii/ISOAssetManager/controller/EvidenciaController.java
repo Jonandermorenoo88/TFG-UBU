@@ -35,6 +35,21 @@ import java.security.Signature;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+/**
+ * Controlador para la gestión de evidencias (archivos adjuntos) en los
+ * controles.
+ * <p>
+ * Maneja el ciclo de vida de las evidencias: subida, descarga, eliminación y
+ * verificación.
+ * Incluye funcionalidades avanzadas como:
+ * <ul>
+ * <li>Validación de tipo y tamaño de archivo.</li>
+ * <li>Cálculo de hash SHA-256 para integridad.</li>
+ * <li>Firma digital opcional con clave privada del usuario.</li>
+ * <li>Registro inmutable en Blockchain.</li>
+ * </ul>
+ * </p>
+ */
 @Controller
 @RequestMapping("/empresas/{empresaId}/cuestionario/evidencias")
 public class EvidenciaController {
@@ -52,6 +67,16 @@ public class EvidenciaController {
 
     private final Path rootLocation = Paths.get("uploads/evidencias");
 
+    /**
+     * Constructor con inyección de dependencias.
+     *
+     * @param evidenciaRepo     Repositorio de evidencias.
+     * @param empresaRepo       Repositorio de empresas.
+     * @param controlRepo       Repositorio de controles.
+     * @param usuarioRepo       Repositorio de usuarios.
+     * @param blockchainService Servicio de blockchain.
+     * @param bloqueRepo        Repositorio de bloques.
+     */
     public EvidenciaController(EvidenciaRepository evidenciaRepo,
             EmpresaRepository empresaRepo,
             ControlRepository controlRepo,
@@ -66,6 +91,23 @@ public class EvidenciaController {
         this.bloqueRepo = bloqueRepo;
     }
 
+    /**
+     * Sube una nueva evidencia para un control específico.
+     * <p>
+     * Realiza validaciones de seguridad (tamaño, tipo MIME), guarda el archivo
+     * físico,
+     * calcula su hash, intenta firmarlo digitalmente si el usuario tiene clave
+     * privada,
+     * guarda los metadatos en BD y registra la operación en la blockchain.
+     * </p>
+     *
+     * @param empresaId ID de la empresa.
+     * @param controlId ID del control.
+     * @param archivo   Archivo subido (MultipartFile).
+     * @param auth      Información de autenticación del usuario.
+     * @return Redirección a la lista de preguntas del control con parámetro de
+     *         éxito o error.
+     */
     @PostMapping("/subir")
     public String subirEvidencia(@PathVariable Long empresaId,
             @RequestParam("controlId") String controlId,
@@ -214,6 +256,13 @@ public class EvidenciaController {
         }
     }
 
+    /**
+     * Descarga el archivo físico de una evidencia.
+     *
+     * @param empresaId   ID de la empresa.
+     * @param evidenciaId ID de la evidencia a descargar.
+     * @return ResponseEntity con el recurso del archivo para su descarga.
+     */
     @GetMapping("/{evidenciaId}/descargar")
     public ResponseEntity<Resource> descargarEvidencia(@PathVariable Long empresaId,
             @PathVariable Long evidenciaId) {
@@ -247,6 +296,18 @@ public class EvidenciaController {
         }
     }
 
+    /**
+     * Elimina una evidencia del sistema.
+     * <p>
+     * Borra el archivo físico, el registro en BD y el bloque de blockchain asociado
+     * (nota: borrar el bloque rompe la cadena, pero es necesario para la
+     * funcionalidad de borrado).
+     * </p>
+     *
+     * @param empresaId   ID de la empresa.
+     * @param evidenciaId ID de la evidencia a eliminar.
+     * @return Redirección a la lista de preguntas del control.
+     */
     @PostMapping("/{evidenciaId}/eliminar")
     public String eliminarEvidencia(@PathVariable Long empresaId,
             @PathVariable Long evidenciaId) {
@@ -272,9 +333,22 @@ public class EvidenciaController {
                 "/cuestionario/control/" + controlId + "/preguntas";
     }
 
-    // =========================================================
-    // Verificar integridad + firma (VISTA BONITA THYMELEAF)
-    // =========================================================
+    /**
+     * Muestra la vista de verificación de integridad y autenticidad de una
+     * evidencia.
+     * <p>
+     * Verifica dos aspectos:
+     * 1. Integridad: Recalcula el hash del archivo físico y lo compara con el
+     * almacenado.
+     * 2. Autenticidad: Si está firmada, verifica la firma digital usando la clave
+     * pública del usuario.
+     * </p>
+     *
+     * @param empresaId   ID de la empresa.
+     * @param evidenciaId ID de la evidencia a verificar.
+     * @param model       Modelo para pasar los resultados de la verificación.
+     * @return Nombre de la vista de verificación de evidencia.
+     */
     @GetMapping("/{evidenciaId}/verificar")
     public String verificarEvidencia(@PathVariable Long empresaId,
             @PathVariable Long evidenciaId,
