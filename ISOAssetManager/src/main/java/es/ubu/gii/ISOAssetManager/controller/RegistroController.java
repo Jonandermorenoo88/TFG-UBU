@@ -14,6 +14,15 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Controlador para el registro de nuevos usuarios.
+ * <p>
+ * Gestiona el proceso de alta de usuarios, incluyendo la validación de
+ * contraseñas,
+ * la codificación de credenciales y la generación de claves RSA para firma
+ * digital.
+ * </p>
+ */
 @Controller
 public class RegistroController {
 
@@ -23,11 +32,32 @@ public class RegistroController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Procesa la solicitud de registro de un nuevo usuario.
+     * <p>
+     * Realiza las siguientes acciones:
+     * <ol>
+     * <li>Valida que la contraseña cumpla con los requisitos de seguridad.</li>
+     * <li>Verifica que el email no esté ya registrado.</li>
+     * <li>Crea el usuario y codifica su contraseña.</li>
+     * <li>Genera un par de claves RSA (pública/privada) para el usuario. La clave
+     * pública se guarda en BD.</li>
+     * <li>Guarda el usuario en la base de datos.</li>
+     * </ol>
+     * </p>
+     *
+     * @param nombre   Nombre completo del usuario.
+     * @param email    Correo electrónico del usuario.
+     * @param password Contraseña elegida por el usuario.
+     * @param model    Modelo para pasar datos a la vista en caso de error.
+     * @return Redirección al login si es exitoso, o vuelta al formulario de
+     *         registro con mensaje de error.
+     */
     @PostMapping("/registro")
     public String registrarUsuario(@RequestParam String nombre,
-                                   @RequestParam String email,
-                                   @RequestParam String password,
-                                   Model model) {
+            @RequestParam String email,
+            @RequestParam String password,
+            Model model) {
 
         System.out.println("[/registro] Intento de alta: " + email);
 
@@ -35,9 +65,9 @@ public class RegistroController {
         if (!ValidarFormatoPassword.esPasswordValida(password)) {
             model.addAttribute("error",
                     "La contraseña no cumple los requisitos de seguridad. " +
-                    "Debe tener entre 8 y 32 caracteres y cumplir al menos 3 de los 4 criterios: " +
-                    "mayúsculas, minúsculas, números y caracteres especiales. " +
-                    "Además, no puede contener más de dos caracteres consecutivos iguales.");
+                            "Debe tener entre 8 y 32 caracteres y cumplir al menos 3 de los 4 criterios: " +
+                            "mayúsculas, minúsculas, números y caracteres especiales. " +
+                            "Además, no puede contener más de dos caracteres consecutivos iguales.");
             return "registro";
         }
 
