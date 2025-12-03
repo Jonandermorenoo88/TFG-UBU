@@ -64,7 +64,7 @@ Para generar la documentación técnica del proyecto (Javadoc), ejecuta el sigui
 ```bash
 ./mvnw javadoc:javadoc
 ```
-La documentación generada estará disponible en: `target/site/apidocs/index.html`.
+La documentación generada estará disponible en: `target/reports/apidocs/index.html`.
 
 ## Uso
 Una vez iniciada la aplicación, abre tu navegador web y accede a:
