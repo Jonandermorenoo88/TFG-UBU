@@ -1,4 +1,3 @@
-// SeedConfig.java
 package es.ubu.gii.ISOAssetManager.config;
 
 import org.springframework.boot.CommandLineRunner;
@@ -13,13 +12,39 @@ import es.ubu.gii.ISOAssetManager.repository.CategoriaRepository;
 import es.ubu.gii.ISOAssetManager.repository.ControlRepository;
 import es.ubu.gii.ISOAssetManager.repository.RespuestaPosibleRepository;
 
+/**
+ * Configuración de carga inicial de datos (seed data) para la aplicación.
+ * <p>
+ * Esta clase se encarga de poblar la base de datos con las categorías y
+ * controles
+ * definidos en la norma ISO/IEC 27001:2022 (Anexos A5-A8), así como las
+ * respuestas
+ * posibles para los cuestionarios de evaluación.
+ * </p>
+ * <p>
+ * Los datos se cargan automáticamente al iniciar la aplicación mediante
+ * {@link CommandLineRunner} beans, utilizando una estrategia de "upsert" que
+ * permite actualizar registros existentes sin duplicarlos.
+ * </p>
+ */
 @Configuration
 public class SeedConfig {
 
-    /*
-     * ==========================================================
-     * RUNNER 1: CATEGORÍAS y CONTROLES
-     * ==========================================================
+    /**
+     * Bean que ejecuta la carga inicial de categorías y controles ISO.
+     * <p>
+     * Crea las 4 categorías principales del Anexo A de ISO 27001:2022:
+     * <ul>
+     * <li>A5 - Controles organizacionales (37 controles)</li>
+     * <li>A6 - Controles de personas (8 controles)</li>
+     * <li>A7 - Controles físicos (14 controles)</li>
+     * <li>A8 - Controles tecnológicos (34 controles)</li>
+     * </ul>
+     * </p>
+     *
+     * @param catRepo  Repositorio de categorías.
+     * @param ctrlRepo Repositorio de controles.
+     * @return CommandLineRunner que ejecuta la lógica de seed.
      */
     @Bean
     @Transactional
@@ -142,10 +167,33 @@ public class SeedConfig {
         };
     }
 
+    /**
+     * Crea una categoría si no existe en la base de datos.
+     *
+     * @param repo   Repositorio de categorías.
+     * @param id     Identificador de la categoría (ej: "A5").
+     * @param nombre Nombre descriptivo de la categoría.
+     */
     private void createCat(CategoriaRepository repo, String id, String nombre) {
         repo.findById(id).orElseGet(() -> repo.save(new Categoria(id, nombre)));
     }
 
+    /**
+     * Crea o actualiza un control ISO en la base de datos.
+     * <p>
+     * Si el control ya existe, actualiza su nombre, categoría u orden si han
+     * cambiado.
+     * Si no existe, lo crea nuevo. Esta estrategia permite re-ejecutar el seed sin
+     * duplicar datos.
+     * </p>
+     *
+     * @param ctrlRepo Repositorio de controles.
+     * @param catRepo  Repositorio de categorías.
+     * @param id       Identificador del control (ej: "A5.1").
+     * @param nombre   Nombre descriptivo del control.
+     * @param orden    Orden de visualización dentro de su categoría.
+     * @param catId    ID de la categoría a la que pertenece.
+     */
     private void createCtrl(ControlRepository ctrlRepo, CategoriaRepository catRepo,
             String id, String nombre, Integer orden, String catId) {
         var cat = catRepo.findById(catId).orElseThrow();
@@ -171,10 +219,20 @@ public class SeedConfig {
         });
     }
 
-    /*
-     * ==========================================================
-     * RUNNER 2: RESPUESTAS POSIBLES GLOBALES (upsert + orden)
-     * ==========================================================
+    /**
+     * Bean que ejecuta la carga inicial de respuestas posibles para los
+     * cuestionarios.
+     * <p>
+     * Define las opciones de respuesta estándar con sus baremos:
+     * <ul>
+     * <li>SI - Baremo: 100 (cumplimiento total)</li>
+     * <li>NO APLICA - Baremo: 0 (control no aplicable)</li>
+     * <li>NO - Baremo: -100 (incumplimiento)</li>
+     * </ul>
+     * </p>
+     *
+     * @param opcionesRepo Repositorio de respuestas posibles.
+     * @return CommandLineRunner que ejecuta la lógica de seed.
      */
     @Bean
     @Transactional
@@ -189,6 +247,19 @@ public class SeedConfig {
         };
     }
 
+    /**
+     * Crea o actualiza una respuesta posible en la base de datos.
+     * <p>
+     * Si la opción ya existe (búsqueda case-insensitive), actualiza su baremo u
+     * orden si han cambiado.
+     * Si no existe, la crea nueva.
+     * </p>
+     *
+     * @param repo   Repositorio de respuestas posibles.
+     * @param texto  Texto de la opción (ej: "SI", "NO", "NO APLICA").
+     * @param baremo Valor numérico asociado para cálculos de cumplimiento.
+     * @param orden  Orden de visualización en formularios.
+     */
     private void upsertOpcion(RespuestaPosibleRepository repo, String texto, int baremo, Integer orden) {
         repo.findByTextoOpcionIgnoreCase(texto).ifPresentOrElse(opt -> {
             boolean changed = false;
