@@ -1,4 +1,3 @@
-// PreguntaRepository.java
 package es.ubu.gii.ISOAssetManager.repository;
 
 import java.util.List;
