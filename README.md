@@ -44,7 +44,7 @@ La aplicación permite administrar controles, verificar la integridad de los dat
 2. **Configurar la Base de Datos**
    - Asegúrate de tener un servidor MySQL corriendo en el puerto `3306`.
    - Crea una base de datos llamada `isoassetmanager` (o la aplicación intentará crearla si tienes permisos).
-   - Verifica las credenciales en `src/main/resources/application.properties`:
+   - Verifica las credenciales en `ISOAssetManager/src/main/resources/application.properties`:
      ```properties
      spring.datasource.url=jdbc:mysql://localhost:3306/isoassetmanager...
      spring.datasource.username=root
@@ -53,11 +53,19 @@ La aplicación permite administrar controles, verificar la integridad de los dat
    - Modifica `username` y `password` según tu configuración local.
 
 3. **Ejecutar la aplicación**
-   Usa el wrapper de Maven incluido para ejecutar la aplicación:
+   Accede al directorio del código fuente y ejecuta la aplicación:
    ```bash
+   cd ISOAssetManager
    ./mvnw spring-boot:run
    ```
    (En Windows puedes usar `mvnw.cmd spring-boot:run`)
+
+4. **Carga de Datos (Preguntas)**
+   La aplicación carga automáticamente las Categorías y Controles al iniciar. Sin embargo, para cargar las preguntas de los cuestionarios, debes ejecutar los scripts SQL ubicados en la carpeta `sql/` en tu base de datos `isoassetmanager`:
+   - `sql/preguntasA5.sql`
+   - `sql/preguntasA6.sql`
+   - `sql/preguntasA7.sql`
+   - `sql/preguntasA8.sql`
 
 ## Limpiar el target
 Limpiar el target para eliminar archivos temporales y objetos de compilación.  
@@ -80,9 +88,10 @@ http://localhost:8081
 El puerto por defecto está configurado en `8081` (ver `application.properties`).
 
 ## Estructura del Proyecto
-- `src/main/java`: Código fuente Java (Controladores, Modelos, Servicios, Configuración).
-- `src/main/resources`: Archivos de configuración y plantillas (Thymeleaf).
-- `pom.xml`: Definición de dependencias Maven.
+- `ISOAssetManager/src/main/java`: Código fuente Java (Controladores, Modelos, Servicios, Configuración).
+- `ISOAssetManager/src/main/resources`: Archivos de configuración y plantillas (Thymeleaf).
+- `sql/`: Scripts SQL para la carga inicial de preguntas de los cuestionarios.
+- `ISOAssetManager/pom.xml`: Definición de dependencias Maven.
 
 ## Autor
 Jon Ander Incera Moreno
