@@ -59,7 +59,7 @@ La aplicación permite administrar controles, verificar la integridad de los dat
    ```
    (En Windows puedes usar `mvnw.cmd spring-boot:run`)
 
-4. **Limpiar el target**
+## Limpiar el target**
   Limpiar el target para eliminar archivos temporales y objetos de compilación.  
    ```bash
    ./mvnw clean
