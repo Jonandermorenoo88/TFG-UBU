@@ -6,14 +6,39 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * Repositorio para gestionar las operaciones CRUD de la entidad {@link Bloque}.
+ * <p>
+ * Permite acceder a los bloques de la cadena (Blockchain) y realizar búsquedas
+ * específicas
+ * por respuesta o evidencia.
+ * </p>
+ */
 @Repository
 public interface BloqueRepository extends JpaRepository<Bloque, Long> {
-    // Find the last block to link the chain
+    /**
+     * Obtiene el último bloque añadido a la cadena.
+     * <p>
+     * Se utiliza para obtener el hash previo necesario para crear un nuevo bloque.
+     * </p>
+     * 
+     * @return El último bloque, si existe.
+     */
     Optional<Bloque> findTopByOrderByIdDesc();
 
-    // Find block by answer ID
+    /**
+     * Busca un bloque asociado a una respuesta específica.
+     *
+     * @param respuestaId ID de la respuesta.
+     * @return El bloque asociado, si existe.
+     */
     Optional<Bloque> findByRespuestaId(Long respuestaId);
 
-    // Find block by evidence ID
+    /**
+     * Busca un bloque asociado a una evidencia específica.
+     *
+     * @param evidenciaId ID de la evidencia.
+     * @return El bloque asociado, si existe.
+     */
     Optional<Bloque> findByEvidenciaId(Long evidenciaId);
 }
