@@ -18,18 +18,36 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Servicio encargado de gestionar la lógica de la cadena de bloques
+ * (Blockchain).
+ * <p>
+ * Permite crear nuevos bloques para respuestas y evidencias, calcular hashes,
+ * firmar digitalmente los bloques y validar la integridad de la cadena.
+ * </p>
+ */
 @Service
 public class BlockchainService {
 
     private static final Logger logger = LoggerFactory.getLogger(BlockchainService.class);
     private final BloqueRepository bloqueRepo;
 
+    /**
+     * Constructor del servicio.
+     *
+     * @param bloqueRepo Repositorio de bloques.
+     */
     public BlockchainService(BloqueRepository bloqueRepo) {
         this.bloqueRepo = bloqueRepo;
     }
 
     /**
-     * Crea un nuevo bloque en la cadena para una respuesta dada.
+     * Crea un nuevo bloque en la cadena para registrar una respuesta de empresa.
+     *
+     * @param respuesta La respuesta de la empresa a registrar.
+     * @param usuario   El usuario que realiza la acción.
+     * @param principal El objeto principal de seguridad (UserDetails) para firmar.
+     * @return El nuevo bloque guardado en la base de datos.
      */
     public Bloque crearBloque(RespuestaEmpresa respuesta, Usuario usuario, Object principal) {
         // 1. Obtener el hash del último bloque (o "0" si es el primero)
@@ -78,7 +96,12 @@ public class BlockchainService {
     }
 
     /**
-     * Crea un nuevo bloque en la cadena para una evidencia subida.
+     * Crea un nuevo bloque en la cadena para registrar una evidencia subida.
+     *
+     * @param evidencia La evidencia a registrar.
+     * @param usuario   El usuario que sube la evidencia.
+     * @param principal El objeto principal de seguridad (UserDetails) para firmar.
+     * @return El nuevo bloque guardado en la base de datos.
      */
     public Bloque crearBloque(Evidencia evidencia, Usuario usuario, Object principal) {
         // 1. Obtener el hash del último bloque
@@ -130,7 +153,14 @@ public class BlockchainService {
     }
 
     /**
-     * Valida la integridad de la cadena completa.
+     * Valida la integridad de toda la cadena de bloques.
+     * <p>
+     * Verifica que el hash de cada bloque sea correcto y que el hash previo
+     * coincida
+     * con el hash del bloque anterior.
+     * </p>
+     * 
+     * @return true si la cadena es válida, false en caso contrario.
      */
     public boolean validarCadena() {
         List<Bloque> cadena = bloqueRepo.findAll();
@@ -166,7 +196,13 @@ public class BlockchainService {
     }
 
     /**
-     * Valida la integridad de los bloques asociados a un control específico.
+     * Valida la integridad de los bloques asociados a un control específico de una
+     * empresa.
+     *
+     * @param controlId ID del control.
+     * @param empresaId ID de la empresa.
+     * @return true si los bloques del control son válidos, false si hay
+     *         inconsistencias.
      */
     public boolean validarIntegridadControl(String controlId, Long empresaId) {
         List<Bloque> cadena = bloqueRepo.findAll();
@@ -190,6 +226,14 @@ public class BlockchainService {
         return true;
     }
 
+    /**
+     * Verifica si un bloque pertenece a un control y empresa específicos.
+     *
+     * @param b         El bloque a verificar.
+     * @param controlId ID del control.
+     * @param empresaId ID de la empresa.
+     * @return true si pertenece, false en caso contrario.
+     */
     private boolean perteneceAControl(Bloque b, String controlId, Long empresaId) {
         if (b.getRespuesta() != null) {
             return b.getRespuesta().getEmpresa().getId().equals(empresaId) &&
@@ -202,6 +246,12 @@ public class BlockchainService {
         return false;
     }
 
+    /**
+     * Calcula el hash SHA-256 de un bloque basado en su contenido.
+     *
+     * @param b El bloque.
+     * @return El hash calculado en formato hexadecimal.
+     */
     private String calcularHashBloque(Bloque b) {
         return aplicarSha256(
                 b.getPreviousHash()
@@ -209,6 +259,12 @@ public class BlockchainService {
                         + b.getData());
     }
 
+    /**
+     * Aplica el algoritmo SHA-256 a una cadena de texto.
+     *
+     * @param input Texto de entrada.
+     * @return Hash en formato hexadecimal.
+     */
     private String aplicarSha256(String input) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -219,6 +275,12 @@ public class BlockchainService {
         }
     }
 
+    /**
+     * Convierte un array de bytes a una cadena hexadecimal.
+     *
+     * @param bytes Array de bytes.
+     * @return Cadena hexadecimal.
+     */
     private String bytesToHex(byte[] bytes) {
         if (bytes == null)
             return "";
