@@ -59,12 +59,12 @@ La aplicación permite administrar controles, verificar la integridad de los dat
    ```
    (En Windows puedes usar `mvnw.cmd spring-boot:run`)
 
-## Limpiar el target**
-  Limpiar el target para eliminar archivos temporales y objetos de compilación.  
-   ```bash
-   ./mvnw clean
-   ```
-   (En Windows puedes usar `mvnw.cmd clean`)
+## Limpiar el target
+Limpiar el target para eliminar archivos temporales y objetos de compilación.  
+```bash
+./mvnw clean
+```
+(En Windows puedes usar `mvnw.cmd clean`)
 
 ## Documentación (Javadoc)
 Para generar la documentación técnica del proyecto (Javadoc), ejecuta el siguiente comando:
