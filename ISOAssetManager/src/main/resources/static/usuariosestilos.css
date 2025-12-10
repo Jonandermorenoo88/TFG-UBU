@@ -1,4 +1,4 @@
-/* usuarioestilos.css */
+/* Estilos para la gestión de usuarios (tabla, roles, edición) */
 
 body {
     font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@ body {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-actions {
@@ -56,7 +56,8 @@ table thead {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: left;

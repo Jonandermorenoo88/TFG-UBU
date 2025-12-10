@@ -1,3 +1,5 @@
+/* Estilos para la página de inicio de sesión */
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f0f2f5;
@@ -9,12 +11,13 @@ body {
     justify-content: center;
 }
 
+/* Contenedor del formulario de login */
 .login-container {
     background-color: white;
     padding: 40px;
     border-radius: 10px;
     width: 350px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 

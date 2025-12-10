@@ -1,23 +1,42 @@
 /* ====== Variables (colores/estilo base) ====== */
-:root{
+/* Definición de variables CSS para facilitar el mantenimiento y la consistencia del diseño */
+:root {
   --bg: #f2f5f9;
+  /* Color de fondo principal */
   --card: #ffffff;
+  /* Color de fondo de las tarjetas */
   --text: #1f2937;
+  /* Color de texto principal */
   --muted: #6b7280;
+  /* Color de texto atenuado */
   --primary: #0a66ff;
+  /* Color primario (azul) */
   --primary-600: #0957d6;
-  --ring: rgba(10,102,255,.15);
+  /* Tono más oscuro del primario para hover */
+  --ring: rgba(10, 102, 255, .15);
+  /* Color del anillo de foco */
   --border: #e5e7eb;
+  /* Color de bordes */
   --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+  /* Sombra estándar */
   --radius: 16px;
+  /* Radio de borde grande */
   --radius-sm: 10px;
+  /* Radio de borde pequeño */
   --gap: 14px;
+  /* Espaciado estándar */
 }
 
-*{ box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+}
 
-body{
+html,
+body {
+  height: 100%;
+}
+
+body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -29,7 +48,7 @@ body{
 }
 
 /* ====== Tarjeta contenedora ====== */
-.container{
+.container {
   width: min(680px, 92vw);
   background: var(--card);
   border-radius: var(--radius);
@@ -38,7 +57,7 @@ body{
 }
 
 /* ====== Título ====== */
-h1{
+h1 {
   margin: 6px 0 18px;
   text-align: center;
   font-weight: 800;
@@ -47,11 +66,11 @@ h1{
 }
 
 /* ====== Campos ====== */
-.container form > div{
+.container form>div {
   margin: var(--gap) 0;
 }
 
-label{
+label {
   display: block;
   font-weight: 700;
   font-size: 14px;
@@ -61,7 +80,7 @@ label{
 input[type="text"],
 input[type="number"],
 textarea,
-select{
+select {
   width: 100%;
   padding: 12px 14px;
   border: 1px solid var(--border);
@@ -72,10 +91,13 @@ select{
   transition: border .2s, box-shadow .2s, transform .02s;
 }
 
-textarea{ min-height: 92px; resize: vertical; }
+textarea {
+  min-height: 92px;
+  resize: vertical;
+}
 
 input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button{
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -83,13 +105,13 @@ input[type="number"]::-webkit-inner-spin-button{
 /* Estado de foco tipo “ring” azul */
 input:focus,
 textarea:focus,
-select:focus{
+select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 6px var(--ring);
 }
 
 /* ====== Acciones ====== */
-button{
+button {
   width: 100%;
   appearance: none;
   border: 0;
@@ -99,17 +121,22 @@ button{
   font-size: 15px;
   color: #fff;
   background: var(--primary);
-  box-shadow: 0 6px 12px rgba(10,102,255,.18);
+  box-shadow: 0 6px 12px rgba(10, 102, 255, .18);
   cursor: pointer;
   transition: background .2s, transform .02s, box-shadow .2s;
   margin-top: 6px;
 }
 
-button:hover{ background: var(--primary-600); }
-button:active{ transform: translateY(1px); }
+button:hover {
+  background: var(--primary-600);
+}
+
+button:active {
+  transform: translateY(1px);
+}
 
 /* Enlace “Cancelar” con look de ghost button */
-form a{
+form a {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
@@ -118,12 +145,18 @@ form a{
   padding: 10px 12px;
   border-radius: 10px;
 }
-form a:hover{
-  background: rgba(10,102,255,.08);
+
+form a:hover {
+  background: rgba(10, 102, 255, .08);
 }
 
 /* ====== Responsivo ====== */
-@media (max-width: 420px){
-  h1{ font-size: 24px; }
-  .container{ padding: 22px; }
+@media (max-width: 420px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 22px;
+  }
 }

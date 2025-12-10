@@ -1,3 +1,5 @@
+/* Estilos para el formulario de registro de nueva empresa */
+
 body {
     background-color: #f1f1f1;
     font-family: Arial, sans-serif;
@@ -5,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Tarjeta contenedora del formulario */
 .container {
     width: 60%;
     margin: 40px auto;

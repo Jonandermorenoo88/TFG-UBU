@@ -1,103 +1,123 @@
- body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f4f5f7;
-      margin: 0;
-      padding: 0;
-    }
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card {
-      background: #fff;
-      padding: 1.75rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      max-width: 520px;
-      width: 100%;
-    }
-    h1 {
-      margin: 0 0 0.5rem;
-      font-size: 1.4rem;
-    }
-    .subtitle {
-      font-size: 0.9rem;
-      color: #667085;
-      margin-bottom: 1.5rem;
-    }
-    .file-name {
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-    .meta {
-      font-size: 0.85rem;
-      color: #667085;
-      margin-bottom: 1.5rem;
-    }
-    .status-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-    .label {
-      font-size: 0.9rem;
-      color: #475467;
-    }
-    .badge {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .badge.ok {
-      background: #ecfdf3;
-      color: #027a48;
-      border: 1px solid #a6f4c5;
-    }
-    .badge.fail {
-      background: #fef3f2;
-      color: #b42318;
-      border: 1px solid #fecac3;
-    }
-    .error {
-      margin-top: 0.75rem;
-      font-size: 0.8rem;
-      color: #b42318;
-    }
-    .actions {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.45rem 0.9rem;
-      font-size: 0.9rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s ease, transform 0.05s ease;
-    }
-    .btn-primary {
-      background: #2563eb;
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: #e5e7eb;
-      color: #374151;
-    }
-    .btn-secondary:hover {
-      background: #d1d5db;
-      transform: translateY(-1px);
-    }
+/* Estilos para la vista de verificación de evidencias (Blockchain) */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 1.75rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 520px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #667085;
+  margin-bottom: 1.5rem;
+}
+
+.file-name {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #667085;
+  margin-bottom: 1.5rem;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #475467;
+}
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge.ok {
+  background: #ecfdf3;
+  color: #027a48;
+  border: 1px solid #a6f4c5;
+}
+
+.badge.fail {
+  background: #fef3f2;
+  color: #b42318;
+  border: 1px solid #fecac3;
+}
+
+.error {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #b42318;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+}

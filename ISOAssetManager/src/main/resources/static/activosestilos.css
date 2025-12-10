@@ -1,3 +1,6 @@
+/* Estilos para botones de acción en listados de activos */
+
+/* Contenedor flex para alinear botones horizontalmente */
 .acciones {
     display: flex;
     gap: 8px;

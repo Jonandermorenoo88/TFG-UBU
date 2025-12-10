@@ -1,3 +1,5 @@
+/* Estilos compartidos para los paneles de administración y auditoría */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f1f4f9;
@@ -8,6 +10,7 @@ body {
     margin: 0;
 }
 
+/* Contenedor central del dashboard */
 .dashboard-container {
     background-color: white;
     padding: 40px;

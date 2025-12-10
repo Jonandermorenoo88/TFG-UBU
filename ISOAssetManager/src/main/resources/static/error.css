@@ -1,3 +1,5 @@
+/* Estilos para páginas de error (403, 404, 500) */
+
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
@@ -9,6 +11,7 @@ body {
   justify-content: center;
 }
 
+/* Tarjeta central de mensaje de error */
 .error-container {
   background: #fff;
   border-radius: 16px;
