@@ -17,6 +17,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsivo: Ancho completo en móviles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+
 h2 {
     text-align: center;
     margin-bottom: 25px;

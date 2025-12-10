@@ -15,6 +15,22 @@ body {
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    /* Scroll horizontal si la tabla es muy ancha */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
 
 h2 {

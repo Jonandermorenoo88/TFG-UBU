@@ -43,3 +43,13 @@ p {
 .botones .btn:hover {
     background-color: #005bb5;
 }
+
+/* Responsivo: Botones apilados en móviles */
+@media (max-width: 600px) {
+    .botones .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+}

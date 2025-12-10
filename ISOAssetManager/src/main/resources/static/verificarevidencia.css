@@ -20,7 +20,14 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   max-width: 520px;
-  width: 100%;
+  width: 90%;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.25rem;
+    width: 95%;
+  }
 }
 
 h1 {

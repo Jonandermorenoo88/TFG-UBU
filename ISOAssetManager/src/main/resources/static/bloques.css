@@ -37,6 +37,12 @@ h1 {
     gap: 20px;
 }
 
+@media (max-width: 600px) {
+    .bloques {
+        grid-template-columns: 1fr;
+    }
+}
+
 .bloque {
     background-color: #007bff;
     color: white;

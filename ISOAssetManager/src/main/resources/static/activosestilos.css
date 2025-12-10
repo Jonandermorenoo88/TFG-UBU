@@ -5,6 +5,8 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-wrap: wrap;
+    /* Permitir que los botones bajen si no caben */
 }
 
 .btn-warning {
