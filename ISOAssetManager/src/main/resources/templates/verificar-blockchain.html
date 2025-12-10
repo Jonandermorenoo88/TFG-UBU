@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head>
@@ -10,13 +11,16 @@
 <body>
   <div class="page">
     <div class="card">
+      <!-- Títulos dinámicos según si es auditoría global o de un control específico -->
       <h1 th:if="${controlId == null}">Auditoría Blockchain Global</h1>
       <h1 th:if="${controlId != null}" th:text="'Auditoría Blockchain - Control ' + ${controlId}">Auditoría Control</h1>
 
+      <!-- Explicación contextual -->
       <p class="subtitle" th:if="${controlId == null}">Verificación de integridad de TODA la cadena de bloques.</p>
       <p class="subtitle" th:if="${controlId != null}">Verificación de integridad específica para el control <strong
           th:text="${controlId}"></strong>.</p>
 
+      <!-- Badge de estado (INTEGRA / CORRUPTA) -->
       <div class="status-row">
         <span class="label">Estado de la cadena</span>
         <span class="badge" th:classappend="${esValida} ? ' ok' : ' fail'"
@@ -25,7 +29,9 @@
         </span>
       </div>
 
+      <!-- Detalles del resultado de la verificación -->
       <div class="meta" style="margin-top: 20px;">
+        <!-- Mensajes de ÉXITO -->
         <p th:if="${esValida}">
           <span th:if="${controlId == null}">Todos los registros de la cadena mantienen su integridad
             criptográfica.</span>
@@ -33,6 +39,7 @@
             mantienen su integridad.</span>
           La verificación de firmas y hashes ha sido exitosa.
         </p>
+        <!-- Mensajes de ERROR/ALERTA -->
         <p th:if="${!esValida}" style="color: red; font-weight: bold;">
           ¡ALERTA! Se ha detectado una manipulación en los registros.
           <span th:if="${controlId == null}">La cadena de bloques global contiene inconsistencias.</span>
@@ -41,6 +48,7 @@
         </p>
       </div>
 
+      <!-- Botón de retorno -->
       <div class="actions">
         <a href="javascript:history.back()" class="btn btn-secondary">
           ← Volver

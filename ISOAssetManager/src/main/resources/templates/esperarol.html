@@ -1,18 +1,24 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Esperando rol</title>
     <link rel="stylesheet" href="/esperarol.css">
 </head>
+
 <body>
     <div class="container">
+        <!-- Mensaje informativo para usuarios recién registrados sin rol asignado -->
         <h1>Tu cuenta está pendiente</h1>
         <p>Un administrador debe asignarte un rol antes de poder acceder al sistema.</p>
-        
+
+        <!-- Opción para cerrar sesión y volver al inicio -->
         <form th:action="@{/logout}" method="post">
             <button type="submit" class="btn">Cerrar sesión</button>
         </form>
     </div>
 </body>
+
 </html>

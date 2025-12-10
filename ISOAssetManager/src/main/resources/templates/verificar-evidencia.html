@@ -1,60 +1,69 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Verificación de evidencia</title>
   <link rel="stylesheet" href="/verificarevidencia.css">
 </head>
+
 <body>
-<div class="page">
-  <div class="card">
-    <h1>Resultado de verificación</h1>
-    <p class="subtitle">Comprobación de integridad y firma digital de la evidencia.</p>
+  <div class="page">
+    <div class="card">
+      <h1>Resultado de verificación</h1>
+      <p class="subtitle">Comprobación de integridad y firma digital de la evidencia.</p>
 
-    <div class="file-name"
-         th:text="${evidencia != null} ? ${evidencia.nombreArchivo} : 'Evidencia desconocida'">
-      fichero.pdf
-    </div>
+      <!-- Nombre del fichero -->
+      <div class="file-name" th:text="${evidencia != null} ? ${evidencia.nombreArchivo} : 'Evidencia desconocida'">
+        fichero.pdf
+      </div>
 
-    <div class="meta" th:if="${evidencia != null}">
-      <span th:text="'Subida el ' + ${#temporals.format(evidencia.fechaSubida, 'dd/MM/yyyy HH:mm')}"></span>
-      <br/>
-      <span th:text="'Tamaño: ' + ${#numbers.formatInteger(evidencia.tamanoBytes, 0, 'POINT')} + ' bytes'"></span>
-    </div>
+      <!-- Metadatos de la evidencia (fecha, tamaño) -->
+      <div class="meta" th:if="${evidencia != null}">
+        <span th:text="'Subida el ' + ${#temporals.format(evidencia.fechaSubida, 'dd/MM/yyyy HH:mm')}"></span>
+        <br />
+        <span th:text="'Tamaño: ' + ${#numbers.formatInteger(evidencia.tamanoBytes, 0, 'POINT')} + ' bytes'"></span>
+      </div>
 
-    <div class="status-row">
-      <span class="label">Integridad (hash)</span>
-      <span class="badge"
-            th:classappend="${hashCoincide} ? ' ok' : ' fail'"
-            th:text="${hashCoincide} ? 'Correcta' : 'No coincide'">
-        Correcta
-      </span>
-    </div>
+      <!-- Estado: Integridad del Hash -->
+      <div class="status-row">
+        <span class="label">Integridad (hash)</span>
+        <span class="badge" th:classappend="${hashCoincide} ? ' ok' : ' fail'"
+          th:text="${hashCoincide} ? 'Correcta' : 'No coincide'">
+          Correcta
+        </span>
+      </div>
 
-    <div class="status-row">
-      <span class="label">Firma digital</span>
-      <span class="badge"
-            th:classappend="${firmaValida} ? ' ok' : ' fail'"
-            th:text="${firmaValida} ? 'Válida' : 'No válida'">
-        Válida
-      </span>
-    </div>
+      <!-- Estado: Validez de la Firma Digital -->
+      <div class="status-row">
+        <span class="label">Firma digital</span>
+        <span class="badge" th:classappend="${firmaValida} ? ' ok' : ' fail'"
+          th:text="${firmaValida} ? 'Válida' : 'No válida'">
+          Válida
+        </span>
+      </div>
 
-    <p class="error" th:if="${error != null}" th:text="${error}"></p>
-    <p class="error" th:if="${errorFirma != null}" th:text="${errorFirma}"></p>
+      <!-- Mensajes de error específicos si la verificación falla -->
+      <p class="error" th:if="${error != null}" th:text="${error}"></p>
+      <p class="error" th:if="${errorFirma != null}" th:text="${errorFirma}"></p>
 
-    <div class="actions">
-      <a th:href="@{|/empresas/${empresaId}/cuestionario/control/${evidencia.control.id}/preguntas|}"
-         class="btn btn-secondary">
-        ← Volver al control
-      </a>
+      <!-- Botones de acción -->
+      <div class="actions">
+        <!-- Volver al cuestionario del control -->
+        <a th:href="@{|/empresas/${empresaId}/cuestionario/control/${evidencia.control.id}/preguntas|}"
+          class="btn btn-secondary">
+          ← Volver al control
+        </a>
 
-      <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${evidencia.id}/descargar|}"
-         class="btn btn-primary">
-        ⬇ Descargar evidencia
-      </a>
+        <!-- Descargar el fichero original -->
+        <a th:href="@{|/empresas/${empresaId}/cuestionario/evidencias/${evidencia.id}/descargar|}"
+          class="btn btn-primary">
+          ⬇ Descargar evidencia
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </body>
+
 </html>

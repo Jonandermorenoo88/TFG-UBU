@@ -1,24 +1,32 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>Panel de Administración</title>
   <link rel="stylesheet" href="/panelestilos.css">
 </head>
+
 <body>
   <div class="dashboard-container">
     <h1>Panel de Auditor</h1>
     <p>Selecciona una opción:</p>
 
+    <!-- Botonera de opciones del panel de auditor -->
     <div class="botonera">
-        <a href="/empresas" class="btn">Gestionar Empresas</a>
+      <!-- Gestión de Empresas: accesible para Auditor -->
+      <a href="/empresas" class="btn">Gestionar Empresas</a>
 
-        <div th:if="${esAuditor}">
-            <a href="/auditor/usuarios" class="btn">Gestionar Clientes</a>
-        </div>
+      <!-- Gestión de Clientes: visible solo si el usuario tiene el rol de auditor -->
+      <div th:if="${esAuditor}">
+        <a href="/auditor/usuarios" class="btn">Gestionar Clientes</a>
+      </div>
     </div>
 
+    <!-- Cierre de sesión y retorno -->
     <a href="/inicio" class="volver">Cerrar sesión</a>
   </div>
 </body>
+
 </html>
