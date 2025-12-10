@@ -1,51 +1,64 @@
 <!DOCTYPE html>
+<!-- Definición básica HTML y namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>Nuevo Activo</title>
   <link rel="stylesheet" href="/activonuevoestilos.css">
 </head>
+
 <body>
-<div class="container">
-  <h1>Nuevo activo</h1>
+  <div class="container">
+    <h1>Nuevo activo</h1>
 
-  <form th:action="@{/activos/guardar}" method="post">
-    <input type="hidden" name="empresaId" th:value="${empresaId}">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <!-- Formulario para crear un nuevo activo, envía a /activos/guardar -->
+    <form th:action="@{/activos/guardar}" method="post">
+      <!-- ID de la empresa a la que pertenecerá el activo (oculto) -->
+      <input type="hidden" name="empresaId" th:value="${empresaId}">
+      <!-- Protección CSRF -->
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
-    <div>
-      <label>Nombre:</label>
-      <input type="text" name="nombre" required>
-    </div>
+      <!-- Campo para el nombre del activo -->
+      <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+      </div>
 
-    <div>
-      <label>Tipo:</label>
-      <input type="text" name="tipo" required>
-    </div>
+      <!-- Campo para el tipo de activo (hardware, software, etc.) -->
+      <div>
+        <label>Tipo:</label>
+        <input type="text" name="tipo" required>
+      </div>
 
-    <div>
-      <label>Descripción:</label>
-      <textarea name="descripcion" rows="3" required></textarea>
-    </div>
+      <!-- Descripción detallada del activo -->
+      <div>
+        <label>Descripción:</label>
+        <textarea name="descripcion" rows="3" required></textarea>
+      </div>
 
-    <div>
-      <label>Valor (€):</label>
-      <input type="number" name="valor" step="0.01" min="0" value="0.00" required>
-    </div>
+      <!-- Valor económico del activo -->
+      <div>
+        <label>Valor (€):</label>
+        <input type="number" name="valor" step="0.01" min="0" value="0.00" required>
+      </div>
 
-    <div>
-      <label>Responsable:</label>
-      <select name="responsableId" required>
-        <option value="" disabled selected>Selecciona responsable…</option>
-        <option th:each="u : ${usuariosEmpresa}"
-                th:value="${u.id}"
-                th:text="${u.nombre + ' (' + u.email + ')'}"></option>
-      </select>
-    </div>
+      <!-- Selección del usuario responsable del activo -->
+      <div>
+        <label>Responsable:</label>
+        <select name="responsableId" required>
+          <option value="" disabled selected>Selecciona responsable…</option>
+          <!-- Itera sobre la lista de usuarios disponibles en la empresa -->
+          <option th:each="u : ${usuariosEmpresa}" th:value="${u.id}" th:text="${u.nombre + ' (' + u.email + ')'}">
+          </option>
+        </select>
+      </div>
 
-    <button type="submit">Guardar</button>
-    <a th:href="@{'/activos/empresa/' + ${empresaId}}">Cancelar</a>
-  </form>
-</div>
+      <!-- Botón de envío y enlace de cancelación -->
+      <button type="submit">Guardar</button>
+      <a th:href="@{'/activos/empresa/' + ${empresaId}}">Cancelar</a>
+    </form>
+  </div>
 </body>
+
 </html>

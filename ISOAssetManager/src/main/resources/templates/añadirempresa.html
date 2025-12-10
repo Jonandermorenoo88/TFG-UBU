@@ -1,33 +1,45 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Nueva Empresa</title>
     <link rel="stylesheet" href="/anadirempresaestilos.css">
 </head>
+
 <body>
     <div class="container">
+        <!-- Título del formulario -->
         <h2>Registrar Nueva Empresa</h2>
+
+        <!-- Formulario de registro de empresas, envía datos a /empresas/guardar -->
         <form method="post" th:action="@{/empresas/guardar}">
+            <!-- Campo para el nombre de la empresa -->
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
 
+            <!-- Campo para el sector de actividad -->
             <div class="form-group">
                 <label for="sector">Sector:</label>
                 <input type="text" id="sector" name="sector" required>
             </div>
 
+            <!-- Campo para la dirección física -->
             <div class="form-group">
                 <label for="direccion">Dirección:</label>
                 <input type="text" id="direccion" name="direccion" required>
             </div>
 
+            <!-- Botón de envío -->
             <button type="submit" class="boton">Guardar Empresa</button>
         </form>
 
+        <!-- Enlace para volver al listado sin guardar -->
         <a href="/empresas" class="boton">Volver al listado</a>
     </div>
 </body>
+
 </html>

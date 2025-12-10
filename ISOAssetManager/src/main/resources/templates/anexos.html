@@ -1,29 +1,35 @@
 <!DOCTYPE html>
+<!-- Declaración del documento y namespace de Thymeleaf -->
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evaluar ISO</title>
   <link rel="stylesheet" href="/controles.css">
 </head>
+
 <body class="page">
   <div class="container">
+    <!-- Enlace de retorno al listado de empresas -->
     <a class="back" th:href="@{/empresas}">← Volver a empresas</a>
 
+    <!-- Título de la página, muestra el nombre del usuario si está disponible -->
     <h1 class="page-title">
       <span>Evaluar ISO</span>
       <span th:if="${usuarioNombre != null}" th:text="' - ' + ${usuarioNombre}"></span>
     </h1>
 
     <div class="grid">
-      <!-- Botones de anexos -->
-      <a class="card"
-         th:each="cat : ${categorias}"
-         th:href="@{'/anexos/' + ${cat.id} + '/controles'}">
+      <!-- Grid de tarjetas para cada anexo/categoría. Itera sobre la lista de categorías -->
+      <a class="card" th:each="cat : ${categorias}" th:href="@{'/anexos/' + ${cat.id} + '/controles'}">
+        <!-- Nombre de la categoría/anexo -->
         <h3 class="card-title" th:text="${cat.nombre}">Controles organizacionales</h3>
+        <!-- Subtítulo con el ID del anexo -->
         <small class="card-sub" th:text="'Anexo ' + ${cat.id}">Anexo A.5</small>
       </a>
     </div>
   </div>
 </body>
+
 </html>

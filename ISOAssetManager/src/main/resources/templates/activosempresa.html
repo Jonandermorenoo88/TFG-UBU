@@ -1,16 +1,22 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf y enlace a hoja de estilos específica -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Activos de la Empresa</title>
     <link rel="stylesheet" href="/activosempresaestilos.css">
 </head>
+
 <body>
     <div class="container">
+        <!-- Título principal con el nombre de la empresa -->
         <h2 th:text="'Activos de ' + ${empresa.nombre}">Activos</h2>
 
+        <!-- Enlace para añadir un nuevo activo, pasando el ID de la empresa como parámetro -->
         <a th:href="@{'/activos/nuevo?empresaId=' + ${empresa.id}}" class="btn btn-primary">Añadir Activo</a>
 
+        <!-- Tabla para listar los activos existentes -->
         <table>
             <thead>
                 <tr>
@@ -23,24 +29,33 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Iteración sobre la lista de activos -->
                 <tr th:each="activo : ${activos}">
                     <td th:text="${activo.nombre}">Nombre</td>
                     <td th:text="${activo.tipo}">Tipo</td>
                     <td th:text="${activo.descripcion}">Descripción</td>
+                    <!-- Formato de número para mostrar el valor con dos decimales -->
                     <td th:text="${#numbers.formatDecimal(activo.valor,1,2)}">0,00</td>
+                    <!-- Muestra el responsable si existe, o un guion si es nulo -->
                     <td th:text="${activo.responsable != null ? activo.responsable.nombre : '—'}">—</td>
                     <td>
+                        <!-- Enlace a la vista de edición -->
                         <a th:href="@{/activos/editar/{id}(id=${activo.id})}" class="btn btn-warning">Modificar</a>
-                        <form th:action="@{/activos/eliminar/{id}(id=${activo.id})}" method="post" style="display:inline;">
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Eliminar este activo?');">Eliminar</button>
+                        <!-- Formulario para eliminar el activo con confirmación -->
+                        <form th:action="@{/activos/eliminar/{id}(id=${activo.id})}" method="post"
+                            style="display:inline;">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('¿Eliminar este activo?');">Eliminar</button>
                         </form>
                     </td>
                 </tr>
             </tbody>
         </table>
 
+        <!-- Botón para regresar al listado de empresas -->
         <a href="/empresas" class="btn btn-secondary">Volver a empresas</a>
     </div>
 </body>
+
 </html>

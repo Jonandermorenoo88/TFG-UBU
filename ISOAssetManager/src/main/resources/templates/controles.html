@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Namespace de Thymeleaf y seguridad -->
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
 
 <head>
@@ -13,8 +14,10 @@
 <body class="page">
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <!-- Botón volver -->
       <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
 
+      <!-- Botón para verificar integridad blockchain (Solo admin/auditor) -->
       <a sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
         th:href="@{|/empresas/${empresaId}/cuestionario/blockchain/verificar-vista|}"
         style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
@@ -22,6 +25,7 @@
       </a>
     </div>
 
+    <!-- Header dinámico con nombre del anexo -->
     <h1 class="page-title" th:text="${anexo != null ? anexo.nombre : 'Controles'}">Controles</h1>
     <div class="subtitle" th:if="${anexo != null}" th:text="'Anexo ' + ${anexo.id}">Anexo A.5</div>
 
@@ -32,6 +36,7 @@
         style="width:100%;height:360px;"></canvas>
     </div>
 
+    <!-- Listado de tarjetas de controles -->
     <div class="grid">
       <a class="card" th:each="c : ${controles}"
         th:href="@{|/empresas/${empresaId}/cuestionario/control/${c.id}/preguntas|}">
@@ -40,7 +45,7 @@
         <!-- Mostrar ID (p.ej. A5.1) como subtítulo -->
         <div class="card-sub" th:text="${c.id}">A5.1</div>
 
-        <!-- Puntuación media -->
+        <!-- Puntuación media. Se asignan clases de color según rangos (<50, <70, >=70) -->
         <div th:if="${scores != null}" th:with="p=${scores[c.id]}" class="score" th:classappend="${p == null} ? ' score--muted' :
                             (${p} &lt; 50 ? ' score--red' :
                             (${p} &lt; 70 ? ' score--orange' : ' score--green'))"
