@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.4. Responsabilidades de gestión</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">7.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La administración debe exigirle a todo el personal que aplique la SI de acuerdo con la política de
+                    SI establecida, las políticas y los procedimientos específicos de cada tema.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que la dirección comprenda su papel en la SI y emprender acciones encaminadas a
+                    garantizar que todo el personal sea consciente y cumpla con sus responsabilidades en materia
+                    de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La administración debe demostrar el apoyo a la política de SI, a las políticas específicas de
+                        cada
+                        tema, a los procedimientos y a los controles de SI.</p>
+                    <p>Las responsabilidades de la dirección deben incluir la garantía de que el personal:</p>
+
+                    <ol class="alpha-list">
+                        <li>Está debidamente informado sobre sus roles y responsabilidades de SI antes de que se
+                            le conceda acceso a la información de la organización y a otros activos asociados;</li>
+                        <li>Ha recibido orientaciones respecto a las expectativas de SI de su rol;</li>
+                        <li>Tiene el mandato de cumplir la política de SI y las políticas específicas de cada tema;</li>
+                        <li>Logra un nivel de sensibilización sobre la SI pertinente para sus roles y responsabilidades
+                            (ver 6.3);</li>
+                        <li>Cumpla los términos y condiciones de empleo, contrato o acuerdo, que comprende la
+                            política de SI y los métodos de trabajo apropiados;</li>
+                        <li>Siga teniendo las habilidades y calificaciones apropiadas de SI a través de la educación
+                            profesional continua;</li>
+                        <li>Cuando sea factible, tenga un canal confidencial para informar sobre violaciones de la
+                            política de SI, políticas específicas de cada tema o procedimientos para la SI ("denuncia").
+                            Esto puede permitir la presentación de informes anónimos o tener disposiciones para
+                            garantizar que el conocimiento de la identidad del informante sea conocido solo por
+                            aquellos que necesiten ocuparse de dichos informes;</li>
+                        <li>Cuente con recursos adecuados y tiempo de planificación de proyectos para implementar
+                            los procesos y controles relacionados con la SI.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Muchas organizaciones nombran a un administrador de SI para que asuma la responsabilidad general
+                        del desarrollo e implementación de la SI y para que apoye la identificación de riesgos y los
+                        controles mitigantes.</p>
+                    <p>Sin embargo, la responsabilidad de la obtención de recursos y la aplicación de los controles a
+                        menudo recae en los directores individuales. Una práctica común es nombrar un propietario para
+                        cada activo que se haga responsable de su protección diaria.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

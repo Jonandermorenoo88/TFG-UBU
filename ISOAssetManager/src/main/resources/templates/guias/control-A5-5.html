@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.5. Contacto con autoridades</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                        <li>#Responder</li>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">6.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debe establecer y mantener contacto con las autoridades pertinentes.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar un flujo de información adecuado con respecto a la SI entre la organización y las
+                    autoridades legales, reglamentarias y de supervisión pertinentes.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debe especificar cuándo y por quién se debe contactar a las autoridades (por
+                        ejemplo, las autoridades encargadas de hacer cumplir la ley, los organismos reguladores, las
+                        autoridades supervisoras) y cómo deben informarse oportunamente los incidentes de SI
+                        identificados.</p>
+                    <p>Los contactos con las autoridades también se deben utilizar para facilitar la comprensión de las
+                        expectativas actuales y futuras de estas autoridades (por ejemplo, las normas aplicables de SI).
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las organizaciones atacadas pueden solicitar a las autoridades que tomen medidas contra la fuente
+                    del ataque. El mantenimiento de estos contactos puede ser un requisito para respaldar la gestión
+                    de incidentes de SI (ver 5.24 a 5.28) o los procesos de planificación de contingencias y
+                    continuidad del negocio (ver 5.29 y 5.30). Los contactos con los organismos reguladores también
+                    son útiles para anticipar y prepararse para los próximos cambios en las leyes o reglamentos
+                    pertinentes que afectan a la organización. Los contactos con otras autoridades incluyen los
+                    servicios públicos, los servicios de emergencia, los proveedores de electricidad y la salud y la
+                    seguridad; por ejemplo, los departamentos de bomberos (en conexión con la continuidad de las
+                    operaciones), proveedores de telecomunicaciones (en relación con el enrutamiento y la
+                    disponibilidad de las líneas) y proveedores de agua (en relación con las instalaciones de
+                    refrigeración de equipos).
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
