@@ -31,15 +31,17 @@ body {
 }
 
 /* Contenedor tipo "hoja" o tarjeta integrada */
+/* Contenedor tipo "hoja" o tarjeta integrada */
 .iso-container {
-    max-width: 210mm;
-    /* A4 aprox */
+    width: 100%;
+    max-width: 1200px;
+    /* Ampliado para que quepa la tabla cómodamente */
     margin: 0 auto;
     background: #ffffff;
     padding: 40px;
     border-radius: var(--radius-lg);
-    box-shadow: 0 12px 26px rgba(16, 70, 255, 0.08);
-    /* Sombra con toque azul muy sutil */
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+    /* Sombra mucho más visible para el "efecto caja" */
 }
 
 .iso-title {
