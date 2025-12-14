@@ -105,6 +105,41 @@
                 </td>
             </tr>
 
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La segregación de funciones evita que una sola persona tenga el control total de un proceso
+                        crítico. Ejemplos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Desarrollo vs. Producción</strong>
+                        <p>Regla técnica que impide que los desarrolladores de software tengan permisos de escritura en
+                            el entorno de producción. El despliegue lo realiza un administrador de sistemas o un proceso
+                            automatizado (CI/CD) validado por un tercero.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Compras y Pagos</strong>
+                        <p>El empleado que autoriza una orden de compra de nuevo hardware no puede ser el mismo que
+                            aprueba el pago de esa factura. Se requiere la firma de dos departamentos distintos.</p>
+                    </div>
+
+                    <p style="margin-top: 15px;">Áreas críticas para segregar:</p>
+                    <ul style="list-style: none; display: flex; gap: 10px; flex-wrap: wrap; padding: 0;">
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            Gestión de Claves Criptográficas</li>
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            Auditoría de Logs</li>
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            Altas de Usuarios</li>
+                    </ul>
+                </td>
+            </tr>
+
             <!-- Fila de OTRA INFO -->
             <tr>
                 <td class="iso-row-header">OTRA INFO.</td>
