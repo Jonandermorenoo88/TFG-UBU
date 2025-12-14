@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.3. Segregación de funciones</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">#Prevención</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">#Proteger</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                        <li>#Gestion_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">#Gobierno_y_ecosistema</td>
+                <td class="attr-content">6.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las funciones y las áreas de responsabilidad conflictivas deben estar separadas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Reducir el riesgo de fraude, error y omisión de los controles de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La separación de obligaciones y áreas de responsabilidad tiene como objetivo separar las
+                        obligaciones conflictivas entre diferentes individuos a fin de evitar que ejecuten posibles
+                        obligaciones conflictivas por su cuenta.</p>
+                    <p>La organización debe determinar qué obligaciones y áreas de responsabilidad deben ser segregadas.
+                        A continuación se muestran ejemplos de actividades que pueden requerir separación:</p>
+
+                    <ol class="alpha-list">
+                        <li>Inicio, aprobación y ejecución de un cambio;</li>
+                        <li>Solicitud, aprobación y aplicación de los derechos de acceso;</li>
+                        <li>Diseño, implementación y revisión del código;</li>
+                        <li>Desarrollo de software y administración de sistemas de producción;</li>
+                        <li>Utilización y administración de aplicaciones;</li>
+                        <li>Utilización de aplicaciones y administración de bases de datos;</li>
+                        <li>Diseño, auditoría y garantía de los controles de SI.</li>
+                    </ol>
+
+                    <p>Al diseñar la segregación se debe tener en cuenta la posibilidad de colusión. Las organizaciones
+                        pequeñas pueden encontrar difícil lograr la separación de obligaciones, pero el principio se
+                        debe aplicar siempre que sea posible y factible. Cuando sea difícil separar, se deben considerar
+                        otros controles, como el seguimiento de las actividades, las pistas de auditoría y la
+                        supervisión de la dirección.</p>
+                    <p>Cuando se utilicen sistemas de control de acceso basados en roles, hay que tener cuidado de que
+                        no se concedan a las personas funciones contradictorias. Cuando hay un gran número de roles, la
+                        organización debe considerar el uso de herramientas automatizadas para identificar conflictos y
+                        facilitar su eliminación. Los roles se deben definir y aprovisionar cuidadosamente para
+                        minimizar los problemas de acceso si se elimina o se reasigna un rol.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.2. Funciones y responsabilidades en materia de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">#Prevención</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">#Identificar</td>
+                <td class="attr-content">#Gobierno</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    6.1.1
+                </td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las funciones y responsabilidades de SI se deberían definir y asignar de acuerdo con las
+                    necesidades de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Establecer una estructura definida, aprobada y entendida para la implementación operación y
+                    gestión de la SI dentro de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La asignación de las funciones y responsabilidades de SI se debe realizar de acuerdo con la
+                        política de SI y las políticas específicas de cada tema (ver 5.1). La organización debe definir
+                        y gestionar las responsabilidades de:</p>
+                    <ol class="alpha-list">
+                        <li>protección de la información y otros activos asociados;</li>
+                        <li>llevar a cabo procesos específicos de SI;</li>
+                        <li>actividades de gestión de riesgos de SI y, en particular, aceptación de riesgos residuales
+                            (por ejemplo, para los propietarios de riesgos);</li>
+                        <li>todo el personal que utilice la información y otros activos asociados.</li>
+                    </ol>
+
+                    <p>Estas responsabilidades se deberían complementar, cuando sea necesario, con una guía más
+                        detallada para sitios específicos e instalaciones de procesamiento de información. Las personas
+                        con responsabilidades asignadas en materia de SI pueden asignar tareas de seguridad a otras
+                        personas. Sin embargo, siguen siendo responsables y deben determinar que cualquier tarea
+                        delegada se ha realizado correctamente.</p>
+                    <p>Se debe definir, documentar y comunicar cada área de seguridad de la que son responsables los
+                        individuos. Se deben definir y documentar los niveles de autorización. Las personas que asumen
+                        una función específica de SI deben ser competentes en cuanto a los conocimientos y habilidades
+                        requeridos por la función y deben recibir apoyo para mantenerse al día con los desarrollos
+                        relacionados con la función y requeridos para cumplir con las responsabilidades de esta.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Muchas organizaciones nombran a un administrador de SI para que asuma la responsabilidad general
+                        del desarrollo e implementación de la SI y para que apoye la identificación de riesgos y los
+                        controles mitigantes.</p>
+                    <p>Sin embargo, la responsabilidad de la obtención de recursos y la aplicación de los controles a
+                        menudo recae en los directores individuales. Una práctica común es nombrar un propietario para
+                        cada activo que se haga responsable de su protección diaria.</p>
+                    <p>En función del tamaño y la obtención de recursos de una organización, la SI puede estar cubierta
+                        por funciones o tareas dedicadas que se llevan a cabo además de las funciones existentes.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

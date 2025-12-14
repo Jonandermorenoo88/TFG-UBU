@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.1. Políticas de seguridad de la información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">#Prevención</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">#Identificar</td>
+                <td class="attr-content">#Gobierno</td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    5.1.1<br>
+                    5.1.2
+                </td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La política de SI y las políticas de temas específicos deben ser definidas, aprobadas por la
+                    dirección, publicadas, comunicadas y reconocidas por el personal y las partes interesadas
+                    pertinentes y revisadas a intervalos planificados y si se producen cambios significativos
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la idoneidad, adecuación y eficacia continuas de la dirección y el apoyo a la SI de
+                    acuerdo con los requisitos organizacionales, legales, reglamentarios y contractuales.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>En el nivel más alto, la organización debe definir una "política de SI" que sea aprobada por la
+                        alta dirección y que establezca el enfoque de la organización para administrar su SI.</p>
+                    <p>La política de SI debe tener en cuenta los requisitos derivados de:</p>
+                    <ol class="alpha-list">
+                        <li>Estrategia y requisitos organizacionales;</li>
+                        <li>Reglamentos, legislación y contratos;</li>
+                        <li>Los riesgos y amenazas actuales y proyectados para la SI.</li>
+                    </ol>
+
+                    <p>La política de si debe contener declaraciones relativas a:</p>
+                    <ol class="alpha-list">
+                        <li>Definición de la SI;</li>
+                        <li>Los objetivos de si o el marco para establecerlos;</li>
+                        <li>Principios que orienten todas las actividades relacionadas con la SI;</li>
+                        <li>Compromiso de satisfacer los requisitos aplicables relacionados con la SI;</li>
+                        <li>Compromiso con la mejora continua del SGSI;</li>
+                        <li>Asignación de responsabilidades para la gestión de la SI a funciones definidas;</li>
+                        <li>Procedimientos para manejar exenciones y excepciones.</li>
+                    </ol>
+
+                    <p>La administración superior debe aprobar cualquier cambio en la política de SI.</p>
+                    <p>En un nivel inferior, la política de SI debiera apoyarse en políticas específicas según sea
+                        necesario, a fin de seguir asignando la aplicación de los controles de SI. Las políticas
+                        específicas de un tema se estructuran normalmente para satisfacer las necesidades de
+                        determinados grupos de destino dentro de una organización o para cubrir determinadas áreas de
+                        seguridad. Las políticas específicas de cada tema deben estar alineadas y complementarse con la
+                        política de SI de la organización.</p>
+
+                    <p>Algunos ejemplos de temas incluyen:</p>
+                    <ol class="alpha-list">
+                        <li>Control de acceso;</li>
+                        <li>Seguridad física y ambiental;</li>
+                        <li>Gestión de activos;</li>
+                        <li>Transferencia de información;</li>
+                        <li>Configuración y gestión seguras de dispositivos finales de usuario;</li>
+                        <li>Seguridad de red;</li>
+                        <li>Gestión de incidentes de SI;</li>
+                        <li>Respaldos;</li>
+                        <li>Criptografía y gestión de claves;</li>
+                        <li>Clasificación y tratamiento de la información;</li>
+                        <li>Gestión de las vulnerabilidades técnicas;</li>
+                        <li>Desarrollo seguro.</li>
+                    </ol>
+
+                    <p>La responsabilidad de la elaboración, revisión y aprobación de las políticas específicas del tema
+                        se debe asignar al personal pertinente en función de su nivel apropiado de autoridad y
+                        competencia técnica. La revisión debe incluir la evaluación de las oportunidades de mejora de la
+                        política de SI de la organización y de las políticas de temas específicos y la gestión de la SI
+                        en respuesta a los cambios en:</p>
+                    <ol class="alpha-list">
+                        <li>La estrategia organizacional de la organización;</li>
+                        <li>El entorno técnico de la organización;</li>
+                        <li>Reglamentos, estatutos, legislación y contratos;</li>
+                        <li>Riesgos de si;</li>
+                        <li>El entorno actual y proyectado de amenazas a la SI;</li>
+                        <li>Lecciones aprendidas de incidentes y eventos de SI.</li>
+                    </ol>
+
+                    <p>La revisión de la política de SI y de las políticas específicas de cada tema debe tener en cuenta
+                        los resultados de las revisiones y auditorías. Se debe considerar la revisión y actualización de
+                        otras políticas relacionadas cuando se cambia una política con la finalidad de mantener la
+                        coherencia.</p>
+                    <p>La política de SI y las políticas específicas de cada tema se deben comunicar al personal
+                        pertinente y a las partes interesadas de una forma que sea pertinente, accesible y comprensible
+                        para el lector al que se dirige. Los destinatarios de las políticas deben estar obligados a
+                        reconocer que comprenden y aceptan cumplir con las políticas cuando sea aplicable. La
+                        organización puede determinar los formatos y nombres de estos documentos normativos que
+                        satisfagan las necesidades de la organización. En algunas organizaciones, la directiva de SI y
+                        las políticas específicas de temas pueden estar en un solo documento. La organización puede
+                        nombrar estas políticas específicas de temas como normas, políticas, políticas u otras.</p>
+                    <p>Si la política de SI o cualquier política específica de un tema se distribuye fuera de la
+                        organización, se debe tener cuidado de no revelar información confidencial de forma incorrecta.
+                    </p>
+
+                    <p>La tabla siguiente muestran las diferencias entre la política de SI y la política específica del
+                        tema.</p>
+
+                    <!-- Tabla de Comparación -->
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="border:none; background:white;"></th> <!-- Celda vacía esquina -->
+                                <th class="comparison-header">Política de SI</th>
+                                <th class="comparison-header">Política específica por tema</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="comparison-sub-header">Nivel de detalle</td>
+                                <td>General o de alto nivel</td>
+                                <td>Específico y detallado</td>
+                            </tr>
+                            <tr>
+                                <td class="comparison-sub-header">Documentado y aprobado formalmente por:</td>
+                                <td>Alta dirección</td>
+                                <td>Nivel apropiado de gestión</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las políticas específicas de cada tema pueden variar según las organizaciones.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
