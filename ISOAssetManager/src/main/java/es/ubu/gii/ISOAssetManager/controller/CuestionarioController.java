@@ -195,7 +195,24 @@ public class CuestionarioController {
         model.addAttribute("respuestas", respuestas);
         model.addAttribute("opciones", opcionesGlobales);
         // IMPORTANTE: el nombre coincide con preguntas.html
+        // IMPORTANTE: el nombre coincide con preguntas.html
         model.addAttribute("evidenciasControl", evidenciasControl);
+
+        // Calcular el slug del grupo (anexo) para el botón VOLVER
+        // Buscamos el control para saber su categoría
+        var controlOpt = controlRepo.findById(controlId);
+        if (controlOpt.isPresent()) {
+            String catId = controlOpt.get().getCategoria().getId();
+            // Buscar la key (slug) que corresponde a este catId en SLUG_TO_CAT
+            String grupoSlug = SLUG_TO_CAT.entrySet().stream()
+                    .filter(entry -> entry.getValue().equals(catId))
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+                    .orElse("organizacionales"); // fallback
+
+            // Usamos "categorias" porque así lo ha puesto el usuario en el HTML
+            model.addAttribute("categorias", grupoSlug);
+        }
 
         return "preguntas";
     }

@@ -24,7 +24,8 @@
 
         <!-- Header con botones de acción -->
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <a class="back" th:href="@{|/empresas/${empresaId}/bloques|}">← Volver</a>
+            <!-- Boton volver a los controles -->
+            <a class="back" th:href="@{|/empresas/${empresaId}/cuestionario/grupo/${categorias}|}">← Volver</a>
             <div>
                 <!-- Exportar Excel -->
                 <a class="btn"
@@ -33,6 +34,7 @@
                     📊 Exportar Excel
                 </a>
                 <!-- Verificar Blockchain (ADMIN/AUDITOR) -->
+
                 <a class="btn" sec:authorize="hasAnyRole('ADMIN','AUDITOR')"
                     style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
                     th:href="@{|/empresas/${empresaId}/cuestionario/control/${controlId}/blockchain/verificar-vista|}">

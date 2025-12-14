@@ -56,88 +56,175 @@ body {
 /* Tabla Principal */
 .iso-table {
     width: 100%;
-    border-collapse: collapse;
-    border: 1px solid var(--iso-border-color);
+    border-collapse: separate;
+    /* Necesario para bordes redondeados si quisiéramos */
+    border-spacing: 0;
     font-size: 0.95rem;
+    border: 1px solid var(--iso-border-color);
+    border-radius: 8px;
+    /* Bordes redondeados en la tabla */
+    overflow: hidden;
 }
 
 .iso-table th,
 .iso-table td {
-    border: 1px solid var(--iso-border-color);
-    padding: 10px;
+    border-bottom: 1px solid var(--iso-border-color);
+    border-right: 1px solid var(--iso-border-color);
+    padding: 14px 16px;
+    /* Más espacio */
     vertical-align: top;
+}
+
+.iso-table tr:last-child td {
+    border-bottom: none;
+}
+
+.iso-table tr td:last-child {
+    border-right: none;
 }
 
 .iso-row-header {
     background-color: var(--iso-header-bg);
     font-weight: 700;
-    width: 130px;
+    width: 140px;
+    color: var(--text);
+    /* Sutil gradiente para dar volumen */
+    background: linear-gradient(to right, #f8fafc, #eff6ff);
 }
 
 .attr-header {
     background-color: var(--iso-header-bg);
     font-weight: 700;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    padding: 12px 8px;
 }
 
 .attr-content {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    color: var(--text);
 }
 
+/* Estilo para los "Badges" o Etiquetas (#Tag) */
+/* Detectamos texto que parece tag en listas */
 .attr-content ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    /* Centrar tags si es columna corta */
 }
 
-/* Tabla de comparación */
+.attr-content ul li {
+    background-color: #e0f2fe;
+    /* Azul claro badge */
+    color: #0369a1;
+    /* Azul oscuro texto */
+    padding: 4px 10px;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Intentar estilizar celdas que solo tienen texto plano con # (hacky en CSS puro, pero efectivo si el texto es corto) */
+/* Asumimos que celdas cortas pueden ser centradas */
+.attr-content {
+    text-align: center;
+}
+
+/* Alineación izq para celdas largas (como la última de controles numéricos) */
+.attr-content:last-child {
+    text-align: left;
+}
+
+/* Contenido Principal (Control, Objetivos, Guias) */
+.iso-content {
+    text-align: left;
+    line-height: 1.7;
+    /* Mejor lectura */
+    color: #334155;
+    padding: 20px !important;
+}
+
+.iso-content p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+/* Tabla de comparación - Estilo Moderno */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .comparison-table th,
 .comparison-table td {
     border: 1px solid var(--iso-border-color);
-    padding: 8px;
+    padding: 12px 16px;
+    text-align: left;
 }
 
 .comparison-header {
     background-color: var(--iso-orange);
-    color: var(--iso-orange-text);
-    font-weight: 700;
-    text-align: center;
+    /* Azul primario */
+    color: white;
+    font-weight: 600;
+    text-align: center !important;
+    border-color: var(--iso-orange) !important;
 }
 
+/* Sub-header lateral en tabla comparativa */
 .comparison-sub-header {
-    background-color: var(--iso-orange);
-    color: var(--iso-orange-text);
-    font-weight: 700;
+    background-color: #f1f5f9;
+    color: var(--text);
+    font-weight: 600;
 }
 
-/* Listas estilizadas */
+/* Listas estilizadas (a, b, c...) */
 ol.alpha-list {
     list-style-type: none;
     counter-reset: alpha-counter;
     padding-left: 0;
+    margin-top: 1rem;
 }
 
 ol.alpha-list li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
+    padding-left: 2.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 ol.alpha-list li::before {
     counter-increment: alpha-counter;
-    content: counter(alpha-counter, lower-alpha) ") ";
+    content: counter(alpha-counter, lower-alpha);
     position: absolute;
     left: 0;
-    color: var(--iso-orange);
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-color: var(--iso-orange);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 0.75rem;
     font-weight: 700;
+    box-shadow: 0 2px 4px rgba(11, 123, 255, 0.3);
 }
 
 /* Estilo del botón volver (coincide con .back de controles.css) */
@@ -145,21 +232,23 @@ ol.alpha-list li::before {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #1864ff;
-    font-weight: 700;
+    color: var(--iso-orange);
+    /* Usar azul primario */
+    font-weight: 600;
     text-decoration: none;
-    margin: 2px 0 18px;
-    transition: transform .15s ease, opacity .15s ease;
-    font-size: 1rem;
+    margin: 20px 0 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    border: 1px solid var(--iso-border-color);
+    transition: all .2s ease;
+    font-size: 0.95rem;
 }
 
 .back:hover {
-    transform: translateX(-2px);
-    opacity: .9;
-}
-
-.back:focus-visible {
-    outline: 3px solid rgba(24, 100, 255, .35);
-    outline-offset: 3px;
-    border-radius: 8px;
+    background-color: var(--iso-orange);
+    color: white;
+    border-color: var(--iso-orange);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
