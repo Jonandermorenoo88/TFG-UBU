@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.11. Devolución de activos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">8.14</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El personal y otras partes interesadas, según corresponda, deben devolver todos los activos de la
+                    organización que estén en su poder al cambiar o terminar su empleo, contrato o acuerdo.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger los activos de la organización como parte del proceso de cambio o terminación de empleo,
+                    contrato o acuerdo.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El proceso de cambio o terminación debe formalizarse para incluir la devolución de todos los
+                        activos físicos y electrónicos emitidos anteriormente. En casos de uso de equipo personal
+                        (BYOD), se deben seguir procedimientos para asegurar que la información relevante se rastree,
+                        transfiera a la organización y se elimine de forma segura del equipo.</p>
+
+                    <p>Además, se debe documentar y transferir el conocimiento importante para las operaciones. Durante
+                        el período de notificación, la organización debe impedir la copia no autorizada de información.
+                    </p>
+
+                    <p>La organización debe identificar y documentar claramente toda la información y otros activos
+                        asociados que se devolverán, que pueden incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Dispositivos finales del usuario;</li>
+                        <li>Dispositivos de almacenamiento portátiles;</li>
+                        <li>Equipo especializado;</li>
+                        <li>Hardware de autenticación (por ejemplo, claves mecánicas, tokens físicos y tarjetas
+                            inteligentes) para sistemas de información, sitios y archivos físicos;</li>
+                        <li>Copias físicas de la información.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La salida de un empleado es un momento crítico. No se debe dejar nada al azar:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Checklist de Offboarding
+                            Automatizado</strong>
+                        <p>RRHH dispara un ticket automático 5 días antes de la salida del empleado. El técnico de
+                            soporte recibe una lista: "Recoger portátil Dell X123, Monitor, Tarjeta de Acceso #99 y
+                            Token RSA". El empleado no recibe su finiquito/liquidación hasta que el técnico marca todos
+                            los ítems como devueltos.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Borrado Remoto (MDM)</strong>
+                        <p>Si el empleado usaba su propio móvil para el correo (BYOD), el administrador utiliza la
+                            consola de Gestión de Dispositivos Móviles (MDM) para enviar un comando de "Wipe Corporate
+                            Data". Esto borra solo el correo y los archivos de la empresa, dejando las fotos personales
+                            intactas, pero asegurando que no se lleva datos.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Puede ser difícil devolver información contenida en activos que no son propiedad de la organización.
+                    En tales casos, es necesario restringir el uso de la información al utilizar otros controles de SI
+                    como la gestión de derechos de acceso (ver 5.18) o el uso de criptografía (ver 8.24).
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
