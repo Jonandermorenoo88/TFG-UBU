@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.7. Inteligencia sobre amenazas</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Detección</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Detectar</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_amenazas_y_vulnerabilidades</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content" style="color: red; font-weight: bold;">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La información relativa a las amenazas a la SI se debe recopilar y analizar para producir
+                    inteligencia sobre amenazas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Dar a conocer el entorno de amenazas de la organización para que se puedan tomar las medidas de
+                    mitigación adecuadas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se debería recopilar y analizar información sobre amenazas existentes o emergentes para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Facilitar acciones informadas para evitar que las amenazas causen daños;</li>
+                        <li>Reducir el impacto de tales amenazas.</li>
+                    </ol>
+
+                    <p>La inteligencia frente a amenazas se puede dividir en tres capas, que se deben considerar:</p>
+                    <ol type="a" class="alpha-list">
+                        <li><strong>Inteligencia de amenazas estratégicas:</strong> intercambio de información de alto
+                            nivel sobre el cambiante panorama de amenazas (por ejemplo, tipos de atacantes o tipos de
+                            ataques);</li>
+                        <li><strong>Inteligencia de amenazas tácticas:</strong> información sobre metodologías,
+                            herramientas y tecnologías de atacantes implicadas;</li>
+                        <li><strong>Inteligencia operativa sobre amenazas:</strong> detalles sobre ataques específicos,
+                            incluidos indicadores técnicos.</li>
+                    </ol>
+
+                    <p>La inteligencia frente a amenazas debe ser:</p>
+                    <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 1rem;">
+                        <li><strong>Pertinente:</strong> relacionado con la protección de la organización;</li>
+                        <li><strong>Perspicaz:</strong> proporcionar a la organización una comprensión precisa y
+                            detallada del panorama de amenazas;</li>
+                        <li><strong>Contextual:</strong> para proporcionar conciencia situacional (agregar contexto a la
+                            información basada en el momento de los eventos, etc.);</li>
+                        <li><strong>Procesable:</strong> la organización puede actuar sobre la información de forma
+                            rápida y eficaz.</li>
+                    </ul>
+
+                    <p>Las actividades de inteligencia frente a amenazas deben incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Establecer objetivos para la producción de inteligencia frente a amenazas;</li>
+                        <li>Identificar, determinar y seleccionar fuentes de información internas y externas;</li>
+                        <li>Recopilar información de fuentes seleccionadas;</li>
+                        <li>Procesar la información recopilada para prepararla para el análisis;</li>
+                        <li>Analizar la información para entender cómo se relaciona y es significativa;</li>
+                        <li>Comunicarla y compartirla con los individuos pertinentes en un formato adecuado.</li>
+                    </ol>
+
+                    <p>Se debe analizar y utilizar la inteligencia de amenazas posteriormente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>mediante la implementación de procesos para incluir información recopilada en los procesos
+                            de gestión de riesgos;</li>
+                        <li>como aportación adicional a los controles técnicos preventivos y de detección (firewalls,
+                            IDS, antimalware);</li>
+                        <li>como aportación a los procesos y técnicas de prueba de SI.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La inteligencia debe ser práctica y escalonada:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Informe Estratégico Trimestral</strong>
+                        <p>El CISO presenta al Comité de Dirección un informe resumen sobre las tendencias de ransomware
+                            en el sector industrial, justificando la inversión en nuevos backups inmutables
+                            (Inteligencia Estratégica).</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Automatización de IoCs (Indicadores de
+                            Compromiso)</strong>
+                        <p>El sistema SIEM de la empresa está conectado a un feed de amenazas (como OTX o MISP). Cuando
+                            se detecta una nueva IP maliciosa a nivel global, el Firewall la bloquea automáticamente en
+                            menos de 1 hora (Inteligencia Operativa).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las organizaciones pueden utilizar la inteligencia frente a amenazas para prevenir, detectar o
+                    responder a las amenazas. Las organizaciones pueden producir inteligencia frente a amenazas, pero
+                    normalmente reciben y utilizan la inteligencia producida por otras fuentes (proveedores, asesores
+                    independientes, agencias gubernamentales o grupos colaborativos).
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
