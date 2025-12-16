@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.12. Clasificación de la información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">8.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La información se debe clasificar según las necesidades de SI de la organización en función de la
+                    confidencialidad, la integridad, la disponibilidad y los requisitos pertinentes de las partes
+                    interesadas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Asegurar la identificación y comprensión de las necesidades de protección de la información de
+                    acuerdo con su importancia para la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer una política específica sobre clasificación de la información
+                        y comunicarla a todas las partes interesadas pertinentes. Se deben tener en cuenta las
+                        necesidades organizacionales para compartir o restringir la información, los requisitos legales,
+                        y el valor, sensibilidad y criticidad de la información a lo largo de su ciclo de vida.</p>
+
+                    <p>Los propietarios de la información deberían ser responsables de su clasificación. El esquema de
+                        clasificación utilizado debe ser coherente en toda la organización para que todos apliquen una
+                        protección adecuada.</p>
+
+                    <p>La clasificación puede determinarse por el nivel de impacto que el compromiso (divulgación,
+                        modificación, destrucción) de la información tendría para la organización.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>No basta con decir que algo es "importante", hay que ponerle una etiqueta estandarizada:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Esquema de 4 Niveles (P-I-C-S)</strong>
+                        <p>La organización define 4 niveles universales y obliga a marcar cada documento en el pie de
+                            página:</p>
+                        <ul style="margin-top: 5px; margin-bottom: 5px;">
+                            <li><strong>PÚBLICA:</strong> Web corporativa, notas de prensa.</li>
+                            <li><strong>INTERNA:</strong> Políticas, organigramas, menús del comedor.</li>
+                            <li><strong>CONFIDENCIAL:</strong> Nóminas, contratos de clientes, código fuente.</li>
+                            <li><strong>SECRETA:</strong> Planes estratégicos de fusión, claves maestras.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Clasificación Automática (Microsoft
+                            Purview)</strong>
+                        <p>Al guardar un documento en Word, una barra obligatoria pide al usuario que seleccione la
+                            sensibilidad. Si detecta números de tarjeta de crédito, sugiere automáticamente
+                            "Confidencial".</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La clasificación proporciona una indicación concisa de cómo manejar la información. Evita la
+                        sub-clasificación (riesgo) y la sobre-clasificación (gastos innecesarios).</p>
+                    <p>Como ejemplo, un esquema de clasificación de confidencialidad puede basarse en cuatro niveles
+                        como sigue:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La divulgación no causa ningún daño;</li>
+                        <li>La divulgación causa daños menores a la reputación o un menor impacto operativo;</li>
+                        <li>La divulgación tiene un impacto significativo a corto plazo en las operaciones o los
+                            objetivos organizacionales;</li>
+                        <li>La divulgación tiene un impacto grave en los objetivos organizacionales a largo plazo o pone
+                            en riesgo la supervivencia de la organización.</li>
+                    </ol>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
