@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.9. Inventario de activos de información y otros activos asociados</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">8.1.1, 8.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se debería elaborar y mantener un inventario de información y otros activos asociados, incluidos los
+                    propietarios.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Identificar la información de la organización y otros activos asociados para preservar su SI y
+                    asignar la propiedad apropiada.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <h4 style="margin-top: 0; color: #334155;">Inventario</h4>
+                    <p>La organización debe identificar su información y otros activos asociados y determinar su
+                        importancia en términos de SI. La documentación se debe mantener en inventarios dedicados o
+                        existentes.</p>
+                    <p>El inventario debe ser preciso, actualizado, coherente y alineado con otros inventarios. Las
+                        opciones para garantizar la exactitud incluyen:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Realizar revisiones periódicas de la información identificada y otros activos asociados con
+                            respecto al inventario de activos;</li>
+                        <li>Aplicar automáticamente una actualización de inventario en el proceso de instalación, cambio
+                            o eliminación de un activo.</li>
+                    </ol>
+                    <p>La ubicación de un activo se debe incluir en el inventario según corresponda. No es necesario que
+                        sea una lista única; puede ser un conjunto de inventarios dinámicos (hardware, software,
+                        máquinas virtuales, etc.). Cada activo se debe clasificar de conformidad con la clasificación de
+                        la información (ver 5.12).</p>
+
+                    <h4 style="color: #334155;">Propiedad</h4>
+                    <p>La propiedad del activo debe asignarse a un individuo o a un grupo y debe identificarse la
+                        clasificación. La propiedad se debe asignar cuando se crean activos o cuando se transfieren a la
+                        organización. Debe reasignarse si el propietario cambia de función.</p>
+
+                    <h4 style="color: #334155;">Obligaciones del propietario</h4>
+                    <p>El propietario del activo debe ser responsable de su correcta gestión y garantizar que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Se realiza el inventario de la información y otros activos asociados;</li>
+                        <li>La información y otros activos asociados se clasifican y protegen adecuadamente;</li>
+                        <li>La clasificación se revisa periódicamente;</li>
+                        <li>Se enumeran y vinculan componentes que respaldan activos tecnológicos (bases de datos,
+                            almacenamiento, software);</li>
+                        <li>Se establecen requisitos para el uso aceptable de la información (ver 5.10);</li>
+                        <li>Las restricciones de acceso corresponden a la clasificación y son efectivas;</li>
+                        <li>La información y otros activos, cuando se eliminan, se gestionan de forma segura;</li>
+                        <li>Participa en la identificación y gestión de los riesgos asociados a sus activos;</li>
+                        <li>Apoya al personal que tiene las funciones y responsabilidades de gestionar su información.
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un inventario no es un Excel estático, debe ser algo vivo:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Herramienta de Descubrimiento Automático
+                            (CMDB)</strong>
+                        <p>La organización utiliza una herramienta de gestión de activos (como GLPI o ServiceNow) que
+                            escanea la red cada 24 horas. Detecta nuevos servidores, portátiles y software instalado,
+                            actualizando automáticamente el inventario sin intervención humana.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Asignación de "Data Owners"</strong>
+                        <p>Para cada carpeta compartida en el servidor de archivos y cada base de datos, se designa
+                            nominalmente a un "Propietario del Dato" (ej. Director Financiero para los datos de
+                            facturación). Este propietario debe aprobar trimestralmente quién tiene acceso a sus datos.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Los inventarios de información y otros activos asociados son a menudo necesarios para garantizar la
+                    protección eficaz de la información y pueden ser necesarios para otros fines (salud, seguridad,
+                    seguros). Ayudan en la gestión de riesgos y planificación de recuperación. Las normas ISO/IEC
+                    19770-1 e ISO 55001 proporcionan información adicional.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -27,8 +27,9 @@ public class GuiaController {
      * @return Nombre de la vista de la guía del control.
      */
     @GetMapping("/guia-control/{controlId:.+}")
-    public String verGuia(@PathVariable String controlId) {
+    public String verGuia(@PathVariable String controlId, org.springframework.ui.Model model) {
         String normalizado = controlId.replace('.', '-').toUpperCase(); // A5.1 -> A5-1
+        model.addAttribute("controlId", controlId);
         return "guias/control-" + normalizado;
     }
 }
