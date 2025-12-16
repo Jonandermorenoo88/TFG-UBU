@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.6. Contacto con grupos de interés especial</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Responder</li>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">6.1.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debe establecer y mantener contacto con grupos de interés especial u otros foros de
+                    seguridad especializados y asociaciones profesionales.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que se produce un flujo adecuado de información con respecto a la SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La pertenencia a grupos o foros de interés especial debe considerarse como un medio para:</p>
+                    <ol type="a">
+                        <li>mejorar el conocimiento sobre las mejores prácticas y mantenerse al día con la información
+                            de seguridad pertinente;</li>
+                        <li>asegurarse de que la comprensión del entorno de SI es mantiene actualizada;</li>
+                        <li>recibir alertas tempranas, avisos y parches relacionados con ataques y vulnerabilidades;
+                        </li>
+                        <li>obtener acceso a asesoramiento especializado en SI;</li>
+                        <li>compartir e intercambiar información sobre nuevas tecnologías, productos, servicios,
+                            amenazas o vulnerabilidades;</li>
+                        <li>proporcionar puntos de enlace adecuados cuando se trate de incidentes de SI (ver 5.24 al
+                            5.28).</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Participar activamente en la comunidad de seguridad es clave. Ejemplos de implementación:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Membresía en Foros de Seguridad</strong>
+                        <p>La organización se inscribe como miembro corporativo en foros como ISMS Forum o capítulos
+                            locales de ISACA. El CISO asiste a reuniones trimestrales para compartir experiencias y
+                            conocer nuevas tendencias.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Suscripción a Alertas de
+                            Vulnerabilidades</strong>
+                        <p>El equipo de TI está suscrito a los boletines de avisos de seguridad de INCIBE-CERT y del
+                            CCN-CERT. Estas alertas se reciben por correo electrónico y se revisan diariamente para
+                            aplicar parches críticos.</p>
+                    </div>
+
+                    <p style="margin-top: 15px;">Grupos de interés clave:</p>
+                    <ul style="list-style: none; display: flex; gap: 10px; flex-wrap: wrap; padding: 0;">
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            ISMS Forum</li>
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            ISACA</li>
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            OWASP</li>
+                        <li
+                            style="background: #e0f2fe; color: #0369a1; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            INCIBE</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
