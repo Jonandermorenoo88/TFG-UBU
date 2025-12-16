@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Guía del Control ' + ${controlId}">Guía del Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.8. Seguridad de la información en gestión de proyectos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">6.1.5, 14.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La seguridad de la información se debe integrar en la gestión de proyectos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que los riesgos de seguridad de la información relacionados con los proyectos y los
+                    productos finales se aborden de forma eficaz en la gestión de proyectos durante todo el ciclo de
+                    vida del proyecto.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La SI se debe integrar en la gestión de proyectos para garantizar que los riesgos de SI se
+                        aborden como parte de la gestión del proyecto. Esto se puede aplicar a cualquier tipo de
+                        proyecto independientemente de su complejidad, tamaño, duración, disciplina o área de
+                        aplicación.</p>
+
+                    <p>La gestión de proyectos en uso debería exigir que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>los riesgos de SI se evalúen y traten en una fase temprana y periódicamente como parte de
+                            los riesgos del proyecto a lo largo del ciclo de vida del proyecto;</li>
+                        <li>los requisitos de SI (por ejemplo, requisitos de seguridad de las aplicaciones, requisitos
+                            para el cumplimiento de derechos de propiedad intelectual, etc.) se aborden en las primeras
+                            etapas de los proyectos;</li>
+                        <li>los riesgos de SI asociados con la ejecución de proyectos, como la seguridad de los aspectos
+                            de comunicación interna y externa, se consideren y traten a lo largo del ciclo de vida del
+                            proyecto;</li>
+                        <li>se revise el progreso en el tratamiento de riesgos de SI y se evalúe y pruebe la eficacia
+                            del tratamiento.</li>
+                    </ol>
+
+                    <p>Las responsabilidades y autoridades de SI pertinentes para el proyecto se deben definir y asignar
+                        a funciones específicas.</p>
+                    <p>Los requisitos de SI se deben determinar mediante varios métodos, incluidos los requisitos de
+                        cumplimiento derivados de la política de SI y las normativas específicas.</p>
+
+                    <p>Los requisitos de SI se deben determinar para todos los tipos de proyectos, no solo para los
+                        proyectos de desarrollo de las TIC. Al determinar estos requisitos también se debe tener en
+                        cuenta lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>qué información está implicada y cuáles son las necesidades de SI correspondientes;</li>
+                        <li>las necesidades de protección requeridas, particularmente en términos de confidencialidad,
+                            integridad y disponibilidad;</li>
+                        <li>el nivel de confianza o garantía necesario para la identidad reclamada de las entidades;
+                        </li>
+                        <li>acceder a los procesos de provisión y autorización;</li>
+                        <li>informar a los usuarios de sus deberes y responsabilidades;</li>
+                        <li>los requisitos derivados de los procesos organizacionales (registro, no rechazo);</li>
+                        <li>requisitos exigidos por otros controles de SI;</li>
+                        <li>el cumplimiento del entorno legal, reglamentario y contractual;</li>
+                        <li>nivel de confianza o garantía requerido para que terceros cumplan la política de SI.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La seguridad no debe ser un "parche" al final del proyecto, sino un pilar desde el inicio:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Hito de Aprobación de Seguridad</strong>
+                        <p>En el diagrama de Gantt de cualquier proyecto nuevo, se incluye un hito obligatorio llamada
+                            "Validación de Seguridad por el CISO" antes de pasar a la fase de Producción. Si no se
+                            aprueba, el proyecto no se despliega.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Evaluación de Riesgos Inicial
+                            (PIA/BIA)</strong>
+                        <p>Al comenzar un proyecto de migración a la nube, se realiza un Análisis de Impacto en el
+                            Negocio (BIA) y una Evaluación de Impacto en la Privacidad (PIA) para definir qué controles
+                            de cifrado y acceso son necesarios desde el diseño.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    El enfoque de desarrollo del proyecto, como el ciclo de vida en cascada o el ciclo de vida ágil,
+                    debe apoyar la SI de una manera estructurada. Las normas ISO 21500 e ISO 21502 proporcionan guía
+                    sobre conceptos y procesos de gestión que son importantes. La norma ISO/IEC 27005 proporciona guía
+                    sobre el uso de procesos de gestión de riesgos para identificar controles.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
