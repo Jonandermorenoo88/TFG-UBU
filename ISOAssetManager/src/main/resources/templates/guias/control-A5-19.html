@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.19. SI en las relaciones con los proveedores</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_relaciones_con_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">15.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían definirse e implementarse procesos y procedimientos para gestionar los riesgos de SI
+                    asociados con el uso de los productos o servicios del proveedor.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener un nivel acordado de SI en las relaciones con los proveedores.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debe establecer y comunicar a todas las partes interesadas una política
+                        específica sobre las relaciones con los proveedores. La organización debería identificar e
+                        implementar procesos y procedimientos para abordar los riesgos de seguridad asociados con el uso
+                        de productos y servicios proporcionados por los proveedores. Esto también debería aplicarse al
+                        uso por parte de la organización de los recursos de los proveedores de servicios en la nube.</p>
+                    <p>Estos procesos y procedimientos deberían incluir aquellos que debe implementar la organización,
+                        así como aquellos que la organización requiere que el proveedor implemente, tales como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar y documentar los tipos de proveedores (por ejemplo, Servicios de TIC, logística,
+                            servicios públicos, servicios financieros, componentes de infraestructura de TIC) que pueden
+                            afectar a la confidencialidad, integridad y disponibilidad de la información de la
+                            organización;</li>
+                        <li>Establecer cómo evaluar y seleccionar proveedores según la sensibilidad de la información,
+                            los productos y los servicios (por ejemplo, con análisis de mercado, referencias de
+                            clientes, revisión de documentos, evaluaciones in situ, certificaciones);</li>
+                        <li>Evaluar y seleccionar los productos o servicios del proveedor que tengan controles adecuados
+                            de SI y revisarlos; en particular, la exactitud e integridad de los controles implementados
+                            por el proveedor que garanticen la integridad de la información del proveedor y el
+                            procesamiento de la información y, por lo tanto, la SI de la organización;</li>
+                        <li>Definir la información de la organización, los servicios de TIC y la infraestructura física
+                            a la que los proveedores pueden acceder, supervisar, controlar o utilizar;</li>
+                        <li>Definir los tipos de componentes y servicios de la infraestructura de TIC proporcionados por
+                            los proveedores que puedan afectar a la confidencialidad, integridad y disponibilidad de la
+                            información de la organización;</li>
+                        <li>Evaluar y gestionar los riesgos de SI asociados con:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>El uso por parte de los proveedores de la información de la organización y otros
+                                    activos asociados, incluidos los riesgos originados por el personal potencialmente
+                                    malintencionado de los proveedores;</li>
+                                <li>El mal funcionamiento o las vulnerabilidades de los productos (incluidos los
+                                    componentes y subcomponentes de software utilizados en estos productos) o los
+                                    servicios prestados por los proveedores;</li>
+                            </ol>
+                        </li>
+                        <li>Supervisar el cumplimiento de los requisitos de SI establecidos para cada tipo de proveedor
+                            y tipo de acceso, incluida la revisión por parte de terceros y la validación del producto;
+                        </li>
+                        <li>Mitigar la no conformidad de un proveedor, tanto si se ha detectado a través de la
+                            supervisión como por otros medios;</li>
+                        <li>Manejar incidentes y contingencias asociados con productos y servicios del proveedor,
+                            incluyendo responsabilidades tanto de la organización como de los proveedores;</li>
+                        <li>Desarrollar resiliencia y, si es necesario, medidas de recuperación y contingencia para
+                            asegurar la disponibilidad de la información de la organización si ocurre un fallo en la
+                            disponibilidad de la información del proveedor;</li>
+                        <li>Sensibilizar y formar al personal de la organización que interactúa con el personal de los
+                            proveedores en lo que respecta a las normas de compromiso adecuadas, las políticas, los
+                            procesos y los procedimientos específicos y el comportamiento en función del tipo de
+                            proveedor y del nivel de acceso del proveedor a los sistemas y la información de la
+                            organización;</li>
+                        <li>Gestionar la necesaria transferencia de información, de otros activos asociados y de
+                            cualquier otro elemento que deba modificarse y garantizar el mantenimiento de la SI durante
+                            todo el periodo de transferencia;</li>
+                        <li>Definir los requisitos para garantizar una terminación segura de la relación con el
+                            proveedor, que incluye:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>Retiro de los derechos de acceso;</li>
+                                <li>Tratamiento de la información;</li>
+                                <li>Titularidad de la propiedad intelectual desarrollada durante el compromiso;</li>
+                                <li>Portabilidad de la información en caso de cambio de proveedor o de recurso interno
+                                    (insourcing);</li>
+                                <li>Gestión de documentos;</li>
+                                <li>Devolución de activos;</li>
+                                <li>Eliminación segura de la información y otros activos asociados;</li>
+                                <li>Requisitos de confidencialidad continuos;</li>
+                            </ol>
+                        </li>
+                        <li>Definir el nivel de seguridad del personal y seguridad física que se espera del personal y
+                            las instalaciones del proveedor.</li>
+                    </ol>
+                    <p>Los procedimientos para continuar con el tratamiento de la información en caso de que el
+                        proveedor no pueda suministrar sus productos o servicios (por ejemplo, debido a un incidente,
+                        porque el proveedor ya no está en el negocio o ya no proporciona algunos componentes debido a
+                        los avances tecnológicos) deberían considerarse para evitar cualquier retraso en la organización
+                        de productos o servicios de sustitución.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Acuerdos de Nivel de Servicio (SLA) de
+                            Seguridad</strong>
+                        <p>Inclusión de cláusulas específicas en los contratos que obliguen al proveedor a reportar
+                            brechas de seguridad en menos de 24h y a someterse a auditorías anuales (Derecho de
+                            Auditoría).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Evaluación de Riesgos de Terceros (TPRM)</strong>
+                        <p>Cuestionario de seguridad previo a la contratación para evaluar si el proveedor cumple con
+                            los estándares internos (ej. ¿Tiene certificación ISO 27001? ¿Cifra los datos en reposo?).
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Monitorización Continua</strong>
+                        <p>Revisión periódica de los informes de servicio del proveedor y monitoreo de vulnerabilidades
+                            públicas asociadas al software o hardware adquirido.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>En los casos en que no es posible que una organización coloque requisitos en un proveedor, la
+                        organización debería:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Considerar la guía dada en este control al tomar decisiones sobre la elección de un
+                            proveedor y su producto o servicio;</li>
+                        <li>Implementar controles de compensación según sea necesario basándose en una evaluación de
+                            riesgos.</li>
+                    </ol>
+                    <p>Los proveedores con una gestión inadecuada de la SI pueden poner en peligro la información. Se
+                        deberían determinar y aplicar controles para gestionar el acceso del proveedor a la información
+                        y otros activos asociados. Por ejemplo, si existe una necesidad especial de confidencialidad de
+                        la información, se pueden utilizar acuerdos de no divulgación (NDA) o técnicas de cifrado. Otro
+                        ejemplo son los riesgos de protección de datos personales cuando el acuerdo con el proveedor
+                        implica la transferencia de información o el acceso a ella a través de las fronteras.</p>
+                    <p>Los riesgos también pueden ser causados por controles inadecuados de los componentes de la
+                        infraestructura de TIC o de los servicios prestados por los proveedores. Los componentes o
+                        servicios vulnerables o que funcionan mal pueden provocar infracciones de la SI en la
+                        organización o en otra entidad (por ejemplo, pueden causar infecciones de malware, ataques u
+                        otros daños a entidades distintas de la organización).</p>
+                    <p>Ver la norma ISO/IEC 27036-2 para obtener más información.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
