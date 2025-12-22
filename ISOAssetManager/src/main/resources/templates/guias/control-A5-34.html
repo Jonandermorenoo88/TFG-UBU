@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.34</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.34. Privacidad y protección de la IIP</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                        <li>#Legal_y_cumplimiento</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.1.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería identificar y cumplir con los requisitos relativos a la preservación de la
+                    privacidad y la protección de la IIP de acuerdo con las leyes y reglamentos aplicables y los
+                    requisitos contractuales.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el cumplimiento de los requisitos legales, estatutarios, reglamentarios y contractuales
+                    relacionados con los aspectos de SI de la protección de la IIP.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer y comunicar una política específica sobre privacidad y
+                        protección de la IIP a todas las partes interesadas pertinentes.</p>
+                    <p>La organización debería desarrollar e implementar procedimientos para la preservación de la
+                        privacidad y la protección de la IIP. Estos procedimientos deberían comunicarse a todas las
+                        partes interesadas pertinentes que participen en el tratamiento de la información de
+                        identificación personal.</p>
+                    <p>El cumplimiento de estos procedimientos y de toda la legislación y normativa pertinente relativa
+                        a la preservación de la privacidad y la protección de la IIP requiere funciones,
+                        responsabilidades y controles apropiados. A menudo, esto se consigue mejor con el nombramiento
+                        de una persona responsable, como un <strong>funcionario de privacidad</strong>, que debería
+                        proporcionar guía al personal, proveedores de servicios y otras partes interesadas sobre sus
+                        responsabilidades individuales y los procedimientos específicos que deberían seguirse.</p>
+                    <p>La responsabilidad de la manipulación de la IIP debería abordarse tomando en consideración la
+                        legislación y los reglamentos pertinentes.</p>
+                    <p>Deberían aplicarse medidas técnicas y organizativas apropiadas para proteger la IIP.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Delegado de Protección de Datos (DPO)</strong>
+                        <p>Nombramiento formal de un DPO (interno o externalizado) que supervise el cumplimiento del
+                            GDPR y actúe como punto de contacto con la autoridad de control (AEPD).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Evaluación de Impacto (DPIA)</strong>
+                        <p>Realizar obligatoriamente un DPIA antes de lanzar cualquier nuevo proyecto que implique
+                            tratamiento masivo de datos sensibles (ej. reconocimiento facial o datos de salud).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Registro de Actividades de Tratamiento (RAT)</strong>
+                        <p>Documento vivo que inventaría qué datos se recogen, con qué finalidad, quiénes son los
+                            destinatarios y cuánto tiempo se conservan.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Varios países han introducido una legislación que controla la recogida, el tratamiento, la
+                        transmisión y la supresión de la IIP. Dependiendo de la legislación nacional respectiva, tales
+                        controles pueden imponer obligaciones a los que recolectan, procesan y difunden la IIP y también
+                        pueden restringir la autoridad para transferir la IIP a otros países.</p>
+                    <p>Normas relevantes:</p>
+                    <ul>
+                        <li><strong>ISO/IEC 29100</strong>: Marco de alto nivel para la protección de la IIP.</li>
+                        <li><strong>ISO/IEC 27701</strong>: Información específica sobre la gestión de la privacidad
+                            (extensión de ISO 27001).</li>
+                        <li><strong>ISO/IEC 27018</strong>: Gestión de la IIP en nubes públicas (procesadores).</li>
+                        <li><strong>ISO/IEC 29134</strong>: Directrices para la evaluación del impacto en la privacidad
+                            (PIA) y estructura del informe.</li>
+                        <li><strong>ISO/IEC 27005</strong>: Gestión de riesgos (ayuda a identificar riesgos de
+                            privacidad).</li>
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
