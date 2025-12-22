@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.24. Planificación y preparación de la gestión de incidentes de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Responder</li>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                        <li>#Gobierno</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">16.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería planificar y prepararse para gestionar los incidentes de SI definiendo,
+                    estableciendo y comunicando los procesos, funciones y responsabilidades de gestión de incidentes de
+                    SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar una respuesta rápida, eficaz, coherente y ordenada a los incidentes de SI, incluida la
+                    comunicación sobre los eventos de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer procesos apropiados de gestión de incidentes de SI. Las
+                        funciones y responsabilidades para llevar a cabo los procedimientos de gestión de incidentes
+                        deberían determinarse y comunicarse eficazmente a las partes interesadas internas y externas
+                        pertinentes.</p>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Funciones y
+                        responsabilidades</strong>
+                    <p>Se debe considerar lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Establecer un método común para informar sobre eventos de SI, que incluye el punto de
+                            contacto (Ver 6.8);</li>
+                        <li>Establecer un proceso de gestión de incidencias para proporcionar a la organización la
+                            capacidad de gestionar los incidentes de SI, que incluye la administración, la
+                            documentación, la detección, la clasificación, la priorización, análisis, comunicación y
+                            coordinación de las partes interesadas;</li>
+                        <li>Establecer un proceso de respuesta a incidentes para proporcionar a la organización la
+                            capacidad de evaluar, responder y aprender de los incidentes de SI;</li>
+                        <li>Permitir que el personal competente se encargue de los problemas relacionados con los
+                            incidentes de SI dentro de la organización. Dicho personal debería recibir documentación
+                            sobre procedimientos y capacitación periódica;</li>
+                        <li>Establecer un proceso para identificar la formación, la certificación y el desarrollo
+                            profesional continuo necesarios para el personal de respuesta a incidentes.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Procedimientos de gestión
+                        de incidentes</strong>
+                    <p>Los objetivos de la gestión de incidentes de SI debieran acordarse con la administración y
+                        debería asegurarse de que los responsables de la gestión de incidentes de SI comprendan las
+                        prioridades de la organización para manejar incidentes de SI. La administración debería
+                        asegurarse de que se cree un plan de gestión de incidentes de SI tomando en consideración los
+                        diferentes escenarios y procedimientos que se desarrollan e implementan para las siguientes
+                        actividades:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Evaluación de los eventos de SI según criterios para lo que constituye un incidente de SI;
+                        </li>
+                        <li>Vigilancia (ver 8.15 y 8.16), detección (ver 8.16), clasificación (ver 5.25), análisis e
+                            informes (ver 6.8) de los eventos e incidentes de SI (por medios humanos o automáticos);
+                        </li>
+                        <li>Gestión de los incidentes de SI hasta su conclusión, incluida la respuesta y el escalamiento
+                            (ver 5.26), según el tipo y la categoría del incidente, posible activación de la gestión de
+                            crisis y activación de planes de continuidad, recuperación controlada de un incidente y
+                            comunicación con partes interesadas internas y externas;</li>
+                        <li>Coordinación con partes interesadas internas y externas, tales como autoridades, grupos y
+                            foros de interés externos, proveedores y clientes (ver 5.5 y 5.6);</li>
+                        <li>Registro de actividades de gestión de incidentes;</li>
+                        <li>Gestión de pruebas (ver 5.28);</li>
+                        <li>Análisis de la causa raíz o procedimientos post mortem;</li>
+                        <li>Identificación de las lecciones aprendidas y cualquier mejora en los procedimientos de
+                            gestión de incidentes o en los controles de SI en general que sean necesarios.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Procedimientos de
+                        presentación de informes</strong>
+                    <p>Los procedimientos de presentación de informes deberían incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Acciones por tomar en caso de un evento de SI (por ejemplo, anotar todos los detalles
+                            pertinentes inmediatamente, como la aparición de errores de funcionamiento y mensajes en
+                            pantalla, informar inmediatamente al punto de contacto y solo tomar acciones coordinadas);
+                        </li>
+                        <li>Uso de formularios de incidentes para ayudar al personal a realizar todas las acciones
+                            necesarias al informar de incidentes de SI;</li>
+                        <li>Procesos de retroalimentación adecuados para garantizar que las personas que informan sobre
+                            eventos de SI sean notificadas, en la medida de lo posible, de los resultados una vez que se
+                            ha abordado y cerrado el problema;</li>
+                        <li>Creación de informes de incidentes.</li>
+                    </ol>
+                    <p>Cualquier requisito externo sobre la notificación de incidentes a las partes interesadas
+                        pertinentes dentro del plazo definido (por ejemplo, los requisitos de notificación de
+                        infracciones a los reguladores) debería ser considerado al implementar los procedimientos de
+                        gestión de incidentes.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Playbooks de Respuesta a Incidentes</strong>
+                        <p>Documentación paso a paso de qué hacer ante escenarios comunes (Ransomware, Phishing, DDoS),
+                            asegurando que el equipo no improvisa durante una crisis.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Equipo de Respuesta (CSIRT)</strong>
+                        <p>Designación formal de un equipo (interno o externo) con roles claros (Incident Commander,
+                            Analista Forense, Comunicación) disponible 24/7 si es necesario.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Simulacros de Mesa (Tabletop Exercises)</strong>
+                        <p>Reuniones semestrales donde el equipo simula un ataque teórico para probar la efectividad de
+                            los planes de comunicación y toma de decisiones sin afectar la producción.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los incidentes de SI pueden trascender las fronteras organizativas y nacionales. Para responder a
+                        tales incidentes, es conveniente coordinar la respuesta y compartir información sobre estos
+                        incidentes con organizaciones externas, según corresponda.</p>
+                    <p>La norma ISO/IEC 27035 proporciona una guía detallada sobre la gestión de incidentes relacionados
+                        con la SI.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
