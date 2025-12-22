@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 6.6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">6.6. Acuerdos de confidencialidad o no divulgación</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_los_recursos_humanos</li>
+                        <li>#Protección_de_la_información</li>
+                        <li>#Relaciones_con_los_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">13.2.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los acuerdos de confidencialidad o no divulgación que reflejen las necesidades de la organización
+                    para la protección de la información deberían ser identificados, documentados, revisados y firmados
+                    regularmente por el personal y otras partes interesadas pertinentes.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener la confidencialidad de la información accesible por el personal o terceros.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los acuerdos de confidencialidad o no divulgación deberían abordar el requisito de proteger la
+                        información confidencial al utilizar términos legalmente exigibles. Los acuerdos de
+                        confidencialidad o no divulgación son aplicables a las partes interesadas y al personal de la
+                        organización. Sobre la base de los requisitos de SI, los términos de los acuerdos deberían
+                        determinarse tomando en consideración el tipo de información que se tratará, su nivel de
+                        clasificación, su uso y el acceso permitido por la otra parte. Para identificar los requisitos
+                        para los acuerdos de confidencialidad o no divulgación, se deberían considerar los siguientes
+                        elementos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Una definición de la información que se va a proteger (por ejemplo, información
+                            confidencial);</li>
+                        <li>La duración prevista de un acuerdo, incluidos los casos en que puede ser necesario mantener
+                            la confidencialidad indefinidamente o hasta que la información esté disponible públicamente;
+                        </li>
+                        <li>Las acciones necesarias cuando se termina un acuerdo;</li>
+                        <li>Las responsabilidades y acciones de los signatarios para evitar la divulgación de
+                            información no autorizada;</li>
+                        <li>La propiedad de la información, los secretos comerciales y la propiedad intelectual y cómo
+                            se relaciona con la protección de la información confidencial;</li>
+                        <li>El uso permitido de información confidencial y los derechos del signatario a utilizar la
+                            información;</li>
+                        <li>El derecho a auditar y supervisar actividades que impliquen información confidencial en
+                            circunstancias muy sensibles;</li>
+                        <li>El proceso para la notificación y notificación de revelación no autorizada o fuga de
+                            información confidencial;</li>
+                        <li>Los términos de la información que se devolverá o destruirá en el momento de la terminación
+                            del acuerdo;</li>
+                        <li>Las medidas previstas en caso de incumplimiento del acuerdo.</li>
+                    </ol>
+                    <p>La organización debe tener en cuenta el cumplimiento de los acuerdos de confidencialidad y no
+                        divulgación de la jurisdicción a la que se aplican (ver 5.31, 5.32, 5.33 y 5.34).</p>
+                    <p>Los requisitos para los acuerdos de confidencialidad y no divulgación deberían revisarse
+                        periódicamente y cuando se produzcan cambios que influyan en estos requisitos.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un papel firmado es la primera barrera legal ante una fuga de información:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: NDA con Proveedores Externos</strong>
+                        <p>Antes de que la consultora TI externe entre a reparar un servidor, debe firmar un NDA
+                            (Non-Disclosure Agreement) que estipula multas de 50.000€ si se filtra cualquier dato de la
+                            base de datos de usuarios a la que podrían tener acceso accidental durante el mantenimiento.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Renovación Anual de Compromiso</strong>
+                        <p>No basta con firmar al entrar. Cada año, junto con la evaluación de desempeño, los empleados
+                            clave revisan y re-firman electrónicamente las políticas de confidencialidad actualizadas,
+                            recordando que lo que ven en el trabajo, se queda en el trabajo.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los acuerdos de confidencialidad y no divulgación protegen la información de la organización e
+                        informan a los signatarios de su responsabilidad de proteger, utilizar y divulgar la información
+                        de una manera responsable y autorizada.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
