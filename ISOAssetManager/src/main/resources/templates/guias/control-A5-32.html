@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.32</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.32. Derecho de propiedad intelectual</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Legal_y_cumplimiento</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería aplicar los procedimientos apropiados para proteger los derechos de
+                    propiedad intelectual.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el cumplimiento de los requisitos legales, estatutarios, reglamentarios y contractuales
+                    relacionados con derechos de propiedad intelectual y uso de productos patentados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían considerar las siguientes directrices para proteger cualquier material que pueda
+                        considerarse propiedad intelectual:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Definir y comunicar una política temática específica sobre la protección de los derechos de
+                            propiedad intelectual;</li>
+                        <li>Publicar procedimientos para el cumplimiento de los derechos de propiedad intelectual que
+                            definan el uso conforme del software y los productos de información;</li>
+                        <li>Adquirir software solo a través de fuentes conocidas y acreditadas, para garantizar que no
+                            se infrinja el copyright;</li>
+                        <li>Mantener registros de activos adecuados e identificar todos los activos con requisitos para
+                            proteger los derechos de propiedad intelectual;</li>
+                        <li>Mantener pruebas y pruebas de la propiedad de licencias, manuales, etc.;</li>
+                        <li>Garantizar que no se supere el número máximo de usuarios o recursos (por ejemplo, unidades
+                            de procesamiento central (CPU)) permitidos en la licencia;</li>
+                        <li>Llevar a cabo revisiones para garantizar que solo se instalan el software autorizado y los
+                            productos con licencia;</li>
+                        <li>Proporcionar procedimientos para mantener las condiciones de licencia adecuadas;</li>
+                        <li>Proporcionar procedimientos para desechar o transferir software a otros;</li>
+                        <li>El cumplimiento de los términos y condiciones del software y de la información obtenida de
+                            redes públicas y fuentes externas;</li>
+                        <li>No duplicar, convertir a otro formato o extraer de grabaciones comerciales (video, audio)
+                            que no estén permitidas por la ley de copyright o las licencias aplicables;</li>
+                        <li>No copiar, en su totalidad o en parte, normas (por ejemplo, normas internacionales ISO/IEC),
+                            libros, artículos, informes u otros documentos, distintos de los permitidos por la ley de
+                            derechos de autor o las licencias aplicables.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Software Asset Management (SAM)</strong>
+                        <p>Implementar una herramienta centralizada (como GLPI, Snow o Ivanti) que escanee la red para
+                            detectar software instalado y cruce los datos con las licencias adquiridas para asegurar el
+                            cumplimiento.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Política de Código Abierto (Open Source)</strong>
+                        <p>Reglas claras para desarrolladores sobre qué tipos de librerías pueden usar (ej. MIT, Apache)
+                            y cuáles están prohibidas (ej. GPLv3 en software propietario) para evitar problemas legales
+                            de derivación.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Prohibición de Software "Pirata"</strong>
+                        <p>Bloqueo de descargas de Torrents en el firewall y restricción de permisos de administrador en
+                            los equipos de usuario para impedir la instalación de software no autorizado o crackeado.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los derechos de propiedad intelectual incluyen los derechos de autor de software o documentos,
+                        los derechos de diseño, las marcas comerciales, las patentes y las licencias de código fuente.
+                        Los productos de software propietario se suministran normalmente bajo un acuerdo de licencia que
+                        especifica los términos y condiciones de la licencia, por ejemplo, al limitar el uso de los
+                        productos a máquinas específicas o al limitar la copia a la creación de copias de seguridad
+                        solamente. Más información detallada sobre la gestión de activos de TI en la norma
+                        <strong>ISO/IEC 19770</strong>.</p>
+                    <p>Los datos se pueden obtener de fuentes externas. En general, se da el caso de que esos datos se
+                        obtengan en virtud de los términos de un acuerdo de intercambio de datos o de un instrumento
+                        jurídico similar. Dichos acuerdos de intercambio de datos deberían dejar claro qué procesamiento
+                        se permite para los datos adquiridos. También es aconsejable que se indique claramente la
+                        procedencia de los datos. Detalles sobre los acuerdos de intercambio de datos en la norma
+                        <strong>ISO/IEC 23751</strong>.</p>
+                    <p>Los requisitos legales, estatutarios, reglamentarios y contractuales pueden imponer restricciones
+                        a la copia de material propietario. En particular, pueden exigir que solo se pueda utilizar
+                        material desarrollado por la organización o autorizado o suministrado por el desarrollador a la
+                        organización. La infracción de los derechos de derechos de autor puede conducir a acciones
+                        legales, que pueden implicar multas y procedimientos penales.</p>
+                    <p>Aparte de que la organización necesita cumplir con sus obligaciones con respecto a los derechos
+                        de propiedad intelectual de terceros, también deben gestionarse los riesgos de que el personal y
+                        terceros no respeten los derechos de propiedad intelectual de la organización.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
