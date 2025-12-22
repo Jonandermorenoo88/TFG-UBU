@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.15. Control de acceso</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.1.1<br>9.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las reglas para controlar el acceso físico y lógico a la información y otros activos asociados
+                    deberían establecerse e implementarse en función de los requisitos de SI y del negocio.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el acceso autorizado y evitar el acceso no autorizado a la información y otros activos
+                    asociados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los propietarios de la información y otros activos asociados deberían determinar la SI y los
+                        requisitos organizacionales relacionados con el control de acceso. Debería definirse una
+                        política específica sobre el control del acceso que tenga en cuenta estos requisitos y debería
+                        comunicarse a todas las partes interesadas pertinentes.</p>
+
+                    <p>Estos requisitos y la política específica del tema deberían considerar lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Determinar qué entidades requieren qué tipo de acceso a la información y otros activos
+                            asociados;</li>
+                        <li>Seguridad de las aplicaciones (ver 8.26);</li>
+                        <li>El acceso físico, que debe estar soportado por los controles de entrada físicos apropiados;
+                        </li>
+                        <li>Difusión y autorización de la información (ej. principio de necesidad de conocer) y niveles
+                            de SI y clasificación (ver 5.10, 5.12, 5.13);</li>
+                        <li>Restricciones al acceso privilegiado (ver 8.2);</li>
+                        <li>Segregación de deberes (ver 5.3);</li>
+                        <li>Legislación, reglamentos y obligaciones contractuales pertinentes relativas a la limitación
+                            del acceso;</li>
+                        <li>Segregación de las funciones de control de acceso (ej. solicitud, autorización,
+                            administración);</li>
+                        <li>Autorización formal de solicitudes de acceso (ver 5.16 y 5.18);</li>
+                        <li>La gestión de los derechos de acceso (ver 5.18);</li>
+                        <li>Registro (ver 8.15).</li>
+                    </ol>
+
+                    <p>Las reglas de control de acceso deberían implementarse definiendo y mapeando los derechos y
+                        restricciones de acceso apropiados a las entidades pertinentes. Una entidad puede representar a
+                        un usuario humano, así como a un elemento técnico o lógico (máquina, servicio).</p>
+
+                    <p>Al definir e implementar las reglas de control de acceso, se debería tener en cuenta lo
+                        siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La coherencia entre los derechos de acceso y la clasificación de la información;</li>
+                        <li>La coherencia entre los derechos de acceso y las necesidades y requisitos de seguridad del
+                            perímetro físico;</li>
+                        <li>Todos los tipos de conexiones disponibles en los entornos distribuidos para que las
+                            entidades solo tengan acceso a la información y otros activos asociados autorizados;</li>
+                        <li>Cómo se pueden reflejar los elementos o factores relevantes para el control dinámico de
+                            acceso.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Control de Acceso Basado en Roles (RBAC)</strong>
+                        <p>Definición clara de perfiles (Administrador, Usuario, Auditor) donde cada uno tiene permisos
+                            preasignados, evitando asignar permisos individuales a personas.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Principio de Mínimo Privilegio</strong>
+                        <p>Configuración por defecto de "Denegar todo", abriendo accesos solo a los recursos
+                            estrictamente necesarios para el puesto de trabajo.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Autenticación Multifactor (MFA)</strong>
+                        <p>Implementación de un segundo factor (código móvil, token) para acceder a sistemas críticos o
+                            desde fuera de la red corporativa.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>A menudo se utilizan principios generales en el contexto del control de acceso. Dos de los
+                        principios más utilizados son:</p>
+                    <ol type="a" class="alpha-list">
+                        <li><strong>Necesidad de saber:</strong> a una entidad solo se le concede acceso a la
+                            información que requiere para realizar sus tareas.</li>
+                        <li><strong>Necesidad de uso:</strong> a una entidad solo se le asigna acceso a la
+                            infraestructura de tecnología de la información cuando existe una necesidad clara.</li>
+                    </ol>
+
+                    <p>Se debe tener cuidado al especificar las reglas de control de acceso que se deben tener en
+                        cuenta:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Establecer reglas basadas en la premisa del menor privilegio ("Todo está prohibido a menos
+                            que esté expresamente permitido");</li>
+                        <li>Los cambios en las etiquetas de información que se inician automáticamente mediante las
+                            instalaciones de procesamiento;</li>
+                        <li>Los cambios en los permisos de usuario iniciados automáticamente o por un administrador;
+                        </li>
+                        <li>Cuando definir y revisar regularmente la aprobación.</li>
+                    </ol>
+
+                    <p>Existen varias formas de implementar el control de acceso, como:</p>
+                    <ul>
+                        <li><strong>MAC</strong> (Control de acceso obligatorio)</li>
+                        <li><strong>DAC</strong> (Control de acceso discrecional)</li>
+                        <li><strong>RBAC</strong> (Control de acceso basado en roles)</li>
+                        <li><strong>ABAC</strong> (Control de acceso basado en atributos)</li>
+                    </ul>
+                    <p>Las reglas también pueden contener elementos dinámicos (hora del día, ubicación, tipo de red).
+                        Las reglas más sólidas y una mayor granularidad normalmente conducen a un mayor costo, por lo
+                        que se deben equilibrar con el riesgo.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
