@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.27</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.27. Aprendizaje de los incidentes de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">16.1.6</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los conocimientos obtenidos de los incidentes de SI deberían utilizarse para reforzar y mejorar los
+                    controles de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Reducir la probabilidad o las consecuencias de futuros incidentes.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer procedimientos para cuantificar y supervisar los tipos,
+                        volúmenes y costos de los incidentes de SI.</p>
+                    <p>La información obtenida de la evaluación de incidentes de SI debería utilizarse para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Mejorar el plan de gestión de incidentes, incluidos los escenarios y procedimientos de
+                            incidentes (ver 5.24);</li>
+                        <li>Identificar incidentes recurrentes o graves y sus causas para actualizar la evaluación de
+                            riesgos de SI de la organización y determinar e implementar los controles adicionales
+                            necesarios para reducir la probabilidad o consecuencias de futuros incidentes similares.
+                            Mecanismos que permitan recopilar, cuantificar y supervisar información sobre tipos,
+                            volúmenes y costes de incidentes;</li>
+                        <li>Mejorar el conocimiento y la formación de los usuarios (ver 6.3) proporcionando ejemplos de
+                            lo que puede suceder, cómo responder a dichos incidentes y cómo evitarlos en el futuro.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Base de Conocimiento (Knowledge Base)</strong>
+                        <p>Repositorio en Confluence o Wiki interna donde se documentan los "Workarounds" y soluciones
+                            definitivas de incidentes pasados para agilizar la resolución de casos futuros similares.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Actualización de Análisis de Riesgos</strong>
+                        <p>Si ocurre un incidente no previsto (ej. un nuevo tipo de ransomware), se debe revisar el
+                            Análisis de Riesgos anual para incluir esta nueva amenaza y reevaluar si los controles
+                            actuales son suficientes.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Campañas de Concienciación "Basadas en Hechos
+                            Reales"</strong>
+                        <p>Utilizar ejemplos anonimizados de incidentes reales ocurridos en la empresa ("El mes pasado,
+                            alguien hizo clic en un enlace...") para hacer la formación más relevante e impactante para
+                            los empleados.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La norma ISO/IEC 27035 proporciona más guía sobre la gestión de incidentes.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
