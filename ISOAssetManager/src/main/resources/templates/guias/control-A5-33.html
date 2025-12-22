@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.33</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.33. Protección de los registros</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Legal_y_cumplimiento</li>
+                        <li>#Gestión_de_activos</li>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los registros deberían estar protegidos de pérdidas, destrucción, falsificación, acceso no
+                    autorizado y liberación no autorizada.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el cumplimiento de los requisitos legales, reglamentarios y contractuales, así como de
+                    las expectativas comunitarias o sociales relacionadas con la protección y disponibilidad de los
+                    registros.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería tomar las siguientes medidas para proteger la autenticidad, fiabilidad,
+                        integridad y usabilidad de los registros, a medida que su contexto empresarial y los requisitos
+                        para su gestión cambien con el tiempo:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Emitir directrices sobre el almacenamiento, la cadena de custodia y la disposición de los
+                            registros, lo que incluye la prevención de la manipulación de los registros. Estas
+                            directrices deberían estar alineadas con la política temática específica de la organización
+                            sobre gestión de registros y otros requisitos de registros;</li>
+                        <li>Elaborar un programa de retención que defina los registros y el período de tiempo durante el
+                            que deberían conservarse.</li>
+                    </ol>
+                    <p>El sistema de almacenamiento y manipulación debería garantizar la identificación de los registros
+                        y de su período de retención, tomando en consideración la legislación o los reglamentos
+                        nacionales o regionales, así como las expectativas de la comunidad o de la sociedad, si procede.
+                        Este sistema debería permitir la destrucción apropiada de los registros después de ese período
+                        si la organización no los necesita.</p>
+                    <p>Al decidir sobre la protección de registros organizacionales específicos, debería considerarse su
+                        clasificación de SI correspondiente, basada en el esquema de clasificación de la organización.
+                    </p>
+                    <p>Los registros deberían clasificarse en tipos de registros (por ejemplo, registros contables,
+                        registros de transacciones comerciales, registros de personal, registros legales), cada uno con
+                        detalles de los períodos de retención y el tipo de medios de almacenamiento permitidos que
+                        pueden ser físicos o electrónicos.</p>
+                    <p>Los sistemas de almacenamiento de datos deberían elegirse de forma que los registros necesarios
+                        puedan recuperarse en un marco de tiempo y formato aceptables, dependiendo de los requisitos que
+                        se cumplan. Cuando se elijan medios de almacenamiento electrónicos, deberían establecerse
+                        procedimientos para garantizar la capacidad de acceder a los registros (tanto medios de
+                        almacenamiento como legibilidad de formato) durante todo el período de retención, a fin de
+                        proteger contra las pérdidas debidas a futuros cambios tecnológicos.</p>
+                    <p>Todas las claves cifradas y los programas asociados a los archivos cifrados o a las firmas
+                        digitales también deberían conservarse para permitir el descifrado de los registros durante el
+                        tiempo que se conserven (Ver 8.24).</p>
+                    <p>Los procedimientos de almacenamiento y manipulación deberían aplicarse de conformidad con las
+                        recomendaciones proporcionadas por los fabricantes de medios de almacenamiento. Se debería
+                        considerar la posibilidad de deterioro de los medios utilizados para el almacenamiento de
+                        registros.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Calendario de Retención (Retention Schedule)</strong>
+                        <p>Política clara que define, por ejemplo: "Facturas: 5 años", "Logs de Firewall: 1 año", "CVs
+                            de candidatos no contratados: 6 meses". Automatizar el borrado tras este periodo.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Almacenamiento Inmutable (WORM)</strong>
+                        <p>Para registros legales críticos, usar almacenamiento de tipo "Write Once, Read Many" (como
+                            AWS S3 Object Lock) para garantizar que nadie, ni siquiera un administrador, pueda modificar
+                            o eliminar el archivo antes de tiempo.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Archivo Digital a Largo Plazo</strong>
+                        <p>Uso de formatos estándar abiertos (como PDF/A para documentos) en lugar de formatos
+                            propietarios que podrían quedar obsoletos en 10 años, asegurando la legibilidad futura.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los registros documentan eventos o transacciones individuales o pueden formar agregaciones
+                        diseñadas para documentar procesos, actividades o funciones de trabajo. Estos constituyen
+                        pruebas de la actividad empresarial y de los activos de información. Cualquier conjunto de
+                        información, independientemente de su estructura o formulario, se puede administrar como un
+                        registro. Esto incluye información en forma de documento, recopilación de datos u otros tipos de
+                        información digital o analógica que se crean, capturan y gestionan en el curso de la actividad
+                        empresarial.</p>
+                    <p>En la gestión de registros, los metadatos son datos que describen el contexto, el contenido y la
+                        estructura de los registros, así como su gestión a lo largo del tiempo. Los metadatos son un
+                        componente esencial de cualquier documento.</p>
+                    <p>Puede ser necesario conservar algunos registros de forma segura para cumplir con los requisitos
+                        legales, estatutarios, reglamentarios o contractuales, así como para apoyar las actividades
+                        empresariales esenciales. La legislación nacional puede establecer el período de tiempo y el
+                        contenido de los datos para la conservación de la información. Más información sobre la gestión
+                        de documentos en la norma <strong>ISO 15489</strong>.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
