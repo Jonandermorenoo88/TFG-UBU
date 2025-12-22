@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.17</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.17. Información de autenticación</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.2.4<br>9.3.1<br>9.4.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La asignación y gestión de la información de autenticación debería controlarse mediante un proceso
+                    de gestión, que incluya el asesoramiento del personal sobre el tratamiento adecuado de la
+                    información de autenticación.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para garantizar la autenticación de entidades correcta y evitar errores en los procesos de
+                    autenticación.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Asignación de información
+                        de autenticación</strong>
+                    <p>El proceso de asignación y gestión debería garantizar que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Las contraseñas personales o los números de identificación personal (PIN) generados
+                            automáticamente durante los procesos de inscripción ya que la información de autenticación
+                            secreta temporal no se puede adivinar y es única para cada persona y los usuarios deben
+                            cambiarlos después del primer uso;</li>
+                        <li>Se establecen procedimientos para verificar la identidad de un usuario antes de proporcionar
+                            información de autenticación nueva, de sustitución o temporal;</li>
+                        <li>La información de autenticación, incluida la información de autenticación temporal, se
+                            transmite a los usuarios de forma segura (por ejemplo, a través de un canal autenticado y
+                            protegido) y se evita el uso de mensajes de correo electrónico no protegidos (texto no
+                            cifrado) con este fin;</li>
+                        <li>Los usuarios acusan recibo de la información de autenticación;</li>
+                        <li>La información de autenticación predeterminada predefinida o proporcionada por los
+                            proveedores se cambia inmediatamente después de la instalación de sistemas o software;</li>
+                        <li>Se mantienen registros de eventos significativos relativos a la asignación y gestión de la
+                            información de autenticación y se otorga su confidencialidad y se aprueba el método de
+                            mantenimiento de registros (por ejemplo, mediante el uso de una herramienta de almacén de
+                            contraseñas aprobada).</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Responsabilidades del
+                        usuario</strong>
+                    <p>Cualquier persona que tenga acceso o utilice la información de autenticación debería ser
+                        aconsejada para asegurarse de que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La información de autenticación secreta, como las contraseñas, se mantiene confidencial. La
+                            información de autenticación secreta personal no debe compartirse con nadie. La información
+                            de autenticación secreta utilizada en el contexto de identidades vinculadas a varios
+                            usuarios o vinculadas a entidades no personales se comparte únicamente con personas
+                            autorizadas;</li>
+                        <li>La información de autenticación secreta comprometida se cambia inmediatamente tras la
+                            notificación o cualquier otra indicación de un compromiso;</li>
+                        <li>
+                            Cuando se utilizan contraseñas como información de autenticación, se seleccionan contraseñas
+                            seguras según las recomendaciones de prácticas recomendadas, por ejemplo:
+                            <ol type="1" style="margin-top: 5px;">
+                                <li>Las contraseñas no se basen en nada que otra persona pueda adivinar u obtener
+                                    fácilmente al utilizar información relacionada con la persona (por ejemplo, nombres,
+                                    números de teléfono y fechas de nacimiento);</li>
+                                <li>Las contraseñas no se basen en palabras de diccionario o sus combinaciones;</li>
+                                <li>Se utilicen frases de contraseña fáciles de recordar e intente incluir caracteres
+                                    alfanuméricos y especiales;</li>
+                                <li>Las contraseñas tienen una longitud mínima;</li>
+                            </ol>
+                        </li>
+                        <li>Las mismas contraseñas no se utilizan en distintos servicios y sistemas;</li>
+                        <li>La obligación de seguir estas normas también se incluye en términos y condiciones de empleo
+                            (ver 6.2).</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Sistema de gestión de
+                        contraseñas</strong>
+                    <p>Cuando se utilizan contraseñas como información de autenticación, el sistema de gestión de
+                        contraseñas debe:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Permitirles a los usuarios seleccionar y cambiar sus propias contraseñas e incluir un
+                            procedimiento de confirmación para solucionar los errores de entrada;</li>
+                        <li>Aplicar contraseñas seguras de acuerdo con las recomendaciones de buenas prácticas (ver c)
+                            "responsabilidades del usuario");</li>
+                        <li>Forzar a los usuarios a cambiar sus contraseñas en el primer inicio de sesión;</li>
+                        <li>Aplicar los cambios de contraseña según sea necesario, por ejemplo, después de un incidente
+                            de seguridad o al terminar o cambiar de empleo cuando un usuario tiene contraseñas conocidas
+                            para identidades que permanecen activas (por ejemplo, identidades compartidas);</li>
+                        <li>Evitar la reutilización de contraseñas anteriores;</li>
+                        <li>Evitar el uso de contraseñas de uso común y nombres de usuario comprometidos, combinaciones
+                            de contraseñas de sistemas pirateados;</li>
+                        <li>No mostrar contraseñas en la pantalla al introducirlas;</li>
+                        <li>Almacene y transmita contraseñas en forma protegida. El cifrado de contraseñas y el hashing
+                            deberían realizarse de acuerdo con las técnicas cifradas aprobadas para contraseñas (ver
+                            8.24).</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Política de Contraseñas Robusta</strong>
+                        <p>Implantación técnica en Active Directory para exigir contraseñas de al menos 12 caracteres,
+                            mezclando mayúsculas, números y símbolos, y bloqueando el uso de las últimas 5 contraseñas.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Gestores de Contraseñas Corporativos</strong>
+                        <p>Distribución de licencias de software como 1Password o Bitwarden para que los empleados
+                            generen y almacenen contraseñas únicas sin tener que memorizarlas ni escribirlas en
+                            post-its.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Almacenamiento Seguro (Hashing)</strong>
+                        <p>Asegurar que las bases de datos de la empresa no guardan contraseñas en texto claro, sino
+                            "hashed" con algoritmos lentos como BCrypt o Argon2.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las contraseñas o frases de acceso son un tipo de información de autenticación que se utiliza
+                        habitualmente y son un medio común de verificar la identidad de un usuario. Otros tipos de
+                        información de autenticación son las claves cifradas, los datos almacenados en tokens de
+                        hardware (por ejemplo, tarjetas inteligentes) que producen códigos de autenticación y datos
+                        biométricos, como escaneos de iris o huellas dactilares.</p>
+                    <p>Requerir cambios frecuentes de contraseñas puede ser problemático porque los usuarios se pueden
+                        molestar por los cambios frecuentes olvidar contraseñas nuevas, anotarlas en lugares inseguros o
+                        elegir contraseñas no seguras. La provisión de inicio de sesión único (SSO) u otras herramientas
+                        de administración de autenticación (por ejemplo, almacenes de contraseñas) reduce la cantidad de
+                        información de autenticación que los usuarios deberían proteger y, por lo tanto, puede aumentar
+                        la eficacia de este control.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
