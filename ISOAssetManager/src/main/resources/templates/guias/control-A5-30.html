@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.30</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.30. Preparación de las TIC para la continuidad de la actividad</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Continuidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content" style="color:red;">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La preparación para las TIC debería planificarse, implementarse, mantenerse y probarse sobre la base
+                    de los objetivos de continuidad empresarial y los requisitos de su continuidad.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la disponibilidad de la información de la organización y de otros activos asociados
+                    durante la interrupción.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La preparación de las TIC para la continuidad del negocio es un componente importante en la
+                        gestión de la continuidad del negocio y la gestión de la SI para garantizar que los objetivos de
+                        la organización puedan seguir cumpliéndose durante la interrupción.</p>
+                    <p>Los requisitos de continuidad de las TIC son el resultado del <strong>análisis de impacto de
+                            negocio (BIA)</strong>. El proceso BIA debería utilizar tipos y criterios de impacto para
+                        evaluar los impactos a lo largo del tiempo resultantes de la interrupción. La magnitud y la
+                        duración del impacto resultante deberían utilizarse para identificar las actividades
+                        prioritarias a las que se debe asignar un objetivo de tiempo de recuperación
+                        <strong>(RTO)</strong>.</p>
+                    <p>El BIA que implica servicios de TIC puede ampliarse para definir los requisitos de rendimiento y
+                        capacidad de los sistemas de TIC y los objetivos de punto de recuperación <strong>(RPO)</strong>
+                        de la información necesaria para apoyar las actividades durante la interrupción.</p>
+                    <p>Sobre la base de los resultados del BIA y de la evaluación de riesgos, la organización debe
+                        identificar y seleccionar estrategias de continuidad de las TIC. La organización debería
+                        asegurarse de que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Se ha establecido una estructura organizativa adecuada para preparar, mitigar y responder a
+                            una interrupción apoyada por el personal con la responsabilidad, autoridad y competencia
+                            necesarias;</li>
+                        <li>Los planes de continuidad de las TIC, incluidos los procedimientos de respuesta y
+                            recuperación en los que se detalla cómo planea la organización gestionar una interrupción
+                            del servicio de las TIC, son:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>Periódicamente evaluados mediante ejercicios y pruebas;</li>
+                                <li>Aprobados por la dirección;</li>
+                            </ol>
+                        </li>
+                        <li>Los planes de continuidad de las TIC incluyen la siguiente información de continuidad de las
+                            TIC:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>Especificaciones de rendimiento y capacidad para cumplir los requisitos y objetivos
+                                    de continuidad del negocio especificados en el BIA;</li>
+                                <li>RTO de cada servicio de TIC priorizado y los procedimientos para restaurar esos
+                                    componentes;</li>
+                                <li>RPO de los recursos priorizados de TIC definidos como información y los
+                                    procedimientos para restaurar la información.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Definición de RTO y RPO</strong>
+                        <p>Ejemplo práctico: Para una base de datos crítica de E-commerce, establecer un RPO (pérdida
+                            máxima de datos) de 15 minutos (backups frecuentes) y un RTO (tiempo máximo de caída) de 4
+                            horas.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Pruebas de Restauración (Drills)</strong>
+                        <p>Realizar ejercicios trimestrales donde se restaura un backup completo en un entorno de
+                            "Sandbox" aislado para verificar que los datos son íntegros y que el tiempo real de
+                            restauración cumple con el RTO.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Alta Disponibilidad (HA)</strong>
+                        <p>Implementación de clústeres de servidores y balanceadores de carga para que, si un nodo
+                            físico falla, el servicio continúe sin interrupción perceptible (continuidad activa).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La gestión de la continuidad de las TIC es una parte clave de los requisitos de continuidad del
+                        negocio relativos a la disponibilidad para poder:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Responder y recuperarse de la interrupción de los servicios de TIC independientemente de la
+                            causa;</li>
+                        <li>Asegurar que la continuidad de las actividades prioritarias sea apoyada por los servicios de
+                            TIC requeridos;</li>
+                        <li>Responder antes de que se produzca una interrupción de los servicios de TIC y tras la
+                            detección de al menos un incidente que pueda provocar una interrupción de los servicios de
+                            TIC.</li>
+                    </ol>
+                    <p>En la norma <strong>ISO/IEC 27031</strong> más orientaciones sobre la preparación de las TIC para
+                        la continuidad de las actividades.</p>
+                    <p>En las normas <strong>ISO 22301</strong> e <strong>ISO 22313</strong> más orientaciones sobre los
+                        sistemas de gestión de la continuidad de las actividades.</p>
+                    <p>En la norma <strong>ISO/TS 22317</strong> más orientaciones sobre el BIA.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
