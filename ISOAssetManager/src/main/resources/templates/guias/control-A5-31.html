@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.31</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.31. Requisitos legales, reglamentarios y contractuales</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Legal_y_cumplimiento</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.1.1<br>18.1.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los requisitos legales, estatutarios, reglamentarios y contractuales relevantes para la SI y el
+                    enfoque de la organización para cumplir con estos requisitos deberían ser identificados,
+                    documentados y actualizados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el cumplimiento de los requisitos legales, reglamentarios y contractuales relacionados
+                    con la SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">General</strong>
+                    <p>Los requisitos externos, incluidos los legales, estatutarios, reglamentarios o contractuales,
+                        deberían tenerse en cuenta cuando:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Se desarrollan políticas y procedimientos de SI;</li>
+                        <li>Se diseñan, aplican o modifican los controles de SI;</li>
+                        <li>Se clasifica la información y otros activos asociados como parte del proceso para establecer
+                            requisitos de SI para necesidades internas o acuerdos con proveedores;</li>
+                        <li>Se realizan evaluaciones de riesgos de SI y se determinan las actividades de tratamiento de
+                            riesgos de SI;</li>
+                        <li>Se determinan los procesos junto con las funciones y responsabilidades relacionadas con la
+                            SI;</li>
+                        <li>Se determinan los requisitos contractuales de los proveedores pertinentes para la
+                            organización y el alcance del suministro de productos y servicios.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Legislación y
+                        regulaciones</strong>
+                    <p>La organización debería:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar toda la legislación y las normativas pertinentes a la SI de la organización para
+                            conocer los requisitos de su tipo de negocio;</li>
+                        <li>Tomar en consideración el cumplimiento en todos los países pertinentes, si la organización:
+                            <ul style="list-style-type: disc; margin-left: 20px;">
+                                <li>Realiza negocios en otros países;</li>
+                                <li>Utiliza productos y servicios de otros países en los que las leyes y normativas
+                                    pueden afectar a la organización;</li>
+                                <li>Transfiere información a través de fronteras jurisdiccionales donde las leyes y
+                                    reglamentos pueden afectar a la organización;</li>
+                            </ul>
+                        </li>
+                        <li>Revisar periódicamente la legislación y el reglamento identificados a fin de mantenerse al
+                            día con los cambios e identificar la nueva legislación;</li>
+                        <li>Definir y documentar los procesos específicos y las responsabilidades individuales para
+                            cumplir con estos requisitos.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Cifrado</strong>
+                    <p>El campo del cifrado es un área que a menudo tiene requisitos legales específicos. Se debería
+                        tener en cuenta el cumplimiento de los acuerdos, leyes y reglamentos pertinentes relativos a los
+                        siguientes elementos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Restricciones a la importación o exportación de hardware y software informático para la
+                            realización de funciones de cifrado;</li>
+                        <li>Restricciones a la importación o exportación de hardware y software informático diseñado
+                            para que se le añadan funciones de cifrado;</li>
+                        <li>Restricciones al uso del cifrado;</li>
+                        <li>Métodos obligatorios o discrecionales de acceso de las autoridades de los países a la
+                            información cifrada;</li>
+                        <li>Validez de firmas digitales, sellos y certificados.</li>
+                    </ol>
+                    <p>Se recomienda buscar asesoramiento jurídico para garantizar el cumplimiento de la legislación y
+                        las normativas pertinentes, especialmente cuando la información cifrada o las herramientas de
+                        cifrado se desplazan a través de las fronteras jurisdiccionales.</p>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Contratos</strong>
+                    <p>Los requisitos contractuales relacionados con la SI deben incluir los que se indican en:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Contratos con clientes;</li>
+                        <li>Contratos con proveedores (ver 5.20);</li>
+                        <li>Contratos de seguros.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Registro de Requisitos Legales</strong>
+                        <p>Mantener una hoja de cálculo o herramienta de GRC actualizada que liste todas las leyes
+                            aplicables (GDPR, LOPDGDD, LSSI, ENS) y vincule cada artículo legal con el control interno
+                            que lo satisface.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Control de Exportación de Cifrado</strong>
+                        <p>Si la empresa desarrolla software con módulos criptográficos, verificar las listas de control
+                            de exportación (ej. Acuerdo de Wassenaar) antes de vender a ciertos países para evitar
+                            sanciones.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Revisión Legal Anual</strong>
+                        <p>Contratar un servicio de asesoría jurídica especializada en TIC para que, una vez al año,
+                            valide que las políticas de privacidad y los contratos de la organización siguen siendo
+                            conformes a la normativa vigente.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>No hay más información.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
