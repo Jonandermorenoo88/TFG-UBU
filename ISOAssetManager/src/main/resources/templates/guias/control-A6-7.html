@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 6.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">6.7. Trabajo Remoto</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                        <li>#Protección_de_la_información</li>
+                        <li>#Seguridad_física</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">6.2.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían implementarse medidas de seguridad cuando el personal trabaja de forma remota para proteger
+                    la información a la que se accede, procesa o almacena fuera de las instalaciones de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la SI cuando el personal trabaja de forma remota.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El trabajo a distancia ocurre siempre que el personal de la organización trabaja desde un lugar
+                        fuera de las instalaciones de la organización, al acceder a información ya sea en papel o
+                        electrónicamente a través de equipos de TIC. Los entornos de trabajo remoto incluyen los
+                        denominados "teletrabajo", "trabajo a distancia", "trabajo flexible", "entornos de trabajo
+                        virtuales" y "mantenimiento remoto".</p>
+                    <p><em><strong>NOTA</strong> Es posible que no todas las recomendaciones de esta guía se puedan
+                            aplicar debido a la legislación local y a las regulaciones en diferentes
+                            jurisdicciones.</em></p>
+                    <p>Las organizaciones que permiten actividades de trabajo remoto deberían emitir una política
+                        específica sobre trabajo remoto que defina las condiciones y restricciones pertinentes. Cuando
+                        se considere aplicable, se deberían considerar los siguientes asuntos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La seguridad física existente o propuesta del lugar de trabajo remoto, tomando en
+                            consideración la seguridad física de la ubicación y el entorno local, incluidas las
+                            diferentes jurisdicciones en las que se encuentra el personal;</li>
+                        <li>Las reglas y mecanismos de seguridad para el entorno físico remoto, como archivadores
+                            bloqueables, transporte seguro entre ubicaciones y reglas para acceso remoto, escritorio
+                            transparente, impresión y eliminación de información y otros activos asociados, e informes
+                            de eventos de SI (ver 6.8);</li>
+                        <li>Los entornos de trabajo remotos físicos esperados;</li>
+                        <li>Los requisitos de seguridad de las comunicaciones, tomando en consideración la necesidad de
+                            acceso remoto a los sistemas de la organización, la sensibilidad de la información a la que
+                            que se accede y se transmite a través del enlace de comunicaciones y la sensibilidad de los
+                            sistemas y aplicaciones;</li>
+                        <li>El uso de acceso remoto, como el acceso a escritorios virtuales, que admite el procesamiento
+                            y almacenamiento de información en equipos de propiedad privada;</li>
+                        <li>La amenaza del acceso no autorizado a la información o los recursos de otras personas en el
+                            lugar de trabajo remoto (por ejemplo, familiares y amigos);</li>
+                        <li>La amenaza del acceso no autorizado a la información o a los recursos de otras personas en
+                            lugares públicos;</li>
+                        <li>El uso de redes domésticas y redes públicas, así como los requisitos o restricciones en la
+                            configuración de servicios de red inalámbrica;</li>
+                        <li>El uso de medidas de seguridad, como firewalls y protección contra malware;</li>
+                        <li>Los mecanismos seguros para desplegar e inicializar sistemas de forma remota;</li>
+                        <li>Los mecanismos seguros para la autenticación y la habilitación de privilegios de acceso
+                            tomando en consideración la vulnerabilidad de los mecanismos de autenticación de factor
+                            único en los que se permite el acceso remoto a la red de la empresa.</li>
+                    </ol>
+                    <p>Las directrices y medidas que se deben considerarse deberían incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>El suministro de equipo y mobiliario de almacenamiento adecuados para las actividades de
+                            trabajo a distancia, cuando no se permite el uso de equipo de propiedad privada que no esté
+                            bajo el control de la organización;</li>
+                        <li>Una definición del trabajo permitido, la clasificación de la información que se puede
+                            mantener y los sistemas y servicios internos a los que está autorizado el trabajador remoto;
+                        </li>
+                        <li>La formación de los que trabajan a distancia y de los que prestan apoyo. Esto debería
+                            incluir cómo llevar a cabo el negocio de forma segura mientras trabaja de forma remota;</li>
+                        <li>El suministro de equipos de comunicación adecuados, incluidos métodos para garantizar el
+                            acceso remoto, como requisitos sobre bloqueos de pantalla del dispositivo y temporizadores
+                            de inactividad; la activación del seguimiento de la ubicación del dispositivo; la
+                            instalación de capacidades de borrado remoto;</li>
+                        <li>La seguridad física;</li>
+                        <li>Las normas y directrices sobre el acceso de la familia y los visitantes al equipo y a la
+                            información;</li>
+                        <li>La prestación de asistencia y mantenimiento de hardware y software;</li>
+                        <li>La provisión de seguros;</li>
+                        <li>Los procedimientos de respaldo y continuidad del negocio;</li>
+                        <li>Auditoría y vigilancia de la seguridad;</li>
+                        <li>La revocación de la autoridad y los derechos de acceso y la devolución del equipo cuando se
+                            terminan las actividades de trabajo remoto.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El perímetro de seguridad ya no son las cuatro paredes de la oficina; el perímetro es donde esté
+                        el usuario:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: VPN Corporativa Obligatoria</strong>
+                        <p>Los empleados remotos no pueden acceder directamente a la base de datos de facturación desde
+                            la WiFi de su casa. Deben primero conectarse a una VPN (Red Privada Virtual) cifrada que
+                            autentica tanto al usuario (con contraseña) como al dispositivo (con certificado digital),
+                            creando un túnel seguro a través de internet.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Política de "Pantalla Ajena"</strong>
+                        <p>Se prohíbe trabajar con datos sensibles (nóminas, historiales médicos) en cafeterías o trenes
+                            a menos que se utilice un filtro de privacidad físico en la pantalla que impida que las
+                            personas sentadas al lado puedan leer la información ("shoulder surfing").</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
