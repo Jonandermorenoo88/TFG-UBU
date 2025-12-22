@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.35</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.35. Revisión independiente de la SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El enfoque de la organización para gestionar la SI y su implementación, incluidas las personas, los
+                    procesos y las tecnologías, debería revisarse de forma independiente a intervalos planificados o
+                    cuando se produzcan cambios significativos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la idoneidad, adecuación y eficacia continuas del enfoque de la organización para
+                    gestionar la SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería tener procesos para realizar revisiones independientes. La dirección
+                        debería planificar e iniciar revisiones independientes periódicas. Las revisiones deberían
+                        incluir la evaluación de las oportunidades de mejora y la necesidad de cambios en el enfoque de
+                        la SI, lo que incluye la política de SI, las políticas de temas específicos y otros controles.
+                    </p>
+                    <p>Dichas revisiones deberían ser llevadas a cabo por personas independientes del área revisada (por
+                        ejemplo, la función de auditoría interna, un gestor independiente o una organización externa
+                        especializada en dichas revisiones). Las personas que lleven a cabo estas revisiones deberían
+                        tener la competencia adecuada. La persona que lleve a cabo las revisiones no debe estar en la
+                        línea de autoridad para garantizar que tenga la independencia necesaria para realizar una
+                        evaluación.</p>
+                    <p>Los resultados de las revisiones independientes deberían comunicarse a los directivos que las
+                        iniciaron y, en su caso, a la alta dirección. Estos documentos deberían conservarse.</p>
+                    <p>Si las revisiones independientes identifican que el enfoque y la implementación de la
+                        organización para administrar la SI son inadecuados (por ejemplo, los objetivos y requisitos
+                        documentados no se cumplen o no se ajustan con la dirección de SI indicada en la política de SI
+                        y las políticas de temas específicos), la dirección debe iniciar acciones correctivas.</p>
+                    <p>Además de las revisiones periódicas independientes, la organización debería considerar la
+                        posibilidad de realizar revisiones independientes cuando:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Leyes y reglamentos que afectan al cambio de organización;</li>
+                        <li>Se producen incidentes significativos;</li>
+                        <li>La organización inicia un nuevo negocio o cambia un negocio actual;</li>
+                        <li>La organización comienza a utilizar un nuevo producto o servicio o cambia el uso de un
+                            producto o servicio actual;</li>
+                        <li>La organización cambia significativamente los controles y procedimientos de SI.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Auditoría Interna Anual</strong>
+                        <p>Planificación de un ciclo de auditorías donde el departamento de Calidad o un auditor interno
+                            certificado revisa la conformidad del SGSI (Sistema de Gestión de Seguridad de la
+                            Información) sin ser parte del equipo de TI que lo implementa.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Auditoría de Certificación (Externa)</strong>
+                        <p>Contratación de una entidad certificadora (como AENOR o BSI) para auditar el cumplimiento de
+                            la norma ISO 27001 cada año y mantener el certificado oficial.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Revisión por Pares (Peer Review)</strong>
+                        <p>En organizaciones pequeñas sin departamento de auditoría, un administrador de sistemas de una
+                            sucursal puede auditar los controles de otra sucursal distinta para mantener la
+                            independencia ("Cross-audit").</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las normas <strong>ISO/IEC 27007</strong> y <strong>ISO/IEC TS 27008</strong> proporcionan guía
+                        para llevar a cabo revisiones independientes.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
