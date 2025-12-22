@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.25</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.25. Evaluación y decisión sobre eventos de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detectar</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">16.1.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería evaluar los eventos de SI y decidir si se deben clasificar como incidentes
+                    de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la categorización y priorización efectivas de los eventos de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Debería acordarse un esquema de categorización y priorización de los incidentes de SI para la
+                        identificación de las consecuencias y la prioridad de un incidente. El esquema debería incluir
+                        los criterios para clasificar los eventos como incidentes de SI. El punto de contacto debe
+                        evaluar cada evento de SI al utilizar el esquema acordado.</p>
+                    <p>El personal responsable de coordinar y responder a los incidentes de SI debería realizar la
+                        evaluación y tomar una decisión sobre los eventos de SI.</p>
+                    <p>Los resultados de la evaluación y la decisión deberían registrarse en detalle a efectos de
+                        futuras referencias y verificación.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Matriz de Triaje</strong>
+                        <p>Uso de una escala de severidad (Baja, Media, Alta, Crítica) basada en el impacto (nº de
+                            usuarios afectados) y urgencia, para decidir si una alerta del antivirus es un falso
+                            positivo o un incidente real que requiere activar al equipo.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Evaluación Automatizada (SOAR)</strong>
+                        <p>Herramientas que pre-analizan los correos de phishing reportados por usuarios, comprobando
+                            automáticamente si los enlaces son maliciosos en VirusTotal antes de escalar el ticket a un
+                            analista humano.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Registro de Decisiones</strong>
+                        <p>Mantener un log donde se justifique por qué se descartó una alerta ("El tráfico anómalo
+                            provenía de una copia de seguridad programada, no es ataque"), esencial para auditorías
+                            posteriores.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La norma ISO/IEC 27035 proporciona más guía sobre la gestión de incidentes.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
