@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.29</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.29. SI durante una interrupción</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Continuidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">17.1.1<br>17.1.2<br>17.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería planificar cómo mantener la SI en un nivel adecuado durante la interrupción.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger la información y otros activos asociados durante la interrupción.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería determinar sus requisitos para adaptar los controles de SI durante la
+                        interrupción. Los requisitos de SI deberían incluirse en los procesos de gestión de la
+                        continuidad del negocio.</p>
+                    <p>Se debería desarrollar, implementar, probar, revisar y evaluar planes para mantener o restaurar
+                        la SI de los procesos empresariales críticos tras una interrupción o una falla. La SI debería
+                        restaurarse en el nivel requerido y en los plazos requeridos.</p>
+                    <p>La organización debería implementar y mantener:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Controles de SI, sistemas y herramientas de apoyo dentro de los planes de continuidad de las
+                            TIC;</li>
+                        <li>Procesos para mantener los controles de SI existentes durante la interrupción;</li>
+                        <li>Compensación de los controles de SI que no se pueden mantener durante la interrupción.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Plan de Contingencia "Papel y Lápiz"</strong>
+                        <p>Si el sistema ERP cae, definir un procedimiento seguro para registrar pedidos en papel que
+                            garantice la integridad de los datos hasta que se puedan volcar al sistema, sin perder
+                            información por el camino.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Acceso Remoto de Emergencia</strong>
+                        <p>Tener pre-configurada una VPN de contingencia o escritorios virtuales (VDI) para que el
+                            personal crítico pueda seguir trabajando desde casa si la oficina principal queda
+                            inaccesible (ej. incendio o pandemia), manteniendo los mismos requisitos de MFA.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Sitio de Recuperación (DR SITE)</strong>
+                        <p>Un centro de datos secundario (o región cloud alternativa) donde se replican los datos
+                            cifrados, listo para activarse si el primario falla, asegurando que la seguridad física y
+                            lógica sea equivalente al principal.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>En el contexto de la continuidad empresarial y la planificación de la continuidad de las TIC,
+                        puede ser necesario adaptar los requisitos de SI en función del tipo de interrupción, en
+                        comparación con las condiciones operativas normales. Como parte del análisis del impacto en el
+                        negocio (BIA) y de la evaluación de riesgos realizada dentro de la gestión de la continuidad del
+                        negocio, se deben considerar y priorizar las consecuencias de la pérdida de confidencialidad e
+                        integridad de la información, además de la necesidad de mantener la disponibilidad.</p>
+                    <p>Información sobre los sistemas de gestión de la continuidad del negocio en las normas ISO 22301 e
+                        ISO 22313. Guías sobre el análisis de impacto empresarial (BIA) en la ISO/TS 22317.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
