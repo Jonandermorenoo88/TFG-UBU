@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.22</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.22. Seguimiento, revisión y gestión de cambios en servicios de proveedores</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_relaciones_con_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Seguridad_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">15.2.1<br>15.2.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería supervisar, revisar, evaluar y gestionar regularmente los cambios en las
+                    prácticas de SI del proveedor y en la prestación de servicios.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener un nivel acordado de SI y prestación de servicios de acuerdo con los acuerdos con los
+                    proveedores.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La supervisión, revisión y gestión de cambios de los servicios de proveedores debería garantizar
+                        el cumplimiento de los términos y condiciones de SI de los acuerdos, la gestión adecuada de los
+                        incidentes y problemas de SI y los cambios en los servicios de proveedores o en el estado
+                        empresarial no afectan a la prestación de servicios. Esto debería implicar un proceso para
+                        gestionar la relación entre la organización y el proveedor para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Supervisar los niveles de desempeño del servicio para verificar el cumplimiento de los
+                            acuerdos;</li>
+                        <li>Supervisar los cambios realizados por los proveedores, entre los que se incluyen:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>Mejoras en los servicios actuales ofrecidos;</li>
+                                <li>Desarrollo de cualquier aplicación y sistema nuevos;</li>
+                                <li>Modificaciones o actualizaciones de las políticas y procedimientos del proveedor;
+                                </li>
+                                <li>Controles nuevos o modificados para resolver incidentes de SI y mejorar la SI;</li>
+                            </ol>
+                        </li>
+                        <li>Supervisar los cambios en los servicios del proveedor, incluidos:
+                            <ol type="1" style="margin-top:5px;">
+                                <li>Cambios y mejoras en las redes;</li>
+                                <li>Utilización de nuevas tecnologías;</li>
+                                <li>Adopción de nuevos productos o versiones o versiones más recientes;</li>
+                                <li>Nuevas herramientas y entornos de desarrollo;</li>
+                                <li>Cambios en la ubicación física de las instalaciones de servicio;</li>
+                                <li>Cambio de subproveedores;</li>
+                                <li>Subcontratación con otro proveedor;</li>
+                            </ol>
+                        </li>
+                        <li>Revisar los informes de servicio producidos por el proveedor y organizar reuniones
+                            periódicas de progreso según lo requerido por los acuerdos;</li>
+                        <li>Llevar a cabo auditorías de proveedores y subproveedores, junto con la revisión de los
+                            informes de auditores independientes, si están disponibles y el seguimiento de las
+                            cuestiones identificadas;</li>
+                        <li>Proporcionar información sobre incidentes de SI y revisar esta información según lo
+                            requieran los acuerdos y las directrices y procedimientos de apoyo;</li>
+                        <li>Revisar los registros de auditoría de proveedores y los registros de eventos de SI,
+                            problemas operativos, fallas, seguimiento de fallas e interrupciones relacionados con el
+                            servicio prestado;</li>
+                        <li>Responder y gestionar cualquier incidente o evento de SI identificado;</li>
+                        <li>Identificar las vulnerabilidades de SI y gestionarlas;</li>
+                        <li>Revisar los aspectos de SI de las relaciones del proveedor con sus propios proveedores;</li>
+                        <li>Asegurar que el proveedor mantenga una capacidad de servicio suficiente junto con planes
+                            viables diseñados para garantizar que se mantienen los niveles de continuidad del servicio
+                            acordados tras fallas de servicio o desastres importantes (ver 5.29, 5.30, 5.35, 5.36,
+                            8.14);</li>
+                        <li>Asegurar que los proveedores asignen responsabilidades para revisar el cumplimiento y hacer
+                            cumplir los requisitos de los acuerdos;</li>
+                        <li>Evaluar regularmente que los proveedores mantienen niveles adecuados de SI.</li>
+                    </ol>
+                    <p>La responsabilidad de gestionar las relaciones con los proveedores debería asignarse a un
+                        individuo o equipo designado. Deberían ponerse a disposición suficientes conocimientos técnicos
+                        y recursos para supervisar que se cumplen los requisitos del acuerdo, en particular los
+                        requisitos de SI. Se deberían tomar las medidas adecuadas cuando se observen deficiencias en la
+                        prestación de servicios.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Reuniones de Seguimiento (Service Reviews)</strong>
+                        <p>Establecer reuniones mensuales o trimestrales con el proveedor para revisar el cumplimiento
+                            de los SLAs, analizar incidentes ocurridos y planificar futuras actualizaciones.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Cuadro de Mando de Seguridad</strong>
+                        <p>Solicitar al proveedor un dashboard o informe periódico que muestre métricas clave: % de
+                            disponibilidad, tiempo medio de respuesta a incidentes, y estado de parches de seguridad.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Gestión de Cambios Coordinada</strong>
+                        <p>Asegurar que el proveedor notifica con antelación cualquier cambio significativo en su
+                            infraestructura (ej. migración de CPD) para evaluar el impacto en la seguridad de la
+                            organización.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Ver la norma ISO/IEC 27036-3 para obtener más información.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
