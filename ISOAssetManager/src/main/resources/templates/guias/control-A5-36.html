@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.36</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.36. Cumplimiento de políticas, reglas y normas de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Legal_y_cumplimiento</li>
+                        <li>#Seguridad_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">18.2.2<br>18.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El cumplimiento de la política de SI de la organización, las políticas, las reglas y los estándares
+                    específicos de cada tema deberían revisarse periódicamente.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que la SI se implementa y opera de acuerdo con la política de SI de la organización, las
+                    políticas, reglas y normas específicas de cada tema.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los administradores, los propietarios de servicios, productos o información deberían identificar
+                        cómo revisar que se cumplen los requisitos de SI definidos en la política de SI, las políticas
+                        específicas de cada tema, las reglas, las normas y otras regulaciones que sean aplicables. Se
+                        deberían considerar las herramientas automáticas de medición y elaboración de informes para una
+                        revisión periódica eficaz.</p>
+                    <p>Si se encuentra alguna no conformidad como resultado de la revisión, los administradores deben:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar las causas de la no conformidad;</li>
+                        <li>Evaluar la necesidad de medidas correctivas para lograr la conformidad;</li>
+                        <li>Implementar las acciones correctivas adecuadas;</li>
+                        <li>Revisar las medidas correctivas adoptadas para verificar su eficacia e identificar
+                            deficiencias o debilidades.</li>
+                    </ol>
+                    <p>Se deben registrar los resultados de las revisiones y acciones correctivas llevadas a cabo por
+                        los gerentes, los propietarios de servicios, productos o información y se deberían conservar
+                        estos documentos. Los administradores deberían informar los resultados a las personas que
+                        realizan revisiones independientes (ver 5.35) cuando se lleve a cabo una revisión independiente
+                        en el área de su responsabilidad.</p>
+                    <p>Las acciones correctivas deberían completarse de manera oportuna, según corresponda al riesgo. Si
+                        no se completa en la próxima revisión programada, los progresos deberían abordarse al menos en
+                        esa revisión.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Revisión Anual de Conformidad del Director</strong>
+                        <p>Cada responsable de departamento (ej. Director de RRHH) debe firmar anualmente un checklist
+                            confirmando que su equipo cumple las políticas de seguridad (ej. política de mesas limpias,
+                            borrado seguro de CVs).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Escaneo de Cumplimiento Técnico</strong>
+                        <p>Uso de herramientas como Nessus o OpenSCAP para verificar automáticamente que todos los
+                            servidores cumplen con la línea base de seguridad (Hardening) definida por la empresa (ej.
+                            contraseñas de root rotadas, SSH seguro).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Plan de Acciones Correctivas</strong>
+                        <p>Llevar un registro en Jira de todos los incumplimientos detectados, asignando un responsable
+                            y una fecha límite para subsanarlos, evitando que los hallazgos de auditoría se queden en
+                            "papel mojado".</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>El seguimiento operativo del uso del sistema se trata en 8.15, 8.16 y 8.17.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
