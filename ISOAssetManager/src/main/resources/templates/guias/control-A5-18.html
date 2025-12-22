@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.18</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.18. Derechos de acceso</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.2.2<br>9.2.5<br>9.2.6</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los derechos de acceso a la información y a otros activos asociados se deberían proveer, revisar,
+                    modificar y eliminar de acuerdo con la política y las reglas de control de acceso específicas del
+                    tema de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que el acceso a la información y otros activos asociados se define y autoriza de acuerdo
+                    con los requisitos organizacionales.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Provisión y revocación de
+                        derechos de acceso</strong>
+                    <p>El proceso para asignar o revocar derechos de acceso físicos y lógicos otorgados a la identidad
+                        autenticada de una entidad debe incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Obtención de la autorización del propietario de la información y otros activos asociados
+                            para el uso de la información y otros activos asociados (ver 5.9). También puede ser
+                            apropiada la aprobación por separado de los derechos de acceso por parte de la
+                            administración;</li>
+                        <li>Consideración de los requisitos organizacionales y la política y las reglas específicas de
+                            cada tema de la organización sobre el control de acceso;</li>
+                        <li>Consideración de la separación de deberes, que incluye la separación de las funciones de
+                            aprobación e implementación de los derechos de acceso y la separación de roles conflictivos;
+                        </li>
+                        <li>Garantía de que se eliminan los derechos de acceso cuando alguien no necesita acceder a la
+                            información y a otros activos asociados, en particular garantizando que los derechos de
+                            acceso de los usuarios que han abandonado la organización se eliminan de forma oportuna;
+                        </li>
+                        <li>Consideración de la concesión de derechos de acceso temporal durante un período de tiempo
+                            limitado y su revocación en la fecha de vencimiento, en particular para el personal temporal
+                            o el acceso temporal requerido por el personal;</li>
+                        <li>Verificación de que el nivel de acceso concedido se ajuste a las políticas específicas del
+                            tema sobre control de acceso (ver 5.15) y sea coherente con otros requisitos de si, como la
+                            separación de funciones (ver 5.3);</li>
+                        <li>Garantía de que los derechos de acceso se activen (por ejemplo, por parte de los proveedores
+                            de servicios) solo después de que los procedimientos de autorización se hayan completado
+                            correctamente;</li>
+                        <li>Mantención de un registro central de los derechos de acceso otorgados a un identificador de
+                            usuario (id, lógico o físico) para acceder a la información y otros activos asociados;</li>
+                        <li>Modificación de los derechos de acceso de los usuarios que han cambiado de roles o trabajos;
+                        </li>
+                        <li>Eliminación o ajuste de los derechos de acceso físicos y lógicos, que se pueden realizar
+                            mediante la eliminación, revocación o sustitución de claves, información de autenticación,
+                            tarjetas de identificación o suscripciones;</li>
+                        <li>Mantención de un registro de los cambios en los derechos de acceso lógicos y físicos de los
+                            usuarios.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Revisión de los derechos
+                        de acceso</strong>
+                    <p>Las revisiones periódicas de los derechos de acceso físicos y lógicos deben tener en cuenta lo
+                        siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Los derechos de acceso de los usuarios después de cualquier cambio en la misma organización
+                            (por ejemplo, cambio de empleo, ascenso, descenso) o terminación del empleo (ver 6.1 a 6.5);
+                        </li>
+                        <li>Las autorizaciones para derechos de acceso privilegiados. Consideración antes del cambio o
+                            la terminación del empleo.</li>
+                    </ol>
+                    <p>Los derechos de acceso de un usuario a la información y otros activos asociados deberían
+                        revisarse y ajustarse o eliminarse antes de cualquier cambio o cese del empleo basándose en la
+                        evaluación de factores de riesgo como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Si la terminación o el cambio es iniciado por el usuario o por la dirección y el motivo de
+                            la terminación;</li>
+                        <li>Las responsabilidades actuales del usuario;</li>
+                        <li>El valor de los activos actualmente accesibles.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Revisiones de Acceso de Usuarios (UAR)</strong>
+                        <p>Campañas semestrales donde los propietarios de cada departamento deben revisar y confirmar
+                            (re-certificar) que sus empleados siguen necesitando sus permisos actuales.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Automatización de Bajas (Identity Governance)</strong>
+                        <p>Sistemas IDM (Identity Management) que detectan cuando un usuario pasa a estado "Inactivo" en
+                            RRHH y automáticamente lanzan scripts para de-provisionar cuentas en Active Directory,
+                            correo y ERP.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Clonación Controlada</strong>
+                        <p>Si se usa la función "copiar usuario" para nuevos empleados, debe revisarse manualmente
+                            posteriormente para asegurar que no se heredan permisos históricos innecesarios del usuario
+                            origen.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se debería tener en cuenta el establecimiento de funciones de acceso de usuarios en función de
+                        los requisitos organizacionales que resumen una norma de derechos de acceso en perfiles de
+                        acceso de usuarios típicos. Las solicitudes de acceso y las revisiones de los derechos de acceso
+                        se gestionan más fácilmente en el nivel de dichas funciones que en el nivel de derechos
+                        concretos.</p>
+                    <p>Se debe considerar la inclusión de cláusulas en los contratos de personal y de servicios que
+                        especifiquen sanciones si el personal intenta acceder sin autorización (ver 5.20, 6.2, 6.4 y
+                        6.6).</p>
+                    <p>En los casos de terminación iniciada por la administración, el personal descalificado o los
+                        usuarios externos pueden dañar deliberadamente la información o sabotear las instalaciones de
+                        procesamiento de la información. En los casos de personas que se refirman o son despedidas,
+                        pueden verse tentadas a recoger información para uso futuro.</p>
+                    <p>La clonación es una forma eficaz de que las organizaciones asignen acceso a los usuarios. Sin
+                        embargo, debería hacerse con cuidado basado en funciones distintas identificadas por la
+                        organización en lugar de clonar una identidad con todos los derechos de acceso asociados. La
+                        clonación tiene un riesgo inherente de resultar en derechos de acceso excesivos a la información
+                        y otros activos asociados.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
