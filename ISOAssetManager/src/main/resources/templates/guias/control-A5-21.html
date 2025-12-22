@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.21</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.21. Gestión de la SI en la cadena de suministro TIC</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_relaciones_con_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">15.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían definirse y aplicarse procesos y procedimientos para gestionar los riesgos de SI asociados
+                    a la cadena de suministro de productos y servicios de TIC.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener un nivel acordado de SI en las relaciones con los proveedores.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían considerar los siguientes temas para abordar la SI dentro de la seguridad de la
+                        cadena de suministro de TIC, además de los requisitos generales de SI para las relaciones con
+                        los proveedores:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Definir los requisitos de SI que se aplicarán a la adquisición de productos o servicios de
+                            TIC;</li>
+                        <li>Exigir que los proveedores de servicios de TIC propaguen los requisitos de seguridad de la
+                            organización a lo largo de la cadena de suministro si subcontratan partes del servicio de
+                            TIC proporcionado a la organización;</li>
+                        <li>Exigir que los proveedores de productos de TIC propaguen las prácticas de seguridad
+                            adecuadas a lo largo de la cadena de suministro si estos productos incluyen componentes
+                            comprados o adquiridos a otros proveedores u otras entidades (por ejemplo, desarrolladores
+                            de software subcontratados y proveedores de componentes de hardware);</li>
+                        <li>Solicitar a los proveedores de productos TIC que proporcionen información que describa los
+                            componentes de software utilizados en los productos;</li>
+                        <li>Solicitar a los proveedores de productos TIC que proporcionen información que describa las
+                            funciones de seguridad implementadas de su producto y la configuración necesaria para su
+                            funcionamiento seguro;</li>
+                        <li>Implementar un proceso de monitoreo y métodos aceptables para validar que los productos y
+                            servicios de TIC entregados cumplan con los requisitos de seguridad establecidos. Ejemplos
+                            de dichos métodos de revisión de proveedores pueden incluir pruebas de penetración y pruebas
+                            o validación de declaraciones de terceros para las operaciones de SI del proveedor;</li>
+                        <li>Implementar un proceso para identificar y documentar los componentes de productos o
+                            servicios que son críticos para mantener la funcionalidad y, por lo tanto, requieren mayor
+                            atención, escrutinio y seguimiento adicional cuando se crean fuera de la organización,
+                            especialmente si el proveedor subcontrata aspectos de los componentes de productos o
+                            servicios a otros proveedores;</li>
+                        <li>Obtener la garantía de que los componentes críticos y su origen pueden rastrearse a lo largo
+                            de la cadena de suministro;</li>
+                        <li>Obtener la garantía de que los productos TIC suministrados funcionan como se esperaba sin
+                            ninguna característica inesperada o no deseada;</li>
+                        <li>Implementar procesos para garantizar que los componentes de los proveedores sean auténticos
+                            y no se alteren de sus especificaciones. Entre las medidas de ejemplo se incluyen etiquetas
+                            antimanipulación, verificaciones cifradas de hash o firmas digitales. El control para
+                            detectar un rendimiento fuera de las especificaciones puede ser un indicador de manipulación
+                            o falsificación. La prevención y la detección de manipulación deberían implementarse durante
+                            varias etapas del ciclo de vida del desarrollo del sistema, incluidos el diseño, el
+                            desarrollo, la integración, las operaciones y el mantenimiento;</li>
+                        <li>Obtener la garantía de que los productos TIC alcanzan los niveles de seguridad requeridos,
+                            por ejemplo, mediante una certificación formal o un esquema de evaluación como el Acuerdo
+                            Común de Reconocimiento de Criterios;</li>
+                        <li>Definir reglas para compartir información sobre la cadena de suministro y cualquier posible
+                            problema y compromiso entre la organización y los proveedores;</li>
+                        <li>Implementar procesos específicos para gestionar el ciclo de vida y la disponibilidad de los
+                            componentes de TIC y los riesgos de seguridad asociados. Esto incluye la gestión de los
+                            riesgos de que los componentes ya no estén disponibles debido a que los proveedores ya no
+                            están en el negocio o a que los proveedores ya no proporcionan estos componentes debido a
+                            los avances tecnológicos. Debería considerarse la identificación de un proveedor alternativo
+                            y el proceso de transferencia de software y competencia al proveedor alternativo.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Software Bill of Materials (SBoM)</strong>
+                        <p>Exigir a los desarrolladores un inventario detallado de todas las librerías y dependencias
+                            utilizadas en sus aplicaciones para detectar vulnerabilidades en cadena (ej. Log4j).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Verificación de Integridad</strong>
+                        <p>Validar siempre las firmas digitales (GPG/PGP) o hashes (SHA-256) de los paquetes de software
+                            o firmware descargados antes de instalarlos en producción.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Escaneo de Dependencias (SCA)</strong>
+                        <p>Uso de herramientas automatizadas (como OWASP Dependency Check) en el pipeline de CI/CD para
+                            bloquear componentes con vulnerabilidades conocidas (CVEs).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las prácticas específicas de gestión de riesgos de la cadena de suministro de TIC se basan en
+                        prácticas generales de SI, calidad, gestión de proyectos e ingeniería de sistemas, pero no las
+                        sustituyen.</p>
+                    <p>Se aconseja a las organizaciones que trabajen con los proveedores para comprender la cadena de
+                        suministro de TIC y cualquier asunto que tenga un efecto importante en los productos y servicios
+                        que se proporcionan. La organización puede influir en las prácticas de SI de la cadena de
+                        suministro de TIC al dejar en claro en los acuerdos con sus proveedores los asuntos que deben
+                        abordar otros proveedores de la cadena de suministro de TIC.</p>
+                    <p>Las TIC deberían adquirirse de fuentes de confianza. La fiabilidad del software y del hardware es
+                        una cuestión de control de calidad. Aunque generalmente no es posible que una organización
+                        inspeccione los sistemas de control de calidad de sus proveedores, puede hacer juicios
+                        confiables basados en la reputación del proveedor.</p>
+                    <p>La cadena de suministro de TIC, tal como se aborda aquí, incluye servicios en la nube. Ejemplos
+                        de cadenas de suministro de TIC son:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Aprovisionamiento de servicios en la nube, donde el proveedor de servicios en la nube
+                            depende de los desarrolladores de software, los proveedores de servicios de
+                            telecomunicaciones y los proveedores de hardware;</li>
+                        <li>IoT, donde el servicio implica a los fabricantes de dispositivos, a los proveedores de
+                            servicios en la nube (por ejemplo, los operadores de plataforma IoT), los desarrolladores de
+                            aplicaciones móviles y web, el proveedor de bibliotecas de software;</li>
+                        <li>Servicios de alojamiento, en los que el proveedor depende de escritorios de servicio
+                            externos, incluidos el primero, el segundo y el tercer nivel de soporte.</li>
+                    </ol>
+                    <p>Para obtener más detalles, incluida la guía de evaluación de riesgos, ver la norma ISO/IEC
+                        27036-3.</p>
+                    <p>Las etiquetas de identificación de software (SWID) también pueden ayudar a lograr una mejor SI en
+                        la cadena de suministro, proporcionando información sobre la procedencia del software. Ver la
+                        norma ISO/IEC 19770-2 para obtener más información.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
