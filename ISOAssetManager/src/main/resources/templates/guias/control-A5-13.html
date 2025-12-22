@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.13. Etiquetado de la información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">8.2.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Debería elaborarse y aplicarse un conjunto adecuado de procedimientos para el etiquetado de la
+                    información
+                    de conformidad con el plan de clasificación de la información adoptado por la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Facilitar la comunicación de la clasificación de la información y apoyar la automatización del
+                    procesamiento y la gestión de la información.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>
+                        Los procedimientos para el etiquetado de la información deben abarcar la información y otros
+                        activos asociados en todos los formatos.
+                        El etiquetado debería reflejar el sistema de clasificación establecido en 5.12. Las etiquetas
+                        deberían ser fácilmente reconocibles.
+                    </p>
+                    <p>
+                        Los procedimientos deberían proporcionar guía sobre dónde y cómo se adjuntan las etiquetas en
+                        consideración de cómo se accede a la información
+                        o cómo se manejan los activos dependiendo de los tipos de medios de almacenamiento. Los
+                        procedimientos pueden definir:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Casos en los que se omite el etiquetado (por ejemplo, etiquetado de información no
+                            confidencial para reducir las cargas de trabajo);</li>
+                        <li>Cómo etiquetar la información enviada o almacenada por medios electrónicos o físicos o en
+                            cualquier otro formato;</li>
+                        <li>Cómo manipular los casos en los que no es posible el etiquetado (por ejemplo, debido a
+                            restricciones técnicas).</li>
+                    </ol>
+
+                    <p>Entre los ejemplos de técnicas de etiquetado se incluyen:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Etiquetas físicas;</li>
+                        <li>Encabezados y pies de página;</li>
+                        <li>Metadatos;</li>
+                        <li>Marcas de agua;</li>
+                        <li>Sellos de goma.</li>
+                    </ol>
+
+                    <p>
+                        La información digital debería utilizar metadatos para identificar, gestionar y controlar la
+                        información, especialmente en lo que respecta a la confidencialidad.
+                        Los metadatos también deberían permitir una búsqueda eficaz y correcta de la información y
+                        facilitar la interacción de los sistemas y la toma de decisiones basadas en las etiquetas de
+                        clasificación asociadas.
+                    </p>
+                    <p>
+                        Los procedimientos deberían describir cómo adjuntar metadatos a la información, qué etiquetas
+                        utilizar y cómo deben manejarse los datos, de acuerdo con el modelo de información y la
+                        arquitectura de las TIC de la organización.
+                        Los sistemas deberían agregar metadatos adicionales relevantes cuando procesan la información en
+                        función de sus propiedades de SI.
+                    </p>
+                    <p>
+                        El personal y otras partes interesadas deben tener conocimiento de los procedimientos de
+                        etiquetado. Se debería proporcionar a todo el personal la formación necesaria para garantizar
+                        que la información está correctamente etiquetada y manejada en consecuencia.
+                        La salida de los sistemas que contienen información clasificada como sensible o crítica debería
+                        llevar una etiqueta de clasificación adecuada.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Herramientas de Clasificación Automática
+                            (DLP)</strong>
+                        <p>Configuración de herramientas como Microsoft Purview Information Protection que insertan
+                            metadatos automáticamente en documentos Office (ej. "Confidencial") basándose en el
+                            contenido.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Marcas de Agua en Documentos</strong>
+                        <p>Plantillas de Word/PDF que incluyen automáticamente marcas de agua ("CONFIDENCIAL", "USO
+                            INTERNO") en el fondo o encabezado visible para el usuario.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Etiquetado Físico de Hardware</strong>
+                        <p>Uso de pegatinas de colores en portátiles o discos duros externos para indicar su nivel de
+                            sensibilidad (ej. Rojo = Crítico, Verde = Público).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>
+                        El etiquetado de la información clasificada es un requisito clave para el intercambio de
+                        información. Otros metadatos útiles que se pueden adjuntar a la información son qué proceso
+                        organizativo creó la información y en qué momento.
+                    </p>
+                    <p>
+                        El etiquetado de la información y otros activos asociados a veces puede tener efectos negativos.
+                        Los activos clasificados pueden ser más fáciles de identificar por parte de actores
+                        malintencionados para un posible uso indebido.
+                    </p>
+                    <p>
+                        Algunos sistemas no etiquetan archivos individuales o registros de bases de datos con su
+                        clasificación, sino que protegen toda la información al nivel más alto de clasificación de
+                        cualquier información que contiene o que se permite que contenga. En estos sistemas es habitual
+                        determinar y etiquetar la información cuando se exporta.
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
