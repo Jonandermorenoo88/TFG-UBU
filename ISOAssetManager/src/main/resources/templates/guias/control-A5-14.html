@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.14. Transferencia de información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">13.2.1<br>13.2.2<br>13.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se deberían establecer normas, procedimientos o acuerdos de transferencia de información para todos
+                    los tipos de facilidades de transferencia dentro de la organización y entre la organización y otras
+                    partes.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener la SI transferida dentro de una organización y con cualquier parte externa interesada.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer y comunicar a todas las partes interesadas una política de
+                        transferencia de información sobre un tema específico. Las normas y acuerdos deben reflejar la
+                        clasificación de la información (ver 5.10).</p>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">General</strong>
+                    <p>Para todos los tipos de transferencia, las normas deberían incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Controles diseñados para proteger la información transferida de intercepciones, accesos no
+                            autorizados, copias, modificaciones, destrucción y denegación de servicio;</li>
+                        <li>Controles para garantizar la trazabilidad y el no rechazo, incluido el mantenimiento de una
+                            cadena de custodia;</li>
+                        <li>Identificación de los contactos apropiados relacionados con la transferencia;</li>
+                        <li>Responsabilidades y obligaciones en caso de incidentes de SI;</li>
+                        <li>El uso de un sistema de etiquetado acordado (ver 5.13);</li>
+                        <li>Fiabilidad y disponibilidad del servicio de transferencia;</li>
+                        <li>La política o directrices específicas sobre el uso aceptable (ver 5.10);</li>
+                        <li>Directrices de retención y eliminación de registros;</li>
+                        <li>La consideración de cualquier otro requisito legal, estatutario o contractual.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Transferencia
+                        electrónica</strong>
+                    <ol type="a" class="alpha-list">
+                        <li>Detección y protección contra malware (ver 8.7);</li>
+                        <li>Protección de la información electrónica confidencial comunicada en forma de anexo;</li>
+                        <li>Prevención contra el envío a direcciones incorrectas;</li>
+                        <li>Obtener la aprobación antes de utilizar servicios públicos externos (Nube, mensajería);</li>
+                        <li>Niveles más sólidos de autenticación al transferir a través de redes públicas;</li>
+                        <li>Restricciones asociadas a las instalaciones de comunicación electrónica (reenvío
+                            automático);</li>
+                        <li>Aconsejar al personal no enviar mensajes SMS/instantáneos con información crítica;</li>
+                        <li>Asesorar al personal sobre los problemas del uso de máquinas o servicios de fax (acceso no
+                            autorizado, programación de números).</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Transferencia de medios de
+                        almacenamiento físico</strong>
+                    <ol type="a" class="alpha-list">
+                        <li>Responsabilidades de control y notificación de envío/recepción;</li>
+                        <li>Asegurar el correcto direccionamiento y transporte;</li>
+                        <li>Embalaje que proteja contra daño físico (calor, humedad, electromagnetismo);</li>
+                        <li>Una lista de correos fiables autorizados;</li>
+                        <li>Normas de identificación de mensajería;</li>
+                        <li>Uso de controles a prueba de manipulaciones según clasificación;</li>
+                        <li>Procedimientos para verificar la identificación de los correos;</li>
+                        <li>Lista aprobada de terceros para transporte;</li>
+                        <li>Mantener registros para identificar contenido, custodios y tiempos.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Transferencia
+                        verbal</strong>
+                    <ol type="a" class="alpha-list">
+                        <li>No tener conversaciones confidenciales en lugares públicos o canales inseguros;</li>
+                        <li>No dejar mensajes confidenciales en contestadores automáticos;</li>
+                        <li>Seleccionar el nivel apropiado para escuchar la conversación;</li>
+                        <li>Asegurar controles de sala adecuados (aislamiento acústico);</li>
+                        <li>Comenzar cualquier conversación sensible con un descargo de responsabilidad sobre su
+                            clasificación.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Transferencia Segura de Archivos (SFTP/HTTPS)</strong>
+                        <p>Uso obligatorio de protocolos cifrados para cualquier intercambio de ficheros con proveedores
+                            o clientes externos.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Acuerdos de Confidencialidad (NDA)</strong>
+                        <p>Firma de cláusulas de confidencialidad específicas antes de compartir documentación sensible
+                            con terceros.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Política de "Escritorio Limpio" y Pantallas de
+                            Privacidad</strong>
+                        <p>Para evitar la fuga de información visual (transferencia visual/física) en espacios de
+                            trabajo compartidos.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
