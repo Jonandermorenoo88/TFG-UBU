@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.16</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.16. Gestión de identidad</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se debería gestionar todo el ciclo de vida de las identidades.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Permitir la identificación única de individuos y sistemas que acceden a la información de la
+                    organización y otros activos asociados y permitir la asignación adecuada de derechos de acceso.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los procesos utilizados en el contexto de la gestión de identidades deberían garantizar que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Para las identidades asignadas a personas, una identidad específica solo está vinculada a
+                            una sola persona para que pueda responsabilizar a la persona de las acciones realizadas con
+                            esta identidad específica;</li>
+                        <li>Las identidades asignadas a varias personas (por ejemplo, identidades compartidas) solo se
+                            permiten cuando son necesarias por motivos organizacionales u operativos y están sujetas a
+                            aprobación y documentación específicas;</li>
+                        <li>Las identidades asignadas a entidades no humanas están sujetas a una aprobación debidamente
+                            segregada y a una supervisión independiente continua;</li>
+                        <li>Las identidades se desactivan o eliminan de forma oportuna si ya no son necesarias (por
+                            ejemplo, si sus entidades asociadas se eliminan o ya no se utilizan o si la persona
+                            vinculada a una identidad ha abandonado la organización o ha cambiado el rol);</li>
+                        <li>En un dominio específico, se asigna una única identidad a una sola entidad, [es decir, se
+                            evita la asignación de varias identidades a la misma entidad dentro del mismo contexto
+                            (identidades duplicadas)];</li>
+                        <li>Se mantienen registros de todos los eventos significativos relacionados con el uso y la
+                            gestión de las identidades de usuario y de la información de autenticación.</li>
+                    </ol>
+
+                    <p>La organización debe contar con un proceso de apoyo para gestionar los cambios en la información
+                        relacionada con las identidades de los usuarios. Estos procesos pueden incluir la reverificación
+                        de documentos de confianza relacionados con una persona.</p>
+                    <p>Al utilizar identidades proporcionadas o emitidas por terceros (por ejemplo, credenciales de
+                        redes sociales), la organización debería asegurarse de que las identidades de terceros
+                        proporcionan el nivel de confianza necesario y de que se conocen y tratan suficientemente los
+                        riesgos asociados. Esto puede incluir controles relacionados con terceros (ver 5.19), así como
+                        controles relacionados con la información de autenticación asociada (ver 5.17).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Gestión Centralizada (LDAP/AD)</strong>
+                        <p>Uso de un Directorio Activo (Active Directory) para centralizar la creación, modificación y
+                            baja de usuarios, asegurando una identidad única por empleado.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Proceso de Alta y Baja
+                            (Onboarding/Offboarding)</strong>
+                        <p>Procedimiento automatizado con RRHH para que, al despedir a un empleado, sus credenciales se
+                            revoquen inmediatamente en todos los sistemas.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Revisión de Cuentas Genéricas</strong>
+                        <p>Auditoría trimestral para detectar y justificar cuentas compartidas ("admin", "root",
+                            "becario"), eliminando las que no tengan dueño asignado.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Proporcionar o revocar el acceso a la información y otros activos asociados suele ser un
+                        procedimiento de varios pasos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Confirmar los requisitos organizacionales para establecer una identidad;</li>
+                        <li>Verificar la identidad de una entidad antes de asignarles una identidad lógica;</li>
+                        <li>Establecer una identidad;</li>
+                        <li>Configurar y activar la identidad. Esto también incluye la configuración y configuración
+                            inicial de los servicios de autenticación relacionados;</li>
+                        <li>Proporcionar o revocar derechos de acceso específicos a la identidad, sobre la base de las
+                            decisiones de autorización o derecho apropiadas (ver 5.18).</li>
+                    </ol>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
