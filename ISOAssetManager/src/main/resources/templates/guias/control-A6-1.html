@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 6.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">6.1. Selección</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_los_recursos_humanos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">7.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las verificaciones de los antecedentes de todos los candidatos a convertirse en personal deberían
+                    llevarse a cabo antes de incorporarse a la organización y de forma continuada, tomando en
+                    consideración las leyes, los reglamentos y la ética aplicables y ser proporcionales a los requisitos
+                    de la empresa, la clasificación de la información a la que se va a acceder y los riesgos percibidos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que todo el personal es elegible y adecuado para las funciones para las que se considera
+                    y que sigue siendo elegible y adecuado durante su empleo.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se debería realizar un proceso de selección para todo el personal, incluido el personal a tiempo
+                        completo, a tiempo parcial y temporal. Cuando estas personas se contraten a través de
+                        proveedores de servicios, los requisitos de selección se deberían incluir en los acuerdos
+                        contractuales entre la organización y los proveedores.</p>
+
+                    <p>La información sobre todos los candidatos que se consideren para puestos dentro de la
+                        organización debería ser recogida y manejada tomando en consideración cualquier legislación
+                        apropiada existente en la jurisdicción pertinente. En algunas jurisdicciones, la organización
+                        puede ser legalmente requerida para informar a los candidatos previamente sobre las actividades
+                        de selección.</p>
+
+                    <p>La verificación debería tener en cuenta toda la legislación pertinente en materia de privacidad,
+                        protección de la IIP y basada en el empleo y, cuando lo permita, debe incluir lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Disponibilidad de referencias satisfactorias (por ejemplo, referencias comerciales y
+                            personales);</li>
+                        <li>Verificación (para la integridad y exactitud) del currículum vitae del solicitante;</li>
+                        <li>Confirmación de las calificaciones académicas y profesionales declaradas;</li>
+                        <li>Verificación independiente de la identidad (por ejemplo, pasaporte u otro documento
+                            aceptable expedido por las autoridades competentes);</li>
+                        <li>Verificación más detallada, como la revisión de crédito o la revisión de registros
+                            criminales si el candidato asume un papel crítico.</li>
+                    </ol>
+
+                    <p>Cuando se contrata a un individuo para una función específica de SI, la organización debería
+                        asegurarse de que el candidato:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Tenga la competencia necesaria para desempeñar el papel de seguridad;</li>
+                        <li>Se pueda confiar en él para asumir el rol, especialmente si el rol es crítico para la
+                            organización.</li>
+                    </ol>
+
+                    <p>Cuando un puesto de trabajo ya sea en el momento del nombramiento inicial o de la promoción,
+                        implique que la persona tenga acceso a instalaciones de procesamiento de información y, en
+                        especial, si éstas implican el manejo de información confidencial (por ejemplo, información
+                        financiera, información personal o información médica), la organización también debe considerar
+                        la posibilidad de realizar verificaciones adicionales más detalladas.</p>
+
+                    <p>Los procedimientos deben definir criterios y limitaciones para las revisiones de verificación
+                        (por ejemplo, quién puede seleccionar a las personas y cómo, cuándo y por qué se llevan a cabo
+                        las revisiones de verificación).</p>
+
+                    <p>En situaciones en las que la verificación no se puede completar de forma oportuna, se deberían
+                        implementar controles atenuantes hasta que se haya terminado la revisión, por ejemplo:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Retraso en la incorporación;</li>
+                        <li>Retraso en el despliegue de activos corporativos;</li>
+                        <li>Incorporación con acceso reducido;</li>
+                        <li>Terminación del empleo.</li>
+                    </ol>
+
+                    <p>Los controles de verificación deberían repetirse periódicamente para confirmar la idoneidad
+                        continua del personal, dependiendo de la criticidad de la función de una persona.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La confianza no es suficiente; verificar es esencial para proteger la organización desde el
+                        primer día:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Verificación de Antecedentes
+                            Críticos</strong>
+                        <p>Para un puesto de administrador de sistemas con acceso a bases de datos de clientes, RRHH no
+                            solo verifica las referencias laborales, sino que solicita (con consentimiento y cumpliendo
+                            las leyes locales) un certificado de antecedentes penales. Si el puesto fuera financiero, se
+                            incluiría un historial crediticio.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Validación de Títulos Académicos</strong>
+                        <p>Antes de contratar a un "Ingeniero de Ciberseguridad Senior", la organización contacta
+                            directamente con la universidad emisora o utiliza servicios de verificación para asegurarse
+                            de que el título no es falsificado, previniendo así la incorporación de personal no
+                            cualificado en roles sensibles.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
