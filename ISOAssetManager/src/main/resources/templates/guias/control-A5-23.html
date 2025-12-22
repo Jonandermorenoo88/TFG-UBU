@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.23</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.23. SI para el uso de servicios en la nube</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_relaciones_con_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content" style="color:red;">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los procesos de adquisición, uso, gestión y salida de los servicios en la nube deberían establecerse
+                    de acuerdo con los requisitos de SI de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Especificar y gestionar la SI para el uso de servicios en la nube.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debe establecer y comunicar una política específica sobre el uso de los servicios
+                        en la nube a todas las partes interesadas. La organización debería definir y comunicar cómo
+                        pretende gestionar los riesgos de SI asociados con el uso de servicios en la nube.</p>
+                    <p>El uso de los servicios en la nube puede implicar una <strong>responsabilidad compartida</strong>
+                        en materia de SI. Es esencial que las responsabilidades tanto del proveedor como de la
+                        organización se definan y apliquen adecuadamente.</p>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Definición de
+                        requisitos</strong>
+                    <p>La organización debería definir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Todos los requisitos de SI pertinentes asociados con el uso de los servicios en la nube;
+                        </li>
+                        <li>Criterios de selección de servicios en la nube y alcance del uso del servicio en la nube;
+                        </li>
+                        <li>Funciones y responsabilidades relacionadas con el uso y la gestión de servicios en la nube;
+                        </li>
+                        <li>Qué controles de SI son gestionados por el proveedor y qué son gestionados por la
+                            organización como cliente;</li>
+                        <li>Cómo obtener y utilizar las capacidades de SI proporcionadas por el proveedor;</li>
+                        <li>Cómo obtener la garantía de los controles de SI implementados por los proveedores;</li>
+                        <li>Cómo gestionar controles, interfaces y cambios en los servicios cuando se utilizan varios
+                            servicios en la nube, especialmente de distintos proveedores;</li>
+                        <li>Procedimientos para gestionar los incidentes de SI que se producen en relación con el uso de
+                            servicios en la nube;</li>
+                        <li>Su enfoque para supervisar, revisar y evaluar el uso continuo de los servicios en la nube
+                            para gestionar los riesgos de SI;</li>
+                        <li>Cómo cambiar o detener el uso de los servicios en la nube, incluidas las estrategias de
+                            salida.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Acuerdos de servicios en
+                        la nube</strong>
+                    <p>Los acuerdos de servicios en la nube suelen estar predefinidos. Un acuerdo debe abordar los
+                        requisitos de confidencialidad, integridad, disponibilidad y gestión de la información, e
+                        incluir disposiciones para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Proporcionar soluciones basadas en normas aceptadas en el sector para arquitectura e
+                            infraestructura;</li>
+                        <li>Gestionar los controles de acceso del servicio en la nube para satisfacer los requisitos de
+                            la organización;</li>
+                        <li>Implementar soluciones de protección y supervisión de malware;</li>
+                        <li>Procesar y almacenar la información confidencial de la organización en lugares aprobados
+                            (jurisdicción determinada);</li>
+                        <li>Proporcionar asistencia especializada en caso de incidente de SI;</li>
+                        <li>Garantizar que se cumplen los requisitos de SI en caso de subcontratación de servicios en la
+                            nube;</li>
+                        <li>Apoyar a la organización en la recopilación de pruebas digitales (forense);</li>
+                        <li>Proporcionar soporte y disponibilidad adecuados para un plazo de tiempo adecuado cuando la
+                            organización desea salir del servicio;</li>
+                        <li>Proporcionar la copia de seguridad necesaria de los datos y la información de configuración;
+                        </li>
+                        <li>Proporcionar y devolver información como archivos de configuración, código fuente y datos
+                            propiedad de la organización al finalizar el servicio.</li>
+                    </ol>
+
+                    <strong style="color: var(--iso-orange); display:block; margin-top:10px;">Notificación de
+                        cambios</strong>
+                    <p>El acuerdo debe exigir a los proveedores que proporcionen una notificación previa antes de
+                        cualquier cambio importante, incluidos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Cambios en la infraestructura técnica (reubicación, reconfiguración) que afecten a la oferta
+                            de servicios;</li>
+                        <li>Procesar o almacenar información en una nueva jurisdicción geográfica o jurídica;</li>
+                        <li>Uso de proveedores de servicios en la nube de pares u otros subcontratistas.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Matriz de Responsabilidad Compartida</strong>
+                        <p>Documento visual que aclara quién hace qué. Por ejemplo, en AWS EC2 (IaaS), el proveedor
+                            asegura el hardware físico ("Seguridad <em>de</em> la nube"), pero el cliente debe parchear
+                            el sistema operativo y configurar el firewall ("Seguridad <em>en</em> la nube").</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Estrategia de Salida (Exit Strategy)</strong>
+                        <p>Planificación y pruebas anuales sobre cómo exportar todos los datos corporativos de la nube
+                            (ej. de Office 365 o Google Workspace) a un formato estándar local para evitar el "Vendor
+                            Lock-in".</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Cifrado Gestionado por Cliente (BYOK)</strong>
+                        <p>Uso de "Bring Your Own Key" para que, aunque los datos estén en la nube del proveedor, ellos
+                            no puedan leerlos sin la clave maestra que custodia la organización.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Este control considera la seguridad de la nube desde la perspectiva del cliente. Información
+                        adicional en las normas:</p>
+                    <ul>
+                        <li><strong>ISO/IEC 17788</strong> y <strong>ISO/IEC 22123-1</strong> (Generalidades)</li>
+                        <li><strong>ISO/IEC 19941</strong> (Interoperabilidad y Portabilidad)</li>
+                        <li><strong>ISO/IEC 27017</strong> (Controles de seguridad para servicios en la nube)</li>
+                        <li><strong>ISO/IEC 27018</strong> (Protección de IIP/Datos personales en la nube)</li>
+                        <li><strong>ISO/IEC 27036-4</strong> (Relaciones con proveedores en la nube)</li>
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
