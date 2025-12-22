@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 6.4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">6.4. Proceso disciplinario</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_los_recursos_humanos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">7.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se debería formalizar y comunicar un proceso disciplinario para tomar medidas contra el personal y
+                    otras partes interesadas pertinentes que hayan cometido una violación de la política de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que el personal y otras partes interesadas comprendan las consecuencias de la violación
+                    de la política de SI, para disuadir y tratar adecuadamente al personal y otras partes interesadas
+                    pertinentes que hayan cometido la violación.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El proceso disciplinario no debería iniciarse sin una verificación previa de que se ha producido
+                        una violación de la política de SI (ver 5.28).</p>
+                    <p>El proceso disciplinario formal debería proporcionar una respuesta graduada que tome en
+                        consideración factores tales como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La naturaleza (quién, qué, cuándo, cómo) y la gravedad de la violación y sus consecuencias;
+                        </li>
+                        <li>Si el delito fue intencional (malicioso) o no intencional (accidental);</li>
+                        <li>Tanto si se trata de una primera infracción como de una reincidencia;</li>
+                        <li>Si el infractor estaba debidamente formado o no.</li>
+                    </ol>
+
+                    <p>La respuesta debería tener en cuenta los requisitos legales, reglamentarios, contractuales y
+                        empresariales pertinentes, así como otros factores según sea necesario. El proceso disciplinario
+                        también debería utilizarse como elemento disuasorio para evitar que el personal y otras partes
+                        interesadas pertinentes infrinjan la política de SI, las políticas específicas del tema y los
+                        procedimientos de SI. Las infracciones deliberadas de la política de SI pueden requerir acciones
+                        inmediatas.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las reglas deben cumplirse, pero la respuesta debe ser proporcional y justa:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Matriz de Respuesta Graduada</strong>
+                        <p>La política define claramente:
+                            <br>- Error no intencional (clic en phishing sin consecuencias): Re-entrenamiento
+                            obligatorio.
+                            <br>- Negligencia (compartir contraseña): Amonestación escrita y suspensión de 3 días.
+                            <br>- Malicia (robo de datos): Despido inmediato y acciones legales.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Evidencia Forense antes de la
+                            Acción</strong>
+                        <p>Antes de acusar a un empleado de borrar archivos vitales, el equipo de seguridad presenta
+                            logs de auditoría inalterables que muestran su ID de usuario, dirección IP y hora exacta del
+                            evento, descartando fallos del sistema o suplantaciones, para asegurar que el proceso
+                            disciplinario se basa en hechos probados.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Siempre que sea posible, la identidad de las personas sujetas a medidas disciplinarias debería
+                        protegerse de conformidad con los requisitos aplicables.</p>
+                    <p>Si las personas demuestran un comportamiento excelente en materia de SI, se les puede recompensar
+                        para promover la SI y fomentar el buen comportamiento.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
