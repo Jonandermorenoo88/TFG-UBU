@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.37</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.37. Procedimientos operativos documentados</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                        <li>#Seguridad_fisica</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Configuración_segura</li>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                        <li>#Gestión_de_las_amenazas_y_de_la_vulnerabilidad</li>
+                        <li>#Continuidad</li>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los procedimientos operativos para las instalaciones de procesamiento de la información deberían
+                    estar documentados y disponibles para el personal que los necesite.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el funcionamiento correcto y seguro de las instalaciones de procesamiento de información.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían preparar los procedimientos documentados para las actividades operacionales de la
+                        organización asociadas con la SI, por ejemplo cuando la actividad:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Necesite ser realizada de la misma manera por muchas personas;</li>
+                        <li>Se realiza en raras ocasiones y la siguiente vez que se realiza, es probable que se haya
+                            olvidado el procedimiento;</li>
+                        <li>Es nueva y presenta un riesgo si no se realiza correctamente;</li>
+                        <li>La actividad se asigna al nuevo personal.</li>
+                    </ol>
+
+                    <p>Los procedimientos operativos deberían especificar:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Personas responsables;</li>
+                        <li>Instalación y configuración seguras de los sistemas;</li>
+                        <li>Procesamiento y manejo de la información, tanto automatizada como manual;</li>
+                        <li>Respaldo (ver 8.13) y resiliencia;</li>
+                        <li>Requisitos de programación, incluidas las interdependencias con otros sistemas;</li>
+                        <li>Instrucciones para gestionar errores u otras condiciones excepcionales (por ejemplo,
+                            restricciones en el uso de programas utilitarios (ver 8.18)), que pueden surgir durante la
+                            ejecución del trabajo;</li>
+                        <li>Contactos de asistencia y escalada, incluidos contactos de asistencia externa en caso de
+                            dificultades técnicas u operativas inesperadas;</li>
+                        <li>Instrucciones de manipulación de los soportes de almacenamiento (ver 7.10 y 7.14);</li>
+                        <li>Procedimientos de reinicio y recuperación del sistema para su uso en caso de falla del
+                            sistema;</li>
+                        <li>Gestión de la información del registro de auditoría y del registro del sistema (ver 8.15 y
+                            8.17) y de los sistemas de monitoreo de video (ver 7.4);</li>
+                        <li>Procedimientos de monitoreo como la capacidad, el rendimiento y la seguridad (ver 8.6 y
+                            8.16);</li>
+                        <li>Instrucciones de mantenimiento.</li>
+                    </ol>
+
+                    <p>Los procedimientos operativos documentados deberían revisarse y actualizarse cuando sea
+                        necesario. Se deberían autorizar los cambios en los procedimientos operativos documentados.</p>
+                    <p>Cuando sea técnicamente factible, los sistemas de información deberían gestionarse de manera
+                        coherente, al utilizar los mismos procedimientos, herramientas y servicios públicos.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Documentar cómo se hacen las cosas reduce la dependencia de personas clave y minimiza errores
+                        humanos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Procedimiento de Copia de Seguridad
+                            (SOP)</strong>
+                        <p>Un documento paso a paso que detalla cómo realizar el backup diario: qué scripts ejecutar,
+                            cómo verificar que la copia en la nube o cinta se ha completado correctamente y a quién
+                            notificar en caso de error. Esto permite que un operador junior pueda cubrir la tarea si el
+                            administrador principal no está disponible.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Checklist de Verificación de Salud del
+                            Sistema</strong>
+                        <p>Una lista de verificación que el equipo de operaciones debe completar al inicio de cada
+                            turno. Incluye ítems como: "Verificar espacio libre en disco servidor DB", "Confirmar estado
+                            de servicios críticos" y "Revisar cola de correos". Si un ítem falla, el documento enlaza
+                            directamente a la guía de resolución de problemas correspondiente.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
