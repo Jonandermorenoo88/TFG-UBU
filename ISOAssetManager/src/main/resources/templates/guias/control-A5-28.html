@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.28</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.28. Recopilación de pruebas</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detectar</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">16.1.7</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debería establecer e implementar procedimientos para la identificación, recolección,
+                    adquisición y preservación de pruebas relacionadas con eventos de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar una gestión coherente y eficaz de las pruebas relacionadas con los incidentes de SI para
+                    los fines de las acciones disciplinarias y legales.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían desarrollar y seguir procedimientos internos cuando se trate de pruebas relacionadas
+                        con eventos de SI para los propósitos de acciones disciplinarias y legales. Se deberían
+                        considerar los requisitos de las diferentes jurisdicciones para maximizar las posibilidades de
+                        admisión en las jurisdicciones pertinentes.</p>
+                    <p>En general, estos procedimientos para la gestión de las pruebas deberían proporcionar
+                        instrucciones para la identificación, recolección, adquisición y conservación de las pruebas de
+                        conformidad con los diferentes tipos de medios de almacenamiento, dispositivos y estado de estos
+                        (es decir, encendidos o apagados). Por lo general, las pruebas se deben recopilar de manera que
+                        sean admisibles en los tribunales nacionales correspondientes o en otro foro disciplinario.
+                        Debería ser posible demostrar que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Los registros están completos y no se han manipulado de ninguna manera;</li>
+                        <li>Las copias de las pruebas electrónicas son probablemente idénticas a las originales;</li>
+                        <li>Cualquier sistema de información del que se hayan recopilado pruebas funcionaba
+                            correctamente en el momento en que se registraron dichas pruebas.</li>
+                    </ol>
+                    <p>Cuando se disponga de ella, debería buscarse la certificación u otros medios pertinentes de
+                        calificación del personal y de los instrumentos, a fin de fortalecer el valor de las pruebas
+                        conservadas.</p>
+                    <p>La evidencia digital puede trascender los límites organizativos o jurisdiccionales. En tales
+                        casos, debería garantizarse que la organización tenga derecho a recopilar la información
+                        requerida como prueba digital.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Cadena de Custodia</strong>
+                        <p>Formulario oficial que debe rellenarse cada vez que un disco duro o dispositivo sospechoso
+                            cambia de manos, registrando quién lo entregó, quién lo recibió, fecha y motivo, para
+                            garantizar que no ha sido manipulado.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Imagen Forense (Bit-a-bit)</strong>
+                        <p>Uso de hardware bloqueador de escritura (Write Blocker) para crear una copia exacta del disco
+                            afectado sin alterar ni un solo metadato del original, trabajando siempre sobre la copia.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Retención Legal (Legal Hold)</strong>
+                        <p>Procedimiento para paralizar el borrado automático de correos (política de retención) de
+                            empleados que están bajo investigación interna o litigio.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Cuando se detecta por primera vez un evento de SI, no siempre es evidente si el evento dará lugar
+                        o no a una acción judicial. Por lo tanto, existe el peligro de que las pruebas necesarias se
+                        destruyan de forma intencionada o accidental antes de que se comprenda la gravedad del
+                        incidente. Se recomienda recurrir al asesoramiento jurídico o a las fuerzas de seguridad en una
+                        fase temprana de cualquier acción legal prevista y asesorarse sobre las pruebas necesarias.</p>
+                    <p>La norma ISO/IEC 27037 proporciona definiciones y directrices para la identificación,
+                        recopilación, adquisición y conservación de pruebas digitales.</p>
+                    <p>La norma ISO/IEC 27050 trata del descubrimiento electrónico, que implica el procesamiento de
+                        información almacenada electrónicamente como prueba.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
