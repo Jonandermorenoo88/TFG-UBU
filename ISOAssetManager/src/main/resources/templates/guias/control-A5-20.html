@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.20</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.20. Abordar la SI en los acuerdos con los proveedores</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_relaciones_con_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">15.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los requisitos de SI pertinentes debieran establecerse y acordarse con cada proveedor en función del
+                    tipo de relación con el proveedor.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Mantener un nivel acordado de SI en las relaciones con los proveedores.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían establecer y documentar acuerdos con proveedores para garantizar que existe un
+                        entendimiento claro entre la organización y el proveedor en relación con las obligaciones de
+                        ambas partes de cumplir los requisitos de SI identificados.</p>
+                    <p>Se pueden considerar los siguientes términos para su inclusión en los acuerdos con el fin de
+                        satisfacer los requisitos de SI identificados:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Descripción de la información que se debe proporcionar o acceder a ella y métodos de
+                            suministro o acceso a la información;</li>
+                        <li>Clasificación de la información según el esquema de clasificación de la organización (ver
+                            5.10, 5.12 y 5.13);</li>
+                        <li>Correspondencia entre el esquema de clasificación propio de la organización y el esquema de
+                            clasificación del proveedor;</li>
+                        <li>Requisitos legales, reglamentarios y contractuales, incluidos la protección de datos, el
+                            tratamiento de la información de identificación personal (IIP), los derechos de propiedad
+                            intelectual y los derechos de autor y una descripción de cómo se garantizará su
+                            cumplimiento;</li>
+                        <li>Obligación de cada parte contractual de implementar un conjunto acordado de controles,
+                            incluyendo control de acceso, revisión de desempeño, monitoreo, informe y auditoría y las
+                            obligaciones del proveedor de cumplir con los requisitos de SI de la organización;</li>
+                        <li>Normas de uso aceptable de la información y otros activos asociados, incluido el uso
+                            inaceptable si es necesario;</li>
+                        <li>Procedimientos o condiciones para la autorización y eliminación de la autorización para el
+                            uso de la información de la organización y otros activos asociados por parte del personal
+                            del proveedor (por ejemplo, mediante una lista explícita del personal del proveedor
+                            autorizado para utilizar la información de la organización y otros activos asociados);</li>
+                        <li>Requisitos de SI en relación con la infraestructura de TIC del proveedor; en particular,
+                            requisitos mínimos de SI para cada tipo de información y tipo de acceso que sirvan de base
+                            para los acuerdos de proveedores individuales basados en las necesidades empresariales y los
+                            criterios de riesgo de la organización;</li>
+                        <li>Indemnizaciones y reparación por incumplimiento de los requisitos del contratista;</li>
+                        <li>Requisitos y procedimientos de gestión de incidentes (especialmente notificación y
+                            colaboración durante la corrección de incidentes);</li>
+                        <li>Requisitos de formación y concienciación para procedimientos específicos y requisitos de SI
+                            (por ejemplo, para la respuesta a incidentes, procedimientos de autorización);</li>
+                        <li>Disposiciones pertinentes para la subcontratación, incluidos los controles que deben
+                            aplicarse, tales como el acuerdo sobre el uso de los subproveedores (por ejemplo, exigir que
+                            se cumplan las mismas obligaciones del proveedor, exigir que se disponga de una lista de
+                            subproveedores y notificación antes de cualquier cambio);</li>
+                        <li>Contactos pertinentes, incluida una persona de contacto para problemas de SI;</li>
+                        <li>Cualquier requisito de selección, cuando sea legalmente permisible, para el personal del
+                            proveedor, incluidas las responsabilidades para llevar a cabo los procedimientos de
+                            detección y notificación si no se ha completado la selección o si los resultados dan lugar a
+                            dudas o preocupaciones;</li>
+                        <li>Mecanismos de prueba y garantía de las declaraciones de terceros sobre los requisitos
+                            pertinentes de SI relacionados con los procesos del proveedor y un informe independiente
+                            sobre la eficacia de los controles;</li>
+                        <li>Derecho a auditar los procesos y controles del proveedor relacionados con el acuerdo;</li>
+                        <li>Obligación del proveedor de presentar periódicamente un informe sobre la eficacia de los
+                            controles y un acuerdo sobre la corrección oportuna de las cuestiones pertinentes planteadas
+                            en el informe;</li>
+                        <li>Resolución de defectos y procesos de resolución de conflictos;</li>
+                        <li>Copias de seguridad alineadas con las necesidades de la organización (en términos de
+                            frecuencia, tipo y ubicación de almacenamiento);</li>
+                        <li>Disponibilidad de una instalación alternativa (es decir, un sitio de recuperación ante
+                            desastres) que no esté sujeta a las mismas amenazas que la instalación principal y
+                            consideraciones para los controles de retorno (controles alternativos) en caso de que fallen
+                            los controles principales;</li>
+                        <li>Proceso de gestión de cambios que garantice la notificación anticipada a la organización y
+                            la posibilidad de que la organización no acepte cambios;</li>
+                        <li>Controles de seguridad física acordes con la clasificación de la información;</li>
+                        <li>Controles de transferencia de información para proteger la información durante la
+                            transferencia física o la transmisión lógica;</li>
+                        <li>Cláusulas de terminación al concluir el acuerdo, incluida la gestión de registros, la
+                            devolución de activos, la eliminación segura de la información y otros activos asociados,
+                            así como cualquier obligación de confidencialidad en curso;</li>
+                        <li>Suministro de un método para destruir de forma segura la información de la organización
+                            almacenada por el proveedor en cuanto ya no sea necesaria;</li>
+                        <li>Garantía, al final del contrato, del traspaso del apoyo a otro proveedor o a la organización
+                            misma.</li>
+                    </ol>
+                    <p>La organización debe establecer y mantener un registro de acuerdos con partes externas (por
+                        ejemplo, contratos, memorando de entendimiento, acuerdos de intercambio de información) para
+                        hacer un seguimiento de dónde va su información. La organización también debería revisar,
+                        validar y actualizar regularmente sus acuerdos con partes externas para asegurarse de que siguen
+                        siendo necesarios y aptos para su propósito con las cláusulas de SI pertinentes.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Cláusulas de "Derecho a Auditar"</strong>
+                        <p>Incluir explícitamente en el contrato la potestad de la organización de enviar auditores
+                            (internos o externos) a las instalaciones del proveedor para verificar el cumplimiento de
+                            seguridad.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Gestión de Subcontratación (Cadena de
+                            Suministro)</strong>
+                        <p>Obligar al proveedor a notificar y obtener aprobación antes de subcontratar servicios
+                            críticos que impliquen acceso a datos de la organización, asegurando que los
+                            "sub-procesadores" cumplen los mismos estándares (efecto cascada).</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Destrucción de Datos Certificada</strong>
+                        <p>Acordar que, al finalizar el servicio, el proveedor debe entregar un certificado de borrado
+                            seguro de todos los discos y backups que contenían datos de la organización.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los acuerdos pueden variar considerablemente para las distintas organizaciones y entre los
+                        distintos tipos de proveedores. Por lo tanto, se debería tener cuidado de incluir todos los
+                        requisitos pertinentes para abordar los riesgos de SI.</p>
+                    <p>Para información más detallada sobre los acuerdos con proveedores ver la norma ISO/IEC 27036.</p>
+                    <p>Para información sobre los acuerdos de servicios en la nube, ver la norma ISO/IEC 19086.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
