@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 6.2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">6.2. Condiciones del empleo</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_los_recursos_humanos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                    </ul>
+                </td>
+                <td class="attr-content">7.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los acuerdos contractuales de empleo deberían indicar las responsabilidades del personal y de la
+                    organización en materia de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que el personal comprenda sus responsabilidades de SI para las funciones para las que se
+                    consideran.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las obligaciones contractuales para el personal deberían tener en cuenta la política de AI de la
+                        organización y las políticas pertinentes relativas a temas específicos. Además, se pueden
+                        aclarar y precisar los siguientes puntos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Acuerdos de confidencialidad o no divulgación que el personal al que se dé acceso a
+                            información confidencial debería firmar antes de que se le dé acceso a la información y
+                            otros activos asociados (ver 6.6);</li>
+                        <li>Responsabilidades y derechos legales (por ejemplo, con respecto a las leyes de derechos de
+                            autor o la legislación sobre protección de datos (ver 5.32 y 5.34));</li>
+                        <li>Responsabilidades para la clasificación de la información y la gestión de la información de
+                            la organización y otros activos asociados, instalaciones de procesamiento de información y
+                            servicios de información gestionados por el personal (ver 5.9 al 5.13);</li>
+                        <li>Responsabilidades para el manejo de la información recibida de las partes interesadas;</li>
+                        <li>Acciones a tomar si el personal ignora los requisitos de seguridad de la organización (ver
+                            6.4).</li>
+                    </ol>
+
+                    <p>Las funciones y responsabilidades de SI deberían comunicarse a los candidatos durante el proceso
+                        de precontratación.</p>
+                    <p>La organización debería asegurarse de que el personal acepte los términos y condiciones relativos
+                        a la SI. Estos términos y condiciones deberían ser apropiados a la naturaleza y el grado de
+                        acceso que tengan a los activos de la organización asociados con los sistemas y servicios de
+                        información. Los términos y condiciones relativos a la SI deberían revisarse cuando cambien las
+                        leyes, reglamentos, la política de SI o las políticas específicas de cada tema.</p>
+                    <p>Las responsabilidades contenidas en las condiciones de empleo deberían continuar durante un
+                        período determinado después del final del empleo (ver 6.5).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El contrato laboral no es solo salario y horario; es el primer firewall legal de la empresa:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Cláusula de Confidencialidad y Propiedad
+                            Intelectual</strong>
+                        <p>El contrato incluye una sección específica donde el empleado reconoce que todo código,
+                            documento o diseño creado durante su jornada laboral es propiedad exclusiva de la empresa y
+                            se compromete a no divulgar secretos comerciales incluso después de finalizar su relación
+                            laboral.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Código de Conducta Digital</strong>
+                        <p>Como anexo al contrato, se entrega un "Manual de Ciberseguridad para Empleados" que detalla
+                            las sanciones por compartir contraseñas o ignorar las políticas de phishing. El empleado
+                            firma haberlo recibido y entendido, estableciendo una base legal para posibles acciones
+                            disciplinarias en caso de negligencia grave.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se puede utilizar un código de conducta para las responsabilidades de SI del personal del estado
+                        en relación con la confidencialidad, la protección de la IIP, la ética, el uso apropiado de la
+                        información de la organización y otros activos asociados, así como las prácticas de reputación
+                        esperadas por la organización.</p>
+                    <p>Una parte externa, con la que el personal del proveedor está asociado, puede estar obligado a
+                        celebrar acuerdos contractuales en nombre de la persona contratada.</p>
+                    <p>Si la organización no es una entidad legal y no tiene empleados, el equivalente del acuerdo
+                        contractual y los términos y condiciones pueden considerarse de acuerdo con la directriz de este
+                        control.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
