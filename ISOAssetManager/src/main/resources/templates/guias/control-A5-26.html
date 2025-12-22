@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control A5.26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">5.26. Respuesta a incidentes de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Responder</li>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno</li>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">16.1.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los incidentes de SI deberían responderse en conformidad con los procedimientos documentados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar una respuesta eficaz a los incidentes de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer y comunicar los procedimientos de respuesta a incidentes de SI
+                        a todas las partes interesadas pertinentes. Los incidentes de SI deberían ser respondidos por un
+                        equipo designado con la competencia requerida (ver 5.24).</p>
+                    <p>La respuesta debería incluir lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Sistemas afectados, si las consecuencias del incidente pueden extenderse;</li>
+                        <li>Recopilación de pruebas (ver 5.28) lo antes posible, después de la ocurrencia;</li>
+                        <li>Escalamiento, según sea necesario, que incluya actividades de gestión de crisis y
+                            posiblemente invocando planes de continuidad de negocio (ver 5.29 y 5.30);</li>
+                        <li>Garantía de que todas las actividades de respuesta implicadas se registran correctamente
+                            para su posterior análisis;</li>
+                        <li>Comunicación de la existencia del incidente de SI o de cualquier detalle pertinente a todas
+                            las partes interesadas internas y externas pertinentes según el principio de necesidad de
+                            saber;</li>
+                        <li>Coordinación con las partes internas y externas como autoridades, grupos de interés y foros
+                            externos, proveedores y clientes para mejorar la eficacia de la respuesta y ayudar a
+                            minimizar las consecuencias para otras organizaciones;</li>
+                        <li>Cierre formal y registro una vez que el incidente ha sido abordado con éxito;</li>
+                        <li>Análisis forenses de SI, según sea necesario (ver 5.28);</li>
+                        <li>Análisis post-incidente para identificar la causa raíz. Asegurarse de que se documente y
+                            comunique de acuerdo con los procedimientos definidos (ver 5.27);</li>
+                        <li>Identificación y gestión de vulnerabilidades y debilidades de SI, incluyendo las
+                            relacionadas con los controles que han causado, contribuido o no han podido prevenir el
+                            incidente.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Estrategias de Contención</strong>
+                        <p>Procedimientos claros para aislar un equipo infectado de la red (desconectar cable, vLAN de
+                            cuarentena) para evitar la propagación lateral de un ransomware.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Plan de Comunicación de Crisis</strong>
+                        <p>Plantillas pre-aprobadas para notificar a clientes y reguladores (AEPD) en caso de brecha de
+                            datos, evitando declaraciones improvisadas que puedan dañar la reputación.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Informe Post-Mortem (RCA)</strong>
+                        <p>Reunión obligatoria tras cerrar el incidente para analizar qué falló (Root Cause Analysis con
+                            técnica "5 Porqués") y generar tareas en Jira para evitar la recurrencia.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La norma ISO/IEC 27035 proporciona más guía sobre la gestión de incidentes.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
