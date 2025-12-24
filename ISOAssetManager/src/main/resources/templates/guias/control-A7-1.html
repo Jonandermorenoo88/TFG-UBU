@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.1. Perímetros de seguridad física</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los perímetros de seguridad deberían definirse y utilizarse para proteger las áreas que contienen
+                    información y otros activos asociados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar el acceso físico no autorizado, los daños y las interferencias en la información de la
+                    organización y otros activos asociados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las siguientes directrices deberían considerarse e implementarse cuando sea apropiado para los
+                        perímetros de seguridad física:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Definir los perímetros de seguridad y el emplazamiento y la fuerza de cada uno de los
+                            perímetros de acuerdo con los requisitos de SI relacionados con los activos dentro del
+                            perímetro;</li>
+                        <li>Tener perímetros físicamente sólidos para un edificio o sitio que contenga instalaciones de
+                            procesamiento de información (es decir, no debe haber espacios en el perímetro o áreas donde
+                            pueda ocurrir fácilmente una ruptura). Los techos exteriores, las paredes, los techos y el
+                            suelo del emplazamiento deberían ser de construcción sólida y todas las puertas exteriores
+                            deben estar adecuadamente protegidas contra el acceso no autorizado con mecanismos de
+                            control (por ejemplo, barras, alarmas, cerraduras). Las puertas y ventanas deberían
+                            bloquearse cuando no estén vigiladas y se debe considerar la protección externa para las
+                            ventanas, especialmente a nivel del suelo; también deben considerarse los puntos de
+                            ventilación;</li>
+                        <li>Tener alarmas, realizar monitoreo y prueba de todas las puertas contra incendios en un
+                            perímetro de seguridad junto con las paredes para establecer el nivel requerido de
+                            resistencia de acuerdo con estándares adecuados. Deberían funcionar de forma segura.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La ciberseguridad empieza en el mundo físico. Si pueden tocar el servidor, es su servidor:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Control de Acceso Escalonado (Modelo
+                            Cebolla)</strong>
+                        <p>Para llegar al Centro de Datos (Zona 3), un visitante debe pasar primero por Recepción (Zona
+                            1, control visual), luego por los pasillos de oficinas (Zona 2, tarjeta RFID) y finalmente
+                            superar un control biométrico y una esclusa ("mantrap") para entrar a la sala de servidores,
+                            asegurando que cada capa sea más restrictiva que la anterior.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Sensores Volumétricos y de
+                            Apertura</strong>
+                        <p>Fuera del horario laboral, no solo las puertas tienen sensores magnéticos. Las ventanas de la
+                            planta baja y el falso techo cuentan con detectores de rotura de cristal y sensores de
+                            movimiento infrarrojos para alertar inmediatamente a la central de seguridad privada si
+                            alguien intenta acceder por vías no convencionales.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La protección física se puede lograr creando una o más barreras físicas alrededor de las
+                        instalaciones de la organización y las instalaciones de procesamiento de información.</p>
+                    <p>Una zona segura puede ser una oficina con cerradura o varias salas rodeadas por una barrera de
+                        seguridad física interna continua. Pueden ser necesarias barreras y perímetros adicionales para
+                        controlar el acceso físico entre áreas con diferentes requisitos de seguridad dentro del
+                        perímetro de seguridad. La organización debería considerar la posibilidad de adoptar medidas de
+                        seguridad física que puedan fortalecerse durante situaciones de mayor amenaza.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
