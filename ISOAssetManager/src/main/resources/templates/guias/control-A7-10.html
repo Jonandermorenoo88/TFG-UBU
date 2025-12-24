@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.10. Medios de almacenamiento</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">8.3.1<br>8.3.2<br>8.3.3<br>11.2.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los medios de almacenamiento deberían gestionarse a través de su ciclo de vida de adquisición, uso,
+                    transporte y eliminación de acuerdo con el esquema de clasificación y los requisitos de manipulación
+                    de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar únicamente la divulgación, modificación, eliminación o destrucción autorizada de la
+                    información en los medios de almacenamiento.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>Medios de almacenamiento extraíbles</strong></p>
+                    <p>Se deberían tener en cuenta las siguientes directrices para la gestión de medios de
+                        almacenamiento extraíbles:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Establecer una política específica de un tema sobre la administración de medios de
+                            almacenamiento extraíbles y comunicar dicha política a cualquier persona que utilice o
+                            gestione medios de almacenamiento extraíbles;</li>
+                        <li>Cuando resulte necesario y práctico, exigir la autorización para el retiro de los soportes
+                            de almacenamiento de la organización y mantener un registro de dichos retiros con el fin de
+                            conservar un registro de auditoría;</li>
+                        <li>Almacenar todos los medios de almacenamiento en un entorno seguro y seguro según su
+                            clasificación de información y protegerlos contra amenazas ambientales (como calor, humedad,
+                            humedad, campo electrónico o envejecimiento), de conformidad con las especificaciones de los
+                            fabricantes;</li>
+                        <li>Si la confidencialidad o integridad de la información son consideraciones importantes,
+                            utilizar técnicas cifradas para proteger la información en medios de almacenamiento
+                            extraíbles;</li>
+                        <li>Para mitigar el riesgo de degradación de los medios de almacenamiento mientras aún se
+                            necesita información almacenada, transferir la información a medios de almacenamiento nuevos
+                            antes de que sea ilegible;</li>
+                        <li>Almacenar varias copias de información valiosa en medios de almacenamiento independientes
+                            para reducir aún más el riesgo de daños o pérdidas de información fortuita;</li>
+                        <li>Considerar el registro de medios de almacenamiento extraíbles para limitar la posibilidad de
+                            pérdida de información;</li>
+                        <li>Solo habilitar puertos de medios de almacenamiento extraíbles (por ejemplo, ranuras para
+                            tarjetas Secure Digital (SD) y puertos USB (bus universal en serie)) si existe un motivo de
+                            organización para su uso;</li>
+                        <li>Cuando sea necesario utilizar medios de almacenamiento extraíbles, supervisando la
+                            transferencia de información a dichos medios de almacenamiento;</li>
+                        <li>La información puede ser vulnerable al acceso no autorizado, al uso indebido o a la
+                            corrupción durante el transporte físico, por ejemplo, al enviar medios de almacenamiento a
+                            través del servicio postal o a través del servicio de mensajería.</li>
+                    </ol>
+                    <p>En este control, el material incluye documentos impresos. Al transferir medios de almacenamiento
+                        físicos, aplique medidas de seguridad en 5.14.</p>
+
+                    <p><strong>Reutilización o eliminación segura</strong></p>
+                    <p>Deberían establecerse procedimientos para la reutilización o eliminación segura de los medios de
+                        almacenamiento a fin de reducir al mínimo el riesgo de fuga de información confidencial a
+                        personas no autorizadas. Los procedimientos para la reutilización o eliminación segura de los
+                        medios de almacenamiento que contienen información confidencial deberían ser proporcionales a la
+                        sensibilidad de dicha información. Se deberían tomar en consideración los siguientes factores:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Si es necesario reutilizar los medios de almacenamiento que contienen información
+                            confidencial dentro de la organización, elimine los datos de forma segura o formatee los
+                            medios de almacenamiento antes de volver a utilizarlos (ver 8.10);</li>
+                        <li>Desechar los medios de almacenamiento que contienen información confidencial de forma segura
+                            cuando ya no sea necesario (por ejemplo, destruir, triturar o eliminar el contenido de forma
+                            segura);</li>
+                        <li>Disponer de procedimientos para identificar los elementos que pueden requerir una
+                            eliminación segura;</li>
+                        <li>Muchas organizaciones ofrecen servicios de recogida y eliminación de medios de
+                            almacenamiento. Se debería tener cuidado al seleccionar un proveedor externo adecuado con
+                            controles y experiencia adecuados;</li>
+                        <li>Registrar la eliminación de elementos sensibles para mantener un registro de auditoría;</li>
+                        <li>Al acumular medios de almacenamiento para su eliminación, tomando en consideración el efecto
+                            de agregación, que puede hacer que una gran cantidad de información no confidencial se
+                            vuelva sensible.</li>
+                    </ol>
+                    <p>Se debería realizar una evaluación de riesgos en los dispositivos dañados que contengan datos
+                        sensibles para determinar si los elementos deberían destruirse físicamente en lugar de enviarse
+                        para su reparación o descartarse (ver 7.14).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El dato no muere cuando se borra el archivo, muere cuando se destruye el soporte:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Bloqueo de Puertos USB</strong>
+                        <p>Por defecto, todos los puertos USB de los ordenadores de la empresa están bloqueados para
+                            dispositivos de almacenamiento masivo. Solo el personal de TI tiene permisos para usar
+                            pendrives cifrados corporativos, evitando fugas de información o la introducción de malware
+                            desde memorias desconocidas ("USB drops").</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Destrucción Certificada de Discos
+                            Duros</strong>
+                        <p>Cuando un servidor se retira, sus discos duros no se tiran a la basura ni se revenden. Se
+                            contrata a una empresa especializada que trae un camión triturador a las instalaciones,
+                            destruye los discos físicamente ("shredding") en presencia del responsable de seguridad y
+                            emite un certificado de destrucción con los números de serie.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Cuando la información confidencial de los medios de almacenamiento no está cifrada, debería
+                    considerarse la protección física adicional de los medios de almacenamiento.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
