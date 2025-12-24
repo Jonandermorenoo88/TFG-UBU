@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.11</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.11. Servicios públicos de respaldo</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las instalaciones de procesamiento de la información deberían estar protegidas contra los cortes de
+                    energía y otras interrupciones causadas por fallas en los servicios públicos de respaldo.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar la pérdida, daño o compromiso de información y otros activos asociados o la interrupción de
+                    las operaciones de la organización debido al fracaso y la interrupción de los servicios públicos de
+                    respaldo.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las organizaciones dependen de los servicios públicos (por ejemplo, electricidad,
+                        telecomunicaciones, suministro de agua, gas, aguas residuales, ventilación y aire acondicionado)
+                        para apoyar sus instalaciones de procesamiento de información. Por lo tanto, deberían:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Asegurarse de que el equipo que soporta los servicios está configurado operado y mantenido
+                            de acuerdo con las especificaciones del fabricante correspondiente;</li>
+                        <li>Garantizar que los servicios públicos sean evaluados periódicamente en cuanto a su capacidad
+                            para satisfacer el crecimiento de la empresa y las interacciones con otros servicios de
+                            respaldo;</li>
+                        <li>Garantizar que los equipos de soporte de los servicios públicos se inspeccionen y prueben
+                            regularmente para garantizar su correcto funcionamiento;</li>
+                        <li>Levantar alarmas para detectar fallas de funcionamiento de los servicios públicos, si es
+                            necesario;</li>
+                        <li>Asegurarse de que los servicios públicos tienen varias fuentes con enrutamiento físico
+                            diverso, si es necesario;</li>
+                        <li>Garantizar que los equipos que soportan los servicios públicos estén en una red separada de
+                            las instalaciones de procesamiento de la información, si están conectadas a una red;</li>
+                        <li>Garantizar que los equipos que soportan los servicios públicos se conecten a internet solo
+                            cuando sea necesario y de forma segura.</li>
+                    </ol>
+                    <p>Se deberían proporcionar iluminación de emergencia y comunicaciones. Los interruptores y válvulas
+                        de emergencia para cortar la alimentación, el agua, el gas u otros servicios públicos deberían
+                        estar ubicados cerca de las salidas de emergencia o de las salas de equipos. Los datos de
+                        contacto de emergencia deberían registrarse y ponerse a disposición del personal en caso de
+                        interrupción del servicio.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La ciberseguridad no sirve de nada si se corta la luz o se cae internet. La redundancia física es
+                        clave:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: UPS y Generador Diésel</strong>
+                        <p>El centro de datos cuenta con un Sistema de Alimentación Ininterrumpida (SAI/UPS) que, ante
+                            un corte de luz, mantiene los servidores encendidos durante 15 minutos, tiempo suficiente
+                            para que arranque automáticamente el generador diésel de emergencia que puede sostener la
+                            operación durante 48 horas.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Redundancia de Comunicaciones (Dual
+                            Homing)</strong>
+                        <p>La oficina no depende de un solo proveedor de internet. Tiene fibra óptica de Movistar
+                            entrando por la fachada norte y de Vodafone por la fachada sur (diversidad de enrutamiento
+                            físico). Si una excavadora corta accidentalmente los cables de una calle, la conexión
+                            conmuta automáticamente a la otra línea sin perder servicio.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Se puede obtener redundancia adicional para la conectividad de red mediante varias rutas de más de
+                    un proveedor de servicios públicos.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
