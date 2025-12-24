@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.9. Seguridad de los activos fuera de las instalaciones</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.6</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los activos fuera de las instalaciones deberían estar protegidos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para evitar pérdidas, daños, robos o riesgos de dispositivos externos e interrupciones en las
+                    operaciones de la empresa.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Cualquier dispositivo utilizado fuera de las instalaciones de la empresa que almacene o procese
+                        información (por ejemplo, dispositivos móviles), incluidos los dispositivos propiedad de la
+                        empresa y los dispositivos de propiedad privada y utilizados en nombre de la empresa (use su
+                        propio dispositivo (BYOD)) necesita protección. La administración debería autorizar el uso de
+                        estos dispositivos.</p>
+                    <p>Se deberían tener en cuenta las siguientes directrices para la protección de los dispositivos que
+                        almacenan o procesan información fuera de las instalaciones de la organización:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>No dejar el equipo y los medios de almacenamiento sin supervisión en lugares públicos y no
+                            protegidos;</li>
+                        <li>Observar las instrucciones del fabricante para proteger los equipos en todo momento (por
+                            ejemplo, protección contra la exposición a campos electromagnéticos fuertes, agua, calor,
+                            humedad, polvo);</li>
+                        <li>Mantener un registro que defina la cadena de custodia del equipo, incluidos al menos los
+                            nombres y organizaciones de los responsables del equipo, cuando el equipo fuera de las
+                            instalaciones se transfiere entre diferentes personas o partes interesadas. La información
+                            que no necesita transferirse con el activo debería eliminarse de forma segura antes de la
+                            transferencia;</li>
+                        <li>Requerir autorización para retirar el equipo y los medios de comunicación de las
+                            instalaciones de la organización, cuando sea necesario y práctico, y que mantener un
+                            registro de dichas retiradas a fin de mantener un registro de auditoría (ver 5.14);</li>
+                        <li>Proteger contra la visualización de información en los dispositivos (por ejemplo, móvil o
+                            portátil) en transporte público y los riesgos asociados con la navegación en el hombro;</li>
+                        <li>Implementar el seguimiento de ubicación y capacidad para el borrado remoto de dispositivos.
+                        </li>
+                    </ol>
+                    <p>La instalación permanente de equipos fuera de las instalaciones de la organización (como antenas
+                        y cajeros automáticos (ATM)) puede estar sujeta a un mayor riesgo de daños, robo o espionaje.
+                        Estos riesgos pueden variar considerablemente de un lugar a otro y deberían tenerse en cuenta al
+                        determinar las medidas más adecuadas. Al situar este equipo fuera de las instalaciones de la
+                        organización, deberían tenerse en cuenta las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Supervisión de la seguridad física (ver 7.4);</li>
+                        <li>Protección contra las amenazas físicas y medioambientales (ver 7.5);</li>
+                        <li>Controles de acceso físico y de prueba de manipulación;</li>
+                        <li>Control de acceso lógico.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Cuando el activo sale del perímetro seguro de la oficina, la seguridad debe viajar con él:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: MDM y Borrado Remoto (Kill Switch)</strong>
+                        <p>Si un directivo olvida su tablet con datos confidenciales en un taxi, no entra en pánico.
+                            Notifica inmediatamente a seguridad, quienes a través del software de Gestión de
+                            Dispositivos Móviles (MDM) geolocalizan el dispositivo y envían un comando de borrado seguro
+                            ("Wipe") antes de que nadie pueda intentar desbloquearlo.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Filtros de Privacidad en Viajes</strong>
+                        <p>Los empleados que viajan en tren o avión tienen prohibido trabajar en documentos sensibles a
+                            menos que su portátil tenga instalado un filtro de privacidad polarizado. Esto impide que el
+                            pasajero del asiento contiguo ("shoulder surfer") pueda leer los datos de la pantalla,
+                            aunque esté a pocos centímetros.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Para más información sobre otros aspectos de la protección de equipos de almacenamiento y
+                    procesamiento de información y dispositivos finales de usuario ver 8.1 y 6.7.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
