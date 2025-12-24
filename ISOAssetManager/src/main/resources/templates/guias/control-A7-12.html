@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.12. Seguridad del cableado</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los cables que transportan energía, datos o servicios de información de respaldo deben estar
+                    protegidos contra la interceptación, las interferencias o los daños.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar la pérdida, daño o compromiso de información y otros activos asociados o la interrupción de
+                    las operaciones de la organización debido al cableado de alimentación y comunicaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían tener en cuenta las siguientes directrices para la seguridad del cableado:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Líneas de energía y telecomunicaciones en instalaciones de procesamiento de información bajo
+                            tierra siempre que sea posible o sometidas a una protección alternativa adecuada, como el
+                            protector de cables de suelo y el polo de a tierra; si los cables están bajo tierra, deben
+                            estar protegidos de cortes accidentales (por ejemplo, con conductos blindados o señales de
+                            presencia);</li>
+                        <li>Separar los cables de alimentación de los cables de comunicaciones para evitar
+                            interferencias;</li>
+                        <li>Para sistemas sensibles o críticos otros controles a considerar incluyen:
+                            <ol type="1">
+                                <li>Instalación de conductos blindados y salas o cajas bloqueadas y alarmas en los
+                                    puntos de inspección y terminación;</li>
+                                <li>Uso de blindaje electromagnético para proteger los cables;</li>
+                                <li>Barridos técnicos periódicos e inspecciones físicas para detectar dispositivos no
+                                    autorizados que se conectan a los cables;</li>
+                                <li>Acceso controlado a paneles de conexiones y salas de cables (por ejemplo, con llaves
+                                    mecánicas o PINES);</li>
+                                <li>Uso de cables de fibra óptica;</li>
+                            </ol>
+                        </li>
+                        <li>Etiquetar los cables en cada extremo con suficientes detalles de origen y destino para
+                            permitir la identificación física y la inspección del cable.</li>
+                    </ol>
+                    <p>Se debería solicitar asesoramiento especializado sobre cómo gestionar los riesgos derivados de
+                        incidentes o fallas de funcionamiento del cableado.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un cable cortado puede detener la empresa y un cable pinchado puede filtrar todos sus secretos:
+                    </p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Separación de Cableado (Evitar
+                            Interferencias)</strong>
+                        <p>Las bandejas de cables están estrictamente separadas: una para electricidad y otra para
+                            datos, manteniendo una distancia mínima de 20cm. Esto evita que el campo electromagnético de
+                            la corriente alterna induzca ruido y corrompa los paquetes de datos en los cables de red
+                            UTP.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Protección Física y Etiquetado</strong>
+                        <p>Los cables de fibra óptica que atraviesan zonas de acceso público (como el parking
+                            subterráneo) van por dentro de tubos de acero blindado para evitar cortes malintencionados o
+                            roedores. Además, cada cable tiene una etiqueta en ambos extremos (ej. "SW-Principal-P12 ->
+                            SRV-BBDD-01") facilitando el mantenimiento y detección de conexiones extrañas.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    A veces, el cableado de energía y telecomunicaciones es un recurso compartido para más de una
+                    organización que ocupa instalaciones ubicadas en una misma ubicación.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
