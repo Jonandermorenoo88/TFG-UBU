@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.2. Entrada Física</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.1.2<br>11.1.6</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las áreas seguras deberían protegerse mediante controles de entrada y puntos de acceso adecuados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que solo se produce el acceso físico autorizado a la información de la organización y a
+                    otros activos asociados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>Los puntos de acceso, como las zonas de entrega y carga y otros puntos en los que personas no
+                        autorizadas puedan entrar en las instalaciones, deberían controlarse y, si es posible, aislarse
+                        de las instalaciones de procesamiento de información para evitar el acceso no autorizado.</p>
+                    <p>Se deberían tomar en consideración las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>restringir el acceso a los sitios y edificios solo al personal autorizado. El proceso de
+                            gestión de los derechos de acceso a las áreas físicas debería incluir la provisión, revisión
+                            periódica, actualización y revocación de autorizaciones (ver 5.18);</li>
+                        <li>mantener y supervisar de forma segura un libro de registro físico o un registro de auditoría
+                            electrónico de todos los accesos y proteger todos los registros (ver 5.33) y la información
+                            confidencial de autenticación;</li>
+                        <li>establecer e implementar un proceso y mecanismos técnicos para la gestión del acceso a las
+                            áreas donde se procesa o almacena la información. Los mecanismos de autenticación incluyen
+                            el uso de tarjetas de acceso, biometría o autenticación de dos factores, como una tarjeta de
+                            acceso y un PIN secreto. Para el acceso a zonas sensibles deberían considerarse puertas de
+                            seguridad dobles;</li>
+                        <li>establecer un área de recepción supervisada por el personal u otros medios para controlar el
+                            acceso físico al sitio o al edificio;</li>
+                        <li>inspeccionar y examinar las pertenencias personales del personal y de las partes interesadas
+                            en el momento de la entrada y salida;<br><em><strong>NOTA</strong> Pueden existir
+                                legislaciones y normativas locales sobre la posibilidad de inspeccionar los objetos
+                                personales.</em></li>
+                        <li>requerir a todo el personal y a las partes interesadas que lleven algún tipo de
+                            identificación visible y que notifiquen inmediatamente al personal de seguridad si se
+                            encuentran con visitantes no escoltados y alguien que no lleve identificación visible.
+                            Deberían considerarse insignias fácilmente distinguibles para identificar mejor a los
+                            empleados, proveedores y visitantes permanentes;</li>
+                        <li>conceder al personal del proveedor acceso restringido a áreas seguras o instalaciones de
+                            procesamiento de información solo cuando sea necesario. Este acceso debería autorizarse y
+                            supervisarse;</li>
+                        <li>prestar especial atención a la seguridad del acceso físico en el caso de los edificios que
+                            tienen activos para múltiples organizaciones;</li>
+                        <li>diseñar medidas de seguridad física para que puedan reforzarse cuando aumente la
+                            probabilidad de incidentes físicos;</li>
+                        <li>asegurar otros puntos de entrada, como salidas de emergencia, frente a accesos no
+                            autorizados;</li>
+                        <li>configurar un proceso de gestión de claves para garantizar la gestión de las claves físicas
+                            o la información de autenticación (por ejemplo, códigos de bloqueo, bloqueos combinados a
+                            oficinas, salas e instalaciones como armarios de llaves) y garantizar un libro de registro o
+                            una auditoría de claves anual y el acceso a la información física las claves o la
+                            información de autenticación se controlan (ver 5.17 para obtener más información sobre la
+                            autenticación).</li>
+                    </ol>
+
+                    <p><strong>Visitantes</strong></p>
+                    <p>Se deberían tomar en consideración las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Autenticar la identidad de los visitantes por un medio apropiado;</li>
+                        <li>Registrar la fecha y hora de entrada y salida de los visitantes;</li>
+                        <li>Conceder acceso únicamente a los visitantes con fines específicos y autorizados y con
+                            instrucciones sobre los requisitos de seguridad de la zona y sobre los procedimientos de
+                            emergencia;</li>
+                        <li>Supervisar a todos los visitantes, a menos que se conceda una excepción explícita.</li>
+                    </ol>
+
+                    <p><strong>Áreas de entrega y carga y material entrante</strong></p>
+                    <p>Se deberían tomar en consideración las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>restringir el acceso a las zonas de entrega y carga desde fuera del edificio al personal
+                            identificado y autorizado;</li>
+                        <li>diseñar las áreas de entrega y carga para que las entregas puedan cargarse y descargarse sin
+                            que el personal de entrega tenga acceso no autorizado a otras partes del edificio;</li>
+                        <li>asegurar las puertas externas de las zonas de entrega y carga cuando se abren las puertas a
+                            zonas restringidas;</li>
+                        <li>inspeccionar y examinar las entregas entrantes en busca de explosivos, productos químicos u
+                            otros materiales peligrosos antes de trasladarlas de las zonas de entrega y carga;</li>
+                        <li>registrar las entregas entrantes de acuerdo con los procedimientos de gestión de activos
+                            (ver 5.9 y 7.10) en el momento de la entrada en el emplazamiento;</li>
+                        <li>separar físicamente los envíos entrantes y salientes, siempre que sea posible;</li>
+                        <li>inspección de las entregas entrantes para comprobar si hay indicios de manipulación en el
+                            camino. Si se descubre la manipulación, se debe informar inmediatamente al personal de
+                            seguridad.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Controlar quién entra y qué trae es la primera defensa de la fortaleza:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Registro Digital y Badges Visibles</strong>
+                        <p>En la recepción, todo visitante debe escanear su DNI en un kiosco. El sistema imprime
+                            automáticamente una etiqueta adhesiva con su foto, nombre completo y la palabra "VISITANTE"
+                            en fondo rojo. Los tornos de acceso a la zona de oficinas solo se abren si un empleado
+                            anfitrión pasa su tarjeta primero, garantizando que ningún externo deambule solo.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Zona de Carga "Limpia"</strong>
+                        <p>Los repartidores de Amazon o proveedores de catering nunca cruzan la puerta principal.
+                            Entregan en una sala de "zona sucia" comunicada con el exterior. Un oficial de seguridad
+                            inspecciona los paquetes (visualmente o con escáner) antes de pasarlos a través de una
+                            ventanilla segura a la "zona limpia" interna para su distribución.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
