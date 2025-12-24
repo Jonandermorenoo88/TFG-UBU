@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.7. Escritorio y pantalla limpios</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.9</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se deberían definir y aplicar de forma adecuada reglas para papeles y medios de almacenamiento
+                    extraíbles en los escritorios, así como reglas de pantalla limpia para las instalaciones de
+                    procesamiento de información.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Reducir los riesgos de acceso no autorizado, pérdida y daños a la información en escritorios,
+                    pantallas y otros lugares accesibles durante y fuera del horario de trabajo normal.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería establecer y comunicar a todas las partes interesadas una política
+                        específica sobre el tema del escritorio ya la pantalla limpios. Se deberían tomar en
+                        consideración las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Proteger la información organizacional confidencial o crítica (por ejemplo, en papel o en
+                            medios de almacenamiento electrónicos) (idealmente en una caja fuerte, armario u otro tipo
+                            de mobiliario de seguridad) cuando no sea necesario, especialmente cuando la oficina está
+                            desocupada;</li>
+                        <li>Proteger los dispositivos finales de usuario mediante bloqueos de llave u otros medios de
+                            seguridad cuando no se utilizan o no están desatendidos;</li>
+                        <li>Dejar los dispositivos de punto final de usuario desconectados o protegidos con un mecanismo
+                            de bloqueo de pantalla y teclado controlado por un mecanismo de autenticación de usuario
+                            cuando no están atendidos. Todos los equipos y sistemas deberían configurarse con una
+                            función de tiempo de espera o cierre de sesión automático;</li>
+                        <li>Hacer que el originador recopile inmediatamente las salidas de impresoras o dispositivos
+                            multifunción. El uso de impresoras con una función de autenticación, por lo que los
+                            creadores son los únicos que pueden obtener sus impresiones y solo cuando se encuentran
+                            junto a la impresora;</li>
+                        <li>Almacenar de forma segura documentos y medios de almacenamiento extraíbles que contengan
+                            información confidencial y, cuando ya no sea necesario, desecharlos mediante mecanismos de
+                            eliminación seguros;</li>
+                        <li>Establecer y comunicar reglas y directrices para la configuración de ventanas emergentes en
+                            las pantallas (por ejemplo, desactivar las nuevas ventanas emergentes de correo electrónico
+                            y mensajería, si es posible, durante las presentaciones, el uso compartido de pantalla o en
+                            un área pública);</li>
+                        <li>Borrar la información sensible o crítica de pizarras blancas y otros tipos de pantalla
+                            cuando ya no sea necesario.</li>
+                    </ol>
+                    <p>La organización debería disponer de procedimientos al desocupar las instalaciones, incluida la
+                        realización de un barrido final antes de salir para garantizar que los activos de la
+                        organización no se queden olvidados y desprotegidos (por ejemplo, documentos caídos detrás de
+                        cajones o muebles).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Orden en la mesa, seguridad en la empresa. Un vistazo rápido no debería revelar secretos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Bloqueo Automático y Cultura
+                            "Win+L"</strong>
+                        <p>Los portátiles corporativos están configurados por política central para bloquearse
+                            automáticamente tras 5 minutos de inactividad. Además, se fomenta la cultura de que, al
+                            levantarse a por un café, todo empleado pulse "Windows + L" instintivamente, protegiendo su
+                            sesión de miradas indiscretas.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Impresión Segura (Follow-Me
+                            Printing)</strong>
+                        <p>Para evitar que nóminas o contratos confidenciales queden olvidados en la bandeja de salida
+                            de la impresora común, los documentos no se imprimen hasta que el usuario va físicamente a
+                            la máquina y se autentica con su tarjeta de empleado, liberando la cola de impresión en ese
+                            momento.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
