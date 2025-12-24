@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.5. Protección contra amenazas físicas y medioambientales</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.1.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Debería diseñarse y aplicarse la protección contra las amenazas físicas y ambientales, como los
+                    desastres naturales y otras amenazas físicas intencionales o no intencionales a la infraestructura.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Prevenir o reducir las consecuencias de los eventos originados por amenazas físicas y ambientales.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las evaluaciones de riesgos para identificar las consecuencias potenciales de las amenazas
+                        físicas y ambientales deberían realizarse antes de iniciar operaciones críticas en un sitio
+                        físico y a intervalos regulares. Se deberían aplicar las salvaguardias necesarias y se deben
+                        supervisar los cambios en las amenazas. Se debería obtener asesoramiento especializado sobre
+                        cómo gestionar los riesgos derivados de amenazas físicas y ambientales como incendios,
+                        inundaciones, terremotos, explosiones, disturbios civiles, desechos tóxicos, emisiones
+                        ambientales y otras formas de desastres naturales o desastres causados por seres humanos.</p>
+                    <p>La ubicación y la construcción de las instalaciones físicas deberían tener en cuenta:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La topografía local, como elevación apropiada, cuerpos de agua y líneas de falla tectónica;
+                        </li>
+                        <li>Las amenazas urbanas, como lugares con un alto perfil para atraer disturbios políticos,
+                            actividades delictivas o ataques terroristas.</li>
+                    </ol>
+                    <p>Sobre la base de los resultados de la evaluación de riesgos, deberían identificarse las amenazas
+                        físicas y ambientales pertinentes y considerarse los controles apropiados en los siguientes
+                        contextos como ejemplos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Fuego: instalación y configuración de sistemas capaces de detectar incendios en una fase
+                            temprana para enviar alarmas o activar sistemas de extinción de incendios con el fin de
+                            evitar daños por incendio en los medios de almacenamiento y en los sistemas de procesamiento
+                            de información relacionados. La extinción de incendios debería realizarse al utilizar la
+                            sustancia más apropiada con respecto al entorno circundante (por ejemplo, gas en espacios
+                            confinados);</li>
+                        <li>Inundaciones: instalación de sistemas capaces de detectar inundaciones en una etapa temprana
+                            bajo los pisos de áreas que contienen medios de almacenamiento o sistemas de procesamiento
+                            de información. Las bombas de agua o los medios equivalentes deberían estar disponibles
+                            fácilmente en caso de que ocurra una inundación;</li>
+                        <li>Sobretensiones eléctricas: adoptar sistemas capaces de proteger tanto los sistemas de
+                            información de servidor como de cliente contra sobretensiones eléctricas o eventos similares
+                            para minimizar las consecuencias de tales eventos;</li>
+                        <li>Explosivos y armas: realización de inspecciones aleatorias por la presencia de explosivos o
+                            armas en personal, vehículos o mercancías que entran en instalaciones de procesamiento de
+                            información sensible.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La naturaleza y los accidentes no avisan, por lo que la infraestructura debe estar preparada para
+                        lo peor:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Sistemas de Extinción por Gas (Sin
+                            Agua)</strong>
+                        <p>En el centro de datos, en lugar de rociadores de agua que destruirían los servidores, se
+                            instala un sistema de gas inerte (como FM-200 o Novec 1230). Al detectar humo, el sistema
+                            inunda la sala con gas que sofoca el fuego reduciendo el oxígeno o el calor, pero sin dañar
+                            la electrónica ni dejar residuos.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Ubicación Estratégica y Sensores de
+                            Inundación</strong>
+                        <p>Como la oficina está en una zona de lluvias torrenciales, el CPD se ubica en el primer piso,
+                            nunca en el sótano. Además, bajo el falso suelo técnico se instalan cables sensores de
+                            líquidos que detectan cualquier fuga de agua del aire acondicionado o filtración externa
+                            antes de que llegue a los racks.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las cajas fuertes u otras formas de instalaciones seguras de almacenamiento pueden proteger la
+                        información almacenada en ellas contra desastres tales como incendios, terremotos, inundaciones
+                        o explosiones.</p>
+                    <p>Las organizaciones pueden considerar los conceptos de prevención del delito a través del diseño
+                        ambiental al diseñar los controles para asegurar su medio ambiente y reducir las amenazas
+                        urbanas. Por ejemplo, en lugar de utilizar balizas, las estatuas o los elementos de agua pueden
+                        servir tanto de característica como de barrera física.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
