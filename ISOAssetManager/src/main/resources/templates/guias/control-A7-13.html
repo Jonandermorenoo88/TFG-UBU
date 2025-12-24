@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.13. Mantenimiento de equipos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los equipos deberían mantenerse correctamente para garantizar la disponibilidad, integridad y
+                    confidencialidad de la información.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar la pérdida, daño o compromiso de información y otros activos asociados o la interrupción de
+                    las operaciones de la organización debido al cableado de alimentación y comunicaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían tener en cuenta las siguientes directrices para el mantenimiento del equipo:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Mantener el equipo de acuerdo con la frecuencia de servicio y las especificaciones
+                            recomendadas por el proveedor;</li>
+                        <li>Ejecutar y hacer seguimiento a un programa de mantenimiento por parte de la organización;
+                        </li>
+                        <li>Realizar las reparaciones y el mantenimiento de los equipos solo por el personal de
+                            mantenimiento autorizado;</li>
+                        <li>Mantener registros de todas las averías sospechosas o reales, así como de todo mantenimiento
+                            preventivo y correctivo;</li>
+                        <li>Implementar controles adecuados cuando el equipo esté programado para el mantenimiento,
+                            tomando en consideración si este mantenimiento lo realiza el personal del emplazamiento o
+                            externo a la organización; someter al personal de mantenimiento a un acuerdo de
+                            confidencialidad adecuado;</li>
+                        <li>Supervisar al personal de mantenimiento durante el mantenimiento in situ;</li>
+                        <li>Autorizar y controlar el acceso para el mantenimiento remoto;</li>
+                        <li>Aplicar medidas de seguridad para los activos fuera de las instalaciones (ver 7.9) si el
+                            equipo que contiene información se desocupa de las instalaciones para su mantenimiento;</li>
+                        <li>Cumplir todos los requisitos de mantenimiento impuestos por el seguro;</li>
+                        <li>Antes de volver a poner el equipo en funcionamiento después del mantenimiento, se debe
+                            inspeccionar para asegurarse de que el equipo no se ha manipulado y funciona correctamente;
+                        </li>
+                        <li>Aplicar medidas para la eliminación o reutilización seguras del equipo (ver 7.14) si se
+                            determina que el equipo se va a desechar.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un equipo mal mantenido es una vulnerabilidad esperando a explotar, ya sea por fallo técnico o
+                        puerta trasera:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Mantenimiento Preventivo de UPS</strong>
+                        <p>Las baterías del Sistema de Alimentación Ininterrumpida (UPS) tienen una vida útil finita. La
+                            organización programa revisiones semestrales con el proveedor para medir la impedancia y
+                            reemplazar celdas envejecidas preventivamente, evitando que el CPD se apague inesperadamente
+                            durante un corte de luz real.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Supervisión de Técnicos Externos</strong>
+                        <p>Cuando el técnico del servicio oficial viene a arreglar la impresora multifunción (que tiene
+                            un disco duro interno con copias de los documentos escaneados), no se le deja solo en el
+                            pasillo. Un administrativo lo acompaña en todo momento para asegurar que repara la avería
+                            mecánica sin extraer datos ni conectar dispositivos no autorizados.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    El equipo incluye componentes técnicos de instalaciones de procesamiento de información, sistemas de
+                    alimentación ininterrumpida (UPS) y baterías, generadores de energía, alternadores y convertidores
+                    de potencia, sistemas y alarmas de detección de intrusiones físicas, detectores de humo, extintores
+                    de incendios, aire acondicionado y ascensores.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
