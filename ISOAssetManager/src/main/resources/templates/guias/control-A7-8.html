@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.8. Ubicación y protección de los equipos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los equipos deberían ubicarse de forma segura y protegidos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Reducir los riesgos derivados de amenazas físicas y ambientales, así como del acceso y los daños no
+                    autorizados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían tomar en consideración las siguientes directrices para proteger los equipos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Ubicar los equipos de manera de minimizar el acceso innecesario a las zonas de trabajo y
+                            evitar el acceso no autorizado;</li>
+                        <li>Ubicar cuidadosamente las instalaciones de procesamiento de información que manipulan datos
+                            sensibles para reducir el riesgo de que personas no autorizadas vean la información durante
+                            su uso;</li>
+                        <li>Adoptar controles para minimizar el riesgo de posibles amenazas físicas y ambientales (por
+                            ejemplo, robo, incendio, explosivos, humo, agua (o falla del suministro de agua), polvo,
+                            vibraciones, efectos químicos, interferencias en el suministro eléctrico, interferencias de
+                            comunicaciones, radiación electromagnética y vandalismo);</li>
+                        <li>Establecer directrices para comer, beber y fumar en proximidad a las instalaciones de
+                            procesamiento de información;</li>
+                        <li>Controlar las condiciones ambientales, como la temperatura y la humedad, para condiciones
+                            que puedan afectar negativamente al funcionamiento de las instalaciones de procesamiento de
+                            información;</li>
+                        <li>Aplicar protección pararrayos a todos los edificios e instalar filtros de protección contra
+                            rayos en todas las líneas de alimentación y comunicaciones entrantes;</li>
+                        <li>Considerar el uso de métodos de protección especiales, como membranas de teclado, para
+                            equipos en entornos industriales;</li>
+                        <li>Proteger los equipos que procesan información confidencial para minimizar el riesgo de
+                            pérdida de información debido a emanaciones electromagnéticas;</li>
+                        <li>Separar físicamente las instalaciones de procesamiento de información gestionadas por la
+                            organización de las no gestionadas por la organización.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La ubicación estratégica y el cuidado del entorno físico evitan accidentes y robos oportunistas:
+                    </p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Orientación de Pantallas y Filtros de
+                            Privacidad</strong>
+                        <p>En la recepción o áreas de atención al cliente, los monitores se giran físicamente para que
+                            el público no pueda leer los datos mostrados. Si esto no es posible por la distribución del
+                            mobiliario, se instalan filtros de privacidad que oscurecen la pantalla si se mira desde un
+                            ángulo lateral.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Prohibición de Comer y Beber en el Sala de
+                            Servidores</strong>
+                        <p>Para evitar daños accidentales por derrames de líquidos sobre equipos críticos, se establece
+                            una política estricta que prohíbe introducir alimentos o bebidas en el Centro de
+                            Procesamiento de Datos (CPD). Se habilita una zona de descanso ("office") separada para este
+                            fin.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
