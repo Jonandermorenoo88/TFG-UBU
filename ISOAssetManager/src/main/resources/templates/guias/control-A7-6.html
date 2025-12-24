@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.6. Trabajo en áreas seguras</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.1.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían diseñarse y aplicarse medidas de seguridad para trabajar en zonas seguras.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger la información y otros activos asociados en áreas seguras contra daños e interferencias no
+                    autorizadas por parte del personal que trabaja en estas áreas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las medidas de seguridad para trabajar en zonas seguras deberían aplicarse a todo el personal y
+                        abarcar todas las actividades que se realicen en la zona segura.</p>
+                    <p>Se deberían tomar en consideración las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Informar al personal de la existencia de, o actividades dentro de, un área segura;</li>
+                        <li>Evitar el trabajo no supervisado en áreas seguras tanto por razones de seguridad como para
+                            reducir las posibilidades de actividades malintencionadas;</li>
+                        <li>Bloquear físicamente e inspeccionar periódicamente las áreas seguras vacías;</li>
+                        <li>No permitir el uso de equipos de grabación, de video, audio o de fotografía, como cámaras en
+                            dispositivos finales de usuario, a menos que estén autorizados;</li>
+                        <li>Controlar adecuadamente el transporte y el uso de los dispositivos de punto final del
+                            usuario en zonas seguras;</li>
+                        <li>Publicar procedimientos de emergencia de forma fácilmente visible o accesible.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Una vez dentro de la zona segura, las reglas del juego cambian para minimizar riesgos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Prohibición de Dispositivos Móviles (Zona
+                            Libre de Móviles)</strong>
+                        <p>En la Sala de Operaciones Críticas (SOC), está prohibido introducir teléfonos personales.
+                            Existen taquillas en la entrada para depositarlos. Esto evita la fuga de información
+                            mediante fotografías a las pantallas o grabaciones de audio no autorizadas.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Política de "Trabajo Acompañado" (Regla de
+                            los Dos Hombres)</strong>
+                        <p>Para realizar mantenimiento en el servidor raíz de la empresa, ningún administrador puede
+                            entrar solo a la jaula de seguridad. Siempre deben ir en parejas para supervisarse
+                            mutuamente, reduciendo el riesgo de sabotaje interno o errores críticos no detectados.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
