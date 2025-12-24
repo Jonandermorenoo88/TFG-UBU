@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 7.14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">7.14. Eliminación segura o reutilización de equipos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_física</li>
+                        <li>#Gestión_de_equipos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">11.2.7</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los elementos de los equipos que contienen medios de almacenamiento deberían verificarse para
+                    garantizar que los datos confidenciales y el software con licencia se han eliminado o sobrescrito de
+                    forma segura antes de desecharlos o reutilizarlos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar fugas de información del equipo que se va a desechar o reutilizar.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El equipo se debería verificar para asegurarse de que los medios de almacenamiento están
+                        contenidos o no antes de su eliminación o reutilización. Los medios de almacenamiento que
+                        contienen información confidencial o protegida por derechos de autor deberían destruirse
+                        físicamente o la información debería destruirse, eliminarse o sobrescribirse al utilizar
+                        técnicas para que la información original no pueda recuperarse en lugar de utilizar la función
+                        de eliminación convencional. Ver 7.10 para obtener guía detallada sobre la eliminación segura de
+                        los medios de almacenamiento y el 8.10 para obtener guía sobre la eliminación de información.
+                    </p>
+                    <p>Las etiquetas y las marcas que identifiquen a la organización o indiquen la clasificación,
+                        propietario, sistema o red, deberían eliminarse antes de su disposición final, esto incluye la
+                        reventa o donación a una organización benéfica.</p>
+                    <p>La organización debería considerar la eliminación de los controles de seguridad, como los
+                        controles de acceso o los equipos de vigilancia, al final del contrato de arrendamiento o cuando
+                        se traslade de las instalaciones. Esto depende de factores como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Su contrato de arrendamiento para devolver la instalación a su condición original;</li>
+                        <li>Minimizar el riesgo de dejar sistemas con información confidencial para el siguiente
+                            arrendatario (por ejemplo, listas de acceso de usuarios, archivos de video o de imágenes);
+                        </li>
+                        <li>La capacidad de reutilizar los controles en la siguiente instalación.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Donar ordenadores viejos es una buena causa, pero regalar los datos de los clientes con ellos es
+                        un desastre:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Borrado Seguro (Wiping) y
+                            Reutilización</strong>
+                        <p>Antes de reasignar el portátil de un ex-empleado a un becario nuevo, el departamento de TI
+                            realiza un "cero-fill" (sobrescritura completa del disco duro con ceros) utilizando software
+                            certificado. Esto asegura que ningún archivo residual de la persona anterior pueda ser
+                            recuperado con herramientas forenses.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Retirada de Etiquetas
+                            Identificativas</strong>
+                        <p>Cuando la empresa vende un lote de servidores antiguos a un reciclador, los técnicos no solo
+                            borran los discos, sino que también arrancan todas las pegatinas que ponen "Propiedad de
+                            [Nombre de la Empresa]" o direcciones IP internas. Esto evita que, si esos equipos acaban en
+                            malas manos, se pueda rastrear su origen para ingeniería social.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los equipos dañados que contienen medios de almacenamiento pueden requerir una evaluación de
+                        riesgos para determinar si los elementos deberían destruirse físicamente en lugar de enviarse
+                        para su reparación o descartarse. La información puede verse comprometida por la eliminación
+                        descuidada o la reutilización del equipo.</p>
+                    <p>Además de la eliminación segura del disco, el cifrado de disco completo reduce el riesgo de
+                        revelación de información confidencial cuando se desecha o se vuelve a implementar el equipo,
+                        siempre que:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>El proceso de cifrado sea suficientemente sólido y cubra todo el disco (incluido el espacio
+                            libre, los archivos de intercambio);</li>
+                        <li>Las claves cifradas sean lo suficientemente largas como para resistir los ataques de fuerza
+                            bruta;</li>
+                        <li>Las claves cifradas se mantienen en sí mismas como confidenciales (por ejemplo, nunca se
+                            almacenan en el mismo disco). Para más consejos sobre cifrado, ver 8.24.</li>
+                    </ol>
+                    <p>Las técnicas para sobrescribir de forma segura los medios de almacenamiento difieren según la
+                        tecnología de los medios de almacenamiento y el nivel de clasificación de la información
+                        contenida en los medios de almacenamiento. Las herramientas de sobreescritura deberían revisarse
+                        para asegurarse de que sean aplicables a la tecnología de los medios de almacenamiento.</p>
+                    <p>Información detallada sobre los métodos de desinfección de los medios de almacenamiento en la
+                        norma ISO/IEC 27040.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
