@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.16</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.16. Actividades de monitoreo</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detección</li>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detectar</li>
+                        <li>#Responder</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las redes, los sistemas y las aplicaciones deberían ser monitoreados para detectar comportamientos
+                    anómalos y tomar las medidas apropiadas para evaluar posibles incidentes de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Detectar comportamientos anómalos y posibles incidentes de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El alcance y el nivel de supervisión deberían determinarse de conformidad con los requisitos de
+                        seguridad de la organización y la información y tomando en consideración las leyes y reglamentos
+                        pertinentes. Los registros de supervisión deberían mantenerse para los períodos de retención
+                        definidos. Se debería considerar la inclusión de los siguientes elementos en el sistema de
+                        supervisión:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Tráfico de red, sistema y aplicaciones salientes y entrantes;</li>
+                        <li>Acceso a sistemas, servidores, equipos de red, sistema de supervisión, aplicaciones
+                            críticas, etc.;</li>
+                        <li>Archivos de configuración del sistema y de la red de nivel crítico o administrativo;</li>
+                        <li>Registros de herramientas de seguridad (por ejemplo, antivirus, IDS, sistema de prevención
+                            de intrusiones (IPS), filtros web, firewalls, prevención de fugas de datos);</li>
+                        <li>Registros de eventos relacionados con la actividad del sistema y de la red;</li>
+                        <li>Comprobar que el código que se está ejecutando está autorizado a ejecutarse en el sistema y
+                            que no se ha manipulado (por ejemplo, mediante recompilación para añadir código no deseado
+                            adicional);</li>
+                        <li>Uso de los recursos (por ejemplo, CPU, discos duros, memoria, ancho de banda) y su
+                            rendimiento.</li>
+                    </ol>
+                    <p>La organización debería establecer una línea de base de comportamiento normal y vigilar contra
+                        esta línea de base para detectar anomalías. Al establecer una línea base, se debería tener en
+                        cuenta lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Revisar la utilización de los sistemas en períodos normales y máximos;</li>
+                        <li>Hora habitual de acceso, ubicación del acceso, frecuencia de acceso para cada usuario o
+                            grupo de usuarios.</li>
+                    </ol>
+                    <p>El sistema de supervisión debería configurarse con respecto a la línea base establecida para
+                        identificar el comportamiento anómalo, como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Terminación no planificada de procesos o aplicaciones;</li>
+                        <li>Actividad normalmente asociada con malware o tráfico procedente de direcciones IP o dominios
+                            de red maliciosos conocidos (por ejemplo, los asociados con los servidores de comando y
+                            control de botnet);</li>
+                        <li>Características de ataque conocidas (por ejemplo, denegación de servicio y desbordamientos
+                            de búfer);</li>
+                        <li>Comportamiento inusual del sistema (por ejemplo, registro de pulsaciones de teclas,
+                            inyección de procesos y desviaciones en el uso de protocolos estándar);</li>
+                        <li>Cuellos de botella y sobrecargas (por ejemplo, colas de red, niveles de latencia y
+                            fluctuación de red); f) acceso no autorizado (real o tentativo) a sistemas o información;
+                        </li>
+                        <li>Análisis no autorizado de aplicaciones, sistemas y redes empresariales;</li>
+                        <li>Intentos correctos e incorrectos de acceder a los recursos protegidos (por ejemplo,
+                            servidores DNS, portales web y recursos compartidos de archivos);</li>
+                        <li>Comportamiento inusual del usuario y del sistema en relación con el comportamiento esperado.
+                        </li>
+                    </ol>
+                    <p>Se debería utilizar el monitoreo continuo a través de una herramienta de monitoreo. El monitoreo
+                        debería realizarse en tiempo real o en intervalos periódicos, sujeto a las necesidades y
+                        capacidades de la organización. Las herramientas de supervisión deberían incluir la capacidad de
+                        gestionar grandes cantidades de datos, adaptarse a un panorama de amenazas en constante cambio y
+                        permitir la notificación en tiempo real. Las herramientas también deben ser capaces de reconocer
+                        firmas y datos específicos o patrones de comportamiento de red o aplicaciones.</p>
+                    <p>El software de supervisión automatizada debería configurarse para generar alertas (por ejemplo,
+                        mediante consolas de administración, mensajes de correo electrónico o sistemas de mensajería
+                        instantánea) basándose en umbrales predefinidos. El sistema de alerta debería ser ajustado y
+                        entrenado en la línea de base de la organización para minimizar falsos positivos. El personal
+                        debe estar dedicado a responder a las alertas y debería estar debidamente capacitado para
+                        interpretar con precisión los posibles incidentes. Debería haber sistemas y procesos redundantes
+                        para recibir y responder a las notificaciones de alerta.</p>
+                    <p>Los eventos anormales deberían comunicarse a las partes relevantes para mejorar las siguientes
+                        actividades: Auditoría, evaluación de la seguridad, análisis y monitoreo de vulnerabilidades
+                        (ver 5.25). Deberían establecerse procedimientos para responder oportunamente a los indicadores
+                        positivos del sistema de vigilancia, a fin de minimizar el efecto de los eventos adversos (ver
+                        5.26) en la SI. También deberían establecerse procedimientos para identificar y abordar falsos
+                        positivos, incluido el ajuste del software de supervisión para reducir el número de falsos
+                        positivos futuros.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Para detectar a los malos, primero tienes que saber qué es "normal" en tu casa. Cualquier cosa
+                        fuera de lo normal es sospechosa:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Detección de Anomalías de Comportamiento
+                            (UEBA)</strong>
+                        <p>El sistema de seguridad "aprende" que el empleado Juan suele conectarse desde Madrid entre
+                            las 8:00 y las 18:00. Si un martes a las 03:00 AM las credenciales de Juan se usan para
+                            loguearse desde una IP en un país extranjero, el sistema detecta esta desviación de la línea
+                            base y bloquea automáticamente la cuenta, alertando al SOC por "Viaje Improbable" o "Cuenta
+                            Comprometida".</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Monitorización de Recursos
+                            Críticos</strong>
+                        <p>Los servidores de bases de datos tienen un uso de CPU estable del 40%. La herramienta de
+                            monitorización (como Nagios o Zabbix) está configurada para alertar si la CPU supera el 90%
+                            durante más de 5 minutos. Un pico repentino y sostenido a las 2 de la madrugada podría
+                            indicar un proceso de minería de criptomonedas instalado ilegalmente (Cryptojacking) o un
+                            ataque de Ransomware cifrando archivos.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La supervisión de la seguridad se puede mejorar mediante:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Aprovechar los sistemas de inteligencia frente a amenazas (ver 5.7);</li>
+                        <li>Aprovechar las capacidades de aprendizaje automático e inteligencia artificial;</li>
+                        <li>Al utilizar listas de bloqueo o listas de permisos;</li>
+                        <li>Realizar una serie de evaluaciones técnicas de seguridad (por ejemplo, evaluaciones de
+                            vulnerabilidad, pruebas de penetración, simulaciones de ciberataques y ejercicios de
+                            respuesta cibernética) y utilizar los resultados de estas evaluaciones para ayudar a
+                            determinar las líneas de base o el comportamiento aceptable;</li>
+                        <li>Utilizar sistemas de supervisión del rendimiento para ayudar a establecer y detectar
+                            comportamientos anómalos;</li>
+                        <li>Aprovechar los registros en combinación con los sistemas de supervisión.</li>
+                    </ol>
+                    <p>Las actividades de supervisión se realizan a menudo al utilizar software especializado, como
+                        sistemas de detección de intrusiones. Se pueden configurar en una línea de base de las
+                        actividades normales, aceptables y esperadas del sistema y de la red.</p>
+                    <p>El monitoreo de comunicaciones anómalas ayuda a identificar botnets (es decir, un conjunto de
+                        dispositivos bajo el control malicioso del propietario de botnet, que se suele utilizar para
+                        montar ataques distribuidos de denegación de servicio en otros equipos de otras organizaciones).
+                        Si el equipo está controlado por un dispositivo externo, existe una comunicación entre el
+                        dispositivo infectado y el controlador. Por lo tanto, la organización debe emplear tecnologías
+                        para vigilar las comunicaciones anómalas y adoptar las medidas necesarias.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
