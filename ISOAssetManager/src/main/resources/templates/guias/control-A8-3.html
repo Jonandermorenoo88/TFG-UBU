@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.3. Restricción de acceso a la información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.4.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El acceso a la información y a otros activos asociados debería restringirse de conformidad con la
+                    política establecida sobre el control del acceso relativa a temas específicos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar únicamente el acceso autorizado y evitar el acceso no autorizado a la información y otros
+                    activos asociados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El acceso a la información y a otros activos asociados debería restringirse de conformidad con
+                        las políticas establecidas sobre temas específicos. Se debería tener en cuenta lo siguiente para
+                        admitir los requisitos de restricción de acceso:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>No permitir el acceso a información confidencial por identidades de usuario desconocidas o
+                            anónimas. El acceso público o anónimo solo debería concederse a ubicaciones de
+                            almacenamiento que no contengan información confidencial;</li>
+                        <li>Proporcionar mecanismos de configuración para controlar el acceso a la información en
+                            sistemas, aplicaciones y servicios;</li>
+                        <li>Controlar a qué datos puede acceder un usuario concreto;</li>
+                        <li>Controlar qué identidades o grupos de identidades tienen acceso, como lectura, escritura,
+                            eliminación y ejecución;</li>
+                        <li>Proporcionar controles de acceso físicos o lógicos para el aislamiento de aplicaciones,
+                            datos de aplicaciones o sistemas confidenciales.</li>
+                    </ol>
+                    <p>Además, las técnicas y procesos de gestión de acceso dinámico para proteger la información
+                        confidencial que tiene un alto valor para la organización deben considerarse cuando la
+                        organización:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Necesita un control granular sobre quién puede acceder a dicha información durante qué
+                            periodo y de qué manera;</li>
+                        <li>Desea compartir dicha información con personas ajenas a la organización y mantener el
+                            control sobre quién puede acceder a ella;</li>
+                        <li>Desea gestionar dinámicamente, en tiempo real, el uso y la distribución de dicha
+                            información;</li>
+                        <li>Desea proteger dicha información contra cambios, copias y distribución no autorizados
+                            (incluida la impresión);</li>
+                        <li>Quiere controlar el uso de la información;</li>
+                        <li>Desea registrar cualquier cambio en dicha información que tenga lugar en caso de que se
+                            requiera una investigación futura.</li>
+                    </ol>
+                    <p>Las técnicas de gestión dinámica de acceso deben proteger la información a lo largo de su ciclo
+                        de vida (es decir, creación, procesamiento, almacenamiento, transmisión y eliminación),
+                        incluidos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Establecer reglas sobre la gestión del acceso dinámico basadas en casos de uso específicos
+                            considerando:
+                            <ol type="1">
+                                <li>Conceder permisos de acceso basados en la identidad, el dispositivo, la ubicación o
+                                    la aplicación;</li>
+                                <li>Aprovechar el esquema de clasificación para determinar qué información necesita
+                                    protegerse con técnicas de gestión de acceso dinámico;</li>
+                            </ol>
+                        </li>
+                        <li>Establecimiento de procesos operacionales, de supervisión y de presentación de informes y de
+                            infraestructura técnica de apoyo.</li>
+                    </ol>
+                    <p>Los sistemas de gestión de acceso dinámico deberían proteger la información mediante:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Solicitud de autenticación, credenciales adecuadas o un certificado para acceder a la
+                            información;</li>
+                        <li>Restricción del acceso, por ejemplo, a un plazo de tiempo especificado (por ejemplo, después
+                            de una fecha determinada o hasta una fecha determinada);</li>
+                        <li>Uso del cifrado para proteger la información;</li>
+                        <li>Definición de los permisos de impresión para la información;</li>
+                        <li>Registro de quién accede a la información y cómo se utiliza;</li>
+                        <li>Aumento de alertas al detectar intentos de hacer un uso incorrecto de la información.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>No basta con tener usuario y contraseña; hace falta saber a qué puerta te permite entrar esa
+                        llave:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Sistema de Ficheros y ACLs (Least
+                            Privilege)</strong>
+                        <p>En el servidor de archivos compartidos, la carpeta 'RRHH_Nominas' tiene permisos estrictos.
+                            Solo el grupo 'Usuarios_RRHH' tiene permiso de Lectura/Escritura. El resto de la empresa no
+                            tiene ni siquiera permiso de listado ('List Folder Contents'), asegurando que nadie pueda
+                            curiosear archivos salariales por error o malicia.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: IRM/DRM en Documentos Sensibles</strong>
+                        <p>La organización utiliza Azure Information Protection (AIP) para documentos clasificados como
+                            'Confidencial'. Si un empleado envía por error un informe estratégico a un correo personal
+                            de Gmail, el receptor no podrá abrirlo porque el documento está cifrado y requiere una
+                            autenticación exitosa contra el Directorio Activo de la empresa para descifrarse,
+                            independientemente de dónde esté almacenado el archivo.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las técnicas de gestión de acceso dinámico y otras tecnologías de protección dinámica pueden
+                        admitir la protección de la información incluso cuando los datos se comparten más allá de la
+                        organización de origen, donde no se pueden aplicar los controles de acceso tradicionales. Se
+                        puede aplicar a documentos, correos electrónicos u otros archivos que contengan información para
+                        limitar quién puede acceder al contenido y de qué manera. Puede ser a nivel granular y ser
+                        adaptado a lo largo del ciclo de vida de la información.</p>
+                    <p>Las técnicas de gestión dinámica de acceso no sustituyen a la gestión clásica de acceso (por
+                        ejemplo, el uso de listas de control de acceso (ACL)), sino que pueden añadir más factores para
+                        la condicionalidad, la evaluación en tiempo real, la reducción de datos justo a tiempo y otras
+                        mejoras que pueden ser útiles para la información más sensible. Ofrece una forma de controlar el
+                        acceso fuera del entorno de la organización. Las técnicas de gestión de acceso dinámico pueden
+                        admitir la respuesta a incidentes ya que los permisos se pueden modificar o revocar en cualquier
+                        momento.</p>
+                    <p>Información adicional sobre un marco para la gestión del acceso en la norma ISO/IEC 29146.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
