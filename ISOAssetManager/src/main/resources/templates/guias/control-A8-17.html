@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.17</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.17. Sincronización de relojes</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Integridad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.4.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los relojes de los sistemas de procesamiento de información utilizados por la organización deberían
+                    sincronizarse con las fuentes de tiempo aprobadas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Permitir la correlación y el análisis de los eventos relacionados con la seguridad y otros datos
+                    registrados y apoyar las investigaciones sobre incidentes de SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deben documentar e implementar los requisitos externos e internos de representación de tiempo,
+                        sincronización fiable y precisión. Tales requisitos pueden ser legales, reglamentarios,
+                        contractuales, normativos y de control interno. Se debería definir y considerar un tiempo de
+                        referencia estándar para su uso dentro de la organización para todos los sistemas, incluidos los
+                        sistemas de gestión de edificios, los sistemas de entrada y salida y otros que puedan utilizarse
+                        para ayudar en las investigaciones.</p>
+                    <p>Un reloj vinculado a un emisor de hora de radio desde un reloj atómico nacional o un sistema de
+                        posicionamiento global (GPS) debería utilizarse como reloj de referencia para los sistemas de
+                        registro; una fuente de fecha y hora coherente y fiable para garantizar la precisión de las
+                        marcas de hora (time stamp). Los protocolos como el protocolo de hora de red (NTP) o el
+                        protocolo de hora de precisión (PTP) deberían utilizarse para mantener todos los sistemas
+                        conectados en red sincronizados con un reloj de referencia.</p>
+                    <p>La organización puede utilizar dos fuentes de tiempo externas al mismo tiempo para mejorar la
+                        fiabilidad de los relojes externos y gestionar de forma adecuada cualquier variación.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Sin una hora sincronizada, reconstruir un ciberataque es imposible. ¿Entró el hacker antes o
+                        después de que se desactivara la alarma?</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Servidor NTP en Capas</strong>
+                        <p>La organización configura sus controladores de dominio principales (Active Directory) para
+                            sincronizar su hora con una fuente externa fiable de estrato 1 (como el Real Instituto y
+                            Observatorio de la Armada en España, <code>hora.roa.es</code>). A su vez, todos los
+                            servidores, estaciones de trabajo, cámaras de seguridad y dispositivos IoT de la red interna
+                            se configuran vía DHCP para sincronizar su hora exclusivamente con estos controladores de
+                            dominio locales, garantizando que hasta el último dispositivo tenga una desviación inferior
+                            a 100 milisegundos.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Evidencia Legal Rechazada</strong>
+                        <p>En un juicio por robo de propiedad intelectual, la empresa presenta logs del servidor de
+                            archivos mostrando que el empleado copió datos a las 18:05. Sin embargo, los tornos de
+                            acceso físico muestran que el empleado salió del edificio a las 18:00. Debido a que el
+                            servidor tenía un retraso de 7 minutos en su reloj por falta de sincronización NTP, la
+                            evidencia es contradictoria y el juez la desestima por falta de integridad ("Cadena de
+                            Custodia" rota).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La sincronización del reloj puede ser difícil cuando se utilizan varios servicios en la nube o
+                        cuando se utilizan servicios en la nube y en las instalaciones. En este caso, se debe supervisar
+                        el reloj de cada servicio y registrar la diferencia para mitigar los riesgos derivados de las
+                        discrepancias.</p>
+                    <p>La configuración correcta de los relojes de computador es importante para garantizar la precisión
+                        de los registros de eventos, que puede ser requerido para investigaciones o como evidencia en
+                        casos legales y disciplinarios. Los registros de auditoría inexactos pueden obstaculizar dichas
+                        investigaciones y dañar la credibilidad de dichas pruebas.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
