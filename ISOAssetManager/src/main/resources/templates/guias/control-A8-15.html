@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.15. Registros</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_eventos_de_SI</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.4.1<br>12.4.2<br>12.4.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían producirse, almacenarse, protegerse y analizarse los registros que recogen las actividades,
+                    las excepciones, las fallas y otros eventos relevantes.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para registrar eventos, generar pruebas, garantizar la integridad de la información de registro,
+                    evitar el acceso no autorizado, identificar eventos de SI que pueden dar lugar a un incidente de SI
+                    y respaldar las investigaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>La organización debería determinar el propósito para el que se crean los registros, los datos que
+                        se recopilan y registran y los requisitos específicos del registro para proteger y gestionar los
+                        datos del registro. Esto debería documentarse en una directiva específica sobre el registro.</p>
+                    <p>Los registros de eventos deberían incluir para cada evento, según corresponda:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>ID de usuario;</li>
+                        <li>Actividades del sistema;</li>
+                        <li>Fechas, horas y detalles de los eventos relevantes (por ejemplo, inicio y cierre de sesión);
+                        </li>
+                        <li>Identidad del dispositivo, identificador del sistema y ubicación;</li>
+                        <li>Direcciones de red y protocolos.</li>
+                    </ol>
+                    <p>Los siguientes eventos deben ser considerados para el registro:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Intentos de acceso al sistema exitosos y rechazados;</li>
+                        <li>Datos correctos y rechazados y otros intentos de acceso a recursos;</li>
+                        <li>Cambios en la configuración del sistema;</li>
+                        <li>Uso de privilegios;</li>
+                        <li>Uso de programas y aplicaciones utilitarios;</li>
+                        <li>Los archivos a los que se accede y el tipo de acceso, incluida la eliminación de archivos de
+                            datos importantes;</li>
+                        <li>Alarmas generadas por el sistema de control de acceso;</li>
+                        <li>Activación y desactivación de sistemas de seguridad, como sistemas antivirus y sistemas de
+                            detección de intrusiones;</li>
+                        <li>Creación, modificación o eliminación de identidades;</li>
+                        <li>Transacciones ejecutadas por usuarios en aplicaciones. En algunos casos, las aplicaciones
+                            son un servicio o producto proporcionado o ejecutado por un tercero.</li>
+                    </ol>
+                    <p>Es importante que todos los sistemas tengan orígenes de tiempo sincronizados (ver 8.17) ya que
+                        esto permite la correlación de registros entre sistemas para el análisis, las alertas y la
+                        investigación de un incidente.</p>
+
+                    <p><strong>Protección de registros</strong></p>
+                    <p>Los usuarios, incluidos aquellos con derechos de acceso con privilegios, no deberían tener
+                        permiso para eliminar o desactivar registros de sus propias actividades. Pueden manipular
+                        potencialmente los registros de las instalaciones de procesamiento de información bajo su
+                        control directo. Por lo tanto, es necesario proteger y revisar los registros para mantener la
+                        responsabilidad de los usuarios con privilegios.</p>
+                    <p>Los controles deberían tener como objetivo proteger contra cambios no autorizados en la
+                        información de registro y problemas operativos con la instalación de registro, incluidos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Modificaciones de los tipos de mensajes que se graban;</li>
+                        <li>Archivos de registro que se están editando o eliminando;</li>
+                        <li>Error al grabar eventos o sobreescritura de eventos grabados pasados si se excede el medio
+                            de almacenamiento que contiene un archivo de registro.</li>
+                    </ol>
+                    <p>Para la protección de registros, se debería considerar el uso de las siguientes técnicas: Hash de
+                        cifrado, grabación en un archivo de solo anexión y de solo lectura, grabación en un archivo de
+                        transparencia pública.</p>
+                    <p>Algunos registros de auditoría pueden ser necesarios para archivarse debido a los requisitos de
+                        retención de datos o a los requisitos para recopilar y conservar pruebas (ver 5.28).</p>
+                    <p>Cuando la organización necesite enviar registros del sistema o de la aplicación a un proveedor
+                        para ayudar con la depuración o la solución de errores, los registros deberían desidentificarse
+                        siempre que sea posible mediante técnicas de enmascaramiento de datos (ver 8.11) para obtener
+                        información como nombres de usuario, direcciones de protocolo de Internet (IP), nombres de host
+                        o nombre de la organización, antes de enviarlos al proveedor. Los registros de eventos pueden
+                        contener datos confidenciales e información de identificación personal. Deberían adoptarse
+                        medidas adecuadas de protección de la intimidad (ver 5.34).</p>
+
+                    <p><strong>Análisis de registros</strong></p>
+                    <p>El análisis de los registros debería abarcar el análisis y la interpretación de los eventos de
+                        SI, para ayudar a identificar actividades inusuales o comportamientos anómalos, que pueden
+                        representar indicadores de compromiso.</p>
+                    <p>El análisis de los eventos debería realizarse tomando en consideración:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Las habilidades necesarias para los expertos que realizan el análisis;</li>
+                        <li>El procedimiento de análisis de registros;</li>
+                        <li>Los atributos necesarios de cada evento relacionado con la seguridad;</li>
+                        <li>Excepciones identificadas mediante el uso de reglas predeterminadas (por ejemplo,
+                            información de seguridad y gestión de eventos (SIEM) o reglas de firewall y sistemas de
+                            detección de intrusiones (IDS) o firmas de malware);</li>
+                        <li>Patrones de comportamiento conocidos y tráfico de red estándar en comparación con la
+                            actividad y el comportamiento anómalos (análisis de comportamiento de usuarios y entidades
+                            (UEBA));</li>
+                        <li>Resultados del análisis de tendencias o patrones (por ejemplo, como resultado del uso de
+                            análisis de datos, técnicas de big data y herramientas de análisis especializadas);</li>
+                        <li>Inteligencia de amenazas disponible.</li>
+                    </ol>
+                    <p>El análisis de registros debería estar respaldado por actividades de supervisión específicas para
+                        ayudar a identificar y analizar el comportamiento anómalo, que incluye:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Revisar los intentos correctos e incorrectos de acceder a los recursos protegidos (por
+                            ejemplo, servidores del sistema de nombres de dominio (DNS), portales web y recursos
+                            compartidos de archivos);</li>
+                        <li>Comprobar los registros DNS para identificar las conexiones de red salientes a servidores
+                            malintencionados, como los asociados a los servidores de control y comandos botnet;</li>
+                        <li>Examinar los informes de uso de los proveedores de servicios (por ejemplo, facturas o
+                            informes de servicio) para determinar si hay actividad inusual en los sistemas y las redes
+                            (por ejemplo, revisando los patrones de actividad);</li>
+                        <li>Incluir registros de eventos de monitoreo físico, como entrada y salida, para garantizar una
+                            detección y análisis de incidentes más precisos;</li>
+                        <li>Correlacionar registros para permitir un análisis eficiente y muy preciso.</li>
+                    </ol>
+                    <p>Los incidentes de SI sospechosos y reales deberían identificarse (por ejemplo, infección por
+                        malware o sondeo de firewalls) y estar sujetos a una investigación más exhaustiva (por ejemplo,
+                        como parte de un proceso de gestión de incidentes de SI, ver 5.25).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Si no registras lo que pasa en tus sistemas, eres "ciego" ante los ataques. Los logs son la caja
+                        negra del avión:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Centralización con SIEM</strong>
+                        <p>En lugar de que cada servidor guarde sus logs localmente (donde un atacante podría
+                            borrarlos), todos los sistemas (firewalls, PCs, servidores) envían sus logs en tiempo real a
+                            un servidor central SIEM (Security Information and Event Management). El SIEM correlaciona
+                            eventos: si ve 5 intentos de login fallidos en el VPN seguidos de un acceso exitoso y una
+                            descarga masiva de datos en el servidor de ficheros, dispara una alerta de "Posible Robo de
+                            Credenciales" inmediatamente.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Logs Inmutables (WORM)</strong>
+                        <p>Para proteger la integridad de los registros ante un administrador deshonesto o un hacker con
+                            privilegios de root, los logs críticos se almacenan en un almacenamiento tipo WORM (Write
+                            Once, Read Many). Una vez que un registro se escribe, no puede ser modificado ni eliminado
+                            por nadie durante un periodo obligatorio de 1 año, garantizando la evidencia forense legal.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los registros del sistema suelen contener un gran volumen de información, gran parte de la cual
+                        es ajena a la supervisión de la SI. Para ayudar a identificar eventos significativos con fines
+                        de supervisión de la SI, se puede considerar el uso de programas utilitarios o herramientas de
+                        auditoría adecuados para realizar la interrogación de archivos.</p>
+                    <p>El registro de eventos sienta las bases de los sistemas de supervisión automatizados (ver 8.16)
+                        que son capaces de generar informes consolidados y alertas sobre la seguridad del sistema.</p>
+                    <p>Se puede utilizar una herramienta SIEM (Security Incident Event Management) o un servicio
+                        equivalente para almacenar, correlacionar, normalizar y analizar la información de registro, así
+                        como para generar alertas. Los SIEM tienden a requerir una configuración cuidadosa para
+                        optimizar sus beneficios. Las configuraciones por considerar incluyen identificación y selección
+                        de fuentes de registro apropiadas, ajuste y prueba de reglas y desarrollo de casos de uso.</p>
+                    <p>Los archivos de transparencia pública para el registro de registros se utilizan, por ejemplo, en
+                        sistemas de transparencia de certificados. Estos archivos pueden proporcionar un mecanismo de
+                        detección adicional útil para proteger contra la manipulación de registros.</p>
+                    <p>En los entornos de nube, las responsabilidades de gestión de registros se pueden compartir entre
+                        el cliente del servicio y el proveedor de servicios de nube. Las responsabilidades varían en
+                        función del tipo de servicio en la nube que se utilice. Más información en la norma ISO/IEC
+                        27017.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
