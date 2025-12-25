@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.14. Redundancia de las instalaciones de tratamiento de información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Continuidad</li>
+                        <li>#Gestión_de_activos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Resiliencia</li>
+                    </ul>
+                </td>
+                <td class="attr-content">17.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las instalaciones de procesamiento de información deberían implementarse con redundancia suficiente
+                    para satisfacer los requisitos de disponibilidad.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el funcionamiento continuo de las instalaciones de procesamiento de información.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería identificar los requisitos para la disponibilidad de servicios
+                        organizacionales y sistemas de información. La organización debería diseñar e implementar una
+                        arquitectura de sistemas con redundancia adecuada para satisfacer estos requisitos.</p>
+                    <p>La redundancia se puede introducir duplicando las instalaciones de procesamiento de información
+                        en parte o en su totalidad (por ejemplo, componentes de repuesto o tener dos de todo).</p>
+                    <p>La organización debería planificar e implementar procedimientos para la activación de los
+                        componentes redundantes y las instalaciones de procesamiento. Los procedimientos deberían
+                        establecer si los componentes redundantes y las actividades de procesamiento siempre están
+                        activados o en caso de emergencia, se activan automática o manualmente. Los componentes
+                        redundantes y las instalaciones de procesamiento de la información deberían garantizar el mismo
+                        nivel de seguridad que los principales.</p>
+                    <p>Deberían existir mecanismos para alertar a la organización de cualquier falla en las
+                        instalaciones de procesamiento de información, permitir la ejecución del procedimiento
+                        planificado y permitir una disponibilidad continua mientras se reparan o reemplazan las
+                        instalaciones de procesamiento de información.</p>
+                    <p>La organización debería tener en cuenta lo siguiente al implementar sistemas redundantes:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Contratar con dos o más proveedores de redes e instalaciones de procesamiento de información
+                            crítica, como proveedores de servicios de internet;</li>
+                        <li>Uso de redes redundantes;</li>
+                        <li>Utilizar dos centros de datos separados geográficamente con sistemas duplicados;</li>
+                        <li>Uso de fuentes de energía o fuentes físicamente redundantes;</li>
+                        <li>Utilizar varias instancias paralelas de componentes de software, con equilibrio de carga
+                            automático entre ellos (entre instancias en el mismo centro de datos o en diferentes centros
+                            de datos);</li>
+                        <li>Tener componentes duplicados en los sistemas (por ejemplo, CPU, discos duros, memorias) o en
+                            redes (por ejemplo, firewalls, routers, switches).</li>
+                    </ol>
+                    <p>Cuando sea aplicable, preferiblemente en modo de producción, se deberían probar sistemas de
+                        información redundantes para garantizar que la conmutación por error de un componente a otro
+                        funciona según lo previsto.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Si algo crítico se rompe, debe haber un "gemelo" listo para entrar en acción sin que el usuario
+                        lo note:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Balanceo de Carga y Clústeres</strong>
+                        <p>La tienda online de la empresa no reside en un solo servidor. Utiliza un clúster de tres
+                            servidores detrás de un balanceador de carga. Si el Servidor A falla por un pico de CPU o un
+                            error de hardware, el balanceador redirige instantáneamente el tráfico a los Servidores B y
+                            C. Los clientes siguen comprando sin percibir ninguna interrupción.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Conectividad a Internet Redundante</strong>
+                        <p>La oficina central tiene dos conexiones a Internet de proveedores diferentes (ISP A por fibra
+                            y ISP B por enlace de microondas o 5G). El router principal (SD-WAN) está configurado para
+                            "Failover": si la fibra del ISP A se corta por unas obras en la calle, todo el tráfico
+                            corporativo salta automáticamente a la conexión del ISP B en cuestión de milisegundos.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Existe una fuerte relación entre la redundancia y la preparación de las TIC para la continuidad
+                        del negocio (ver 5.30), especialmente si se requieren tiempos de recuperación cortos. Muchas de
+                        las medidas de redundancia pueden formar parte de las estrategias y soluciones de continuidad de
+                        las TIC.</p>
+                    <p>La implementación de redundancias puede generar riesgos para la integridad (por ejemplo, los
+                        procesos de copia de datos en componentes duplicados pueden introducir errores) o la
+                        confidencialidad (por ejemplo, un control débil de la seguridad de los componentes duplicados
+                        puede llevar a un compromiso) de los sistemas de información y de información, que deberían
+                        tenerse en cuenta al diseñar sistemas de información.</p>
+                    <p>La redundancia en las instalaciones de procesamiento de información normalmente no aborda la
+                        indisponibilidad de las aplicaciones debido a fallas dentro de una aplicación.</p>
+                    <p>Con el uso de computación en la nube pública, es posible disponer de varias versiones en directo
+                        de las instalaciones de procesamiento de información, que existen en varias ubicaciones físicas
+                        independientes con failover automático (o conmutación por error) y equilibrio de carga entre
+                        ellas.</p>
+                    <p>Algunas de las tecnologías y técnicas para proporcionar redundancia y failover automático en el
+                        contexto de los servicios en la nube se analizan en la ISO/IEC TS 23167.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
