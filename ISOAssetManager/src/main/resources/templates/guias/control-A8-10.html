@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.10. Eliminación de información</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                        <li>#Legal_y_cumplimiento</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La información almacenada en sistemas de información, dispositivos o cualquier otro medio de
+                    almacenamiento debería eliminarse cuando ya no sea necesario.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar la exposición innecesaria de información confidencial y cumplir con los requisitos legales,
+                    legales, reglamentarios y contractuales para la eliminación de información.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>La información confidencial no debería conservarse durante más tiempo del necesario para reducir
+                        el riesgo de divulgación indeseable.</p>
+                    <p>Al eliminar información sobre sistemas, aplicaciones y servicios, se debería tener en cuenta lo
+                        siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Seleccionar un método de borrado (por ejemplo, sobreescritura electrónica o borrado cifrado)
+                            de acuerdo con los requisitos de la empresa y tomando en consideración las leyes y
+                            reglamentos pertinentes;</li>
+                        <li>Registrar los resultados de la eliminación como prueba;</li>
+                        <li>Obtener pruebas de la eliminación de dicha información, cuando se utilicen proveedores de
+                            servicios de eliminación de información.</li>
+                    </ol>
+                    <p>Cuando terceros almacenen la información de la organización en su nombre, la organización debe
+                        considerar la inclusión de requisitos sobre la eliminación de información en los acuerdos de
+                        terceros para aplicarla durante y al terminar dichos servicios.</p>
+
+                    <p><strong>Métodos de eliminación</strong></p>
+                    <p>De conformidad con la política temática específica de la organización sobre la retención de datos
+                        y tomando en consideración la legislación y los reglamentos pertinentes, la información
+                        confidencial debería eliminarse cuando ya no sea necesaria mediante:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Configuración de sistemas para destruir información de forma segura cuando ya no sea
+                            necesaria (por ejemplo, después de un período definido sujeto a la política específica del
+                            tema sobre la retención de datos o por solicitud de acceso del sujeto);</li>
+                        <li>Eliminación de versiones obsoletas, copias y archivos temporales dondequiera que se
+                            encuentren;</li>
+                        <li>Uso de software de eliminación seguro aprobado para eliminar información de forma permanente
+                            para garantizar que la información no se pueda recuperar mediante herramientas forenses de
+                            recuperación especializada;</li>
+                        <li>Uso de proveedores autorizados y certificados de servicios de eliminación segura;</li>
+                        <li>Uso de mecanismos de eliminación adecuados para el tipo de medio de almacenamiento que se va
+                            a desechar (por ejemplo, desmagnetización de unidades de disco duro y otros medios de
+                            almacenamiento magnético).</li>
+                    </ol>
+                    <p>Cuando se utilizan servicios en la nube, la organización debe comprobar si el método de
+                        eliminación proporcionado por el proveedor de servicios en la nube es aceptable y, en caso
+                        afirmativo, la organización debería utilizarlo o solicitar que el proveedor de servicios en la
+                        nube elimine la información. Estos procesos de eliminación se deberían automatizar de acuerdo
+                        con las políticas específicas del tema, cuando estén disponibles y sean aplicables. En función
+                        de la sensibilidad de la información eliminada, los registros pueden realizar un seguimiento o
+                        verificar que se han producido estos procesos de eliminación.</p>
+                    <p>Para evitar la exposición accidental de información confidencial cuando el equipo se regresa a
+                        los proveedores, la información confidencial debería protegerse eliminando almacenamientos
+                        auxiliares (por ejemplo, unidades de disco duro) y la memoria antes de que el equipo salga de
+                        las instalaciones de la organización.</p>
+                    <p>Tomando en consideración que la eliminación segura de algunos dispositivos (por ejemplo,
+                        smartphones) solo se puede lograr mediante la destrucción o el uso de las funciones integradas
+                        en estos dispositivos (por ejemplo “restaurar ajustes de fábrica”), la organización debe elegir
+                        el método apropiado de acuerdo con la clasificación de la información que manejan dichos
+                        dispositivos.</p>
+                    <p>Las medidas de control descritas en 7.14 deberían aplicarse para destruir físicamente el
+                        dispositivo de almacenamiento y eliminar simultáneamente la información que contiene.</p>
+                    <p>Un registro oficial de eliminación de información es útil al analizar la causa de un posible
+                        evento de fuga de información.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Borrar un archivo enviándolo a la papelera no lo elimina realmente; solo borra la referencia en
+                        el índice del disco:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Borrado Seguro (Wiping)</strong>
+                        <p>Para los portátiles que se reasignan a otros empleados, el equipo de IT utiliza software
+                            certificado que sobrescribe todo el disco duro con ceros y unos 7 veces (estándar DoD
+                            5220.22-M). Esto garantiza que la información confidencial del usuario anterior sea
+                            matemáticamente irrecuperable, incluso con herramientas forenses.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Destrucción Criptográfica
+                            (Crypto-shredding)</strong>
+                        <p>Para datos en la nube donde no se puede destruir el disco físico, la empresa cifra los datos
+                            sensibles antes de subirlos. Cuando finaliza el periodo de retención legal de 5 años, en
+                            lugar de intentar sobrescribir los datos (lo cual es complejo en sistemas distribuidos),
+                            simplemente eliminan las claves de cifrado. Sin las claves, los datos encriptados se
+                            convierten en ruido digital inútil, logrando una eliminación efectiva instantánea.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    La información sobre la eliminación de datos de usuario en los servicios en la nube se encuentra en
+                    la ISO/IEC 27017. En la norma ISO/IEC 27555 se puede encontrar información sobre la eliminación de
+                    la IIP.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
