@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.9. Gestión de la configuración</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Configuración_segura</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las configuraciones, incluidas las configuraciones de seguridad, de hardware, software, servicios y
+                    redes deben establecerse, documentarse, implementarse, supervisarse y revisarse.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para garantizar que el hardware, el software, los servicios y las redes funcionan correctamente con
+                    la configuración de seguridad requerida y la configuración no se ve alterada por cambios no
+                    autorizados o incorrectos.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>La organización debería definir e implementar procesos y herramientas para aplicar las
+                        configuraciones definidas (incluidas las configuraciones de seguridad) para hardware, software,
+                        servicios (por ejemplo, servicios en la nube) y redes, para sistemas recién instalados y para
+                        sistemas operativos a lo largo de su vida útil.</p>
+                    <p>Deberían establecerse funciones, responsabilidades y procedimientos para garantizar un control
+                        satisfactorio de todos los cambios de configuración.</p>
+
+                    <p><strong>Plantillas estándar</strong></p>
+                    <p>Se deberían definir plantillas estándar para la configuración segura de hardware, software,
+                        servicios y redes:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Al utilizar orientaciones disponibles públicamente (por ejemplo, plantillas predefinidas de
+                            proveedores y de organizaciones de seguridad independientes);</li>
+                        <li>Al considerar el nivel de protección necesario para determinar un nivel suficiente de
+                            seguridad;</li>
+                        <li>Al apoyar la política de SI de la organización, a las políticas de temas específicos, a las
+                            normas y a otros requisitos de seguridad;</li>
+                        <li>Al considerar la viabilidad y aplicabilidad de las configuraciones de seguridad en el
+                            contexto de la organización.</li>
+                    </ol>
+                    <p>Las plantillas deberían revisarse periódicamente y actualizarse cuando sea necesario abordar
+                        nuevas amenazas o vulnerabilidades o cuando se introduzcan nuevas versiones de software o
+                        hardware.</p>
+                    <p>Se debería tener en cuenta lo siguiente para establecer plantillas estándar para la configuración
+                        segura de hardware, software, servicios y redes:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Minimizar el número de identidades con derechos de acceso a nivel de administrador o con
+                            privilegios;</li>
+                        <li>Deshabilitar identidades innecesarias, no utilizadas o inseguras;</li>
+                        <li>Deshabilitar o restringir funciones y servicios innecesarios;</li>
+                        <li>Restringir el acceso a potentes programas utilitarios y a la configuración de parámetros de
+                            host;</li>
+                        <li>Sincronizar los relojes;</li>
+                        <li>Cambiar la información de autenticación predeterminada del proveedor, como las contraseñas
+                            predeterminadas, inmediatamente después de la instalación y revisar otros parámetros
+                            importantes relacionados con la seguridad predeterminada;</li>
+                        <li>Invocar las funciones de tiempo de espera que desconectan automáticamente los dispositivos
+                            informáticos después de un período predeterminado de inactividad;</li>
+                        <li>Verificar que se han cumplido los requisitos de licencia (ver 5.32).</li>
+                    </ol>
+
+                    <p><strong>Gestión de configuraciones</strong></p>
+                    <p>Se deberían registrar las configuraciones establecidas de hardware, software, servicios y redes y
+                        se debería mantener un registro de todos los cambios de configuración. Estos registros deberían
+                        almacenarse de forma segura. Esto se puede lograr de varias maneras, como bases de datos de
+                        configuración o plantillas de configuración.</p>
+                    <p>Los cambios en las configuraciones deberían seguir el proceso de administración de cambios (ver
+                        8.32). Los registros de configuración pueden contener, según corresponda:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Información actualizada del propietario o punto de contacto del activo;</li>
+                        <li>Fecha del último cambio de configuración;</li>
+                        <li>Versión de la plantilla de configuración;</li>
+                        <li>Relación con las configuraciones de otros activos. Configuraciones de monitoreo.</li>
+                    </ol>
+                    <p>Las configuraciones deberían monitorearse con un conjunto completo de herramientas de
+                        administración del sistema (por ejemplo, servicios de mantenimiento, soporte remoto,
+                        herramientas de administración de la empresa, software de copia de seguridad y restauración) y
+                        deberían revisarse periódicamente para verificar la configuración, evaluar la intensidad de la
+                        contraseña y evaluar las actividades realizadas. Las configuraciones reales se pueden comparar
+                        con las plantillas de destino definidas. Cualquier desviación debería ser tratada ya sea
+                        mediante la aplicación automática de la configuración de blanco definida o mediante el análisis
+                        manual de la desviación seguida de acciones correctivas.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>No basta con instalar el software; hay que configurarlo para que sea seguro y asegurarse de que
+                        nadie cambia esa configuración sin permiso:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Hardening de Servidores Web</strong>
+                        <p>Antes de desplegar un nuevo servidor web Apache en producción, los administradores aplican
+                            una "Plantilla de Hardening". Esta plantilla elimina las páginas de ejemplo predeterminadas,
+                            deshabilita el listado de directorios, oculta la versión del servidor en las cabeceras HTTP
+                            y deshabilita métodos inseguros como TRACE o TRACK. Si alguien intenta habilitar el listado
+                            de directorios más tarde, el sistema de gestión de configuración alerta del cambio no
+                            autorizado.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Infraestructura como Código (IaC)</strong>
+                        <p>La empresa utiliza Terraform para gestionar su infraestructura en la nube. En lugar de
+                            cambiar configuraciones manualmente en la consola (lo que lleva a errores y "configuration
+                            drift"), todos los cambios se hacen en el código de Terraform. Si se necesita abrir un
+                            puerto en el firewall, se modifica el código, se revisa (Pull Request) y se despliega
+                            automáticamente, asegurando que el estado real siempre coincida con la configuración
+                            documentada.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La documentación de los sistemas suele registrar detalles sobre la configuración tanto del
+                        hardware como del software.</p>
+                    <p>El endurecimiento del sistema (hardening) es una parte representativa de la gestión de la
+                        configuración.</p>
+                    <p>La gestión de la configuración se puede integrar con los procesos de gestión de activos y las
+                        herramientas asociadas. La automatización suele ser más eficaz para gestionar la configuración
+                        de la seguridad (por ejemplo, al utilizar la infraestructura como código).</p>
+                    <p>Las plantillas de configuración y los destinos pueden ser información confidencial y deberían
+                        protegerse del acceso no autorizado en consecuencia.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
