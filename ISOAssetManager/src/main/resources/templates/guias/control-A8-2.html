@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.2. Derechos de acceso privilegiados</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_la_identidad_y_del_acceso</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La asignación y el uso de los derechos de acceso privilegiados deberían ser restringidos y
+                    gestionados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que solo los usuarios autorizados, los componentes de software y los servicios se
+                    proporcionan con derechos de acceso privilegiados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La asignación de derechos de acceso privilegiado debería controlarse mediante un proceso de
+                        autorización de acuerdo con la política de control de acceso específica para cada tema (ver
+                        5.15). Se debe considerar lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar a los usuarios que necesitan derechos de acceso privilegiados para cada sistema
+                            o proceso (por ejemplo, sistemas operativos, sistemas de gestión de bases de datos y
+                            aplicaciones);</li>
+                        <li>Asignar derechos de acceso privilegiados a los usuarios según sea necesario y evento por
+                            evento, de acuerdo con la política de control de acceso específica de cada tema (ver 5.15)
+                            (es decir, solo a personas con la competencia necesaria para realizar actividades que
+                            requieran acceso privilegiados y basadas en el requisito mínimo de sus funciones
+                            funcionales);</li>
+                        <li>Mantener un proceso de autorización (es decir, determinar quién puede aprobar los derechos
+                            de acceso privilegiados o no conceder derechos de acceso privilegiados hasta que se complete
+                            el proceso de autorización) y un registro de todos los privilegios asignados;</li>
+                        <li>Definir e implementar los requisitos para la expiración de los derechos de acceso
+                            privilegiado;</li>
+                        <li>Tomar medidas para garantizar que los usuarios conozcan sus derechos de acceso privilegiado
+                            y cuando se encuentren en modo de acceso privilegiado. Entre las posibles medidas se
+                            incluyen el uso de identidades de usuario específicas, la configuración de la interfaz de
+                            usuario o incluso un equipo específico;</li>
+                        <li>Volver a realizar la autenticación o la autenticación antes de trabajar con derechos de
+                            acceso privilegiados si es necesario, ya que los requisitos de autenticación para los
+                            derechos de acceso privilegiados pueden ser superiores a los requisitos para los derechos de
+                            acceso normales;</li>
+                        <li>Revisar, regularmente y después de cualquier cambio en la organización, a los usuarios que
+                            trabajan con derechos de acceso privilegiados, para verificar si sus deberes, funciones,
+                            responsabilidades y competencias aún los califican para trabajar con derechos de acceso
+                            privilegiados (ver 5.18);</li>
+                        <li>Establecer reglas específicas para evitar el uso de ID de usuario de administración
+                            genéricos (como "admin"), dependiendo de las capacidades de configuración de los sistemas.
+                            Administrar y proteger la información de autenticación de dichas identidades (ver 5.17);
+                        </li>
+                        <li>Conceder acceso temporal con privilegios solo durante el período de tiempo necesario para
+                            implementar cambios o actividades aprobados (por ejemplo, para actividades de mantenimiento
+                            o algunos cambios críticos), en lugar de conceder derechos de acceso privilegiados de forma
+                            permanente. A menudo, esto se denomina procedimiento de ventanilla y a menudo está
+                            automatizado mediante tecnologías de gestión de acceso de privilegios;</li>
+                        <li>Registrar todo acceso privilegiado a los sistemas con fines de auditoría;</li>
+                        <li>No compartir o vincular identidades con derechos de acceso privilegiados a varias personas,
+                            asignando a cada persona una identidad independiente que permita asignar derechos de acceso
+                            privilegiados específicos. Las identidades se pueden agrupar (por ejemplo, mediante la
+                            definición de un grupo de administradores) para simplificar la gestión de los derechos de
+                            acceso privilegiados;</li>
+                        <li>Utilizar solamente identidades con derechos de acceso privilegiados para realizar tareas
+                            administrativas y no para tareas generales diarias (es decir, comprobar el correo
+                            electrónico, acceder a la web (los usuarios deben tener una identidad de red normal
+                            independiente para estas actividades)).</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Ser "root" o "admin" es un poder que conlleva gran responsabilidad y alto riesgo. No debe ser el
+                        estado por defecto:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Separación de Cuentas (Admin vs
+                            Usuario)</strong>
+                        <p>El administrador de sistemas, Juan, tiene dos cuentas: "juan.garcia" para leer su correo,
+                            navegar y redactar informes, y "adm_jgarcia" con permisos elevados para configurar
+                            servidores. Nunca navega por internet logueado como administrador para evitar que un malware
+                            infecte el sistema con privilegios totales.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Petición de Acceso Temporal (PAM /
+                            Just-in-Time)</strong>
+                        <p>Nadie conoce la contraseña de "root" de los servidores de producción. Cuando se necesita
+                            realizar un mantenimiento, el ingeniero solicita acceso a través de una herramienta PAM
+                            (Privileged Access Management) justificando la razón. El sistema le concede acceso por 2
+                            horas y registra en video toda la sesión para auditoría.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los derechos de acceso privilegiados son derechos de acceso proporcionados a una identidad, una
+                        función o un proceso que permite realizar actividades que los usuarios o procesos típicos no
+                        pueden realizar. Las funciones de administrador del sistema normalmente requieren derechos de
+                        acceso privilegiados.</p>
+                    <p>El uso inapropiado de los privilegios del administrador del sistema (cualquier característica o
+                        facilidad de un sistema de información que permita al usuario anular los controles del sistema o
+                        de la aplicación) es un factor importante que contribuye a las fallas o incumplimientos de los
+                        sistemas.</p>
+                    <p>Más información relacionada con la gestión del acceso y la gestión segura del acceso a la
+                        información y a los recursos de tecnologías de la información y las comunicaciones en la norma
+                        ISO/IEC 29146.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
