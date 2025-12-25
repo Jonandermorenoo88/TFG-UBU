@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.13. Copias de seguridad de la información (respaldos)</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Corrección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Recuperar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Continuidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.3.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las copias de seguridad (respaldos) de la información, del software y de los sistemas deberían
+                    mantenerse y probarse periódicamente de conformidad con la política de copia de seguridad específica
+                    del tema acordado.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Permitir la recuperación de la pérdida de datos o sistemas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se debería establecer una política de copia de seguridad específica de un tema para abordar los
+                        requisitos de retención de datos y SI de la organización.</p>
+                    <p>Se deberían proporcionar las instalaciones de copia de seguridad adecuadas para garantizar que
+                        toda la información y el software esenciales se puedan recuperar tras un incidente, falla o
+                        pérdida de los medios de almacenamiento.</p>
+                    <p>Se deberían desarrollar e implementar planes para la forma en que la organización realizará
+                        copias de seguridad, el software y los sistemas, para abordar la política específica del tema
+                        sobre copias de seguridad.</p>
+                    <p>Al diseñar un plan de copias de seguridad, se deberían tener en cuenta los siguientes elementos:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Producir registros precisos y completos de las copias de seguridad y procedimientos de
+                            restauración documentados;</li>
+                        <li>Reflejar los requisitos de la organización (por ejemplo, el objetivo del punto de
+                            recuperación, ver 5.30), los requisitos de si implicada y la importancia de la información
+                            para el funcionamiento continuo de la organización en la medida (por ejemplo, copia de
+                            seguridad completa o diferencial) y la frecuencia de las copias de seguridad;</li>
+                        <li>Almacenar las copias de seguridad en una ubicación remota segura y a una distancia
+                            suficiente para evitar cualquier daño causado por un desastre en el sitio principal;</li>
+                        <li>Proporcionar a la información de copia de seguridad un nivel adecuado de protección física y
+                            ambiental (ver la cláusula 7 y 8.1) coherente con las normas aplicadas en el sitio
+                            principal;</li>
+                        <li>Probar regularmente los medios de copia de seguridad para garantizar que se pueden confiar
+                            en ellos para su uso de emergencia cuando sea necesario. Probar la capacidad de restaurar
+                            los datos de copia de seguridad en un sistema de prueba, no sobrescribiendo los medios de
+                            almacenamiento originales en caso de que el proceso de copia de seguridad o restauración
+                            falle y cause daños o pérdidas irreparables en los datos;</li>
+                        <li>Proteger las copias de seguridad mediante cifrado de acuerdo con los riesgos identificados
+                            (por ejemplo, en situaciones en las que la confidencialidad es importante);</li>
+                        <li>Asegúrese de que se detecte una pérdida de datos inadvertida antes de realizar la copia de
+                            seguridad.</li>
+                    </ol>
+                    <p>Los procedimientos operativos deberían supervisar la ejecución de las copias de seguridad y
+                        solucionar las fallas de las copias de seguridad programadas para garantizar la integridad de
+                        las copias de seguridad de acuerdo con la política de copias de seguridad específica del tema.
+                    </p>
+                    <p>Las medidas de respaldo para sistemas y servicios individuales deberían ser probadas regularmente
+                        para asegurar que cumplen con los objetivos de respuesta a incidentes y planes de continuidad
+                        del negocio (ver 5.30). Esto debería combinarse con una prueba de los procedimientos de
+                        restauración y verificarse con el tiempo de restauración requerido por el plan de continuidad
+                        del negocio. En el caso de los sistemas y servicios críticos, las medidas de copia de seguridad
+                        deberían abarcar toda la información, las aplicaciones y los datos de los sistemas necesarios
+                        para recuperar todo el sistema en caso de desastre.</p>
+                    <p>Cuando la organización utiliza un servicio en la nube, se deberían realizar copias de SI, las
+                        aplicaciones y los sistemas de la organización en el entorno del servicio en la nube. La
+                        organización debería determinar si se cumplen los requisitos de copia de seguridad y cómo se
+                        cumplen al utilizar el servicio de copia de seguridad de información proporcionado como parte
+                        del servicio en la nube.</p>
+                    <p>Se debería determinar el período de retención de la información empresarial esencial, tomando en
+                        consideración cualquier requisito de retención de copias archivadas. La organización debería
+                        considerar la eliminación de información (ver 8.10) en los medios de almacenamiento utilizados
+                        para la copia de seguridad una vez que el período de retención de la información expire y debe
+                        tener en cuenta la legislación y las regulaciones.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un backup que no se ha probado no es un backup, es solo una esperanza. Y la esperanza no es una
+                        estrategia:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Estrategia de Backup 3-2-1</strong>
+                        <p>La Pyme implementa la regla de oro: mantener <strong>3</strong> copias de los datos (original
+                            + 2 backups), en <strong>2</strong> tipos de soporte distintos (disco duro local y NAS), y
+                            <strong>1</strong> copia fuera de la oficina (en la nube inmutable). Esto protege contra
+                            fallos de hardware (NAS), incendios en la oficina (copia en la nube) y Ransomware (la copia
+                            en la nube tiene activado el "Object Lock" para evitar modificaciones).</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Simulacro de Restauración
+                            Trimestral</strong>
+                        <p>El administrador de sistemas no solo confía en que los backups se hacen en verde. Cada tres
+                            meses, selecciona aleatoriamente 5 archivos críticos y una máquina virtual completa y
+                            solicita su restauración en un entorno de sandbox. Cronometra cuánto tarda en recuperar los
+                            datos (RTO) y verifica que los archivos no estén corruptos, asegurando que el plan de
+                            continuidad del negocio sea realista.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Más información sobre la seguridad del almacenamiento, incluida la consideración de la retención en
+                    la norma ISO/IEC 27040.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
