@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.5. Autenticación segura</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_identidades_y_accesos</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.4.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las tecnologías y los procedimientos de autenticación segura deberían implementarse en función de
+                    las restricciones de acceso a la información y de la política de control de acceso específica del
+                    tema.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que un usuario o una entidad se autentique de forma segura cuando se conceda acceso a
+                    sistemas, aplicaciones y servicios.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Debería elegirse una técnica de autenticación adecuada para fundamentar la identidad reclamada de
+                        un usuario, software, mensajes y otras entidades.</p>
+                    <p>La solidez de la autenticación debería ser adecuada para la clasificación de la información a la
+                        que se va a acceder. Cuando se requiere autenticación y verificación de identidad sólidas, se
+                        utilizan métodos de autenticación se debería utilizar una alternativa a las contraseñas, como
+                        certificados digitales, tarjetas inteligentes, tokens o medios biométricos.</p>
+                    <p>La información de autenticación debería ir acompañada de factores de autenticación adicionales
+                        para acceder a los sistemas de información críticos (también conocidos como autenticación de
+                        varios factores). El uso de una combinación de varios factores de autenticación, como lo que
+                        sabe, lo que tiene y lo que es, reduce las posibilidades de accesos no autorizados. La
+                        autenticación de varios factores se puede combinar con otras técnicas para requerir factores
+                        adicionales en circunstancias específicas, basados en reglas y patrones predefinidos, como el
+                        acceso desde una ubicación inusual, desde un dispositivo inusual o en un momento inusual.</p>
+                    <p>La información de autenticación biométrica debería invalidarse si alguna vez se ve comprometida.
+                        La autenticación biométrica puede no estar disponible dependiendo de las condiciones de uso (por
+                        ejemplo, humedad o envejecimiento). Para prepararse para estos problemas, la autenticación
+                        biométrica debería ir acompañada de al menos una técnica de autenticación alternativa.</p>
+                    <p>El procedimiento para iniciar sesión en un sistema o aplicación debería diseñarse para minimizar
+                        el riesgo de acceso no autorizado. Los procedimientos y tecnologías de inicio de sesión deberían
+                        implementarse tomando en consideración lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>No mostrar información confidencial del sistema o de la aplicación hasta que el proceso de
+                            inicio de sesión se haya completado correctamente para evitar que un usuario no autorizado
+                            reciba asistencia innecesaria;</li>
+                        <li>Mostrar un aviso general advirtiendo de que el sistema, la aplicación o el servicio solo
+                            deberían ser accesibles por usuarios autorizados;</li>
+                        <li>No proporcionar mensajes de ayuda durante el procedimiento de inicio de sesión que ayuden a
+                            un usuario no autorizado (por ejemplo, si se produce una condición de error, el sistema no
+                            debe indicar qué parte de los datos es correcta o incorrecta);</li>
+                        <li>Validar la información de inicio de sesión solo cuando se completen todos los datos de
+                            entrada;</li>
+                        <li>Proteger contra intentos de inicio de sesión de forzada en nombres de usuario y contraseñas
+                            (por ejemplo, mediante una prueba de Turing pública y automática para distinguir a los
+                            computadores de los humanos (CAPTCHA), que requiere el restablecimiento de la contraseña
+                            después de un número predefinido de intentos fallidos o que bloquea al usuario después de un
+                            número máximo de errores);</li>
+                        <li>Registrar los intentos fallidos y correctos;</li>
+                        <li>Provocar un evento de seguridad si se detecta un posible intento o incumplimiento
+                            satisfactorio de los controles de inicio de sesión (por ejemplo, enviar una alerta al
+                            usuario y a los administradores del sistema de la empresa cuando se ha alcanzado un número
+                            determinado de intentos de contraseña incorrectos);</li>
+                        <li>Visualizar o enviar de la siguiente información en un canal separado al finalizar un inicio
+                            de sesión correcto:
+                            <ol type="1">
+                                <li>Fecha y hora del inicio de sesión anterior correcto;</li>
+                                <li>Detalles de cualquier intento de inicio de sesión incorrecto desde el último inicio
+                                    de sesión correcto;</li>
+                            </ol>
+                        </li>
+                        <li>No mostrar una contraseña en texto no cifrado al introducirla; en algunos casos, puede ser
+                            necesario desactivar esta función para facilitar el inicio de sesión del usuario (por
+                            ejemplo, por motivos de accesibilidad o para evitar bloquear a los usuarios debido a errores
+                            repetidos);</li>
+                        <li>No transmitir contraseñas en texto no cifrado a través de una red para evitar ser capturadas
+                            por un programa de rastreador de red;</li>
+                        <li>Finalizar sesiones inactivas después de un período definido de inactividad, especialmente en
+                            ubicaciones de alto riesgo, como áreas públicas o externas fuera de la gestión de seguridad
+                            de la organización o en dispositivos finales de usuario;</li>
+                        <li>Restringir los tiempos de duración de la conexión para proporcionar seguridad adicional a
+                            las aplicaciones de alto riesgo y reducir la oportunidad de acceso no autorizado.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La contraseña "123456" ya no es suficiente. Hoy en día se necesita verificar que eres quien dices
+                        ser por múltiples vías:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Autenticación Multi-Factor (MFA)
+                            Obligatoria</strong>
+                        <p>Para acceder al portal financiero de la empresa, no basta con introducir el usuario y la
+                            contraseña. El sistema envía una notificación "Push" a la app autenticadora en el móvil
+                            corporativo del empleado (algo que tienes) que debe aprobarse con la huella dactilar (algo
+                            que eres). Sin estos dos pasos adicionales, el acceso se deniega, protegiendo la cuenta
+                            incluso si la contraseña ha sido robada.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Mensajes de Error Genéricos</strong>
+                        <p>Cuando un atacante intenta adivinar usuarios en el formulario de login, si introduce
+                            "usuario_inexistente" con cualquier contraseña, el sistema no responde "Usuario no
+                            encontrado" (lo que le daría pistas), sino que muestra un mensaje genérico: "Credenciales
+                            inválidas". Esto evita que el atacante pueda enumerar qué usuarios son válidos en el
+                            sistema.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Información adicional sobre la garantía de autenticación de entidades en la norma ISO/IEC 29115.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
