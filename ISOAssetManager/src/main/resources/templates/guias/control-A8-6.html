@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.6. Gestión de la capacidad</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Continuidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La utilización de los recursos debería supervisarse y ajustarse de conformidad con las necesidades
+                    de capacidad actuales y previstas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la capacidad necesaria de los servicios de procesamiento de información, los recursos
+                    humanos, las oficinas y otros servicios.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Deberían determinarse las necesidades de capacidad para las instalaciones de procesamiento de
+                        información, los recursos humanos, las oficinas y otras instalaciones, tomando en consideración
+                        la importancia empresarial de los sistemas y procesos en cuestión.</p>
+                    <p>El ajuste y la supervisión del sistema deberían aplicarse para garantizar y, en caso necesario,
+                        mejorar la disponibilidad y la eficiencia de los sistemas.</p>
+                    <p>La organización debería realizar pruebas de esfuerzo de los sistemas y servicios para confirmar
+                        que hay suficiente capacidad del sistema para satisfacer los requisitos de rendimiento máximo.
+                    </p>
+                    <p>Los controles de detección deberían ponerse en marcha para indicar problemas oportunamente.</p>
+                    <p>Las proyecciones de los futuros requisitos de capacidad deberían tener en cuenta los nuevos
+                        requisitos organizacionales y del sistema, así como las tendencias actuales y proyectadas de las
+                        capacidades de procesamiento de información de la organización.</p>
+                    <p>Se debería prestar especial atención a los recursos con plazos de entrega largos o costos
+                        elevados. Por lo tanto, los administradores, los propietarios de servicios o productos deberían
+                        supervisar la utilización de los recursos clave del sistema.</p>
+                    <p>Los administradores deberían utilizar la información de capacidad para identificar y evitar
+                        posibles limitaciones de recursos y dependencia del personal clave que pueda representar una
+                        amenaza para la seguridad o los servicios del sistema y planificar las medidas apropiadas.</p>
+                    <p>Se puede lograr una capacidad suficiente aumentando la capacidad o reduciendo la demanda.</p>
+                    <p>Se deberían tomar en consideración las siguientes directrices para aumentar la capacidad:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Contratación de nuevo personal;</li>
+                        <li>Obtención de nuevas instalaciones o espacio;</li>
+                        <li>Adquisición de sistemas de procesamiento, memoria y almacenamiento más potentes;</li>
+                        <li>Uso de computación en la nube (cloud computing), que tiene características inherentes que
+                            abordan directamente los problemas de capacidad. La computación en nube tiene elasticidad y
+                            escalabilidad que permiten una rápida expansión y reducción bajo demanda de los recursos
+                            disponibles para aplicaciones y servicios específicos.</li>
+                    </ol>
+                    <p>Para reducir la demanda de los recursos de la organización, se debería tener en cuenta lo
+                        siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Eliminación de datos obsoletos (espacio en disco);</li>
+                        <li>Eliminación de registros impresos que hayan cumplido su período de retención (liberar
+                            espacio para estanterías);</li>
+                        <li>Clausura de aplicaciones, sistemas, bases de datos o entornos;</li>
+                        <li>Optimización de procesos por lotes y programaciones;</li>
+                        <li>Optimización del código de aplicación o de las consultas a la base de datos;</li>
+                        <li>Rechazo o restricción del ancho de banda para servicios que consumen recursos si no son
+                            críticos (por ejemplo, transmisión de video).</li>
+                    </ol>
+                    <p>Debería considerarse un plan de gestión de la capacidad documentado para los sistemas de misión
+                        crítica.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Quedarse sin espacio en disco puede detener toda la empresa, no solo impedir guardar un archivo:
+                    </p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Monitorización Proactiva de
+                            Recursos</strong>
+                        <p>El equipo de sistemas configura alertas automáticas en su herramienta de monitorización (como
+                            Nagios o Zabbix). Si el uso de CPU de los servidores web supera el 80% durante más de 5
+                            minutos, o si el espacio en disco de la base de datos baja del 15%, se envía una alerta
+                            crítica a los administradores para que actúen antes de que el servicio se caiga.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Auto-escalado en Cloud</strong>
+                        <p>La tienda online de la empresa utiliza servicios de nube pública (AWS). Durante el "Black
+                            Friday", el tráfico se multiplica por diez. Gracias a las reglas de "Auto Scaling"
+                            configuradas, la infraestructura añade automáticamente nuevos servidores virtuales para
+                            manejar la carga extra y los elimina cuando el tráfico baja, asegurando que la web nunca
+                            vaya lenta ni se caiga por exceso de usuarios.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Más información sobre la elasticidad y escalabilidad de la computación en la nube en la norma
+                    ISO/IEC TS 23167.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
