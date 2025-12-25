@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.12. Prevención de fuga de datos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las medidas de prevención de fugas de datos deberían aplicarse a los sistemas, redes y cualquier
+                    otro dispositivo que procese, almacene o transmita información confidencial.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Detectar y prevenir la divulgación y extracción no autorizada de información por parte de individuos
+                    o sistemas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería considerar lo siguiente para reducir el riesgo de fuga de datos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar y clasificar la información para protegerla contra fugas (por ejemplo,
+                            información personal, modelos de precios y diseños de productos);</li>
+                        <li>Supervisar los canales de fuga de datos (por ejemplo, correo electrónico, transferencias de
+                            archivos, dispositivos móviles y dispositivos de almacenamiento portátiles);</li>
+                        <li>Actuar para evitar que se filtre información (por ejemplo, correos electrónicos de
+                            cuarentena que contengan información confidencial).</li>
+                    </ol>
+                    <p>Se deberían utilizar herramientas de prevención de fugas de datos para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Identificar y supervisar la información confidencial en riesgo de divulgación no autorizada
+                            (por ejemplo, en datos no estructurados del sistema de un usuario);</li>
+                        <li>Detectar la divulgación de información confidencial (por ejemplo, cuando la información se
+                            carga en servicios en la nube de terceros que no son de confianza o se envía por correo
+                            electrónico);</li>
+                        <li>Bloquear las acciones de los usuarios o las transmisiones de red que exponen información
+                            confidencial (por ejemplo, impedir la copia de entradas de la base de datos en una hoja de
+                            cálculo).</li>
+                    </ol>
+                    <p>La organización debería determinar si es necesario restringir la capacidad de un usuario para
+                        copiar y pegar o cargar datos en servicios, dispositivos y medios de almacenamiento fuera de la
+                        organización. Si ese es el caso, la organización debería implementar tecnología como
+                        herramientas de prevención de fugas de datos o la configuración de herramientas existentes que
+                        permitan a los usuarios ver y manipular los datos almacenados de forma remota, pero que impidan
+                        la copia y el pegado fuera del control de la organización.</p>
+                    <p>Si se requiere la exportación de datos, se debería permitir al propietario de los datos aprobar
+                        la exportación y hacer que los usuarios sean responsables de sus acciones.</p>
+                    <p>La realización de capturas de pantalla o fotografías de la pantalla debería abordarse mediante
+                        los términos y condiciones de uso, formación y auditoría.</p>
+                    <p>Cuando se realiza una copia de seguridad de los datos, se debería tener cuidado de garantizar la
+                        protección de la información confidencial mediante medidas como el cifrado, el control de acceso
+                        y la protección física de los medios de almacenamiento que contienen la copia de seguridad.</p>
+                    <p>La prevención de fugas de datos también debería considerarse para proteger contra las acciones de
+                        inteligencia de un adversario de la obtención de información confidencial o secreta
+                        (geopolítica, humana, financiera, comercial, científica o de cualquier otra índole) que pueda
+                        ser de interés para el espionaje o puede ser crítica para la comunidad. Las acciones de
+                        prevención de fugas de datos deberían orientarse a confundir las decisiones del adversario, por
+                        ejemplo, sustituyendo la información auténtica por información falsa ya sea como una acción
+                        independiente o como respuesta a las acciones de inteligencia del adversario. Ejemplos de este
+                        tipo de acciones son la ingeniería social inversa o el uso de “honeypots” para atraer atacantes.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los datos pueden salir de la empresa en un pendrive, por email o subiéndolos a la nube. Controlar
+                        estas "puertas de salida" es vital:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Bloqueo de Almacenamiento USB</strong>
+                        <p>La compañía configura una política a nivel de sistema operativo que deshabilita los puertos
+                            USB para cualquier dispositivo de almacenamiento masivo. Si un empleado conecta un pendrive
+                            traído de casa para copiar archivos del trabajo, el sistema lo detecta, bloquea la acción de
+                            escritura y registra el incidente. Solo se permiten pendrives corporativos cifrados
+                            previamente autorizados (Whitelisting).</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: DLP en Correo y Nube</strong>
+                        <p>Se implementa una solución DLP (Data Loss Prevention) que escanea todo el tráfico saliente.
+                            Si un empleado intenta enviar un correo electrónico con un archivo adjunto que contiene
+                            patrones de tarjetas de crédito o la palabra "Confidencial", el envío se bloquea
+                            automáticamente y el jefe de seguridad recibe una alerta para revisar si es un error o un
+                            intento de robo de información.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <!-- Sin contenido adicional en la imagen -->
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
