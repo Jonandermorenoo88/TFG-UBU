@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.8. Gestión de las vulnerabilidades técnicas</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_amenazas_y_vulnerabilidades</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.6.1<br>18.2.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se debería obtener información sobre las vulnerabilidades técnicas de los sistemas de información en
+                    uso, se debería evaluar la exposición de la organización a esas vulnerabilidades y se deberían
+                    adoptar las medidas apropiadas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Evitar la explotación de vulnerabilidades técnicas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>Identificación de vulnerabilidades técnicas</strong></p>
+                    <p>La organización debería tener un inventario preciso de los activos (ver 5.9 al 5.14) como
+                        requisito previo para una gestión eficaz de la vulnerabilidad técnica; el inventario debe
+                        incluir el proveedor del software, el nombre del software, los números de versión, el estado
+                        actual de la implementación (por ejemplo, qué software está instalado en qué sistemas) y la
+                        persona o personas dentro de la organización responsable del software.</p>
+                    <p>Para identificar vulnerabilidades técnicas, la organización debería considerar:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Definir y establecer las funciones y responsabilidades asociadas con la gestión técnica de
+                            la vulnerabilidad, incluida la supervisión de la vulnerabilidad, la evaluación del riesgo de
+                            vulnerabilidad, la actualización, el seguimiento de los activos y las responsabilidades de
+                            coordinación necesarias;</li>
+                        <li>Identificar los recursos de información que se utilizarán para identificar las
+                            vulnerabilidades técnicas relevantes y mantener la conciencia sobre ellas, para el software
+                            y otras tecnologías (según la lista de inventario de activos, ver 5.9), al actualizar la
+                            lista de recursos de información en función de los cambios en el inventario o cuando se
+                            encuentren otros recursos nuevos o útiles;</li>
+                        <li>Exigir a los proveedores del sistema de información (incluidos sus componentes) que
+                            garanticen la notificación, el tratamiento y la divulgación de vulnerabilidades, incluidos
+                            los requisitos de los contratos aplicables (ver 5.20);</li>
+                        <li>Utilizar herramientas de análisis de vulnerabilidades adecuadas para las tecnologías en uso
+                            para identificar vulnerabilidades y comprobar si la aplicación de parches de
+                            vulnerabilidades se ha realizado correctamente;</li>
+                        <li>Realizar pruebas de penetración o evaluaciones de vulnerabilidad planificadas, documentadas
+                            y repetibles por parte de personas competentes y autorizadas para apoyar la identificación
+                            de vulnerabilidades. Actuar con cautela ya que tales actividades pueden conducir a un
+                            compromiso de la seguridad del sistema;</li>
+                        <li>Realizar un seguimiento del uso de bibliotecas de terceros y del código fuente en busca de
+                            vulnerabilidades. Esto debería ser incluido en la codificación segura (ver 8.28).</li>
+                    </ol>
+                    <p>La organización debería desarrollar procedimientos y capacidades para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Detectar la existencia de vulnerabilidades en sus productos y servicios, incluido cualquier
+                            componente externo utilizado en ellos;</li>
+                        <li>Recibir informes de vulnerabilidad de fuentes internas o externas.</li>
+                    </ol>
+                    <p>La organización debería proporcionar un punto de contacto público como parte de una política
+                        específica de temas sobre la divulgación de la vulnerabilidad para que los investigadores y
+                        otras personas puedan informar de los problemas. La organización debería establecer
+                        procedimientos de notificación de vulnerabilidades, formularios de presentación de informes en
+                        línea y hacer uso de la inteligencia de amenazas apropiada o foros de intercambio de
+                        información. La organización también debería considerar programas de recompensa de errores donde
+                        se ofrecen recompensas como incentivo para ayudar a las organizaciones a identificar
+                        vulnerabilidades con el fin de remediarlas adecuadamente. La organización también debería
+                        compartir información con los organismos industriales competentes u otras partes interesadas.
+                    </p>
+
+                    <p><strong>Evaluación de vulnerabilidades técnicas</strong></p>
+                    <p>Para evaluar las vulnerabilidades técnicas identificadas, se debería tener en cuenta la siguiente
+                        guía:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Analizar y verificar los informes para determinar qué respuesta y actividad de corrección
+                            son necesarias;</li>
+                        <li>Una vez identificada una posible vulnerabilidad técnica, se identifican los riesgos
+                            asociados y las medidas que se deben tomar. Estas acciones pueden implicar la actualización
+                            de sistemas vulnerables o la aplicación de otros controles.</li>
+                    </ol>
+
+                    <p><strong>Tomar las medidas adecuadas para abordar las vulnerabilidades técnicas</strong></p>
+                    <p>Se debería implementar un proceso de gestión de actualizaciones de software para garantizar que
+                        se instalan los parches y actualizaciones de aplicaciones aprobados más actualizados para todo
+                        el software autorizado. Si es necesario realizar cambios, se debería conservar el software
+                        original y aplicar los cambios a una copia designada. Todos los cambios deberían probarse y
+                        documentarse por completo, de modo que se puedan volver a aplicar, si es necesario, a futuras
+                        actualizaciones de software. Si es necesario, las modificaciones deberían ser probadas y
+                        validadas por un organismo de evaluación independiente.</p>
+                    <p>Se debería tener en cuenta la siguiente guía para abordar las vulnerabilidades técnicas:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Adoptar medidas apropiadas y oportunas en respuesta a la identificación de posibles
+                            vulnerabilidades técnicas; definir un calendario para reaccionar a las notificaciones de
+                            vulnerabilidades técnicas potencialmente relevantes;</li>
+                        <li>Dependiendo de la urgencia con que se deba abordar una vulnerabilidad técnica, llevar a cabo
+                            la acción de acuerdo con los controles relacionados con la gestión de cambios (ver 8.32) o
+                            siguiendo los procedimientos de respuesta a incidentes de si (ver 5.26);</li>
+                        <li>Utilizar solo actualizaciones de fuentes legítimas (que pueden ser internas o externas a la
+                            organización);</li>
+                        <li>Probar y evaluar las actualizaciones antes de instalarlas para asegurarse de que son
+                            efectivas y no producen efectos secundarios que no se pueden tolerar (es decir, si hay una
+                            actualización disponible, evaluando los riesgos asociados con la instalación de la
+                            actualización (los riesgos que plantea la vulnerabilidad deben compararse con el riesgo de
+                            instalar la actualización));</li>
+                        <li>Abordar primero los sistemas de alto riesgo;</li>
+                        <li>Desarrollar soluciones (normalmente actualizaciones de software o parches);</li>
+                        <li>Probar para confirmar si la remediación o mitigación es efectiva;</li>
+                        <li>Proporcionar mecanismos para verificar la autenticidad de la corrección;</li>
+                        <li>Revisar si no hay ninguna actualización disponible o la actualización no se puede instalar,
+                            tomando en consideración otros controles, como:
+                            <ol type="1">
+                                <li>Aplicar cualquier solución sugerida por el proveedor del software u otras fuentes
+                                    relevantes;</li>
+                                <li>Desactivar servicios o capacidades relacionados con la vulnerabilidad;</li>
+                                <li>Adaptar o añadir controles de acceso (por ejemplo, firewalls) en los límites de la
+                                    red (ver 8.20 a 8.22);</li>
+                                <li>Proteger sistemas, dispositivos o aplicaciones vulnerables frente a ataques mediante
+                                    la implementación de filtros de tráfico adecuados (a veces denominados parches
+                                    virtuales);</li>
+                                <li>Aumentar la supervisión para detectar ataques reales;</li>
+                                <li>Sensibilizar sobre la vulnerabilidad.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p>En el caso del software adquirido, si los proveedores regularmente liberan información sobre las
+                        actualizaciones de seguridad de su software y proporcionan una instalación para instalar dichas
+                        actualizaciones automáticamente, la organización debería decidir si se debe utilizar o no la
+                        actualización automática.</p>
+
+                    <p><strong>Otras consideraciones</strong></p>
+                    <p>Se debería mantener un registro de auditoría para todos los pasos emprendidos en la gestión
+                        técnica de vulnerabilidades.</p>
+                    <p>El proceso de gestión de la vulnerabilidad técnica debería ser supervisado y evaluado
+                        periódicamente para asegurar su eficacia y eficiencia.</p>
+                    <p>Un proceso de gestión de vulnerabilidad técnica eficaz debería estar alineado con las actividades
+                        de gestión de incidentes, para comunicar datos sobre vulnerabilidades a la función de respuesta
+                        a incidentes y proporcionar procedimientos técnicos que se deberían llevar a cabo en caso de que
+                        se produzca un incidente.</p>
+                    <p>Cuando la organización utiliza un servicio en la nube proporcionado por un proveedor de servicios
+                        en la nube de terceros, éste debe garantizar la gestión de vulnerabilidades técnicas de los
+                        recursos y servicios del provistos la nube. Las responsabilidades del proveedor de servicios en
+                        la nube para la gestión de vulnerabilidades técnicas deberían formar parte del acuerdo de
+                        servicios en la nube y esto debe incluir procesos para informar de las acciones del proveedor de
+                        servicios en la nube relacionadas con vulnerabilidades técnicas (ver 5.23). Para algunos
+                        servicios en la nube, existen responsabilidades respectivas para el proveedor de servicios en la
+                        nube y el cliente de servicios en la nube. Por ejemplo, el cliente del servicio en la nube es
+                        responsable de la gestión de vulnerabilidades de sus propios activos utilizados para los
+                        servicios en la nube.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Esperar a que salga en las noticias que han hackeado tu sistema es una mala estrategia. Tienes
+                        que encontrar tus propios fallos antes que los malos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Escaneos Automatizados y CVSS</strong>
+                        <p>Cada domingo por la noche, Nessus escanea toda la red interna. El lunes por la mañana, el
+                            CISO recibe un informe. Las vulnerabilidades con puntuación CVSS superior a 9.0 (Críticas)
+                            deben parchearse en menos de 48 horas. Las de riesgo Alto (7.0-8.9) tienen una semana. Si un
+                            servidor antiguo no puede parchearse, se aísla en una VLAN sin salida a internet.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Bug Bounty Privado</strong>
+                        <p>La empresa invita a investigadores de seguridad a intentar hackear su nueva app móvil antes
+                            del lanzamiento. Ofrecen recompensas económicas por cada fallo encontrado. Esto no sustituye
+                            a las auditorías internas, pero añade "ojos frescos" y creativos que encuentran
+                            vulnerabilidades lógicas que las herramientas automáticas pasan por alto.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La gestión técnica de la vulnerabilidad puede considerarse una subfunción de la gestión del
+                        cambio y, como tal, puede aprovechar los procesos y procedimientos de gestión del cambio (ver
+                        8.32).</p>
+                    <p>Existe la posibilidad de que una actualización no aborde el problema adecuadamente y tenga
+                        efectos secundarios negativos. Además, en algunos casos, la desinstalación de una actualización
+                        no se puede realizar fácilmente una vez aplicada la actualización.</p>
+                    <p>Si no es posible realizar pruebas adecuadas de las actualizaciones (por ejemplo, debido a los
+                        costos o a la falta de recursos), se puede considerar un retraso en la actualización para
+                        evaluar los riesgos asociados, en función de la experiencia reportada por otros usuarios. El uso
+                        de la norma ISO/IEC 27031 puede ser beneficioso.</p>
+                    <p>Cuando se produzcan parches o actualizaciones de software, la organización puede considerar la
+                        posibilidad de proporcionar un proceso de actualización automatizado en el que estas
+                        actualizaciones se instalen en los sistemas o productos afectados sin necesidad de intervención
+                        del cliente o del usuario. Si se ofrece un proceso de actualización automatizado, puede
+                        permitirle al cliente o usuario elegir una opción para desactivar la actualización automática o
+                        controlar el momento de la instalación de la actualización.</p>
+                    <p>Cuando el proveedor proporciona un proceso de actualización automatizado y las actualizaciones se
+                        pueden instalar en los sistemas o productos afectados sin necesidad de intervención, la
+                        organización determina si aplica o no el proceso automatizado. Una razón por la que no se elige
+                        la actualización automática es mantener el control cuando se realiza la actualización. Por
+                        ejemplo, un software utilizado para una operación de negocio no se puede actualizar hasta que la
+                        operación se haya completado.</p>
+                    <p>Un punto débil del análisis de vulnerabilidades es que es posible que no tenga en cuenta
+                        completamente la defensa en profundidad: Dos contramedidas que siempre se invocan en secuencia
+                        pueden tener vulnerabilidades enmascaradas por puntos fuertes en la otra. La medida compensada
+                        compuesta no es vulnerable, mientras que un analizador de vulnerabilidades puede informar de que
+                        ambos componentes son vulnerables. Por lo tanto, la organización debe tener cuidado al examinar
+                        y actuar en relación con los informes de vulnerabilidad.</p>
+                    <p>Muchas organizaciones suministran software, sistemas, productos y servicios no solo dentro de la
+                        organización, sino también a partes interesadas como clientes, socios u otros usuarios. Este
+                        software, sistemas, productos y servicios pueden tener vulnerabilidades de SI que afectan a la
+                        seguridad de los usuarios.</p>
+                    <p>Las organizaciones pueden publicar soluciones y divulgar información sobre vulnerabilidades a los
+                        usuarios (normalmente a través de un asesoramiento público) y proporcionar información adecuada
+                        para los servicios de base de datos de vulnerabilidades de software.</p>
+                    <p>Más información sobre la gestión de vulnerabilidades técnicas al utilizar computación en la nube
+                        en las series ISO/IEC 19086 e ISO/IEC 27017.</p>
+                    <p>La norma ISO/IEC 29147 proporciona información detallada sobre la recepción de informes y la
+                        publicación de alertas de vulnerabilidad. La norma ISO/IEC 30111 proporciona información
+                        detallada sobre el manejo y la resolución de vulnerabilidades reportadas.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
