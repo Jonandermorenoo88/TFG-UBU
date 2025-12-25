@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.1. Dispositivos finales del usuario</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_activos</li>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">6.2.1<br>11.2.8</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La información almacenada, procesada o accesible a través de los dispositivos de punto final del
+                    usuario debería estar protegida.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger la información contra los riesgos introducidos mediante el uso de dispositivos finales de
+                    usuario (endpoints).
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>La organización debe establecer una política específica de un tema sobre la configuración y el
+                        manejo seguros de los dispositivos finales de usuario. La política específica del tema debería
+                        comunicarse a todo el personal pertinente y considerar lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Tipo de información y el nivel de clasificación que los dispositivos de punto final del
+                            usuario pueden gestionar, procesar, almacenar o admitir;</li>
+                        <li>Registro de dispositivos finales del usuario;</li>
+                        <li>Requisitos de protección física;</li>
+                        <li>Restricción de la instalación de software (por ejemplo, controlado de forma remota por los
+                            administradores del sistema);</li>
+                        <li>Requisitos para el software del dispositivo de punto final del usuario (incluidas las
+                            versiones de software) y para aplicar actualizaciones (por ejemplo, actualización automática
+                            activa);</li>
+                        <li>Normas para la conexión a servicios de información, redes públicas o cualquier otra red
+                            fuera de las instalaciones (por ejemplo, que requiera el uso de cortafuegos personal);</li>
+                        <li>Controles de acceso;</li>
+                        <li>Cifrado de dispositivos de almacenamiento;</li>
+                        <li>Protección contra malware;</li>
+                        <li>Desactivación, eliminación o bloqueo remotos;</li>
+                        <li>Copias de seguridad;</li>
+                        <li>Uso de servicios web y aplicaciones web;</li>
+                        <li>Análisis del comportamiento del usuario final (ver 8.16);</li>
+                        <li>El uso de dispositivos extraíbles, incluidos dispositivos de memoria extraíbles y la
+                            posibilidad de desactivar puertos físicos (por ejemplo, Puertos USB);</li>
+                        <li>El uso de capacidades de partición, si es compatible con el dispositivo final del usuario,
+                            que puede separar de forma segura la información de la empresa y otros activos asociados
+                            (por ejemplo, software) de otra información y otros activos asociados del dispositivo.</li>
+                    </ol>
+                    <p>Se debería considerar si cierta información es tan sensible que solo se puede acceder a ella a
+                        través de dispositivos de punto final de usuario, pero no se puede almacenar en dichos
+                        dispositivos. En tales casos, se pueden requerir protecciones técnicas adicionales en el
+                        dispositivo. Por ejemplo, asegurarse de que la descarga de archivos para trabajar sin conexión
+                        está desactivada y de que el almacenamiento local, como la tarjeta SD, está desactivado.</p>
+                    <p>En la medida de lo posible, las recomendaciones sobre este control se deberían aplicar mediante
+                        la administración de la configuración (ver 8.9) o mediante herramientas automatizadas.</p>
+
+                    <p><strong>Responsabilidades del usuario</strong></p>
+                    <p>Todos los usuarios deben ser conscientes de los requisitos y procedimientos de seguridad para
+                        proteger los dispositivos finales de los usuarios, así como de sus responsabilidades para
+                        implementar dichas medidas de seguridad. Se debería aconsejar a los usuarios:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Cerrar la sesión activa y terminar servicios cuando ya no sean necesarios;</li>
+                        <li>Proteger los dispositivos de punto final del usuario de un uso no autorizado con un control
+                            físico (por ejemplo, bloqueo con llave o bloqueos especiales) y un control lógico (por
+                            ejemplo, acceso con contraseña) cuando no se estén al utilizar; no dejar desatendidos los
+                            dispositivos que lleven información empresarial importante, sensible o crítica;</li>
+                        <li>Utilizar dispositivos con especial cuidado en lugares públicos oficinas abiertas, lugares de
+                            reunión y otras áreas no protegidas (por ejemplo, evitar la lectura de información
+                            confidencial si las personas pueden leer desde la parte posterior, utilizar filtros de
+                            pantalla de privacidad);</li>
+                        <li>Proteger físicamente los dispositivos finales de usuario contra robos (por ejemplo, en
+                            automóviles y otras formas de transporte, habitaciones de hotel, centros de conferencias y
+                            lugares de reunión).</li>
+                    </ol>
+                    <p>Para los casos de robo o pérdida de dispositivos final de usuario se debe establecer un
+                        procedimiento específico que tenga en cuenta los requisitos legales, legales, reglamentarios,
+                        contractuales (incluidos seguros) y otros requisitos de seguridad de la organización.</p>
+
+                    <p><strong>Uso de dispositivos personales</strong></p>
+                    <p>Cuando la empresa permite el uso de dispositivos personales (BYOD), además de las directrices
+                        proporcionadas en este control, se debe tener en cuenta lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Separar el uso personal y organizacional de los dispositivos, incluido el uso de software
+                            para admitir dicha separación y proteger los datos organizacionales en un dispositivo
+                            privado;</li>
+                        <li>Proporcionar acceso a la información empresarial solo después de que los usuarios hayan
+                            reconocido sus obligaciones (protección física, actualización de software, etc.), renunciar
+                            a la propiedad de los datos organizacionales, permitir el borrado remoto de los datos por
+                            parte de la organización en caso de robo o pérdida del dispositivo o cuando ya no esté
+                            autorizado a utilizar el servicio. En tales casos, debería considerarse la legislación de
+                            protección de la IIP;</li>
+                        <li>Establecer políticas y procedimientos específicos para prevenir controversias relativas a
+                            los derechos de propiedad intelectual sobre equipos de propiedad privada;</li>
+                        <li>Impedir el acceso a equipos de propiedad privada (para verificar la seguridad de la máquina
+                            o durante una investigación), si lo requiere la legislación;</li>
+                        <li>Establecer o respetar acuerdos de licencia de software para que la organización pueda
+                            hacerse responsables de la licencia del software cliente en dispositivos finales de usuario
+                            propiedad privada del personal o de usuarios externos.</li>
+                    </ol>
+
+                    <p><strong>Conexiones inalámbricas</strong></p>
+                    <p>La organización debe establecer procedimientos para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La configuración de las conexiones inalámbricas en los dispositivos (por ejemplo, desactivar
+                            protocolos vulnerables);</li>
+                        <li>Utilizar conexiones inalámbricas o con cable con el ancho de banda adecuado de acuerdo con
+                            las políticas específicas de cada tema (por ejemplo, porque se necesitan copias de seguridad
+                            o actualizaciones de software).</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El perímetro ya no son las paredes de la oficina, es donde esté el dispositivo del usuario:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: MDM (Mobile Device Management) y
+                            Cumplimiento</strong>
+                        <p>Todos los móviles corporativos se gestionan mediante un MDM centralizado. Si el dispositivo
+                            detecta que se le ha realizado "jailbreak" o "root", el agente de seguridad instalado
+                            bloquea inmediatamente el acceso al correo corporativo y notifica al SOC, evitando que un
+                            dispositivo comprometido acceda a la red.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Contenerización en BYOD</strong>
+                        <p>Los empleados pueden usar sus propios teléfonos. Sin embargo, para acceder al correo de la
+                            empresa, deben instalar una app "contenedor". Todos los datos de la empresa viven cifrados
+                            dentro de esa app y no pueden copiarse a la parte personal del teléfono. Si el empleado se
+                            marcha, la empresa borra solo el contenedor de trabajo, sin tocar sus fotos personales.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los controles para proteger la información de los dispositivos finales de usuario dependen de si
+                        el dispositivo final de usuario se utiliza solo dentro de las instalaciones seguras y las
+                        conexiones de red de la empresa o si está expuesto a mayores amenazas físicas y relacionadas con
+                        la red fuera de la organización.</p>
+                    <p>Las conexiones inalámbricas para los dispositivos de punto final de usuario son similares a otros
+                        tipos de conexiones de red, pero tienen diferencias importantes que deberían tenerse en cuenta
+                        al identificar los controles. En particular, la copia de SI almacenada en los dispositivos
+                        finales de usuario puede fallar a veces debido a un ancho de banda de red limitado o porque los
+                        dispositivos finales de usuario no están conectados en el momento en que se programan las copias
+                        de seguridad.</p>
+                    <p>Para algunos puertos USB, como USB-C, no es posible desactivar el puerto USB porque se utiliza
+                        para otros fines (por ejemplo, suministro de energía y salida de pantalla).</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
