@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.4. Acceso al código fuente</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gestión_de_identidad_y_accesos</li>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Configuración_segura</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.4.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El acceso de lectura y escritura al código fuente, las herramientas de desarrollo y las bibliotecas
+                    de software se deberían administrar adecuadamente.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para evitar la introducción de funciones no autorizadas, evite cambios no intencionados o
+                    malintencionados y mantenga la confidencialidad de la propiedad intelectual valiosa.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El acceso al código fuente y a los elementos asociados (como diseños, especificaciones, planes de
+                        verificación y planes de validación) y a las herramientas de desarrollo (por ejemplo,
+                        compiladores, constructores, herramientas de integración, plataformas de prueba y entornos)
+                        deberían controlarse rigurosamente.</p>
+                    <p>Para el código fuente, esto se puede lograr al controlar el almacenamiento centralizado de dicho
+                        código, preferiblemente en el sistema de gestión del código fuente.</p>
+                    <p>El acceso de lectura y escritura al código fuente puede variar en función de la función del
+                        personal. Por ejemplo, el acceso de lectura al código fuente se puede proporcionar ampliamente
+                        dentro de la organización, pero el acceso de escritura al código fuente solo está disponible
+                        para el personal con privilegios o los propietarios designados. Cuando varios desarrolladores de
+                        una organización utilizan componentes de código, se debería implementar el acceso de lectura a
+                        un repositorio de código centralizado. Además, si se utiliza código de código abierto o
+                        componentes de código de terceros dentro de una organización, se puede proporcionar acceso de
+                        lectura a dichos repositorios de código externo. Sin embargo, el acceso de escritura debería
+                        seguir estando restringido.</p>
+                    <p>Se deberían considerar las siguientes directrices para controlar el acceso a las bibliotecas de
+                        origen de programas a fin de reducir el potencial de corrupción de los programas informáticos:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Administrar el acceso al código fuente del programa y a las bibliotecas de origen del
+                            programa según los procedimientos establecidos;</li>
+                        <li>Conceder acceso de lectura y escritura al código fuente en función de las necesidades
+                            empresariales y gestionar para abordar los riesgos de alteración o uso indebido y de acuerdo
+                            con los procedimientos establecidos;</li>
+                        <li>Actualizar el código fuente y los elementos asociados y conceder acceso al código fuente de
+                            acuerdo con los procedimientos de control de cambios (ver 8.32) y realizarlo solo después de
+                            recibir la autorización adecuada;</li>
+                        <li>No conceder a los desarrolladores acceso directo al repositorio de código fuente, sino a
+                            través de herramientas de desarrollo que controlan las actividades y autorizaciones en el
+                            código fuente;</li>
+                        <li>Mantener listas de programas en un entorno seguro, donde el acceso de lectura y escritura
+                            debería gestionarse y asignarse de forma adecuada;</li>
+                        <li>Mantener un registro de auditoría de todos los accesos y de todos los cambios realizados en
+                            el código fuente.</li>
+                    </ol>
+                    <p>Si se pretende publicar el código fuente del programa, deberían considerarse controles
+                        adicionales para garantizar su integridad (por ejemplo, la firma digital).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El código fuente es la "joya de la corona" de una empresa de software y un mapa para los
+                        atacantes:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Protección de Ramas (Branch
+                            Protection)</strong>
+                        <p>En el repositorio Git de la empresa, la rama `master` o `main` está protegida. Ningún
+                            desarrollador, ni siquiera los senior, pueden hacer "push" directo. Todos los cambios deben
+                            venir a través de una "Pull Request" que requiere obligatoriamente la aprobación de al menos
+                            otro desarrollador (Code Review) y pasar todos los tests automáticos (CI/CD) antes de
+                            fusionarse.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Minimización de Acceso al
+                            Repositorio</strong>
+                        <p>Los desarrolladores del equipo "Frontend" no tienen acceso de lectura al repositorio
+                            "Backend-Pagos-Core". Esto sigue el principio de mínimo privilegio: si la cuenta de un
+                            desarrollador frontend es comprometida, el atacante no podrá robar ni analizar la lógica
+                            crítica de procesamiento de pagos.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Si el acceso al código fuente no se controla correctamente, el código fuente se puede modificar o
+                    algunos datos del entorno de desarrollo (por ejemplo, copias de datos de producción, detalles de
+                    configuración) pueden ser recuperados por personas no autorizadas.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
