@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.24. Uso de cifrado</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Configuración_segura</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">10.1.1<br>10.1.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Se deberían definir e implementar reglas para el uso efectivo de la criptografía, incluida la
+                    administración de claves cifradas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar el uso adecuado y efectivo del cifrado para proteger la confidencialidad, autenticidad o
+                    integridad de la información de acuerdo con los requisitos de seguridad de la información y tomando
+                    en consideración los requisitos legales, estatutarios, reglamentarios y contractuales relacionados
+                    con el cifrado.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>Al utilizar el cifrado, se debería tener en cuenta lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La directiva específica del tema sobre cifrado definida por la organización, incluidos los
+                            principios generales para la protección de la información. Es necesaria una política
+                            específica sobre el uso del cifrado para maximizar los beneficios y minimizar los riesgos de
+                            utilizar técnicas de cifrado y evitar un uso inapropiado o incorrecto;</li>
+                        <li>El nivel de protección requerido y la clasificación de la información y, en consecuencia,
+                            establecer el tipo, la fuerza y la calidad de los algoritmos cifrados necesarios;</li>
+                        <li>El uso del cifrado para la protección de la información contenida en dispositivos finales de
+                            usuario móvil o medios de almacenamiento y transmitida a través de redes a dichos
+                            dispositivos o medios de almacenamiento;</li>
+                        <li>El enfoque de la gestión de claves, incluidos los métodos para tratar la generación y
+                            protección de claves cifradas y la recuperación de información cifrada en caso de pérdida,
+                            compromiso o daño de claves;</li>
+                        <li>Funciones y responsabilidades para:
+                            <ol type="1">
+                                <li>La implementación de las reglas para el uso efectivo del cifrado;</li>
+                                <li>La gestión de claves, incluida la generación de claves (ver 8.24);</li>
+                            </ol>
+                        </li>
+                        <li>Los estándares que se van a adoptar, así como los algoritmos cifrados, la fuerza del
+                            cifrado, las soluciones cifradas y las prácticas de uso aprobadas o requeridas para su uso
+                            en la organización;</li>
+                        <li>El impacto del uso de información cifrada en controles que dependen de la inspección de
+                            contenido (por ejemplo, detección de malware o filtrado de contenido).</li>
+                    </ol>
+                    <p>Al implementar las reglas de la organización para el uso efectivo del cifrado, se deben tener en
+                        cuenta las regulaciones y restricciones nacionales que pueden aplicarse al uso de técnicas de
+                        cifrado en diferentes partes del mundo, así como los temas del flujo transfronterizo de
+                        información cifrada (ver 5.31).</p>
+                    <p>El contenido de los acuerdos de nivel de servicio o contratos con proveedores externos de
+                        servicios cifrados (por ejemplo, con una autoridad de certificación) debe abarcar cuestiones de
+                        responsabilidad, fiabilidad de los servicios y tiempos de respuesta para la prestación de
+                        servicios (ver 5.22).</p>
+
+                    <p><strong>Gestión de claves</strong></p>
+                    <p>La gestión de claves adecuada requiere procesos seguros para generar, almacenar, archivar,
+                        recuperar, distribuir, retirar y destruir claves cifradas. Un sistema de gestión de claves debe
+                        basarse en un conjunto acordado de normas, procedimientos y métodos seguros para:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Generar claves para diferentes sistemas de cifrado y diferentes aplicaciones;</li>
+                        <li>Emitir y obtener certificados de clave pública;</li>
+                        <li>Distribuir claves a las entidades previstas, incluido cómo activar las claves cuando se
+                            reciben;</li>
+                        <li>Almacenar las claves, incluida la forma en que los usuarios autorizados obtienen acceso a
+                            las claves;</li>
+                        <li>Cambiar o actualizar claves, incluidas las reglas sobre cuándo cambiar claves y cómo se hará
+                            esto;</li>
+                        <li>Tratar con claves comprometidas;</li>
+                        <li>Revocar las claves, incluido cómo retirar o desactivar claves (por ejemplo, cuando las
+                            claves se han puesto en peligro o cuando un usuario abandona una organización (en cuyo caso
+                            las claves también deberían archivarse));</li>
+                        <li>Recuperar claves que se pierden o están dañadas;</li>
+                        <li>Realizar copias de seguridad o archivado de claves;</li>
+                        <li>Destruir claves;</li>
+                        <li>Registrar y auditar las actividades relacionadas con la gestión clave;</li>
+                        <li>Establecer las fechas de activación y desactivación de las claves para que solo se puedan
+                            utilizar durante el período de tiempo de acuerdo con las reglas de la organización sobre la
+                            gestión de claves;</li>
+                        <li>Gestionar solicitudes legales de acceso a claves cifradas (por ejemplo, se puede requerir
+                            que la información cifrada esté disponible en forma no cifrada como prueba en un caso
+                            judicial).</li>
+                    </ol>
+                    <p>Todas las claves cifradas deben estar protegidas contra modificaciones y pérdidas. Además, las
+                        claves secretas y privadas necesitan protección contra el uso no autorizado, así como la
+                        divulgación. El equipo utilizado para generar, almacenar y archivar claves debe estar
+                        físicamente protegido.</p>
+                    <p>Además de la integridad, en muchos casos de uso, también debería considerarse la autenticidad de
+                        las claves públicas.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Cifrar no es solo "poner contraseña", es garantizar matemáticamente que los datos son ilegibles
+                        para ojos ajenos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Cifrado de Disco Completo
+                            (BitLocker/FileVault)</strong>
+                        <p>La política de la empresa obliga a que todos los portátiles tengan el cifrado de disco
+                            completo activado. Las claves de recuperación no se guardan en un post-it, sino que se
+                            almacenan automáticamente en el servicio de directorio activo (AD) o en una solución MDM. Si
+                            el CEO olvida su portátil en un taxi, el ladrón podrá formatearlo, pero jamás podrá acceder
+                            a los documentos confidenciales del disco duro.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: HTTPS y Gestión de Certificados</strong>
+                        <p>Para la web corporativa, se utiliza un certificado TLS emitido por una Autoridad de
+                            Certificación (CA) reconocida. El servidor web se configura para usar solo protocolos
+                            seguros (TLS 1.2 o 1.3) y cifrados robustos (AES-256), desactivando protocolos obsoletos
+                            como SSLv3. Además, se implementa un sistema automatizado (como Let's Encrypt o un gestor de
+                            secretos en la nube) para rotar los certificados antes de que caduquen, evitando alertas de
+                            seguridad en los navegadores de los clientes.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>La autenticidad de las claves públicas se suele abordar mediante procesos de administración de
+                        claves públicas a través de autoridades de certificación y certificados de claves públicas, pero
+                        también es posible abordarla mediante tecnologías como la aplicación de procesos manuales para
+                        claves de número pequeño.</p>
+                    <p>El cifrado se puede utilizar para lograr diferentes objetivos de SI, por ejemplo:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Confidencialidad: utilizar el cifrado de la información para proteger la información
+                            confidencial o crítica, almacenada o transmitida;</li>
+                        <li>Integridad o autenticidad: utilizar firmas digitales o códigos de autenticación de mensajes
+                            para verificar la autenticidad o integridad de la información confidencial o crítica
+                            almacenada o transmitida. El uso de algoritmos para la comprobación de la integridad de los
+                            archivos;</li>
+                        <li>No rechazo: utilizar técnicas de cifrado para proporcionar pruebas de la ocurrencia o no
+                            ocurrencia de un evento o acción;</li>
+                        <li>Autenticación: uso de técnicas de cifrado para autenticar usuarios y otras entidades del
+                            sistema que soliciten acceso o realicen transacciones con usuarios, entidades y recursos del
+                            sistema.</li>
+                    </ol>
+                    <p>Más información sobre la gestión de claves en la norma ISO/IEC 11770.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
