@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.19. Instalación de software en sistemas operativos</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Configuración_segura</li>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.5.1<br>12.6.2</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían implementarse procedimientos y medidas para administrar de forma segura la instalación de
+                    software en sistemas operativos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la integridad de los sistemas operativos y evitar la explotación de las vulnerabilidades
+                    técnicas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían tener en cuenta las siguientes directrices para gestionar de forma segura los cambios
+                        y la instalación del software en los sistemas operativos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Realizar actualizaciones del software operativo solo por parte de administradores formados
+                            con la autorización de administración adecuada (ver 8.5);</li>
+                        <li>Garantizar que solo se instala código ejecutable aprobado y ningún código de desarrollo o
+                            compiladores en los sistemas operativos;</li>
+                        <li>Instalar y actualizar el software solo después de realizar pruebas exhaustivas y
+                            satisfactorias (ver 8.29 y 8.31);</li>
+                        <li>Actualizar todas las bibliotecas de origen de programas correspondientes;</li>
+                        <li>Utilizar un sistema de control de configuración para mantener el control de todo el software
+                            operativo, así como de la documentación del sistema;</li>
+                        <li>Definir una estrategia de reversión (rollback) antes de implementar los cambios;</li>
+                        <li>Mantener un registro de auditoría de todas las actualizaciones del software operativo;</li>
+                        <li>Mantener un archivo de versiones antiguas de software, junto con toda la información y
+                            parámetros necesarios, procedimientos, detalles de configuración y software de soporte como
+                            medida de contingencia y durante el tiempo que el software sea necesario para leer o
+                            procesar datos archivados.</li>
+                    </ol>
+                    <p>Cualquier decisión de actualizar a una nueva versión debe tener en cuenta los requisitos
+                        organizacionales para el cambio y la seguridad de la versión (por ejemplo, la introducción de
+                        nuevas funciones de SI o el número y la gravedad de las vulnerabilidades de SI que afectan a la
+                        versión actual). Los parches de software se deberían aplicar cuando puedan ayudar a eliminar o
+                        reducir las vulnerabilidades de SI (ver 8.8 y 8.19).</p>
+                    <p>El software informático puede basarse en software y paquetes suministrados externamente (por
+                        ejemplo, programas de software que utilizan módulos alojados en sitios externos), que deberían
+                        monitorearse y controlarse para evitar cambios no autorizados ya que pueden introducir
+                        vulnerabilidades de SI.</p>
+                    <p>El software suministrado por el proveedor utilizado en los sistemas operativos debería mantenerse
+                        a un nivel respaldado por el proveedor. Con el tiempo, los proveedores de software dejarán de
+                        admitir versiones anteriores de software. La organización debería considerar los riesgos de
+                        confiar en software no compatible. El software de código abierto utilizado en los sistemas
+                        operativos debería mantenerse en la última versión apropiada del software. Con el tiempo, el
+                        código de código abierto puede dejar de mantenerse, pero sigue estando disponible en un
+                        repositorio de software de código abierto. La organización también debería considerar los
+                        riesgos de depender de software de código abierto no mantenido cuando se utiliza en sistemas
+                        operativos.</p>
+                    <p>Cuando los proveedores participan en la instalación o actualización de software, el acceso físico
+                        o lógico solo debería darse cuando sea necesario y con la autorización adecuada. Es preciso
+                        monitorear las actividades del proveedor (ver 5.22).</p>
+                    <p>La organización debe definir y aplicar reglas estrictas sobre los tipos de software que los
+                        usuarios pueden instalar.</p>
+                    <p>El principio de privilegio mínimo debería aplicarse a la instalación de software en sistemas
+                        operativos. La organización debe identificar qué tipos de instalaciones de software están
+                        permitidas (por ejemplo, actualizaciones y parches de seguridad para el software existente) y
+                        qué tipos de instalaciones están prohibidas (por ejemplo, software que solo es para uso personal
+                        y software cuyo origen con respecto a ser potencialmente malintencionado es desconocido o
+                        sospechoso). Estos privilegios deberían concederse en función de las funciones de los usuarios
+                        afectados.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Evitar que los servidores se conviertan en un vertedero de software basura es esencial para la
+                        estabilidad y seguridad:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Listas Blancas de Aplicaciones
+                            (AppLocker)</strong>
+                        <p>La organización implementa una política de "Default Deny" en todos los endpoints. Solo
+                            permiten la ejecución de binarios que estén firmados digitalmente por certificados de
+                            confianza (Microsoft, Adobe, Equipo de Desarrollo Interno) o que residan en carpetas
+                            protegidas como <code>C:\Program Files</code> (donde los usuarios normales no tienen
+                            permisos de escritura). Si un usuario intenta instalar un juego o una herramienta
+                            desconocida descargada de Internet, el sistema operativo bloquea la instalación
+                            automáticamente.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Infraestructura Inmutable con
+                            Contenedores</strong>
+                        <p>En lugar de instalar y actualizar librerías (Java, Python, Node.js) directamente en el
+                            sistema operativo del servidor de producción, se utilizan contenedores Docker. El sistema
+                            operativo base se mantiene mínimo y "limpio". Cuando se necesita una actualización de
+                            software, no se modifica el servidor en vivo; se despliega un nuevo contenedor con la
+                            versión actualizada y se retira el antiguo. Esto garantiza que las instalaciones sean
+                            idénticas a las probadas en desarrollo y permite un "rollback" instantáneo si algo falla.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    No hay más información.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
