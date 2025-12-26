@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.22</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.22. Segregación de las redes</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_las_redes</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">13.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los grupos de servicios de información, usuarios y sistemas de información deberían separarse en las
+                    redes de la organización.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Dividir la red en límites de seguridad y controlar el tráfico entre ellos en función de las
+                    necesidades de la empresa.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería considerar la gestión de la seguridad de las grandes redes dividiéndolas
+                        en dominios de red separados y separándolas de la red pública (es decir, Internet). Los dominios
+                        se pueden elegir en función de los niveles de confianza, criticidad y sensibilidad (por ejemplo,
+                        dominio de acceso público, dominio de escritorio, dominio de servidor, sistemas de bajo y alto
+                        riesgo), a lo largo de las unidades organizativas (por ejemplo, recursos humanos, finanzas,
+                        marketing) o alguna combinación (por ejemplo, dominio de servidor que se conecta a varias
+                        unidades organizativas). La segregación se puede realizar al utilizar redes físicamente
+                        diferentes o al utilizar redes lógicas diferentes.</p>
+                    <p>El perímetro de cada dominio debería estar bien definido. Si se permite el acceso entre dominios
+                        de red, se debe controlar en el perímetro mediante una puerta de enlace (por ejemplo, un
+                        firewall o un router de filtrado). Los criterios para la segregación de las redes en dominios y
+                        el acceso permitido a través de las puertas de enlace deberían basarse en una evaluación de los
+                        requisitos de seguridad de cada dominio. La evaluación debería realizarse de acuerdo con la
+                        política temática específica sobre control de acceso (ver 5.15), requisitos de acceso, valor y
+                        clasificación de la información procesada y tener en cuenta el costo relativo y el impacto en el
+                        desempeño de incorporar una tecnología de pasarela adecuada.</p>
+                    <p>Las redes inalámbricas requieren un tratamiento especial debido al perímetro de red mal definido.
+                        El ajuste de la cobertura de radio debería considerarse para la segregación de las redes
+                        inalámbricas. Para entornos sensibles, se debe considerar tratar todo el acceso inalámbrico como
+                        conexiones externas y separar este acceso de las redes internas hasta que el acceso haya pasado
+                        a través de una puerta de enlace de acuerdo con los controles de red (ver 8.20) antes de
+                        conceder acceso a los sistemas internos. La red de acceso inalámbrico para invitados debería
+                        separarse de la del personal si el personal solo utiliza dispositivos de punto final de usuario
+                        controlados que cumplan las políticas específicas de la organización. El WiFi para invitados
+                        debería tener al menos las mismas restricciones que el WiFi para el personal, con el fin de
+                        desalentar el uso del WiFi para invitados por parte del personal.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>No mezcles peras con manzanas, ni servidores financieros con ordenadores de invitados. La
+                        segregación limita el "radio de explosión" si hay una intrusión:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Wi-Fi de Invitados (Guest VLAN)</strong>
+                        <p>Cuando un visitante llega a la oficina y pide la clave del Wi-Fi, se le da acceso a la red
+                            "Invitados". Esta red está totalmente aislada de la red corporativa interna. Los invitados
+                            pueden navegar por Internet para consultar su correo, pero es técnicamente imposible que
+                            desde esa red intenten acceder al servidor de ficheros de la empresa o a las impresoras
+                            internas. El tráfico de invitados va directo al router de salida a Internet.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: DMZ (Zona Desmilitarizada)</strong>
+                        <p>La web pública de la empresa (e-commerce) reside en una subred especial llamada DMZ, separada
+                            por firewalls tanto de Internet como de la red interna (donde están los datos sensibles de
+                            los clientes). Si un hacker logra comprometer el servidor web en la DMZ, el segundo firewall
+                            impide que pueda saltar fácilmente a la base de datos interna profunda donde se guardan los
+                            números de tarjeta de crédito.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las redes a menudo se extienden más allá de los límites de la organización ya que se forman
+                    asociaciones empresariales que requieren la interconexión o el intercambio de servicios de
+                    procesamiento de la información y redes. Estas extensiones pueden aumentar el riesgo de acceso no
+                    autorizado a los sistemas de información de la organización que utilizan la red, algunos de los
+                    cuales requieren protección de otros usuarios de la red debido a su sensibilidad o criticidad.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
