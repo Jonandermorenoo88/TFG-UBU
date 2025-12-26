@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.32</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.32. Gestión de cambios</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.1.2<br>14.2.2<br>14.2.3<br>14.2.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los cambios en las instalaciones de procesamiento de la información y en los sistemas de información
+                    deben estar sujetos a procedimientos de gestión del cambio.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para preservar la SI al ejecutar los cambios.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La introducción de nuevos sistemas y de cambios importantes en los sistemas existentes debe
+                        seguir unas normas acordadas y un proceso formal de documentación, especificación, pruebas,
+                        control de calidad y aplicación gestionada. Deberían establecerse responsabilidades y
+                        procedimientos de gestión para garantizar un control satisfactorio de todos los cambios.</p>
+                    <p>Los procedimientos de control de cambios deberían documentarse y aplicarse para garantizar la
+                        confidencialidad, la integridad y la disponibilidad de la información en las instalaciones de
+                        procesamiento de la información y en los sistemas de información, para todo el ciclo de vida de
+                        desarrollo del sistema, desde las primeras etapas de diseño hasta todos los esfuerzos de
+                        mantenimiento posteriores.</p>
+                    <p>Siempre que sea posible, los procedimientos de control de cambios para la infraestructura y el
+                        software de las TIC deberían estar integrados.</p>
+                    <p>Los procedimientos de control de cambios deberían incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Planificar y evaluar el impacto potencial de los cambios tomando en consideración todas las
+                            dependencias;</li>
+                        <li>Autorizar los cambios;</li>
+                        <li>Comunicar los cambios a las partes interesadas pertinentes;</li>
+                        <li>Realizar pruebas internas y pruebas de aceptación para los cambios (ver 8.29);</li>
+                        <li>Aplicar los cambios, incluidos los planes de despliegue;</li>
+                        <li>Consideraciones de emergencia y contingencia, incluidos los procedimientos de repliegue
+                            (rollback);</li>
+                        <li>Mantener registros de los cambios que incluyan todo lo anterior;</li>
+                        <li>Garantizar que la documentación de funcionamiento (ver 5.37) y los procedimientos de los
+                            usuarios se modifiquen según sea necesario para que sigan siendo adecuados;</li>
+                        <li>Garantizar que los planes de continuidad de las TIC y los procedimientos de respuesta y
+                            recuperación (ver 5.30) se modifiquen según sea necesario para seguir siendo adecuados.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Todo cambio es un riesgo. Gestionarlo significa saber qué cambiamos, por qué, y cómo volver atrás
+                        si sale mal:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Proceso de CAB (Change Advisory
+                            Board)</strong>
+                        <p>Para actualizar el servidor principal de la empresa, el administrador de sistemas debe crear
+                            primero una "Solicitud de Cambio" (RFC). Esta solicitud debe incluir el plan de instalación,
+                            el análisis de impacto y, crucialmente, el plan de "Rollback" (vuelta atrás). Un comité
+                            (CAB) revisa la solicitud semanalmente y aprueba o rechaza el cambio basándose en el riesgo
+                            y la ventana de mantenimiento propuesta. Sin aprobación del CAB, no se toca el servidor.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Cambios de Emergencia (Hotfix)</strong>
+                        <p>Cuando se descubre un error crítico en la web que impide las ventas ("incidente P1"), no se
+                            puede esperar al CAB semanal. Se activa el procedimiento de emergencia: el desarrollador
+                            crea el parche, otro desarrollador lo revisa (Peer Review), y el Gerente de TI da la
+                            aprobación verbal inmediata. Una vez resuelto el incidente, se documenta todo el proceso a
+                            posteriori ("Post-Mortem") para mantener el registro de cambios actualizado.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>El control inadecuado de los cambios en las instalaciones de procesamiento de la información y en
+                        los sistemas de información es una causa común de fallas en el sistema o en la seguridad.</p>
+                    <p>Los cambios en el entorno de producción, especialmente cuando se transfiere el software del
+                        entorno de desarrollo al operativo, pueden repercutir en la integridad y disponibilidad de las
+                        aplicaciones.</p>
+                    <p>Los cambios en el software pueden afectar al entorno de producción y viceversa.</p>
+                    <p>Las buenas prácticas incluyen la comprobación de los componentes de las TIC en un entorno
+                        separado de los entornos de producción y desarrollo (ver 8.31). Esto proporciona un medio para
+                        tener control sobre el nuevo software y permite una protección adicional de la información
+                        operativa que se utiliza para fines de prueba. Esto debería incluir parches, paquetes de
+                        servicio y otras actualizaciones.</p>
+                    <p>El entorno de producción incluye los sistemas operativos, las bases de datos y las plataformas de
+                        middleware. El control debería aplicarse a los cambios de aplicaciones e infraestructuras.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
