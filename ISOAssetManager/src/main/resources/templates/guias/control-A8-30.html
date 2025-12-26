@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.30</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.30. Desarrollo tercerizado</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                        <li>#Detección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Identificar</li>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_de_las_relaciones_con_los_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.2.7</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La organización debe controlar, monitorear y revisar las actividades relacionadas con el desarrollo
+                    de sistemas tercerizados.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la aplicación de las medidas de SI requeridas por la organización en el desarrollo de
+                    sistemas tercerizados.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>En los casos en que el desarrollo del sistema se subcontrata, la organización debería comunicar y
+                        acordar los requisitos y expectativas y monitorear y revisar continuamente si la entrega del
+                        trabajo subcontratado cumple con estas expectativas. Los siguientes puntos deberían considerarse
+                        en toda la cadena de suministro externa de la organización:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Acuerdos de licencia, propiedad del código y derechos de propiedad intelectual relacionados
+                            con el contenido subcontratado (ver 5.32);</li>
+                        <li>Requisitos contractuales para las prácticas de diseño, codificación y pruebas seguras (ver
+                            8.25 al 8.29);</li>
+                        <li>Suministro del modelo de amenaza a considerar por desarrolladores externos;</li>
+                        <li>Pruebas de aceptación de la calidad y exactitud de los resultados (ver 8.29);</li>
+                        <li>Suministro de pruebas de que se han establecido niveles mínimos aceptables de capacidades de
+                            seguridad y privacidad (por ejemplo, informes de garantía);</li>
+                        <li>Pruebas de que se han realizado pruebas suficientes para evitar la presencia de contenidos
+                            maliciosos (tanto intencionados como no intencionados) en el momento de la entrega;</li>
+                        <li>Pruebas de que se han realizado pruebas suficientes para evitar la presencia de
+                            vulnerabilidades conocidas;</li>
+                        <li>Acuerdos de custodia del código fuente del software (por ejemplo, si el proveedor quiebra o
+                            desaparece);</li>
+                        <li>Derecho contractual a auditar los procesos y controles de desarrollo;</li>
+                        <li>Requisitos de seguridad para el entorno de desarrollo (ver 8.31);</li>
+                        <li>Tomando en consideración la legislación aplicable (por ejemplo, sobre protección de datos
+                            personales).</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Subcontratar el desarrollo no significa subcontratar la responsabilidad de seguridad. Debes
+                        asegurarte de que trabajan con tus mismos estándares:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Cláusulas de Seguridad en el Contrato de
+                            Desarrollo (SLA)</strong>
+                        <p>Al contratar a una "Software Factory" para desarrollar una app móvil, el contrato legal
+                            incluye anexos técnicos específicos: el proveedor debe entregar reportes de análisis
+                            estático de código (SAST) limpios de vulnerabilidades críticas con cada entrega, y debe
+                            remediar cualquier hallazgo de un pentest independiente en menos de 7 días. El
+                            incumplimiento conlleva penalizaciones económicas.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Escrow de Código Fuente</strong>
+                        <p>La empresa adquiere un software crítico a medida desarrollado por una pequeña startup. Para
+                            mitigar el riesgo de que la startup quiebre y deje el software sin soporte, se firma un
+                            acuerdo de "Escrow" (Custodia). El código fuente actualizado se deposita regularmente ante
+                            un notario o agente de custodia digital. Si la startup desaparece, la empresa tiene derecho
+                            legal a acceder al código fuente para continuar su mantenimiento.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Más información sobre las relaciones con los proveedores en la norma ISO/IEC 27036.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
