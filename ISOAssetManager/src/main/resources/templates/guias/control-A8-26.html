@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.26. Requisitos de SI</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                        <li>#Defensa</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.1.2<br>14.1.3</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los requisitos de SI deberían ser identificados, especificados y aprobados al desarrollar o adquirir
+                    aplicaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que todos los requisitos de SI se identifican y se abordan al desarrollar o adquirir
+                    aplicaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>Se deberían identificar y especificar los requisitos de seguridad de las aplicaciones. Estos
+                        requisitos se determinan generalmente a través de una evaluación de riesgos. Los requisitos
+                        deberían elaborarse con el apoyo de especialistas en SI. Los requisitos de seguridad de las
+                        aplicaciones pueden abarcar una amplia gama de temas, en función del propósito de la aplicación.
+                    </p>
+                    <p>Los requisitos de seguridad de las aplicaciones deberían incluir, según corresponda:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>nivel de confianza en la identidad de las entidades (por ejemplo, mediante autenticación
+                            (ver 5.17, 8.2 y 8.5));</li>
+                        <li>tipo de información y el nivel de clasificación que debe procesar la solicitud;</li>
+                        <li>necesidad de segregación de acceso y nivel de acceso a los datos y funciones de la
+                            aplicación;</li>
+                        <li>resiliencia frente a ataques malintencionados o interrupciones no intencionadas (por
+                            ejemplo, protección contra desbordamiento de búfer o inyecciones de lenguaje de consulta
+                            estructurado (SQL));</li>
+                        <li>requisitos legales, estatutarios y reglamentarios en la jurisdicción donde se genera,
+                            procesa, completa o almacena la transacción;</li>
+                        <li>necesidad de privacidad asociada a todas las partes implicadas;</li>
+                        <li>requisitos de protección de cualquier información confidencial;</li>
+                        <li>protección de datos mientras se procesan, en tránsito y en reposo;</li>
+                        <li>necesidad de cifrar de forma segura las comunicaciones entre todas las partes implicadas;
+                        </li>
+                        <li>controles de entrada, incluidas las comprobaciones de integridad y la validación de entrada;
+                        </li>
+                        <li>controles automatizados (por ejemplo, límites de aprobación o aprobaciones dobles);</li>
+                        <li>controles de salida, considerando también quién puede acceder a los resultados y su
+                            autorización;</li>
+                        <li>restricciones en torno al contenido de campos de texto libre ya que pueden conducir a un
+                            almacenamiento incontrolado de datos confidenciales (por ejemplo, datos personales);</li>
+                        <li>requisitos derivados del proceso de negocio, como el registro y la supervisión de las
+                            transacciones, los requisitos de no rechazo;</li>
+                        <li>requisitos exigidos por otros controles de seguridad (por ejemplo, interfaces para el
+                            registro y el monitoreo o sistemas de detección de fugas de datos);</li>
+                        <li>manejo de mensajes de error.</li>
+                    </ol>
+
+                    <p><strong>Servicios transaccionales</strong></p>
+                    <p>Adicionalmente, para las aplicaciones que ofrecen servicios transaccionales entre la organización
+                        y un socio, se debería considerar lo siguiente al identificar los requisitos de SI:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>El nivel de confianza que cada parte requiere en la identidad declarada de la otra;</li>
+                        <li>El nivel de confianza requerido en la integridad de la información intercambiada o procesada
+                            y los mecanismos para identificar la falta de integridad (por ejemplo, comprobación de
+                            redundancia cíclica, hashing, firmas digitales);</li>
+                        <li>Los procesos de autorización asociados a quién puede aprobar el contenido de los documentos
+                            transaccionales clave, emitirlos o firmarlos;</li>
+                        <li>La confidencialidad, la integridad, la prueba de envío y de recepción de los documentos
+                            clave y el no repudio (por ejemplo, los contratos asociados a los procesos de licitación y
+                            de contratación);</li>
+                        <li>La confidencialidad e integridad de cualquier transacción (por ejemplo, pedidos, detalles de
+                            la dirección de entrega y confirmación de recibos);</li>
+                        <li>Los requisitos sobre la duración de la confidencialidad de una transacción;</li>
+                        <li>Los seguros y otros requisitos contractuales.</li>
+                    </ol>
+
+                    <p><strong>Aplicaciones de pedidos y pagos electrónicos</strong></p>
+                    <p>Asimismo, en el caso de las aplicaciones que implican pedidos y pagos electrónicos, se debería
+                        tener en cuenta lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Los requisitos para mantener la confidencialidad e integridad de la información de los
+                            pedidos;</li>
+                        <li>El grado de verificación apropiado para comprobar la información de pago suministrada por un
+                            cliente;</li>
+                        <li>La pérdida o duplicación de la información de las transacciones;</li>
+                        <li>El almacenamiento de los datos de las transacciones fuera de cualquier entorno de acceso
+                            público (por ejemplo, en una plataforma de almacenamiento existente en la intranet de la
+                            organización y no conservada y expuesta en medios de almacenamiento electrónico directamente
+                            accesibles desde internet);</li>
+                        <li>Cuando se utilice una autoridad de confianza (por ejemplo, para la emisión y el
+                            mantenimiento de firmas certificados digitales), que la seguridad esté integrada e
+                            incorporada en todo el proceso de gestión de certificados o firmas de extremo a extremo.
+                        </li>
+                    </ol>
+                    <p>Varias de las consideraciones anteriores pueden abordarse mediante la aplicación de la
+                        criptografía (ver 8.24), tomando en consideración los requisitos legales (ver 5.31 a 5.38,
+                        especialmente 5.31 para la legislación sobre cifrado).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Antes de "comprar" una aplicación o escribir la primera línea de código, debes saber qué medidas
+                        de seguridad necesitas. Es como hacer la lista de la compra, pero de medidas de protección:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Requisitos No Funcionales de un
+                            CRM</strong>
+                        <p>Al adquirir un nuevo CRM (Gestión de Servicios de Cliente) en la nube, el equipo de seguridad
+                            define los requisitos obligatorios: debe soportar autenticación vía SAML (para integrarse
+                            con el directorio corporativo), debe cifrar los datos en reposo, y debe tener un registro de
+                            auditoría inmutable que guarde quién accedió a qué ficha de cliente. Si el proveedor no
+                            cumple estos requisitos, se descarta la compra.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Validación de Entradas en una Pasarela de
+                            Pagos</strong>
+                        <p>Para la nueva tienda online, se especifica como requisito crítico que el campo "número de
+                            tarjeta" no debe ser texto libre, sino que debe pasar por una validación estricta de formato
+                            (Algoritmo de Luhn) y nunca debe guardarse en la base de datos de la web, sino enviarse
+                            directamente al procesador de pagos (tokenización), cumpliendo así con los requisitos
+                            transaccionales y de privacidad.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las aplicaciones accesibles a través de las redes están sujetas a una serie de amenazas relacionadas
+                    con la red, como las actividades fraudulentas, los conflictos contractuales o la divulgación de
+                    información al público; la transmisión incompleta, el enrutamiento erróneo, la alteración no
+                    autorizada de mensajes, la duplicación o la repetición. Por lo tanto, es indispensable realizar
+                    evaluaciones de riesgo detalladas y determinar cuidadosamente los controles. Los controles
+                    necesarios suelen incluir métodos de cifrado para la autenticación y la seguridad de la
+                    transferencia de datos. Más información sobre la seguridad de las aplicaciones en la norma ISO/IEC
+                    27034.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
