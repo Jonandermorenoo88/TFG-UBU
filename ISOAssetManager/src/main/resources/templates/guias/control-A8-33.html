@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.33</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.33. Información para las pruebas</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.3.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    La información para las pruebas debería seleccionarse, protegerse y gestionarse adecuadamente.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar la pertinencia de las pruebas y la protección de la información operativa utilizada para
+                    las mismas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La información para las pruebas debería seleccionarse para garantizar la fiabilidad de los
+                        resultados de las pruebas y la confidencialidad de la información operativa pertinente. La
+                        información sensible (incluida la información de identificación personal) no debería copiarse en
+                        los entornos de desarrollo y pruebas (ver 8.31).</p>
+                    <p>Las siguientes directrices deberían aplicarse para proteger las copias de la información
+                        operativa, cuando se utilicen con fines de prueba, tanto si el entorno de prueba se construye
+                        internamente como en un servicio en la nube:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Aplicar a los entornos de prueba los mismos procedimientos de control de acceso que se
+                            aplican a los entornos operativos;</li>
+                        <li>Tener una autorización independiente cada vez que se copie información operativa en un
+                            entorno de pruebas;</li>
+                        <li>Registrar la copia y el uso de la información operativa para proporcionar un registro de
+                            auditoría;</li>
+                        <li>Proteger la información sensible mediante su eliminación o enmascaramiento (ver 8.11) si se
+                            utiliza para las pruebas;</li>
+                        <li>Eliminar adecuadamente (ver 8.10) la información operativa de un entorno de prueba
+                            inmediatamente después de que se haya completado la prueba para evitar el uso no autorizado
+                            de la información de prueba.</li>
+                    </ol>
+                    <p>La información de las pruebas debería almacenarse de forma segura (para evitar su manipulación,
+                        que puede dar lugar a resultados no válidos) y utilizarse únicamente con fines de prueba.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>En pruebas, necesitas datos realistas, pero usar datos reales es un riesgo. La clave es el
+                        equilibrio entre realismo y privacidad:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Generación de Datos Sintéticos</strong>
+                        <p>En lugar de copiar la base de datos de producción con datos reales de clientes, el equipo de
+                            QA utiliza una herramienta (como Mockaroo o Faker) para generar 10,000 registros de
+                            "clientes ficticios". Estos datos respetan la estructura y la lógica de negocio (NIFs
+                            válidos, códigos postales reales) pero no corresponden a ninguna persona real, permitiendo
+                            pruebas funcionales completas sin riesgo de fuga de datos personales.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Enmascaramiento y Borrado Seguro</strong>
+                        <p>Cuando es imprescindible usar datos de producción para depurar un error complejo, se sigue un
+                            procedimiento estricto: se solicita aprobación al CISO, se copia solo el subconjunto de
+                            datos necesario a un entorno aislado, se aplica una herramienta de enmascaramiento para
+                            ocultar campos sensibles (como números de tarjeta de crédito o diagnósticos médicos) y, una
+                            vez finalizada la prueba, los datos se eliminan mediante borrado seguro.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las pruebas de sistemas y de aceptación pueden requerir volúmenes considerables de información de
+                    prueba que se acerquen lo más posible a la información operativa.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
