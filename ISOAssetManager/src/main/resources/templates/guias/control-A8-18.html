@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.18</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.18. Uso de programas utilitarios privilegiados</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                        <li>#Configuración_segura</li>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">9.4.4</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El uso de programas utilitarios capaces de anular los controles del sistema y de las aplicaciones
+                    debe estar restringido y controlado de forma estricta.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que el uso de programas utilitarios no perjudique los controles del sistema y de las
+                    aplicaciones para la SI.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Se deberían tener en cuenta las siguientes directrices para el uso de programas utilitarios que
+                        pueden ser capaces de anular los controles del sistema y de la aplicación:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Limitar el uso de programas utilitarios al número mínimo práctico de usuarios confiables y
+                            autorizados (Ver 8.2);</li>
+                        <li>Usar procedimientos de identificación, autenticación y autorización para programas
+                            utilitarios, incluyendo la identificación única de la persona que utiliza los utiliza;</li>
+                        <li>Definir y documentar los niveles de autorización para los programas utilitarios;</li>
+                        <li>Autorizar el uso ad hoc de programas utilitarios;</li>
+                        <li>No poner los programas utilitarios a disposición de los usuarios que tengan acceso a las
+                            aplicaciones en sistemas donde se requiera la separación de tareas;</li>
+                        <li>Eliminar o desactivar todos los programas utilitarios innecesarios;</li>
+                        <li>Como mínimo, segregar de manera lógica los programas utilitarios del software de aplicación.
+                            Cuando sea práctico, separar las comunicaciones de red para dichos programas del tráfico de
+                            aplicaciones;</li>
+                        <li>Limitar la disponibilidad de los programas utilitarios (por ejemplo, durante la duración de
+                            un cambio autorizado);</li>
+                        <li>Registrar todo uso de programas utilitarios.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Herramientas como depuradores, analizadores de paquetes o software de recuperación de contraseñas
+                        son armas de doble filo. En manos incorrectas, son llaves maestras:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Servidor "Jump Box" o Privileged Access
+                            Workstation (PAW)</strong>
+                        <p>Los administradores no acceden a los servidores de producción directamente desde sus
+                            portátiles de uso diario. En su lugar, deben conectarse primero a un servidor de salto
+                            altamente seguro (PAW) que tiene instaladas las herramientas administrativas y utilitarios
+                            privilegiados. Este servidor no tiene acceso a Internet ni correo electrónico para minimizar
+                            riesgos, y todo lo que se hace en él queda grabado en vídeo o logs detallados.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Eliminación de Compiladores en
+                            Producción</strong>
+                        <p>Para evitar que un atacante que logre entrar en un servidor web pueda compilar y ejecutar su
+                            propio malware o exploits locales, la organización elimina sistemáticamente todos los
+                            compiladores (gcc, make, javac) y depuradores (gdb) de las imágenes de los sistemas
+                            operativos que se despliegan en el entorno de producción. Si hace falta depurar algo, se
+                            hace en un entorno de pre-producción clonado.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    La mayoría de los sistemas de información tienen uno o más programas utilitarios, capaces de anular
+                    los controles del sistema y de las aplicaciones, por ejemplo, diagnósticos, parches, antivirus,
+                    desfragmentadores de disco, depuradores, backup y herramientas de red.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
