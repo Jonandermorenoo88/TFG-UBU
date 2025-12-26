@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.25</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.25. Ciclo de vida de desarrollo seguro</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.2.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Deberían establecerse y aplicarse normas para el desarrollo seguro de software y sistemas.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que la SI se diseña e implementa dentro del ciclo de vida de desarrollo seguro del
+                    software y los sistemas.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>El desarrollo seguro es un requisito para crear un servicio, una arquitectura, un software y un
+                        sistema seguros. Para lograr esto, se deberían tomar en consideración los siguientes factores:
+                    </p>
+                    <ol type="a" class="alpha-list">
+                        <li>Separación de entornos de desarrollo, pruebas y entornos de producción (ver el numeral
+                            8.31);</li>
+                        <li>Guía sobre la seguridad en el ciclo de vida de desarrollo de software:
+                            <ol type="1">
+                                <li>Seguridad en la metodología de desarrollo de software (ver 8.28 y 8.27);</li>
+                                <li>Directrices de codificación seguras para cada lenguaje de programación utilizado
+                                    (ver 8.28);</li>
+                            </ol>
+                        </li>
+                        <li>Requisitos de seguridad en la fase de especificación y diseño (ver 5.8);</li>
+                        <li>Puntos de control de seguridad en los proyectos (ver 5.8);</li>
+                        <li>Pruebas de sistema y seguridad, como pruebas de regresión, análisis de código y pruebas de
+                            penetración (ver 8.29);</li>
+                        <li>Repositorios seguros para el código fuente y la configuración (ver 8.4 y 8.9);</li>
+                        <li>Seguridad en el control de versiones (ver 8.32);</li>
+                        <li>Conocimientos y formación necesarios sobre seguridad de las aplicaciones (ver el numeral
+                            8.28);</li>
+                        <li>Capacidad de los desarrolladores para prevenir, encontrar y corregir vulnerabilidades (ver
+                            8.28);</li>
+                        <li>Requisitos de licencia y alternativas para garantizar soluciones rentables y evitar futuros
+                            problemas de licencia (ver 5.32).</li>
+                    </ol>
+                    <p>Si se subcontrata el desarrollo, la organización debería obtener la garantía de que el proveedor
+                        cumple con las reglas de desarrollo seguro de la organización (ver 8.30).</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La seguridad no es una "capa de pintura" que se añade al final; debe estar en los cimientos del
+                        edificio (Security by Design):</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Integración DevSecOps (SAST/DAST)</strong>
+                        <p>En el pipeline de despliegue continuo (CI/CD) de la empresa, se integran escáneres
+                            automáticos. Cada vez que un desarrollador hace un "commit", una herramienta SAST (como
+                            SonarQube) analiza el código en busca de vulnerabilidades estáticas, y una herramienta DAST
+                            escanea la aplicación en ejecución. Si se detecta una vulnerabilidad crítica (como una
+                            inyección SQL), la compilación falla automáticamente y se impide el despliegue a producción.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Modelado de Amenazas (Threat
+                            Modeling)</strong>
+                        <p>Antes de escribir una sola línea de código para el nuevo portal de clientes, el equipo de
+                            arquitectura realiza una sesión de modelado de amenazas utilizando metodologías como STRIDE.
+                            Identifican que la función de "recordar contraseña" podría ser abusada para robar cuentas.
+                            Como resultado, deciden implementar autenticación multifactor (MFA) desde el diseño inicial,
+                            en lugar de intentar parchearlo después del lanzamiento.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    El desarrollo también puede tener lugar dentro de aplicaciones, como aplicaciones de ofimática,
+                    secuencias de comandos, exploradores y bases de datos.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
