@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.27</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.27. Arquitectura de sistemas seguros y principios de ingeniería segura</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.2.5</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los principios para la ingeniería de sistemas seguros deberían establecerse, documentarse,
+                    mantenerse y aplicarse a cualquier actividad de desarrollo de sistemas de información.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que los sistemas de información se diseñan, implementan y operan de forma segura dentro
+                    del ciclo de vida del desarrollo.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los principios de ingeniería de sistemas seguros deberían establecerse, documentarse y aplicarse
+                        a las actividades de ingeniería de los sistemas de información. La seguridad debería diseñarse
+                        en todas las capas de la arquitectura (negocio, datos, aplicaciones y tecnología). La nueva
+                        tecnología debería ser analizada para detectar los riesgos de seguridad y el diseño debería ser
+                        revisado contra los patrones de ataque conocidos.</p>
+                    <p>Los principios de ingeniería de seguridad proporcionan guía sobre las técnicas de autenticación
+                        de usuarios, el control de sesiones seguras y la validación y saneamiento de datos.</p>
+                    <p>Los principios de ingeniería de sistemas seguros deben incluir el análisis de:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La variedad de controles de seguridad necesarios para proteger la información y los sistemas
+                            contra las amenazas identificadas;</li>
+                        <li>Las capacidades de los controles de seguridad para prevenir, detectar o responder a eventos
+                            de seguridad;</li>
+                        <li>Los controles de seguridad específicos que requieren determinados procesos empresariales
+                            (por ejemplo, el cifrado de información sensible, la comprobación de la integridad de la
+                            firma digital de la información);</li>
+                        <li>Dónde y cómo deben aplicarse los controles de seguridad (por ejemplo, mediante la
+                            integración con una arquitectura de seguridad y la infraestructura técnica);</li>
+                        <li>Cómo funcionan los controles de seguridad individuales (manuales y automáticos) para
+                            producir un conjunto integrado de controles.</li>
+                    </ol>
+                    <p>Los principios de ingeniería de seguridad deben tener en cuenta:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La necesidad de integrarse con una arquitectura de seguridad;</li>
+                        <li>Infraestructura técnica de seguridad (por ejemplo, infraestructura de clave pública (pki),
+                            gestión de la identidad y el acceso (iam), prevención de la fuga de datos y gestión dinámica
+                            del acceso);</li>
+                        <li>Capacidad de la organización para desarrollar y apoyar la tecnología elegida;</li>
+                        <li>El costo, el tiempo y la complejidad de cumplir con los requisitos de seguridad;</li>
+                        <li>Las buenas prácticas actuales.</li>
+                    </ol>
+                    <p>La ingeniería de sistemas seguros debe incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>El uso de principios de arquitectura de seguridad, como "seguridad por diseño", "defensa en
+                            profundidad", "seguridad por defecto", "denegación por defecto", "falla segura",
+                            "desconfianza en la entrada de aplicaciones externas", "seguridad en el despliegue", "asumir
+                            el incumplimiento", "mínimo privilegio", "usabilidad y manejabilidad" y "mínima
+                            funcionalidad";</li>
+                        <li>Una revisión del diseño centrada en la seguridad para ayudar a identificar las
+                            vulnerabilidades de la SI, garantizar que se especifican los controles de seguridad y
+                            cumplir con los requisitos de seguridad;</li>
+                        <li>La documentación y el reconocimiento formal de los controles de seguridad que no cumplen
+                            plenamente los requisitos (por ejemplo, debido a requisitos de seguridad imperativos);</li>
+                        <li>Fortalecimiento de los sistemas.</li>
+                    </ol>
+                    <p>La organización debe considerar los principios de "confianza cero", tales como:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Asumir que los sistemas de información de la organización ya han sido vulnerados y, por
+                            tanto, no depender únicamente de la seguridad del perímetro de la red;</li>
+                        <li>Emplear un enfoque de "nunca confiar y siempre verificar" para el acceso a los sistemas de
+                            información;</li>
+                        <li>Garantizar que las solicitudes a los sistemas de información estén cifradas de principio a
+                            fin;</li>
+                        <li>Verificar cada solicitud a un sistema de información como si se originara en una red abierta
+                            y externa, incluso si estas solicitudes se originan dentro de la organización (es decir, no
+                            confiar automáticamente en nada dentro o fuera de sus perímetros);</li>
+                        <li>Utilizar técnicas de control de acceso dinámico y de "mínimo privilegio" (ver los numerales
+                            5.15, 5.18 y 8.2). Esto incluye la autenticación y autorización de las solicitudes de
+                            información o a los sistemas en función de la información contextual, como la información de
+                            autenticación (ver 5.17), las identidades de los usuarios (ver el numeral 5.16), los datos
+                            sobre el dispositivo del usuario y la clasificación de los datos (ver 5.12);</li>
+                        <li>Autenticar siempre a los solicitantes y validar siempre las solicitudes de autorización a
+                            los sistemas de información sobre la base de información que incluya la información de
+                            autenticación (ver 5.17) y las identidades de los usuarios (ver el numeral 5.16), los datos
+                            sobre el dispositivo final del usuario y la clasificación de los datos (ver 5.12), por
+                            ejemplo, aplicando una autenticación fuerte (por ejemplo, multifactorial, ver 8.5).</li>
+                    </ol>
+                    <p>Se deberían aplicar los principios de ingeniería de sistemas seguros establecidos, cuando sea
+                        aplicable, al desarrollo externo de sistemas de información a través de los contratos y otros
+                        acuerdos vinculantes entre la organización y el proveedor al que la organización subcontrata. La
+                        organización debería asegurarse de que las prácticas de ingeniería de sistemas seguros de los
+                        proveedores se ajusten a las necesidades de la organización.</p>
+                    <p>Los principios de ingeniería de sistemas seguros y los procedimientos de ingeniería establecidos
+                        deberían revisarse periódicamente para garantizar que contribuyen efectivamente a mejorar los
+                        estándares de seguridad dentro del proceso de ingeniería. También deberían revisarse
+                        periódicamente para garantizar que se mantienen actualizados en lo que respecta a la lucha
+                        contra cualquier nueva amenaza potencial y para que sigan siendo aplicables a los avances en las
+                        tecnologías y soluciones que se aplican.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>No basta con usar herramientas seguras; la estructura misma del sistema debe ser resiliente por
+                        diseño:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Defensa en Profundidad</strong>
+                        <p>Al diseñar una base de datos con información médica, no se confía solo en el firewall
+                            perimetral. Se aplica una arquitectura multicapa: el firewall bloquea accesos externos, la
+                            base de datos está en una subred aislada, los datos están cifrados en disco (TDE), la
+                            aplicación usa cuentas de servicio con privilegios mínimos, y se monitorizan los logs de
+                            acceso en tiempo real. Si una capa falla (el firewall), las otras siguen protegiendo el
+                            dato.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Principio de Mínimo Privilegio y Zero
+                            Trust</strong>
+                        <p>La aplicación de contabilidad no tiene un usuario "admin" con acceso a todo. Se diseñan roles
+                            granulares: un rol puede "crear facturas" pero no "aprobarlas", y otro puede "ver informes"
+                            pero no "exportarlos". Además, bajo un modelo Zero Trust, el hecho de estar conectado a la
+                            red de la oficina no da acceso automático al servidor; el usuario debe re-autenticarse con
+                            MFA cada vez que accede a una zona crítica del sistema.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los principios de la ingeniería de sistemas seguros pueden aplicarse al diseño o la configuración
+                        de una serie de técnicas, como:</p>
+                    <ul>
+                        <li>Tolerancia a fallas y otras técnicas de resiliencia;</li>
+                        <li>Segregación (por ejemplo, mediante la virtualización o la contenerización);</li>
+                        <li>Resistencia a la manipulación.</li>
+                    </ul>
+                    <p>Las técnicas de virtualización segura pueden utilizarse para evitar la interferencia entre las
+                        aplicaciones que se ejecutan en el mismo dispositivo físico. Si una instancia virtual de una
+                        aplicación se ve comprometida por un atacante, solo esa instancia se ve afectada. El ataque no
+                        tiene efecto sobre ninguna otra aplicación o datos. Las técnicas de resistencia a la
+                        manipulación pueden utilizarse para detectar la manipulación de contenedores de información ya
+                        sean físicos (por ejemplo, una alarma antirrobo) o lógicos (por ejemplo, un archivo de datos).
+                        Una característica de estas técnicas es que queda constancia del intento de manipulación del
+                        contenedor. Además, el control puede impedir que se extraigan con éxito los datos mediante su
+                        destrucción (por ejemplo, se puede borrar la memoria del dispositivo).</p>
+                    <p>Más información sobre la seguridad de las aplicaciones en la norma ISO/IEC 27034.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
