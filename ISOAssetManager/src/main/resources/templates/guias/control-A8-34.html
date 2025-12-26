@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.34</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.34. Protección de los sistemas de información durante las pruebas de auditoría</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                        <li>#Protección_de_la_información</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Gobierno_y_ecosistema</li>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.7.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las pruebas de auditoría y otras actividades de garantía que impliquen la evaluación de los sistemas
+                    operativos deberían planificarse y acordarse entre el encargado de las pruebas y la dirección
+                    correspondiente.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Minimizar el impacto de las auditorías y otras actividades de garantía en los sistemas operativos y
+                    los procesos empresariales.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Deberían observarse las siguientes directrices:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Acordar las solicitudes de auditoría para el acceso a los sistemas y datos con la dirección
+                            correspondiente;</li>
+                        <li>Acordar y controlar el alcance de las pruebas técnicas de auditoría;</li>
+                        <li>Limitar las pruebas de auditoría al acceso de solo lectura a los programas y datos. Si no se
+                            dispone de acceso de solo lectura para obtener la información necesaria, ejecutar la prueba
+                            por un administrador experimentado que tenga los derechos de acceso necesarios en nombre del
+                            auditor;</li>
+                        <li>Si se concede el acceso, establecer y verificar los requisitos de seguridad (por ejemplo,
+                            antivirus y parches) de los dispositivos utilizados para acceder a los sistemas (por ejemplo
+                            computadores portátiles o tabletas) antes de permitir el acceso;</li>
+                        <li>Permitir solo el acceso a copias aisladas de los archivos del sistema que no sean de solo
+                            lectura y borrarlas una vez finalizada la auditoría o darles la protección adecuada si
+                            existe la obligación de conservar dichos archivos en virtud de los requisitos de la
+                            documentación de auditoría;</li>
+                        <li>Identificar y acordar las solicitudes de procesamiento especial o adicional, como la
+                            ejecución de herramientas de auditoría;</li>
+                        <li>Ejecutar pruebas de auditoría que puedan afectar a la disponibilidad del sistema fuera del
+                            horario laboral;</li>
+                        <li>Supervisar y registrar todos los accesos con fines de auditoría y prueba.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>El auditor no debe ser un riesgo operativo. Sus actividades deben ser controladas y no
+                        intrusivas:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Acceso de Solo Lectura y Mínimo
+                            Privilegio</strong>
+                        <p>Para la auditoría financiera anual, el auditor externo solicita acceso al sistema ERP. En
+                            lugar de darle una cuenta de administrador "para que no tenga problemas", el equipo de TI le
+                            crea un usuario temporal con un rol específico de "Auditor" que solo permite visualizar
+                            informes y consultar transacciones (SELECT), pero tiene bloqueada cualquier capacidad de
+                            modificación, creación o borrado (INSERT, UPDATE, DELETE).</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Ventanas de Escaneo de
+                            Vulnerabilidades</strong>
+                        <p>La auditoría incluye un escaneo automatizado de vulnerabilidades en la red. Como estas
+                            herramientas pueden generar mucho tráfico y ralentizar los servidores ("Denegación de
+                            Servicio accidental"), se acuerda ejecutarlas únicamente el domingo entre las 02:00 AM y las
+                            06:00 AM. Además, se avisa al equipo de guardia (SOC) para que no bloqueen la IP del
+                            auditor, ya que ha sido previamente autorizada (Whithlisting).</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Las pruebas de auditoría y otras actividades de aseguramiento también pueden tener lugar en los
+                    sistemas de desarrollo y de prueba, donde dichas pruebas pueden afectar, por ejemplo, a la
+                    integridad del código o llevar a la divulgación de cualquier información sensible que se encuentre
+                    en dichos entornos.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
