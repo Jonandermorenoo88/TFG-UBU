@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.29</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.29. Pruebas de seguridad y de aceptacion en el desarrollo</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_de_la_información</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">14.2.8<br>14.2.9</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los procesos de pruebas de seguridad deberían definirse e implementarse en el ciclo de vida del
+                    desarrollo.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Validar si se cumplen los requisitos de SI cuando las aplicaciones o el código se despliegan en el
+                    entorno de producción.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Los nuevos sistemas de información, las actualizaciones y las nuevas versiones deberían probarse
+                        y verificarse a fondo durante los procesos de desarrollo. Las pruebas de seguridad deberían ser
+                        una parte integral de las pruebas de los sistemas o componentes.</p>
+                    <p>Las pruebas de seguridad deberían realizarse en función de un conjunto de requisitos, que pueden
+                        expresarse como funcionales o no funcionales. Las pruebas de seguridad deberían incluir pruebas
+                        de:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Funciones de seguridad (por ejemplo, autenticación de usuarios (ver 8.5), restricción de
+                            acceso (ver 8.3) y uso de cifrado (ver 8.24));</li>
+                        <li>Codificación segura (ver 8.28);</li>
+                        <li>Configuraciones seguras (ver 8.9, 8.20 y 8.22), incluidas las de los sistemas operativos,
+                            los cortafuegos y otros componentes de seguridad.</li>
+                    </ol>
+                    <p>Los planes de pruebas deberían determinarse mediante un conjunto de criterios. El alcance de las
+                        pruebas debería ser proporcional a la importancia, la naturaleza del sistema y el impacto
+                        potencial del cambio introducido. El plan de pruebas debería incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Un calendario detallado de actividades y pruebas;</li>
+                        <li>Las entradas y salidas previstas en una serie de condiciones;</li>
+                        <li>Criterios para evaluar los resultados;</li>
+                        <li>Decisión sobre las acciones posteriores que sean necesarias.</li>
+                    </ol>
+                    <p>La organización puede aprovechar las herramientas automatizadas, por ejemplo, las herramientas de
+                        análisis de código o los escáneres de vulnerabilidad y debería verificar la corrección de los
+                        defectos relacionados con la seguridad.</p>
+                    <p>En el caso de los desarrollos internos, estas pruebas deberían ser realizadas inicialmente por el
+                        equipo de desarrollo. A continuación, deberían realizarse pruebas de aceptación independientes
+                        para garantizar que el sistema funciona como se espera y solo como se espera (ver 5.8).</p>
+                    <p>Debería tenerse en cuenta la realización de:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Actividades de revisión del código como elemento relevante para la comprobación de las
+                            fallas de seguridad, incluidas las entradas y condiciones no previstas;</li>
+                        <li>Escaneos de vulnerabilidad para identificar configuraciones inseguras y vulnerabilidades del
+                            sistema;</li>
+                        <li>Pruebas de penetración para identificar el código y el diseño inseguros.</li>
+                    </ol>
+                    <p>En el caso de los componentes de desarrollo y compra subcontratados, debería seguirse un proceso
+                        de adquisición. Los contratos con el proveedor deberían abordar los requisitos de seguridad
+                        identificados (ver 5.20). Los productos y servicios deberían ser evaluados según estos criterios
+                        antes de su adquisición.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las pruebas de seguridad son el "control de calidad" final para asegurarse de que no se introduce
+                        vulnerabilidades en producción:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Pruebas de Penetración (Pentesting) antes
+                            del "Go-Live"</strong>
+                        <p>Antes de lanzar la nueva banca móvil, el banco contrata a una empresa especializada para
+                            realizar un "Pentest de Caja Negra". Los pentesters intentan hackear la aplicación simulando
+                            ser atacantes externos. Encuentran una vulnerabilidad crítica donde es posible ver el saldo
+                            de otros usuarios manipulando la URL. El lanzamiento se pospone hasta que esta
+                            vulnerabilidad crítica sea parcheada y verificada mediante un re-test.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Criterios de Aceptación de Seguridad en
+                            Historias de Usuario</strong>
+                        <p>En el backlog del proyecto, cada Historia de Usuario tiene criterios de aceptación de
+                            seguridad ("Definition of Done"). Para la funcionalidad de "Carga de Ficheros", el criterio
+                            de aceptación especifica: "El sistema debe rechazar archivos ejecutables (.exe, .sh) y solo
+                            permitir .pdf y .jpg". El equipo de QA (Quality Assurance) verifica manualmente este
+                            criterio intentando subir archivos maliciosos; si el sistema no los bloquea, la historia se
+                            marca como fallida.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Las pruebas deberían realizarse en un entorno de pruebas que se ajuste lo más posible al entorno
+                        de producción objetivo para garantizar que el sistema no introduce vulnerabilidades en el
+                        entorno de la organización y que las pruebas son fiables (ver 8.31).</p>
+                    <p>Se pueden establecer múltiples entornos de prueba, que se pueden utilizar para diferentes tipos
+                        de pruebas (por ejemplo, pruebas funcionales y de rendimiento). Estos diferentes entornos pueden
+                        ser virtuales, con configuraciones individuales para simular una variedad de entornos
+                        operativos.</p>
+                    <p>También hay que tener en cuenta las pruebas y monitoreo de los entornos de prueba, las
+                        herramientas y las tecnologías para garantizar la eficacia de las pruebas. Las mismas
+                        consideraciones se aplican a la supervisión de los sistemas de control desplegados en los
+                        entornos de desarrollo, prueba y producción. Es necesario tener criterio, guiado por la
+                        sensibilidad de los sistemas y los datos, para determinar cuántas capas de metapruebas son
+                        útiles.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
