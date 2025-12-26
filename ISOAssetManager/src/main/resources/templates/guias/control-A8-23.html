@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.23</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.23. Filtrado Web</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_las_redes</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    El acceso a sitios web externos debería gestionarse para reducir la exposición a contenido
+                    malintencionado.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Para proteger los sistemas contra el peligro de malware y para evitar el acceso a recursos no
+                    autorizador de la web.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>La organización debería reducir los riesgos de que su personal acceda a sitios web que contienen
+                        información ilegal o que se sabe que contienen virus o material de phishing. Una técnica para
+                        lograr esto funciona al bloquear la dirección IP o el dominio de los sitios web en cuestión.
+                        Algunos navegadores y tecnologías antimalware lo hacen automáticamente o pueden configurarse
+                        para hacerlo.</p>
+                    <p>La organización debería identificar los tipos de sitios web a los que el personal debería o no
+                        tener acceso. La organización debería considerar bloquear el acceso a los siguientes tipos de
+                        sitios web:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Sitios web que tengan una función de carga de información a menos que se permita por razones
+                            comerciales válidas;</li>
+                        <li>Sitios web maliciosos conocidos o sospechosos (por ejemplo, aquellos que distribuyen
+                            contenido de malware o phishing);</li>
+                        <li>Servidores de comando y control;</li>
+                        <li>Sitio web malicioso adquirido de inteligencia contra amenazas (ver 5.7);</li>
+                        <li>Sitios web que comparten contenido ilegal.</li>
+                    </ol>
+                    <p>Antes de implementar este control, la organización debería establecer reglas para un uso seguro y
+                        apropiado de recursos en línea, incluida cualquier restricción a sitios web indeseables o
+                        inadecuados y aplicaciones basadas en web. Las normas deberían mantenerse actualizadas.</p>
+                    <p>Se debería impartir capacitación al personal sobre el uso seguro y adecuado de los recursos en
+                        línea, incluido el acceso a la Web. La formación debería incluir las reglas de la organización,
+                        el punto de contacto para plantear problemas de seguridad y el proceso de excepción cuando se
+                        necesite acceder a recursos web restringidos por razones empresariales legítimas. También se
+                        debería impartir formación al personal para asegurarse de que no anulan ningún aviso del
+                        navegador que informe de que un sitio web no es seguro, pero que permite al usuario continuar.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Internet es un campo minado. El filtrado web actúa como un detector de metales para evitar que el
+                        personal pise donde no debe:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Bloqueo de Servidores de Comando y Control
+                            (C2) a nivel DNS</strong>
+                        <p>La empresa utiliza un servicio de resolución DNS seguro (como Cisco Umbrella o Quad9).
+                            Incluso si un empleado hace clic accidentalmente en un enlace de phishing y se descarga un
+                            malware, cuando ese malware intenta "llamar a casa" al servidor del atacante para recibir
+                            instrucciones, la petición DNS es bloqueada automáticamente, neutralizando el ataque y
+                            alertando al equipo de seguridad.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Prevención de Fuga de Datos (Shadow
+                            IT)</strong>
+                        <p>Para evitar que información confidencial salga de la empresa sin control, el proxy web
+                            corporativo está configurado para bloquear el acceso a categorías como "Almacenamiento en la
+                            Nube Personal" (Dropbox, Google Drive personal, WeTransfer) y "Webmail Personal". Solo se
+                            permite el acceso a las instancias corporativas autorizadas (por ejemplo, el SharePoint de
+                            la empresa), previniendo así la exfiltración de documentos sensibles.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    El filtrado web puede incluir una serie de técnicas, entre las que se incluyen firmas, heurística,
+                    lista de sitios web o dominios aceptables, lista de sitios web o dominios prohibidos y configuración
+                    personalizada para ayudar a evitar que software malintencionado y otras actividades maliciosas
+                    ataquen la red y los sistemas de la organización.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
