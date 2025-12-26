@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.31</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.31. Separación de los entornos de desarrollo, pruebas y producción</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_de_las_relaciones_con_los_proveedores</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">12.1.4<br>14.2.6</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los entornos de desarrollo, prueba y producción deben estar separados y protegidos.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger el entorno de producción y los datos del peligro que suponen las actividades de desarrollo
+                    y prueba.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Debería identificarse y aplicarse el nivel de separación entre los entornos de producción, prueba
+                        y desarrollo que es necesario para evitar problemas de producción.</p>
+                    <p>Se deberían tomar en consideración los siguientes factores:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Separar adecuadamente los sistemas de desarrollo y producción y hacerlos funcionar en
+                            dominios diferentes (por ejemplo, en entornos virtuales o físicos separados);</li>
+                        <li>Definir, documentar y aplicar normas y autorizaciones para el despliegue de software desde
+                            el estado de desarrollo al de producción;</li>
+                        <li>Probar los cambios en los sistemas y aplicaciones de producción en un entorno de prueba o de
+                            ensayo antes de aplicarlos a los sistemas de producción (ver 8.29);</li>
+                        <li>No realizar pruebas en entornos de producción, salvo en circunstancias definidas y
+                            aprobadas;</li>
+                        <li>Impedir el acceso desde los sistemas de producción a los compiladores, editores y otras
+                            herramientas de desarrollo o programas de utilidad, cuando no sean necesario;</li>
+                        <li>Mostrar etiquetas de identificación del entorno adecuadas en los menús para reducir el
+                            riesgo de error;</li>
+                        <li>No copiar información sensible en los entornos de los sistemas de desarrollo y de prueba, a
+                            menos que se proporcionen controles equivalentes para los sistemas de desarrollo y de
+                            prueba.</li>
+                    </ol>
+                    <p>En todos los casos, los entornos de desarrollo y prueba deberían estar protegidos tomando en
+                        consideración:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La aplicación de parches y la actualización de todas las herramientas de desarrollo,
+                            integración y prueba (incluidos constructores, integradores, compiladores, sistemas de
+                            configuración y bibliotecas);</li>
+                        <li>Configuración segura de los sistemas y programas informáticos;</li>
+                        <li>Control de acceso a los entornos;</li>
+                        <li>Monitoreo de los cambios en el ambiente y en el código almacenado en el mismo;</li>
+                        <li>Supervisión segura de los entornos;</li>
+                        <li>Realización de copias de seguridad de los entornos.</li>
+                    </ol>
+                    <p>Una sola persona no debe tener la capacidad de realizar cambios tanto en el desarrollo como en la
+                        producción sin revisión y aprobación previas. Esto puede lograrse, por ejemplo, mediante la
+                        separación de los derechos de acceso o mediante reglas supervisadas. En situaciones
+                        excepcionales, deberían aplicarse medidas adicionales, como el registro detallado y la
+                        supervisión en tiempo real, para detectar los cambios no autorizados y actuar en consecuencia.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Mezclar desarrollo y producción es la receta perfecta para el desastre. La separación debe ser
+                        física o lógica y estricta:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Segregación de Red y VPN</strong>
+                        <p>La empresa utiliza VLANs distintas para Desarrollo (Dev), Calidad (QA) y Producción (Prod).
+                            No existe enrutamiento directo entre Dev y Prod. Para acceder a Prod, los administradores
+                            deben usar una VPN específica con MFA y un "Bastion Host" (Salto), mientras que los
+                            desarrolladores solo tienen acceso a la VPN de Dev/QA. Esto impide que un malware en un PC
+                            de desarrollo infecte el servidor de producción.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Datos de Prueba Anonimizados</strong>
+                        <p>Para realizar pruebas realistas sin arriesgar datos reales de clientes (cumpliendo con
+                            GDPR/LOPD), el equipo de Data Engineering ejecuta un proceso nocturno que clona la base de
+                            datos de producción a QA, pero aplicando técnicas de enmascaramiento (masking). Los nombres
+                            reales se cambian por "John Doe", los emails por "user@test.com" y los números de tarjeta de
+                            crédito se aleatorizan, manteniendo la integridad referencial para que las pruebas sean
+                            válidas.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Sin las medidas y procedimientos adecuados, los desarrolladores y probadores que tienen acceso a
+                        los sistemas de producción pueden introducir riesgos significativos (por ejemplo, modificación
+                        no deseada de los archivos o del entorno del sistema, fallas del sistema, ejecución de código no
+                        autorizado y no probado en los sistemas de producción, divulgación de datos confidenciales,
+                        problemas de integridad y disponibilidad de los datos). Es necesario mantener un entorno
+                        conocido y estable en el que se puedan realizar pruebas significativas y evitar el acceso
+                        inadecuado de los desarrolladores al entorno de producción.</p>
+                    <p>Las medidas y los procedimientos incluyen el diseño cuidadoso de las funciones junto con la
+                        aplicación de los requisitos de separación de funciones y el establecimiento de procesos de
+                        supervisión adecuados.</p>
+                    <p>El personal de desarrollo y pruebas también supone una amenaza para la confidencialidad de la
+                        información de producción. Las actividades de desarrollo y prueba pueden provocar cambios no
+                        deseados en el software o la información si comparten el mismo entorno informático. Por lo
+                        tanto, es conveniente separar los entornos de desarrollo, pruebas y producción para reducir el
+                        riesgo de cambios accidentales o de acceso no autorizado al software de producción y a los datos
+                        de la empresa (ver 8.33 para la protección de la información de pruebas).</p>
+                    <p>En algunos casos, la distinción entre los entornos de desarrollo, prueba y producción puede ser
+                        deliberadamente borrosa y las pruebas se pueden llevar a cabo en un entorno de desarrollo o a
+                        través de despliegues controlados a usuarios o servidores en vivo (por ejemplo, una pequeña
+                        población de usuarios piloto). En algunos casos, las pruebas del producto se pueden realizar
+                        mediante el uso en vivo del producto dentro de la organización. Además, para reducir el tiempo
+                        de inactividad de los despliegues en vivo, se puede dar soporte a dos entornos de producción
+                        idénticos en los que solo uno esté en vivo en un momento dado.</p>
+                    <p>Se requieren procesos de apoyo para el uso de datos de producción en entornos de desarrollo y
+                        pruebas (ver 8.33).</p>
+                    <p>Las organizaciones también pueden tomar en consideración las orientaciones proporcionadas en esta
+                        sección para los entornos de formación cuando realicen la formación de los usuarios finales.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
