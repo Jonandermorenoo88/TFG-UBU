@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.20</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.20. Seguridad de las redes</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Detección</li>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                        <li>#Detectar</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">13.1.1</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Las redes y los dispositivos de red deberían estar protegidos, gestionados y controlados para
+                    proteger la información de los sistemas y las aplicaciones.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Proteger la información de las redes y sus instalaciones de procesamiento de información de apoyo
+                    frente a riesgos a través de la red.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p>Deberían implementarse controles para garantizar la SI en las redes y para proteger los servicios
+                        conectados del acceso no autorizado. Especialmente, se deberían tomar en consideración los
+                        siguientes factores:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Determinar tipo y el nivel de clasificación de la información que admite la red;</li>
+                        <li>Establecer responsabilidades y procedimientos para la gestión de equipos y dispositivos de
+                            red;</li>
+                        <li>Mantener documentación actualizada, incluidos diagramas de red y archivos de configuración
+                            de dispositivos (por ejemplo, routers, switches);</li>
+                        <li>Separar la responsabilidad operativa de las redes de las operaciones de los sistemas de TIC
+                            cuando proceda (Ver 5.3);</li>
+                        <li>Establecer controles para salvaguardar la confidencialidad e integridad de los datos que
+                            pasan a través de redes públicas, redes de terceros o redes inalámbricas y proteger los
+                            sistemas y aplicaciones conectados (ver 5.22, 8.24, 5.14 y 6.6). También pueden ser
+                            necesarios controles adicionales para mantener la disponibilidad de los servicios de red y
+                            de los computadores conectados a la red;</li>
+                        <li>Registrar y supervisar las redes para permitir el registro y la detección de acciones que
+                            puedan afectar o sean relevantes para la SI (ver 8.16 y 8.15);</li>
+                        <li>Coordinar estrechamente las actividades de gestión de la red tanto para optimizar el
+                            servicio a la organización como para garantizar que los controles se aplican de forma
+                            coherente en toda la infraestructura de procesamiento de la información;</li>
+                        <li>Autenticar los sistemas en la red;</li>
+                        <li>Restringir y filtrar la conexión de los sistemas a la red (por ejemplo, mediante firewalls);
+                        </li>
+                        <li>Detectar, restringir y autenticar la conexión de equipos y dispositivos a la red;</li>
+                        <li>Reforzar de los dispositivos de red;</li>
+                        <li>Separar los canales de administración de red de otro tráfico de red;</li>
+                        <li>Aislar temporalmente subredes críticas (por ejemplo, con puentes levadizos) si la red está
+                            siendo atacada;</li>
+                        <li>Desactivar de protocolos de red vulnerables.</li>
+                    </ol>
+                    <p>La organización debería asegurarse de que se aplican controles de seguridad adecuados al uso de
+                        redes virtualizadas. Las redes virtualizadas también abarcan redes definidas por software (SDN,
+                        SD-WAN). Las redes virtualizadas pueden ser deseables desde el punto de vista de la seguridad ya
+                        que pueden permitir la separación lógica de la comunicación en redes físicas, especialmente para
+                        sistemas y aplicaciones que se implementan mediante informática distribuida.</p>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>La red no es plana; debe tener "barrios" seguros. Si todo está conectado con todo, un virus en
+                        Recepción llega al despacho del CEO en segundos:</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Segmentación de Red (VLANs)</strong>
+                        <p>El equipo de seguridad configura VLANs (Redes de Área Local Virtuales) separadas para
+                            distintos departamentos. Los dispositivos IoT (cámaras, impresoras) están en la VLAN 10, los
+                            empleados de RRHH en la VLAN 20, y los servidores de base de datos en la VLAN 30. Un
+                            firewall entre las VLANs bloquea todo el tráfico por defecto, permitiendo (por ejemplo) que
+                            RRHH acceda a la base de datos solo por el puerto 1433, pero impidiendo que una cámara
+                            hackeada en la VLAN 10 pueda comunicarse con los servidores.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Red de Gestión OOB (Out-of-Band)</strong>
+                        <p>Los administradores no gestionan los switches y routers mezclando su tráfico con el de los
+                            usuarios navegando por YouTube. Utilizan una red de gestión dedicada (OOB). Si la red
+                            principal sufre un ataque DDoS y se satura, los administradores todavía pueden acceder a los
+                            equipos a través de esta red paralela segura para implementar contramedidas y restaurar el
+                            servicio.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    Información adicional sobre la seguridad de la red en la norma ISO/IEC 27033. Información sobre
+                    redes virtualizadas en la ISO/IEC 23167.
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
