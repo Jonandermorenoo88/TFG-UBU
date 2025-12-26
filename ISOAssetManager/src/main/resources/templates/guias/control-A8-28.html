@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guía del Control 8.28</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/guias.css}">
+</head>
+
+<body>
+
+    <div class="iso-container">
+        <div class="iso-title">8.28. Codificación segura</div>
+
+        <table class="iso-table">
+            <!-- Fila de ATRIBUTOS -->
+            <tr>
+                <td rowspan="2" class="iso-row-header">ATRIBUTOS</td>
+                <td class="attr-header">Tipo de Control</td>
+                <td class="attr-header">Propiedades de la SI</td>
+                <td class="attr-header">Conceptos de Ciberseguridad</td>
+                <td class="attr-header">Capacidades operativas</td>
+                <td class="attr-header">Dominios de Seguridad</td>
+                <td class="attr-header">CONTROLES ISO/IEC 27002:2013</td>
+            </tr>
+            <tr>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Prevención</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Confidencialidad</li>
+                        <li>#Integridad</li>
+                        <li>#Disponibilidad</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Proteger</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Seguridad_de_las_aplicaciones</li>
+                        <li>#Seguridad_del_sistema_y_de_la_red</li>
+                    </ul>
+                </td>
+                <td class="attr-content">
+                    <ul>
+                        <li>#Protección</li>
+                    </ul>
+                </td>
+                <td class="attr-content">Nuevo</td>
+            </tr>
+
+            <!-- Fila de CONTROL -->
+            <tr>
+                <td class="iso-row-header">CONTROL</td>
+                <td colspan="6" class="iso-content">
+                    Los principios de codificación segura se deberían aplicar al desarrollo del software.
+                </td>
+            </tr>
+
+            <!-- Fila de OBJETIVOS -->
+            <tr>
+                <td class="iso-row-header">OBJETIVOS</td>
+                <td colspan="6" class="iso-content">
+                    Garantizar que el software se escribe de forma segura, lo que reduce el número de posibles
+                    vulnerabilidades de SI en el software.
+                </td>
+            </tr>
+
+            <!-- Fila de GUÍAS -->
+            <tr>
+                <td class="iso-row-header">GUÍAS</td>
+                <td colspan="6" class="iso-content">
+                    <p><strong>General</strong></p>
+                    <p>La organización debería establecer procesos en toda la organización para proporcionar un buen
+                        gobierno para la codificación segura. Debería establecerse y aplicarse una base mínima de
+                        seguridad. Además, estos procesos y el gobierno deberían ampliarse para cubrir los componentes
+                        de software de terceros y el software de código abierto.</p>
+                    <p>La organización debería supervisar las amenazas del mundo real y los consejos e información
+                        actualizados sobre las vulnerabilidades del software para guiar los principios de codificación
+                        segura de la organización a través de la mejora y el aprendizaje continuos. Esto puede ayudar a
+                        garantizar la aplicación de prácticas eficaces de codificación segura para combatir el cambiante
+                        panorama de las amenazas.</p>
+
+                    <p><strong>Planificación y antes de la codificación</strong></p>
+                    <p>Los principios de codificación segura deberían utilizarse tanto en los nuevos desarrollos como en
+                        los escenarios de reutilización. Estos principios deberían aplicarse a las actividades de
+                        desarrollo tanto dentro de la organización como para los productos y servicios suministrados por
+                        la organización a otros. La planificación y los requisitos previos a la codificación deberían
+                        incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Expectativas específicas de la organización y los principios aprobados para la codificación
+                            segura que se utilizarán tanto para los desarrollos de código internos como para los
+                            subcontratados;</li>
+                        <li>Prácticas de codificación comunes e históricas y defectos que conducen a vulnerabilidades de
+                            SI;</li>
+                        <li>Configuración de las herramientas de desarrollo, como los entornos de desarrollo integrados
+                            (IDE), para ayudar a imponer la creación de código seguro;</li>
+                        <li>Seguimiento de las directrices emitidas por los proveedores de herramientas de desarrollo y
+                            entornos de ejecución, según proceda;</li>
+                        <li>Mantenimiento y uso de herramientas de desarrollo actualizadas (por ejemplo, compiladores);
+                        </li>
+                        <li>Calificación de los desarrolladores en la escritura de código seguro;</li>
+                        <li>Diseño y arquitectura seguros, incluida la modelización de amenazas;</li>
+                        <li>Normas de codificación segura y, en su caso obligatoriedad de su uso;</li>
+                        <li>Uso de entornos controlados para el desarrollo durante la codificación.</li>
+                    </ol>
+
+                    <p>Las consideraciones durante la codificación deben incluir:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Prácticas de codificación segura específicas de los lenguajes y técnicas de programación que
+                            se utilicen;</li>
+                        <li>Uso de técnicas de programación seguras, como la programación por parejas, la
+                            refactorización, la revisión por pares, las iteraciones de seguridad y el desarrollo basado
+                            en pruebas;</li>
+                        <li>Uso de técnicas de programación estructurada;</li>
+                        <li>Documentación del código y eliminar los defectos de programación, que pueden permitir la
+                            explotación de las vulnerabilidades de la SI;</li>
+                        <li>Prohibición del uso de técnicas de diseño inseguras (por ejemplo, el uso de contraseñas
+                            codificadas, muestras de código no aprobadas y servicios web no autenticados).</li>
+                    </ol>
+                    <p>Las pruebas deberían realizarse durante y después del desarrollo (ver 8.29). Los procesos de
+                        pruebas estáticas de seguridad de las aplicaciones (SAST) pueden identificar vulnerabilidades de
+                        seguridad en el software.</p>
+
+                    <p>Antes de que el software se ponga en funcionamiento, debería evaluarse lo siguiente:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>La superficie de ataque y el principio de mínimo privilegio;</li>
+                        <li>La realización de un análisis de los errores de programación más comunes y la documentación
+                            de que se han mitigado.</li>
+                    </ol>
+
+                    <p><strong>Revisión y mantenimiento</strong></p>
+                    <p>Una vez que el código se ha hecho operativo:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Las actualizaciones deben ser empaquetadas y desplegadas de forma segura;</li>
+                        <li>El tratamiento de las vulnerabilidades de SI notificadas (ver 8.8);</li>
+                        <li>Los errores y las sospechas de ataques deberían anotarse y los registros deberían revisarse
+                            periódicamente para realizar los ajustes necesarios en el código;</li>
+                        <li>El código fuente debería estar protegido contra el acceso no autorizado y la manipulación
+                            (por ejemplo, mediante el uso de herramientas de gestión de la configuración, que suelen
+                            ofrecer funciones como el control de acceso y el control de versiones).</li>
+                    </ol>
+
+                    <p>Si se utilizan herramientas y bibliotecas externas, la organización debería considerar:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>Asegurar que las bibliotecas externas se gestionan (por ejemplo, mediante el mantenimiento
+                            de un inventario de las bibliotecas utilizadas y sus versiones) y que se actualizan
+                            regularmente con los ciclos de lanzamiento;</li>
+                        <li>Seleccionar, autorizar y reutilizar componentes bien examinados, en particular los
+                            componentes de autenticación y cifrado;</li>
+                        <li>Asegurar el licenciamiento, la seguridad y el historial de los componentes externos;</li>
+                        <li>Garantizar que el software es mantenible, tiene un seguimiento y procede de fuentes
+                            acreditadas y de confianza;</li>
+                        <li>Asegurar la disponibilidad a largo plazo de los recursos y artefactos de desarrollo.</li>
+                    </ol>
+
+                    <p>Cuando sea necesario modificar un paquete de software, deberían tenerse en cuenta los siguientes
+                        puntos:</p>
+                    <ol type="a" class="alpha-list">
+                        <li>El riesgo de que los controles incorporados y los procesos de integridad se vean
+                            comprometidos;</li>
+                        <li>La posibilidad de obtener el consentimiento del proveedor;</li>
+                        <li>La posibilidad de obtener los cambios necesarios del proveedor como actualizaciones estándar
+                            del programa;</li>
+                        <li>El impacto si la organización se hace responsable del futuro mantenimiento del software como
+                            resultado de los cambios;</li>
+                        <li>La compatibilidad con otros programas informáticos en uso.</li>
+                    </ol>
+                </td>
+            </tr>
+
+            <!-- Fila de EJEMPLOS DE IMPLEMENTACIÓN -->
+            <tr>
+                <td class="iso-row-header">EJEMPLOS DE IMPLEMENTACIÓN</td>
+                <td colspan="6" class="iso-content">
+                    <p>Escribir código seguro es como conducir con cinturón: un hábito que salva vidas (o bases de
+                        datos):</p>
+
+                    <div style="margin-bottom: 20px;">
+                        <strong style="color: var(--iso-orange);">Ejemplo 1: Prevención de Inyección SQL (Prepared
+                            Statements)</strong>
+                        <p>En lugar de construir consultas SQL concatenando cadenas de texto (lo que permitiría a un
+                            atacante inyectar comandos maliciosos como <code>' OR '1'='1</code>), los desarrolladores
+                            utilizan consultas parametrizadas ("Prepared Statements"). De esta forma, la base de datos
+                            trata la entrada del usuario estrictamente como datos, nunca como código ejecutable,
+                            eliminando la vulnerabilidad de inyección SQL de raíz.</p>
+                    </div>
+
+                    <div>
+                        <strong style="color: var(--iso-orange);">Ejemplo 2: Análisis de Composición de Software
+                            (SCA)</strong>
+                        <p>Antes de lanzar la nueva versión de la app, el equipo usa una herramienta SCA para analizar
+                            todas las librerías "open source" que utiliza el proyecto. La herramienta alerta de que
+                            están usando una versión de "log4j" con una vulnerabilidad crítica conocida. El equipo
+                            actualiza inmediatamente esa librería a la versión parcheada antes de pasar a producción,
+                            evitando así desplegar software vulnerable por culpa de dependencias de terceros.</p>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Fila de OTRA INFO -->
+            <tr>
+                <td class="iso-row-header">OTRA INFO.</td>
+                <td colspan="6" class="iso-content">
+                    <p>Un principio rector es garantizar que el código pertinente para la seguridad se invoque cuando
+                        sea necesario y sea resistente a las manipulaciones. Los programas instalados a partir de código
+                        binario compilado también tienen estas propiedades, pero solo para los datos contenidos en la
+                        aplicación. En el caso de los lenguajes interpretados, el concepto solamente funciona cuando el
+                        código se ejecuta en un servidor inaccesible para los usuarios y procesos que lo utilizan y que
+                        sus datos se guardan en una base de datos igualmente protegida. Por ejemplo, el código
+                        interpretado puede ejecutarse en un servicio en la nube donde el acceso al propio código
+                        requiere privilegios de administrador. Este acceso de administrador debe estar protegido por
+                        mecanismos de seguridad como los principios de administración "justo a tiempo" y la
+                        autenticación fuerte. Si el propietario de la aplicación puede acceder a los scripts mediante un
+                        acceso remoto directo al servidor, en principio también puede hacerlo un atacante. Los
+                        servidores web deberían estar configurados para impedir la navegación por los directorios en
+                        estos casos.</p>
+                    <p>La mejor manera de diseñar el código de las aplicaciones es partiendo de la base de que siempre
+                        es susceptible de ser atacado, por error o por acción maliciosa. Además, las aplicaciones
+                        críticas pueden diseñarse para ser tolerantes a las fallas internos. Por ejemplo, la salida de
+                        un algoritmo complejo puede comprobarse para asegurar que se encuentra dentro de los límites de
+                        seguridad antes de que los datos se utilicen en una aplicación como una aplicación crítica de
+                        seguridad o financiera. El código que realiza las comprobaciones de los límites es sencillo y,
+                        por tanto, mucho más fácil de demostrar su corrección.</p>
+                    <p>Algunas aplicaciones web son susceptibles de sufrir una serie de vulnerabilidades introducidas
+                        por un diseño y una codificación deficientes, como la inyección en la base de datos y los
+                        ataques de scripting entre sitios. En estos ataques, las peticiones pueden ser manipuladas para
+                        abusar de la funcionalidad del servidor web.<br>Más información sobre la evaluación de la
+                        seguridad de las TIC en la norma ISO/IEC 15408.</p>
+                </td>
+            </tr>
+
+        </table>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:void(0)" onclick="history.back()" class="back">← Volver</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
