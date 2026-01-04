@@ -21,6 +21,8 @@ services:
     build: .
     ports:
       - "8081:8081"
+    volumes:
+      - ./uploads:/app/uploads
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/isoassetmanager?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
