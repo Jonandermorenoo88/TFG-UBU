@@ -141,7 +141,29 @@ SHOW TABLES;
 
 ---
 
-📂 **Carga inicial de preguntas (SQL)**
+�️ **Modelo de Datos**
+
+El sistema persiste la información en una base de datos relacional con las siguientes tablas principales:
+
+| Tabla | Descripción |
+| :--- | :--- |
+| `activo` | Inventario de activos de información de la empresa. |
+| `bloque` | Cadena de bloques (Blockchain) para garantizar la integridad de las evidencias. |
+| `categoria` | Clasificación de los dominios de control de la norma ISO 27001. |
+| `control` | Controles de seguridad específicos asociados a cada categoría. |
+| `departamento` | Departamentos internos de las organizaciones. |
+| `empresa` | Entidades u organizaciones gestionadas en el sistema. |
+| `evidencia` | Metadatos y rutas de los archivos probatorios subidos. |
+| `pregunta` | Cuestionarios de auditoría asociados a los controles. |
+| `respuesta_empresa` | Respuestas específicas proporcionadas por las empresas a los cuestionarios. |
+| `respuesta_posible` | Catálogo de opciones de respuesta (ej. Cumple, No cumple, N/A). |
+| `rol` | Definición de los roles de seguridad (ADMIN, AUDITOR, etc.). |
+| `usuario` | Credenciales y datos de perfil de los usuarios del sistema. |
+| `usuario_roles` | Relación muchos a muchos entre usuarios y roles asignados. |
+
+---
+
+�📂 **Carga inicial de preguntas (SQL)**
 
 Las preguntas de los cuestionarios ISO se cargan automáticamente mediante los scripts SQL configurados en `application.properties`.
 Los archivos se encuentran en:
