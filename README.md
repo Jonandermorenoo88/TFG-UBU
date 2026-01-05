@@ -218,7 +218,7 @@ ISOAssetManager/
 
 👤 **Autor**
 
-**Jon Ander Incera Moreno** (jonandermorenoo88)
+**Jon Ander Incera Moreno**
 Estudiante del Grado en Ingeniería Informática
 Universidad de Burgos
 **Trabajo de Fin de Grado — Curso 2024/2025**
