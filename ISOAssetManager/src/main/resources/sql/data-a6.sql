@@ -1,6 +1,6 @@
 USE isoassetmanager;
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización realiza verificaciones de antecedentes del personal antes de formalizar su contratación, cumpliendo requisitos legales y de seguridad.',
     '¿Se realizan verificaciones de antecedentes del personal antes de su contratación, de acuerdo con requisitos legales?',
@@ -22,7 +22,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.1'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los contratos laborales incluyen cláusulas formales que establecen obligaciones de seguridad de la información por parte del empleado.',
     '¿Los contratos de empleo incluyen obligaciones relacionadas con la seguridad de la información?',
@@ -44,7 +44,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.2'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el personal recibe formación inicial en seguridad de la información cuando se incorpora, garantizando que conoce las normas básicas desde el primer día.',
     '¿El personal recibe formación inicial en seguridad de la información al incorporarse a la organización?',
@@ -66,7 +66,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.3'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con un proceso disciplinario formal específicamente definido para gestionar incumplimientos relacionados con la seguridad de la información.',
     '¿Existe un proceso disciplinario formal para tratar incumplimientos relacionados con la seguridad de la información?',
@@ -88,7 +88,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.4'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización revoca de forma inmediata, controlada y documentada todos los accesos del personal que deja la organización para evitar accesos no autorizados.',
     '¿Los accesos del personal que deja la organización son revocados de manera inmediata y documentada?',
@@ -110,7 +110,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.5'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización requiere que el personal firme acuerdos de confidencialidad antes de permitir el acceso a información sensible o crítica.',
     '¿El personal firma acuerdos de confidencialidad antes de acceder a información sensible?',
@@ -132,7 +132,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.6'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de políticas y procedimientos específicos que regulen el trabajo remoto, garantizando la protección de la información fuera de las instalaciones.',
     '¿Existen políticas y procedimientos específicos para el trabajo remoto que incluyan seguridad de la información?',
@@ -154,7 +154,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A6.7'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el personal conoce y entiende el procedimiento formal establecido por la organización para notificar eventos e incidentes de seguridad de la información.',
     '¿El personal conoce el procedimiento para notificar eventos e incidentes de seguridad de la información?',

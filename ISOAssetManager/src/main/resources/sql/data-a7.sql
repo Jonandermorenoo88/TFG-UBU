@@ -1,6 +1,6 @@
 USE isoassetmanager;
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización ha definido perímetros físicos claros para proteger áreas sensibles, como salas de servidores, centros de datos o zonas restringidas.',
     '¿Existen perímetros definidos para proteger las áreas sensibles de la organización?',
@@ -22,7 +22,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.1'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el acceso físico a las instalaciones está debidamente restringido y permitido únicamente a personal autorizado, evitando accesos no controlados.',
     '¿El acceso a las instalaciones está restringido únicamente a personal autorizado?',
@@ -44,7 +44,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.2'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si las oficinas, salas críticas y áreas donde se maneja información sensible están protegidas adecuadamente contra accesos no autorizados.',
     '¿Las oficinas y salas críticas están protegidas contra accesos no autorizados?',
@@ -66,7 +66,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.3'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de sistemas de videovigilancia o herramientas de monitoreo físico en las áreas críticas, como salas de servidores, accesos principales o zonas restringidas.',
     '¿Existen sistemas de videovigilancia o monitoreo en áreas críticas de las instalaciones?',
@@ -88,7 +88,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.4'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si las instalaciones cuentan con medidas adecuadas para protegerse frente a incendios, inundaciones, tormentas, fallos eléctricos u otras amenazas ambientales relevantes.',
     '¿Las instalaciones están protegidas contra incendios, inundaciones y otras amenazas ambientales?',
@@ -110,7 +110,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.5'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización aplica procedimientos especiales y formalizados para trabajar en áreas designadas como seguras, donde se maneja información o activos críticos.',
     '¿Se aplican procedimientos especiales para trabajar en áreas clasificadas como seguras?',
@@ -132,7 +132,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.6'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con una política formal de escritorio y pantalla limpios para proteger la información frente a accesos no autorizados.',
     '¿Existe una política formal de escritorio y pantalla limpios en la organización?',
@@ -154,7 +154,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.7'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el equipamiento crítico, especialmente el relacionado con servicios esenciales o información sensible, está ubicado en zonas seguras con acceso controlado.',
     '¿El equipamiento crítico está ubicado en áreas seguras y de acceso controlado?',
@@ -176,7 +176,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.8'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los equipos, dispositivos y la información utilizados fuera de las instalaciones cuentan con medidas de seguridad claras para evitar pérdidas, robos o accesos no autorizados.',
     '¿Los equipos e información utilizados fuera de las instalaciones cuentan con medidas de seguridad definidas?',
@@ -198,7 +198,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.9'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los medios de almacenamiento físicos, como USB, discos duros externos o cintas, están protegidos frente a accesos no autorizados mediante controles físicos o lógicos.',
     '¿Los medios de almacenamiento físicos (USB, discos, cintas) están protegidos contra accesos no autorizados?',
@@ -220,7 +220,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.10'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica si las instalaciones críticas cuentan con infraestructuras adecuadas y redundantes como energía eléctrica, climatización y otros servicios esenciales para asegurar la continuidad operativa.',
     '¿Las instalaciones críticas cuentan con servicios de energía eléctrica y climatización adecuados y redundantes?',
@@ -242,7 +242,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.11'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el cableado de red y energía está correctamente protegido para evitar accesos no autorizados, manipulaciones o daños accidentales que puedan comprometer la seguridad.',
     '¿El cableado de red y energía está protegido contra accesos no autorizados y daños accidentales?',
@@ -264,7 +264,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.12'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el equipamiento recibe mantenimiento preventivo y correctivo siguiendo las recomendaciones del fabricante para garantizar su funcionamiento seguro.',
     '¿El equipamiento recibe mantenimiento periódico conforme a las recomendaciones del fabricante?',
@@ -286,7 +286,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A7.13'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos formales para garantizar la eliminación o reutilización segura de equipos que puedan contener información sensible.',
     '¿Existen procedimientos para la eliminación o reutilización segura de equipos que contienen información?',

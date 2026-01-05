@@ -1,6 +1,6 @@
 USE isoassetmanager;
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Esta pregunta verifica si la organización cuenta con una política formal de seguridad aprobada por la alta dirección, tal como exige ISO 27001.',
     '¿Existe una política de seguridad de la información formalmente aprobada por la dirección?',
@@ -22,7 +22,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.1'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Esta pregunta evalúa si la organización ha definido formalmente los roles y responsabilidades relacionadas con la seguridad de la información, tal como exige el control A.5.2.',
     '¿Están definidos los roles y responsabilidades relacionados con la seguridad de la información?',
@@ -49,7 +49,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.2'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización ha identificado funciones críticas que requieren segregación para evitar conflictos de intereses, fraude o abuso de privilegios.',
     '¿Se han identificado las funciones críticas que requieren segregación para prevenir conflictos de intereses o abuso?',
@@ -76,7 +76,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.3'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la alta dirección ha aprobado formalmente la política de seguridad de la información, demostrando liderazgo y alineación con el SGSI.',
     '¿Ha aprobado la alta dirección la política de seguridad de la información?',
@@ -103,7 +103,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.4'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización ha identificado correctamente las autoridades competentes en materia de ciberseguridad, privacidad o gestión de incidentes (como CCN-CERT, INCIBE o AEPD).',
     '¿Se han identificado las autoridades competentes en materia de seguridad de la información (p. ej., CCN-CERT, AEPD, INCIBE)?',
@@ -130,7 +130,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.5'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización mantiene relación o participa activamente en grupos de interés, foros o asociaciones relevantes de ciberseguridad, lo cual mejora la capacidad de respuesta ante amenazas.',
     '¿Está la organización afiliada o en contacto con grupos de interés o foros de seguridad (p. ej., ISMS Forum, FIRST, CCN-CERT)?',
@@ -157,7 +157,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.6'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización recopila información sobre amenazas relevantes, como vulnerabilidades, ciberataques o nuevas modalidades de malware, con el fin de anticiparse a posibles riesgos.',
     '¿La organización recopila información sobre amenazas relevantes (p. ej., vulnerabilidades, ciberataques, malware)?',
@@ -184,7 +184,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.7'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización integra la seguridad de la información en todas las fases de los proyectos, asegurando que los riesgos se controlen desde la planificación hasta el cierre.',
     '¿Se tiene en cuenta la seguridad de la información en todas las fases de los proyectos (planificación, ejecución, cierre)?',
@@ -211,7 +211,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.8'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización mantiene un inventario actualizado de activos de información, incluyendo hardware, software, datos y servicios, tal como requiere ISO 27001.',
     '¿Existe un inventario actualizado de todos los activos de información (hardware, software, datos, servicios)?',
@@ -263,7 +263,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.9'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos documentados que describen cómo eliminar la información de forma segura y conforme a los requisitos de la norma.',
     '¿Existe un procedimiento documentado para la eliminación segura de información en todos los soportes?',
@@ -295,7 +295,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.10'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de un procedimiento formal y documentado para asegurar la devolución de activos cuando termina una relación laboral o contractual.',
     '¿Existe un procedimiento documentado para la devolución de activos al finalizar la relación laboral o contractual?',
@@ -317,7 +317,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.11'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con un procedimiento formal para clasificar la información en función de su sensibilidad, criticidad y requisitos de protección.',
     '¿Existe un procedimiento formal para clasificar la información según su sensibilidad y criticidad?',
@@ -339,7 +339,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.12'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con un procedimiento formalizado que defina cómo debe etiquetarse la información en función de su nivel de clasificación.',
     '¿Existe un procedimiento formal para etiquetar la información según su nivel de clasificación?',
@@ -361,7 +361,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.13'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de una política o procedimiento formal que regule cómo debe transferirse la información, tanto interna como externamente, garantizando su protección.',
     '¿Existe una política o procedimiento formal que regule la transferencia de información interna y externa?',
@@ -383,7 +383,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.14'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con una política formal de control de acceso aprobada por la dirección, que defina criterios, responsabilidades y procedimientos.',
     '¿Existe una política formal de control de acceso aprobada por la dirección?',
@@ -405,7 +405,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.15'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de un procedimiento formal que regule la creación, modificación y eliminación de identidades de usuario para garantizar un control adecuado.',
     '¿Existe un procedimiento formal para la creación, modificación y eliminación de identidades de usuario?',
@@ -427,7 +427,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.16'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de una política formal que establezca los requisitos de autenticación necesarios para acceder a sistemas, servicios y datos.',
     '¿Existe una política formal que defina los requisitos de autenticación para el acceso a sistemas y datos?',
@@ -449,7 +449,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.17'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de un procedimiento formal que regule la concesión, modificación y revocación de derechos de acceso, garantizando un control adecuado del ciclo de vida de los permisos.',
     '¿Existe un procedimiento formal para otorgar, modificar y revocar los derechos de acceso de los usuarios?',
@@ -471,7 +471,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.18'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización analiza los riesgos de seguridad asociados a un proveedor antes de iniciar la relación contractual, garantizando que no introduzca vulnerabilidades.',
     '¿Se evalúan los riesgos de seguridad de la información antes de establecer una relación con un proveedor?',
@@ -493,7 +493,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.19'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los contratos firmados con proveedores incluyen requisitos de seguridad alineados con las políticas internas de la organización y las necesidades del SGSI.',
     '¿Los contratos con proveedores incluyen requisitos específicos de seguridad de la información acordes a la política de la organización?',
@@ -515,7 +515,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.20'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización analiza los riesgos de seguridad en toda la cadena de suministro TIC antes de establecer acuerdos, garantizando que no se introduzcan vulnerabilidades a través de terceros.',
     '¿Se evalúan los riesgos de seguridad de la información en toda la cadena de suministro de TIC antes de establecer acuerdos?',
@@ -537,7 +537,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.21'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización realiza supervisiones periódicas de los servicios prestados por los proveedores para verificar que cumplen los requisitos de seguridad acordados.',
     '¿Se supervisan de forma periódica los servicios prestados por los proveedores para verificar el cumplimiento de los requisitos de seguridad?',
@@ -559,7 +559,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.22'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización ha definido y documentado requisitos de seguridad específicos para el uso de servicios en la nube, garantizando su correcta protección.',
     '¿Se han definido y documentado requisitos de seguridad específicos para el uso de servicios en la nube?',
@@ -581,7 +581,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.23'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de un procedimiento formal y documentado para gestionar incidentes de seguridad de la información, incluyendo detección, registro, respuesta y cierre.',
     '¿Existe un procedimiento formal y documentado para la gestión de incidentes de seguridad de la información?',
@@ -603,7 +603,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.24'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos que permitan analizar los eventos de seguridad y decidir cuándo deben escalarse y tratarse como incidentes.',
     '¿Existen procedimientos para evaluar los eventos de seguridad de la información y determinar si deben tratarse como incidentes?',
@@ -625,7 +625,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.25'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con un plan formal de respuesta a incidentes, aprobado por la dirección, que establezca los pasos a seguir para gestionar incidentes de seguridad.',
     '¿Existe un plan formal para responder a incidentes de seguridad de la información aprobado por la dirección?',
@@ -647,7 +647,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.26'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización analiza los incidentes una vez gestionados para identificar sus causas raíz y comprender qué falló o qué controles no funcionaron.',
     '¿Se analizan los incidentes de seguridad una vez gestionados para identificar sus causas raíz?',
@@ -669,7 +669,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.27'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos formales para recopilar evidencias en caso de incidentes de seguridad, garantizando que el proceso sea controlado y consistente.',
     '¿Existen procedimientos formales para la recopilación de evidencias relacionadas con incidentes de seguridad de la información?',
@@ -691,7 +691,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.28'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con procedimientos documentados para garantizar la seguridad de la información durante interrupciones planificadas o imprevistas.',
     '¿Existen procedimientos documentados para mantener la seguridad de la información durante interrupciones planificadas o no planificadas?',
@@ -713,7 +713,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.29'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con planes formales y documentados para asegurar la continuidad de los servicios TIC ante interrupciones, fallos o desastres.',
     '¿Existen planes documentados para garantizar la continuidad de los servicios TIC en caso de interrupciones o desastres?',
@@ -735,7 +735,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.30'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización identifica y mantiene actualizados todos los requisitos legales, reglamentarios y contractuales relacionados con la seguridad de la información y protección de datos.',
     '¿La organización identifica y mantiene actualizados los requisitos legales, reglamentarios y contractuales aplicables a la seguridad de la información?',
@@ -757,7 +757,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.31'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de políticas o procedimientos para proteger los derechos de propiedad intelectual, incluyendo el uso legal de software, contenido y materiales.',
     '¿La organización cuenta con políticas o procedimientos para proteger los derechos de propiedad intelectual (DPI)?',
@@ -779,7 +779,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.32'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos formales para proteger la integridad, confidencialidad y disponibilidad de los registros durante todo su ciclo de vida.',
     '¿Existen procedimientos formales para garantizar la integridad, confidencialidad y disponibilidad de los registros?',
@@ -801,7 +801,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.33'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de políticas y procedimientos formalizados para garantizar la privacidad y la protección adecuada de los datos personales en todos los procesos donde se tratan.',
     '¿La organización cuenta con políticas y procedimientos para garantizar la privacidad y la protección de los datos personales?',
@@ -823,7 +823,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.34'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización realiza revisiones independientes de la seguridad de la información en intervalos planificados, garantizando una visión objetiva del desempeño del SGSI.',
     '¿La organización realiza revisiones independientes de la seguridad de la información a intervalos planificados?',
@@ -845,7 +845,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.35'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización supervisa periódicamente el cumplimiento de las políticas y estándares de seguridad de la información para garantizar su aplicación efectiva.',
     '¿La organización supervisa regularmente el cumplimiento de las políticas y estándares de seguridad de la información?',
@@ -867,7 +867,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A5.36'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de procedimientos operativos documentados que respalden la gestión de la seguridad de la información y garanticen la ejecución consistente de las actividades.',
     '¿La organización dispone de procedimientos operativos documentados para la gestión de la seguridad de la información?',

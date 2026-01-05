@@ -11,6 +11,7 @@ import jakarta.persistence.*;
  * </p>
  */
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "texto", "control_id" }) })
 public class Pregunta {
 
     /**

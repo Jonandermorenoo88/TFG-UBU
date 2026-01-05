@@ -1,6 +1,6 @@
 USE isoassetmanager;
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de una política formal que regule la gestión, el uso y la protección de los dispositivos de usuario final.',
     '¿Existe una política formal para la gestión y uso seguro de los dispositivos de usuario final (ordenadores, portátiles, móviles, tablets)?',
@@ -22,7 +22,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.1'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si existe un procedimiento formal y documentado para la asignación y revocación de derechos de acceso privilegiado, garantizando un control adecuado sobre cuentas con permisos especiales.',
     '¿Existe un procedimiento formal para asignar y revocar derechos de acceso privilegiado?',
@@ -44,7 +44,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.2'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización aplica controles adecuados para restringir el acceso a la información siguiendo el principio de mínima necesidad o least privilege.',
     '¿La organización aplica controles para restringir el acceso a la información según el principio de mínima necesidad?',
@@ -66,7 +66,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.3'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si el acceso al código fuente de las aplicaciones está adecuadamente restringido únicamente a desarrolladores o personal expresamente autorizado.',
     '¿El acceso al código fuente está restringido únicamente a desarrolladores autorizados?',
@@ -88,7 +88,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.4'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los sistemas críticos utilizan mecanismos de autenticación robusta, como contraseñas seguras o autenticación multifactor (MFA), para proteger el acceso.',
     '¿Se utilizan mecanismos de autenticación robusta (ej. contraseñas seguras, MFA) en los sistemas críticos?',
@@ -110,7 +110,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.5'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización supervisa de manera continua el uso de los recursos de los sistemas para evitar que se superen sus límites operativos.',
     '¿Se supervisa el uso de los recursos de los sistemas para asegurar que no se superen sus capacidades?',
@@ -132,7 +132,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.6'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de soluciones de protección contra software malicioso en todos los sistemas, garantizando detección y mitigación efectiva.',
     '¿Todos los sistemas cuentan con soluciones de protección contra software malicioso (antivirus, antimalware)?',
@@ -154,7 +154,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.7'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de un procedimiento formal para identificar, evaluar y gestionar vulnerabilidades técnicas en sus sistemas.',
     '¿Existe un procedimiento formal para identificar, evaluar y gestionar vulnerabilidades técnicas?',
@@ -176,7 +176,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.8'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización aplica configuraciones estándar y seguras en todos los sistemas antes de su puesta en producción, reduciendo riesgos asociados a configuraciones débiles.',
     '¿Se aplican configuraciones estándar y seguras en todos los sistemas antes de entrar en producción?',
@@ -198,7 +198,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.9'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización cuenta con procedimientos documentados para asegurar la eliminación segura de información en medios físicos y digitales.',
     '¿Existen procedimientos documentados para la eliminación segura de información en medios físicos y digitales?',
@@ -220,7 +220,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.10'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización aplica técnicas de enmascaramiento de datos para proteger información sensible cuando se utiliza en entornos no productivos como pruebas o desarrollo.',
     '¿Se aplican técnicas de enmascaramiento de datos para proteger información sensible en entornos de pruebas o desarrollo?',
@@ -242,7 +242,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.11'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de controles técnicos, como sistemas DLP (Data Loss Prevention), destinados a prevenir la fuga no autorizada de información confidencial.',
     '¿Existen controles técnicos (DLP) para prevenir la fuga no autorizada de información confidencial?',
@@ -264,7 +264,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.12'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización realiza copias de seguridad de la información crítica siguiendo una planificación definida que asegure la disponibilidad de los datos.',
     '¿Se realizan copias de seguridad de la información crítica siguiendo una planificación definida?',
@@ -286,7 +286,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.13'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de mecanismos de redundancia que garanticen la disponibilidad de los sistemas críticos en caso de fallos o interrupciones.',
     '¿Existen mecanismos de redundancia para garantizar la disponibilidad de los sistemas críticos?',
@@ -308,7 +308,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.14'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los sistemas, aplicaciones y redes registran eventos relevantes de seguridad para permitir la detección, análisis y respuesta ante incidentes.',
     '¿Se registran los eventos relevantes de seguridad en sistemas, aplicaciones y redes?',
@@ -330,7 +330,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.15'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización supervisa las actividades de usuarios y sistemas para detectar comportamientos anómalos, sospechosos o no autorizados.',
     '¿Se supervisan las actividades de los usuarios y sistemas para detectar comportamientos anómalos o no autorizados?',
@@ -352,7 +352,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.16'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si los sistemas críticos están sincronizados con una fuente de tiempo confiable, como servidores NTP, para asegurar la coherencia en registros y operaciones.',
     '¿Los sistemas críticos están sincronizados con una fuente de tiempo confiable (ej. NTP)?',
@@ -374,7 +374,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.17'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica que los programas utilitarios que permiten realizar acciones privilegiadas solo pueden ser utilizados por personal autorizado, reduciendo riesgos de abuso o alteración de sistemas.',
     '¿El uso de programas utilitarios que otorgan privilegios especiales está restringido a personal autorizado?',
@@ -396,7 +396,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.18'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica que solo personal autorizado pueda instalar software en los entornos de producción, evitando cambios no controlados que puedan afectar la estabilidad o seguridad.',
     '¿La instalación de software en entornos de producción está restringida a personal autorizado?',
@@ -418,7 +418,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.19'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización dispone de controles perimetrales para proteger las redes internas frente a accesos no autorizados, reduciendo el riesgo de intrusiones.',
     '¿Existen controles de seguridad perimetral para proteger las redes internas de accesos no autorizados?',
@@ -440,7 +440,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.20'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica si los servicios de red, tanto internos como externos, cuentan con medidas de seguridad definidas para proteger la infraestructura y los datos transmitidos.',
     '¿Los servicios de red (internos y externos) están protegidos mediante medidas de seguridad definidas?',
@@ -462,7 +462,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.21'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la red está segmentada correctamente para separar entornos críticos de aquellos no críticos, reduciendo riesgos de propagación de amenazas.',
     '¿La red está segmentada para separar entornos críticos de los no críticos?',
@@ -484,7 +484,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.22'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Evalúa si la organización utiliza controles de filtrado web para prevenir el acceso a sitios maliciosos o no autorizados, reduciendo riesgos de malware y fuga de información.',
     '¿Existen controles de filtrado web para limitar el acceso a sitios no autorizados o maliciosos?',
@@ -506,7 +506,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.23'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica si la organización ha definido una política formal que regula el uso de controles criptográficos para proteger la información.',
     '¿Existe una política formal para el uso de controles criptográficos en la organización?',
@@ -528,7 +528,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.24'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica si la organización ha establecido políticas y procedimientos formales para integrar prácticas de seguridad durante todo el ciclo de vida del desarrollo de software.',
     '¿Se han definido políticas y procedimientos para integrar la seguridad en el ciclo de vida de desarrollo de software?',
@@ -550,7 +550,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.25'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Comprueba si la organización define y documenta los requisitos de seguridad antes de desarrollar, adquirir o modificar aplicaciones.',
     '¿Se definen y documentan los requisitos de seguridad antes de desarrollar o adquirir aplicaciones?',
@@ -572,7 +572,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.26'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica que la arquitectura de los sistemas integra principios de seguridad desde la fase inicial de diseño.',
     '¿La arquitectura de los sistemas incorpora principios de seguridad desde la fase de diseño?',
@@ -594,7 +594,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.27'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Comprueba si la organización define y aplica guías o estándares formales de codificación segura para los desarrolladores.',
     '¿Los desarrolladores siguen guías o estándares de codificación segura definidos por la organización?',
@@ -616,7 +616,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.28'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica si la organización realiza pruebas de seguridad antes de poner en producción aplicaciones o sistemas nuevos o modificados.',
     '¿Se realizan pruebas de seguridad antes de poner en producción sistemas o aplicaciones?',
@@ -638,7 +638,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.29'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Comprueba si los contratos con proveedores de desarrollo incluyen requisitos formales de seguridad de la información.',
     '¿Los contratos con proveedores de desarrollo incluyen requisitos de seguridad de la información?',
@@ -660,7 +660,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.30'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica que los entornos de desarrollo, pruebas y producción están separados física o lógicamente para reducir riesgos.',
     '¿Los entornos de desarrollo, pruebas y producción están separados físicamente o lógicamente?',
@@ -682,7 +682,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.31'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Confirma que la organización cuenta con un procedimiento formal y documentado para gestionar cambios en sistemas y aplicaciones.',
     '¿Existe un procedimiento formal para la gestión de cambios en sistemas y aplicaciones?',
@@ -704,7 +704,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.32'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Verifica que la información usada en los entornos de prueba cuenta con medidas de protección contra accesos no autorizados.',
     '¿La información utilizada en pruebas está protegida frente a accesos no autorizados?',
@@ -726,7 +726,7 @@ INSERT INTO pregunta (explicacion, texto, control_id) VALUES
     'A8.33'
 );
 
-INSERT INTO pregunta (explicacion, texto, control_id) VALUES
+INSERT IGNORE INTO pregunta (explicacion, texto, control_id) VALUES
 (
     'Confirma que la organización dispone de procedimientos formales para proteger los sistemas de información cuando se realizan auditorías o evaluaciones técnicas.',
     '¿Existen procedimientos para proteger los sistemas de información durante la realización de pruebas de auditoría o evaluación técnica?',
