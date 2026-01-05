@@ -141,7 +141,7 @@ SHOW TABLES;
 
 ---
 
-�️ **Modelo de Datos**
+**Modelo de Datos**
 
 El sistema persiste la información en una base de datos relacional con las siguientes tablas principales:
 
@@ -163,7 +163,7 @@ El sistema persiste la información en una base de datos relacional con las sigu
 
 ---
 
-�📂 **Carga inicial de preguntas (SQL)**
+📂 **Carga inicial de preguntas (SQL)**
 
 Las preguntas de los cuestionarios ISO se cargan automáticamente mediante los scripts SQL configurados en `application.properties`.
 Los archivos se encuentran en:
