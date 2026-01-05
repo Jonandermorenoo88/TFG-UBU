@@ -75,7 +75,7 @@ La aplicación permite administrar controles de seguridad, gestionar evidencias 
     ```
 
 4.  **Acceso**
-    *   `http://localhost:8081`
+    *   `http://localhost:8081/inicio`
 
 ---
 
@@ -94,7 +94,7 @@ docker compose up --build
 ```
 
 🌐 **Acceso a la aplicación**
-`http://4.210.68.7:8081/inicio`
+`http://localhost:8081/inicio`
 
 ---
 
@@ -113,7 +113,7 @@ La aplicación se encuentra desplegada en una máquina virtual Linux (**Ubuntu S
 
 La aplicación es accesible a través del siguiente DNS público de Azure:
 
-👉 **[http://isoassetmanager.northeurope.cloudapp.azure.com:8081](http://isoassetmanager.northeurope.cloudapp.azure.com:8081)**
+👉 **[http://isoassetmanager.northeurope.cloudapp.azure  .com:8081/inicio](http://isoassetmanager.northeurope.cloudapp.azure.com:8081/inicio)**
 
 *(El puerto 8081 se encuentra expuesto mediante Docker y configurado en el firewall de Azure).*
 
