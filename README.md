@@ -1,99 +1,205 @@
 # ISOAssetManager
+📌 **Descripción**
 
-## Descripción
-ISOAssetManager es una aplicación web desarrollada con Spring Boot para la gestión de activos y controles relacionados con normativas ISO. Este proyecto forma parte de un Trabajo de Fin de Grado (TFG) en la Universidad de Burgos.
+**ISOAssetManager** es una aplicación web desarrollada con **Spring Boot** orientada a la gestión de activos de información y al apoyo en el cumplimiento de los controles de seguridad definidos en la norma **ISO/IEC 27002**.
+El proyecto forma parte del **Trabajo de Fin de Grado (TFG)** del Grado en Ingeniería Informática en la Universidad de Burgos.
 
-La aplicación permite administrar controles, verificar la integridad de los datos mediante tecnología Blockchain y generar reportes en Excel, todo ello gestionado bajo un sistema de roles.
+La aplicación permite administrar controles de seguridad, gestionar evidencias documentales, verificar la integridad de la información mediante un sistema de **Blockchain** privado, y generar informes de auditoría en formato Excel, todo ello bajo un sistema de roles y permisos.
 
-## Características Principales
-- **Gestión de Controles**: Creación, edición y visualización de controles ISO.
-- **Seguridad y Roles**: Sistema de autenticación con roles diferenciados:
-  - **Administrador (ADMIN)**: Acceso total al sistema.
-  - **Auditor (AUDITOR)**: Gestión de auditorías y acceso a todos los cuestionarios.
-  - **Dirección (DIRECCION)**: Acceso a controles organizacionales (A5).
-  - **Recursos Humanos (RRHH)**: Acceso a controles de personas (A6).
-  - **Facilities (FACILITIES)**: Acceso a controles físicos (A7).
-  - **IT/Técnico (IT/TECNICO)**: Acceso a controles tecnológicos (A8).
-- **Verificación Blockchain**: Mecanismo para verificar la integridad de los registros mediante hash/blockchain.
-- **Exportación de Datos**: Funcionalidad para exportar listados y respuestas a formato Excel (XLSX).
-- **Interfaz Web**: Interfaz de usuario amigable construida con Thymeleaf.
+---
 
-## Tecnologías Utilizadas
-- **Java 21**: Lenguaje de programación principal.
-- **Spring Boot 3.5.0**: Framework para el desarrollo de la aplicación.
-  - *Spring Data JPA*: Persistencia de datos.
-  - *Spring Security*: Seguridad y autenticación.
-  - *Spring Web*: Controlador MVC.
-- **Thymeleaf**: Motor de plantillas para la vista.
-- **MySQL**: Base de datos relacional.
-- **Apache POI**: Librería para la generación de archivos Excel.
-- **Maven**: Gestor de dependencias y construcción.
+🚀 **Características principales**
 
-## Requisitos Previos
-- **Java Development Kit (JDK) 21** instalado.
-- **MySQL Server** instalado y en ejecución.
+*   ✅ **Gestión de controles ISO 27002**
+*   🔐 **Sistema de autenticación y roles**:
+    *   **ADMIN**: Administración global del sistema.
+    *   **AUDITOR**: Auditoría de empresas y controles.
+    *   **DIRECCIÓN**: Controles organizativos (A.5).
+    *   **RRHH**: Controles relacionados con personas (A.6).
+    *   **FACILITIES**: Controles físicos (A.7).
+    *   **IT / TÉCNICO**: Controles tecnológicos (A.8).
+*   📦 **Gestión de activos de información**
+*   📂 **Gestión de evidencias documentales**
+*   🔗 **Verificación de integridad mediante Blockchain**
+*   📊 **Exportación de resultados a Excel (XLSX)**
+*   🖥️ **Interfaz web basada en Thymeleaf**
 
-## Instalación y Configuración
+---
 
-1. **Clonar el repositorio**
-   ```bash
-   git clone <url-del-repositorio>
-   cd ISOAssetManager
-   ```
+🧰 **Tecnologías utilizadas**
 
-2. **Configurar la Base de Datos**
-   - Asegúrate de tener un servidor MySQL corriendo en el puerto `3306`.
-   - Crea una base de datos llamada `isoassetmanager` (o la aplicación intentará crearla si tienes permisos).
-   - Verifica las credenciales en `ISOAssetManager/src/main/resources/application.properties`:
-     ```properties
-     spring.datasource.url=jdbc:mysql://localhost:3306/isoassetmanager...
-     spring.datasource.username=root
-     spring.datasource.password=1234
-     ```
-   - Modifica `username` y `password` según tu configuración local.
+*   **Java 21 (LTS)**
+*   **Spring Boot 3.5.0**
+*   **Spring Web (MVC)**
+*   **Spring Data JPA**
+*   **Spring Security**
+*   **Thymeleaf**
+*   **MySQL 8.0**
+*   **Apache POI (Excel)**
+*   **Docker & Docker Compose**
+*   **Maven**
+*   **Microsoft Azure (Máquina Virtual Linux)**
 
-3. **Ejecutar la aplicación**
-   Accede al directorio del código fuente y ejecuta la aplicación:
-   ```bash
-   cd ISOAssetManager
-   ./mvnw spring-boot:run
-   ```
-   (En Windows puedes usar `mvnw.cmd spring-boot:run`)
+---
 
-4. **Carga de Datos (Preguntas)**
-   La aplicación carga automáticamente las Categorías y Controles al iniciar. Sin embargo, para cargar las preguntas de los cuestionarios, debes ejecutar los scripts SQL ubicados en la carpeta `sql/` en tu base de datos `isoassetmanager`:
-   - `sql/preguntasA5.sql`
-   - `sql/preguntasA6.sql`
-   - `sql/preguntasA7.sql`
-   - `sql/preguntasA8.sql`
+⚙️ **Requisitos previos**
 
-## Limpiar el target
-Limpiar el target para eliminar archivos temporales y objetos de compilación.  
+**Para ejecución local (sin Docker)**
+*   JDK 21
+*   MySQL Server
+*   Maven
+
+**Para ejecución con Docker**
+*   Docker
+*   Docker Compose
+
+---
+
+🖥️ **Ejecución en entorno local (sin Docker)**
+
+1.  **Clonar el repositorio**
+    ```bash
+    git clone <url-del-repositorio>
+    cd ISOAssetManager
+    ```
+
+2.  **Configurar base de datos MySQL**
+    *   Asegúrate de tener un servidor MySQL corriendo en el puerto 3306.
+    *   **No es necesario crear la base de datos manualmente**: La aplicación la creará automáticamente al iniciar (`createDatabaseIfNotExist=true`).
+    *   Si tus credenciales no son `root` / `1234`, actualízalas en:
+        `src/main/resources/application.properties`
+
+3.  **Ejecutar la aplicación**
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+4.  **Acceso**
+    *   `http://localhost:8081`
+
+---
+
+🐳 **Ejecución con Docker (recomendado)**
+
+El proyecto incluye un archivo `docker-compose.yml` que levanta:
+*   Contenedor Spring Boot
+*   Contenedor MySQL
+*   Volúmenes persistentes para:
+    *   Base de datos
+    *   Evidencias documentales
+
+▶️ **Arranque**
+```bash
+docker compose up --build
+```
+
+🌐 **Acceso a la aplicación**
+`http://4.210.68.7:8081/inicio`
+
+---
+
+☁️ **Despliegue en Microsoft Azure**
+
+La aplicación se encuentra desplegada en una máquina virtual Linux (**Ubuntu Server 24.04 LTS**) en Microsoft Azure, utilizando Docker y Docker Compose.
+
+**Características del entorno:**
+*   **VM**: Standard B2ls v2
+*   **Sistema Operativo**: Ubuntu Server 24.04 LTS
+*   **Acceso por SSH**
+*   **Contenedores Docker**
+*   **Persistencia de datos mediante volúmenes**
+
+🌍 **Acceso público mediante DNS**
+
+La aplicación es accesible a través del siguiente DNS público de Azure:
+
+👉 **[http://isoassetmanager.northeurope.cloudapp.azure.com:8081](http://isoassetmanager.northeurope.cloudapp.azure.com:8081)**
+
+*(El puerto 8081 se encuentra expuesto mediante Docker y configurado en el firewall de Azure).*
+
+---
+
+🗄️ **Acceso a la base de datos (Docker + Azure)**
+
+La base de datos MySQL se ejecuta en un contenedor Docker independiente.
+
+▶️ **Acceder a MySQL dentro del servidor**
+```bash
+docker exec -it isoassetmanager-db mysql -u root -p
+```
+*   **Contraseña configurada**: `1234`
+
+▶️ **Seleccionar la base de datos**
+```sql
+USE isoassetmanager;
+SHOW TABLES;
+```
+*Este acceso permite:*
+*   *Verificar datos*
+*   *Realizar pruebas*
+*   *Simular alteraciones para la demostración del sistema Blockchain*
+
+---
+
+📂 **Carga inicial de preguntas (SQL)**
+
+Las preguntas de los cuestionarios ISO se cargan automáticamente mediante los scripts SQL configurados en `application.properties`.
+Los archivos se encuentran en:
+`src/main/resources/sql/`
+
+**Scripts disponibles:**
+*   `data-a5.sql`
+*   `data-a6.sql`
+*   `data-a7.sql`
+*   `data-a8.sql`
+
+*Estos scripts se ejecutan al iniciar la aplicación si la configuración `spring.sql.init.mode` lo permite (actualmente configurado como `always`).*
+
+---
+
+🧹 **Limpieza del proyecto**
 ```bash
 ./mvnw clean
 ```
-(En Windows puedes usar `mvnw.cmd clean`)
 
-## Documentación (Javadoc)
-Para generar la documentación técnica del proyecto (Javadoc), ejecuta el siguiente comando:
+📚 **Documentación técnica (Javadoc)**
 ```bash
 ./mvnw javadoc:javadoc
 ```
-La documentación generada estará disponible en: `target/reports/apidocs/index.html`.
+*   **Ruta generada**: `target/reports/apidocs/index.html`
 
-## Uso
-Una vez iniciada la aplicación, abre tu navegador web y accede a:
-http://localhost:8081
+---
 
-El puerto por defecto está configurado en `8081` (ver `application.properties`).
+📁 **Estructura del proyecto**
 
-## Estructura del Proyecto
-- `ISOAssetManager/src/main/java`: Código fuente Java (Controladores, Modelos, Servicios, Configuración).
-- `ISOAssetManager/src/main/resources`: Archivos de configuración y plantillas (Thymeleaf).
-- `sql/`: Scripts SQL para la carga inicial de preguntas de los cuestionarios.
-- `ISOAssetManager/pom.xml`: Definición de dependencias Maven.
+```
+ISOAssetManager/
+├── src/main/java
+│   ├── config
+│   ├── controller
+│   ├── model
+│   ├── repository
+│   └── service
+├── src/main/resources
+│   ├── sql
+│   ├── static
+│   ├── templates
+│   └── application.properties
+├── uploads/
+├── Dockerfile
+├── docker-compose.yml
+├── mvnw
+└── pom.xml
+```
 
-## Autor
-Jon Ander Incera Moreno
-Estudiante del Grado en Ingeniería Informática — Universidad de Burgos
-Trabajo de Fin de Grado 2025
+---
+
+👤 **Autor**
+
+**Jon Ander Incera Moreno** (jonandermorenoo88)
+Estudiante del Grado en Ingeniería Informática
+Universidad de Burgos
+**Trabajo de Fin de Grado — Curso 2024/2025**
+
+⭐ **Observación final**
+Este proyecto tiene un carácter académico, pero ha sido diseñado siguiendo criterios reales de seguridad, arquitectura y despliegue, alineados con prácticas profesionales del ámbito de la ciberseguridad y la ingeniería del software.
