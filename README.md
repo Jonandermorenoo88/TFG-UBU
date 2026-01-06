@@ -221,7 +221,7 @@ ISOAssetManager/
 **Jon Ander Incera Moreno**
 Estudiante del Grado en Ingeniería Informática
 Universidad de Burgos
-**Trabajo de Fin de Grado — Curso 2024/2025**
+**Trabajo de Fin de Grado — Curso 2025/2026**
 
 ⭐ **Observación final**
 Este proyecto tiene un carácter académico, pero ha sido diseñado siguiendo criterios reales de seguridad, arquitectura y despliegue, alineados con prácticas profesionales del ámbito de la ciberseguridad y la ingeniería del software.
