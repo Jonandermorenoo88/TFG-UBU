@@ -82,7 +82,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- Plugin de Javadoc (versión PRO para TFG) -->
+            <!-- Plugin de Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -100,7 +100,7 @@
                     <charset>UTF-8</charset>
                     <docencoding>UTF-8</docencoding>
 
-                    <!-- Generar Javadoc donde tú lo usas -->
+                    <!-- Generar Javadoc -->
                     <reportOutputDirectory>${project.build.directory}/reports</reportOutputDirectory>
                 </configuration>
             </plugin>
