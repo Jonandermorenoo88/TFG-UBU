@@ -225,3 +225,6 @@ Universidad de Burgos
 
 ⭐ **Observación final**
 Este proyecto tiene un carácter académico, pero ha sido diseñado siguiendo criterios reales de seguridad, arquitectura y despliegue, alineados con prácticas profesionales del ámbito de la ciberseguridad y la ingeniería del software.
+
+## License
+MIT License
